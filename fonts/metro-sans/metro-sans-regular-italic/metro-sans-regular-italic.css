@@ -13,15 +13,4 @@ License: 	The WebFont(s) listed in this document must follow the YouWorkForThem
 			from using the WebFonts(s) listed without a purchased license. 
 			All details above must always remain unaltered and visible in your CSS.
 */
-
-@font-face {
-	font-family: 'MetroSans-RegularItalic';
-	src: url('metro-sans-regular-italic.eot');
-	src: url('metro-sans-regular-italic.eot?#iefix') format('embedded-opentype'),
-             url('metro-sans-regular-italic.woff2') format('woff2'),
-	     url('metro-sans-regular-italic.woff') format('woff'),
-	     url('metro-sans-regular-italic.ttf') format('truetype'),
-	     url('metro-sans-regular-italic.svg#youworkforthem') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
+@font-face{font-family:'MetroSans-RegularItalic';src:url('metro-sans-regular-italic.eot');src:url('metro-sans-regular-italic.eot?#iefix') format('embedded-opentype'),url('metro-sans-regular-italic.woff2') format('woff2'),url('metro-sans-regular-italic.woff') format('woff'),url('metro-sans-regular-italic.ttf') format('truetype'),url('metro-sans-regular-italic.svg#youworkforthem') format('svg');font-weight:normal;font-style:normal}

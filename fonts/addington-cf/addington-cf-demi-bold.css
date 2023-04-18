@@ -13,15 +13,4 @@ License: 	The WebFont(s) listed in this document must follow the YouWorkForThem
 			from using the WebFonts(s) listed without a purchased license. 
 			All details above must always remain unaltered and visible in your CSS.
 */
-
-@font-face {
-	font-family: 'AddingtonCF-DemiBold';
-	src: url('addington-cf-demi-bold.eot');
-	src: url('addington-cf-demi-bold.eot?#iefix') format('embedded-opentype'),
-             url('addington-cf-demi-bold.woff2') format('woff2'),
-	     url('addington-cf-demi-bold.woff') format('woff'),
-	     url('addington-cf-demi-bold.ttf') format('truetype'),
-	     url('addington-cf-demi-bold.svg#youworkforthem') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
+@font-face{font-family:'AddingtonCF-DemiBold';src:url('addington-cf-demi-bold.eot');src:url('addington-cf-demi-bold.eot?#iefix') format('embedded-opentype'),url('addington-cf-demi-bold.woff2') format('woff2'),url('addington-cf-demi-bold.woff') format('woff'),url('addington-cf-demi-bold.ttf') format('truetype'),url('addington-cf-demi-bold.svg#youworkforthem') format('svg');font-weight:normal;font-style:normal}
