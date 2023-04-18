@@ -1,0 +1,932 @@
+JS Options Fields
+
+Updated at 31/03/2023 12:22.48am UTC
+
+
+Shortcodes:
+
+
+
+JS:
+
+array (
+  'ID' => 0,
+  'key' => 'field_5d7ac72d78ba6',
+  'label' => '',
+  'name' => 'js_variables_theme',
+  'aria-label' => '',
+  'prefix' => 'acf',
+  'type' => 'textarea',
+  'value' => '',
+  'menu_order' => 25,
+  'instructions' => '',
+  'required' => 0,
+  'id' => '',
+  'class' => '',
+  'conditional_logic' => 0,
+  'parent' => 'group_5d7ac711e9db3',
+  'wrapper' => 
+  array (
+    'width' => '',
+    'class' => 'js',
+    'id' => '9990010',
+  ),
+  'default_value' => '',
+  'placeholder' => '',
+  'maxlength' => '',
+  'rows' => 3,
+  'new_lines' => '',
+  '_name' => 'js_variables_theme',
+  '_valid' => 1,
+)array (
+  'ID' => 0,
+  'key' => 'field_5d800a5a0d849',
+  'label' => '',
+  'name' => 'js_variables_user',
+  'aria-label' => '',
+  'prefix' => 'acf',
+  'type' => 'textarea',
+  'value' => '',
+  'menu_order' => 6,
+  'instructions' => '',
+  'required' => 0,
+  'id' => '',
+  'class' => '',
+  'conditional_logic' => 0,
+  'parent' => 'group_5d7ac711e9db3',
+  'wrapper' => 
+  array (
+    'width' => '',
+    'class' => 'js',
+    'id' => '9990020',
+  ),
+  'default_value' => '',
+  'placeholder' => '',
+  'maxlength' => '',
+  'rows' => 3,
+  'new_lines' => '',
+  '_name' => 'js_variables_user',
+  '_valid' => 1,
+)array (
+  'ID' => 0,
+  'key' => 'field_5d7ac740fbb30',
+  'label' => '',
+  'name' => 'js_functions_theme',
+  'aria-label' => '',
+  'prefix' => 'acf',
+  'type' => 'textarea',
+  'value' => 'function tspSetHeadingTopMargin() {
+	var headingTopMargin = (jQuery(window).height() * 0.75) - jQuery(\'section.section1.fullScreen .container\').height();
+  	if (headingTopMargin > jQuery(\'header\').height()) {
+  		jQuery(\'section.section1.fullScreen .container\').css("margin-top", headingTopMargin + "px");
+  	} else {
+  		jQuery(\'section.section1.fullScreen .container\').css("margin-top", jQuery(\'header\').height() + "px");
+  	}
+}',
+  'menu_order' => 28,
+  'instructions' => '',
+  'required' => 0,
+  'id' => '',
+  'class' => '',
+  'conditional_logic' => 0,
+  'parent' => 'group_5d7ac711e9db3',
+  'wrapper' => 
+  array (
+    'width' => '',
+    'class' => 'js',
+    'id' => '9990030',
+  ),
+  'default_value' => 'function tspSetHeadingTopMargin() {
+	var headingTopMargin = (jQuery(window).height() * 0.75) - jQuery(\'section.section1.fullScreen .container\').height();
+  	if (headingTopMargin > jQuery(\'header\').height()) {
+  		jQuery(\'section.section1.fullScreen .container\').css("margin-top", headingTopMargin + "px");
+  	} else {
+  		jQuery(\'section.section1.fullScreen .container\').css("margin-top", jQuery(\'header\').height() + "px");
+  	}
+}',
+  'placeholder' => '',
+  'maxlength' => '',
+  'rows' => 24,
+  'new_lines' => '',
+  '_name' => 'js_functions_theme',
+  '_valid' => 1,
+)array (
+  'ID' => 0,
+  'key' => 'field_5d800ae70cedf',
+  'label' => '',
+  'name' => 'js_functions_user',
+  'aria-label' => '',
+  'prefix' => 'acf',
+  'type' => 'textarea',
+  'value' => '',
+  'menu_order' => 9,
+  'instructions' => '',
+  'required' => 0,
+  'id' => '',
+  'class' => '',
+  'conditional_logic' => 0,
+  'parent' => 'group_5d7ac711e9db3',
+  'wrapper' => 
+  array (
+    'width' => '',
+    'class' => 'js',
+    'id' => '9990040',
+  ),
+  'default_value' => '',
+  'placeholder' => '',
+  'maxlength' => '',
+  'rows' => 24,
+  'new_lines' => '',
+  '_name' => 'js_functions_user',
+  '_valid' => 1,
+)array (
+  'ID' => 0,
+  'key' => 'field_5d7ac758fbb31',
+  'label' => '',
+  'name' => 'js_document_ready_theme',
+  'aria-label' => '',
+  'prefix' => 'acf',
+  'type' => 'textarea',
+  'value' => '// Confirm JS loaded
+$(\'#js-loaded\').text("true"); // This will prevent "No JS" file from being loaded in footer.php (which is a fallback in case JS doesn\'t execute)
+
+// Animations
+let heading1 = document.querySelector(\'section.kokako h1\');
+let heading2s = document.querySelectorAll(\'section.kokako h2\');
+let textWithPhotoImages = document.querySelectorAll(\'section.textWithPhoto .image\');
+let multipleColumns = document.querySelectorAll(\'section.multipleColumns .multiple-columns-col\');
+let multipleRows = document.querySelectorAll(\'section.multipleRows .multiple-rows-row\');
+let latestPosts = document.querySelectorAll(\'section.kokako.latestPosts .blog-grid.post\');
+
+/* heading2s.forEach(
+	(item) => ( item.style.animationDelay = (Math.random() * 0.5) + \'s\' )
+); */
+
+function inViewPort(el) {
+	if ( el ) {
+		let rect = el.getBoundingClientRect();
+		if ( rect ) {
+			return (
+				(rect.top <= 0 && rect.bottom >= 0) ||
+				(rect.bottom >= window.innerHeight && rect.top <= window.innerHeight) ||
+				(rect.top >= 0 && rect.bottom <= window.innerHeight)
+			);
+		} else {
+			return false;
+		}
+	} else {
+		return false;
+	}
+}
+
+function animateOnScroll() {
+
+	// let windowScroll = jQuery(window).scrollTop(); // Maybe should be .pageYOffset() these days? See chapter "Parallax scrolling with JS"
+	// let windowHeight = jQuery(window).height();
+	// let windowViewable = windowScroll + windowHeight;
+	let animationDelayInitial = 0.2;
+	let animationDelayIncrease = 0.2;
+	let parentSection = "";
+	let previousParentSection = "";
+
+	// Heading 1
+	if ( inViewPort(heading1) ) {
+		heading1.classList.add(\'appear\');
+	}
+
+	// Heading 2s
+	if ( 0 == jQuery(\'.woocommerce\').length ) { // Don\'t fade in h2\'s on Woocommerce pages
+		let animationDelay = animationDelayInitial; // Will add animationDelayInitial (in seconds) in case h1 and first h2 are in view together
+		heading2s.forEach(function(heading2) {
+			if ( inViewPort(heading2) ) {
+				if ( performance.now() < 4000) { // If page has recently loaded, add a variation, so that headings in view don\'t display all at the same time
+					heading2.style.animationDelay = animationDelay + \'s\'; // Animation delay doesn\'t need to be removed, as this code is only executing when a heading is in view with 4 seconds of the page loading, and the animation is never being re-triggered
+					animationDelay += animationDelayIncrease;
+				}			
+				if ( !heading2. classList.contains(\'hide\') ) {
+					heading2.classList.add(\'appear\');
+				}
+			}
+		});
+	}
+
+	// Text with Photo images
+	animationDelay = animationDelayInitial; // Will add 300ms in case h1 and first h2 are in view together, to match headings
+	textWithPhotoImages.forEach(function(textWithPhotoImage) {
+		if ( inViewPort(textWithPhotoImage) ) {
+			if ( performance.now() < 4000) { // If page has recently loaded, add a variation, so that headings in view don\'t display all at the same time
+				textWithPhotoImage.style.animationDelay = animationDelay + \'s\'; // Animation delay doesn\'t need to be removed, as this code is only executing when a heading is in view with 4 seconds of the page loading, and the animation is never being re-triggered
+				animationDelay += animationDelayIncrease;
+			}			
+			textWithPhotoImage.classList.add(\'appear\');
+		}
+	});
+
+	// Multiple Columns columns
+	animationDelay = animationDelayInitial;
+	parentSection = "";
+	previousParentSection = "";
+	multipleColumns.forEach(function(multipleColumnsCol) {
+		if ( inViewPort(multipleColumnsCol) ) {
+			if ( jQuery(window).outerWidth() > 767 ) {
+				parentSection = jQuery(multipleColumnsCol).parent().parent().parent("section").attr("class");
+				if ( ( "" == previousParentSection) || ( parentSection == previousParentSection ) ) {
+					multipleColumnsCol.style.animationDelay = animationDelay + \'s\'; // Animation delay doesn\'t need to be removed, as this code is only executing when a heading is in view with 4 seconds of the page loading, and the animation is never being re-triggered
+					animationDelay += animationDelayIncrease;
+				} else {
+					animationDelay = animationDelayInitial;
+					multipleColumnsCol.style.animationDelay = animationDelay + \'s\'; // Animation delay doesn\'t need to be removed, as this code is only executing when a heading is in view with 4 seconds of the page loading, and the animation is never being re-triggered
+					animationDelay += animationDelayIncrease;
+				}
+				previousParentSection = parentSection;
+			}
+			multipleColumnsCol.classList.add(\'appear\');
+		}
+	});
+
+	// Multiple Rows rows
+	animationDelay = animationDelayInitial;
+	multipleRows.forEach(function(multipleRowsRow) {
+		if ( inViewPort(multipleRowsRow) ) {
+			if ( jQuery(window).outerWidth() > 767 ) {
+				multipleRowsRow.style.animationDelay = animationDelay + \'s\'; // Animation delay doesn\'t need to be removed, as this code is only executing when a heading is in view with 4 seconds of the page loading, and the animation is never being re-triggered
+				animationDelay += animationDelayIncrease;
+			}
+			multipleRowsRow.classList.add(\'appear\');
+		}
+	});
+
+	// Latest Posts columns
+	animationDelay = animationDelayInitial;
+	latestPosts.forEach(function(latestPostsPost) {
+		if ( inViewPort(latestPostsPost) ) {
+			if ( jQuery(window).outerWidth() > 767 ) {
+				latestPostsPost.style.animationDelay = animationDelay + \'s\'; // Animation delay doesn\'t need to be removed, as this code is only executing when a heading is in view with 4 seconds of the page loading, and the animation is never being re-triggered
+				animationDelay += animationDelayIncrease;
+			}
+			latestPostsPost.classList.add(\'appear\');
+		}
+	});
+
+	window.requestAnimationFrame(animateOnScroll);
+}
+window.requestAnimationFrame(animateOnScroll);
+
+
+// Custom Animations
+/* let scrollMagicController = new ScrollMagic.Controller();
+
+if ( jQuery(\'section.kokako.textWithCircularPhoto\').length ) {
+
+	let textWithCircularPhotoMotifTween = TweenMax.from(\'section.kokako.textWithCircularPhoto .background-motif\', {
+		x: 25, // 25
+		y: 25, // 50
+		ease: Sine.easeInOut, // See https://greensock.com/docs/v2/Easing
+	});
+	let textWithCircularPhotoImageTween = TweenMax.from(\'section.kokako.textWithCircularPhoto .image\', {
+		x: -25, // -50
+		y: -25,
+		ease: Sine.easeInOut,
+	});
+
+	new ScrollMagic.Scene({
+		triggerElement: \'section.kokako.textWithCircularPhoto\',
+		duration: ( jQuery(window).height() * 1.5),
+		triggerHook: 0.5,
+		offset: ( jQuery(window).height() / -2 ),
+	})
+		.setTween(textWithCircularPhotoMotifTween)
+		.addTo(scrollMagicController);
+
+	new ScrollMagic.Scene({
+		triggerElement: \'section.kokako.textWithCircularPhoto\',
+		duration: ( jQuery(window).height() * 1.5),
+		triggerHook: 0.5,
+		offset: ( jQuery(window).height() / -2 ),
+	})
+		.setTween(textWithCircularPhotoImageTween)
+		.addTo(scrollMagicController);
+}
+
+if ( jQuery(\'section.kokako.contact-footer\').length ) {
+
+	let contactFooterMotifTween = TweenMax.from(\'section.kokako.contact-footer .foreground-motif\', {
+		x: -25,
+		y: 50,
+		ease: Sine.easeInOut,
+	});
+
+	let contactFooterImageTween = TweenMax.from(\'section.kokako.contact-footer img\', {
+		x: 0,
+		y: -50,
+		ease: Sine.easeInOut,
+	});
+
+	new ScrollMagic.Scene({
+		triggerElement: \'section.kokako.contact-footer\',
+		duration: ( jQuery(window).height() * 1.5),
+		triggerHook: 0.5,
+		offset: ( jQuery(window).height() / -2 ),	
+	})
+		.setTween(contactFooterMotifTween)
+		.addTo(scrollMagicController);
+
+	new ScrollMagic.Scene({
+		triggerElement: \'section.kokako.contact-footer\',
+		duration: ( jQuery(window).height() * 1.5),
+		triggerHook: 0.5,
+		offset: ( jQuery(window).height() / -2 ),
+	})
+		.setTween(contactFooterImageTween)
+		.addTo(scrollMagicController);
+} */
+
+
+// Adjust fixed Header size on scroll
+if (($(document).scrollTop() > 50) && ($(window).outerWidth() > 575)) {
+	jQuery(\'header\').addClass("scrolled");			
+	// jQuery(\'section.section1\').addClass("scrolled"); // No longer required
+} else {
+	jQuery(\'header\').removeClass("scrolled");			
+	// jQuery(\'section.section1\').removeClass("scrolled"); // No longer required
+}
+$(window).scroll(function(){
+	if (($(document).scrollTop() > 50) && ($(window).outerWidth() > 575)) {
+		jQuery(\'header\').addClass("scrolled");			
+		// jQuery(\'section.section1\').addClass("scrolled"); // No longer required
+	} else {
+		jQuery(\'header\').removeClass("scrolled");			
+		// jQuery(\'section.section1\').removeClass("scrolled"); // No longer required
+	}
+});',
+  'menu_order' => 31,
+  'instructions' => 'jQuery(document).ready(function($){',
+  'required' => 0,
+  'id' => '',
+  'class' => '',
+  'conditional_logic' => 0,
+  'parent' => 'group_5d7ac711e9db3',
+  'wrapper' => 
+  array (
+    'width' => '',
+    'class' => 'js',
+    'id' => '9990050',
+  ),
+  'default_value' => '// Adjust fixed Header size on scroll
+if (($(document).scrollTop() > 0) && ($(window).width() > 575)) {
+	jQuery(\'header\').addClass("scrolled");			
+	jQuery(\'section.section1\').addClass("scrolled");			
+	jQuery(\'section.section1 div.bg-pattern-half\').addClass("scrolled");			
+} else {
+	jQuery(\'header\').removeClass("scrolled");			
+	jQuery(\'section.section1\').removeClass("scrolled");			
+	jQuery(\'section.section1 div.bg-pattern-half\').removeClass("scrolled");			
+}
+$(window).scroll(function(){
+	if (($(document).scrollTop() > 0) && ($(window).width() > 575)) {
+		jQuery(\'header\').addClass("scrolled");			
+		jQuery(\'section.section1\').addClass("scrolled");			
+		jQuery(\'section.section1 div.bg-pattern-half\').addClass("scrolled");			
+	} else {
+		jQuery(\'header\').removeClass("scrolled");			
+		jQuery(\'section.section1\').removeClass("scrolled");			
+		jQuery(\'section.section1 div.bg-pattern-half\').removeClass("scrolled");			
+  	}
+});',
+  'placeholder' => '',
+  'maxlength' => '',
+  'rows' => 24,
+  'new_lines' => '',
+  '_name' => 'js_document_ready_theme',
+  '_valid' => 1,
+)array (
+  'ID' => 0,
+  'key' => 'field_5d800b8c97e19',
+  'label' => '',
+  'name' => 'js_document_ready_user',
+  'aria-label' => '',
+  'prefix' => 'acf',
+  'type' => 'textarea',
+  'value' => '',
+  'menu_order' => 12,
+  'instructions' => 'jQuery(document).ready(function($){',
+  'required' => 0,
+  'id' => '',
+  'class' => '',
+  'conditional_logic' => 0,
+  'parent' => 'group_5d7ac711e9db3',
+  'wrapper' => 
+  array (
+    'width' => '',
+    'class' => 'js',
+    'id' => '9990060',
+  ),
+  'default_value' => '',
+  'placeholder' => '',
+  'maxlength' => '',
+  'rows' => 24,
+  'new_lines' => '',
+  '_name' => 'js_document_ready_user',
+  '_valid' => 1,
+)array (
+  'ID' => 0,
+  'key' => 'field_5d7ac778fbb32',
+  'label' => '',
+  'name' => 'js_window_load_theme',
+  'aria-label' => '',
+  'prefix' => 'acf',
+  'type' => 'textarea',
+  'value' => '// Set top margin of heading in top Section
+if (jQuery(\'section.section1.fullScreen\').length) {
+	tspSetHeadingTopMargin();
+	jQuery(window).resize(function(){
+		tspSetHeadingTopMargin();
+	});
+	jQuery(\'section.section1.fullScreen\').stellar();
+}
+
+// Accordion functionality
+jQuery(\'h4.accordion-toggle\').click(function(){
+	jQuery(this).find(\'i.icon-plus\').toggleClass(\'open\');	
+	jQuery(this).next(\'div.accordion-content\').slideToggle(400);	
+});
+
+/*
+// CODE REMOVED AT THIS STAGE AS NEEDS TO BE UPDATED TO INCLUDE ON SCROLL EVENT THAT CAN ALSO REMOVE THE BOTTOM-ALIGN CLASS
+// Position footer to bottom of window on shorter pages
+if ((jQuery(window).height() == jQuery(document).height()) || ((jQuery(window).height() > jQuery(document).height() - 50) && (jQuery(\'#wpadminbar\').is(\':visible\')))) { // See https://stackoverflow.com/questions/14035819/window-height-vs-document-height - doc height is set to window height when it is less than he window height
+	jQuery(\'footer\').addClass(\'bottom-align\');
+}
+*/',
+  'menu_order' => 35,
+  'instructions' => 'jQuery(window).on(\'load\', function(){',
+  'required' => 0,
+  'id' => '',
+  'class' => '',
+  'conditional_logic' => 0,
+  'parent' => 'group_5d7ac711e9db3',
+  'wrapper' => 
+  array (
+    'width' => '',
+    'class' => 'js',
+    'id' => '9990070',
+  ),
+  'default_value' => '// Set top margin of heading in top Section
+if (jQuery(\'section.section1.fullScreen\').length) {
+	tspSetHeadingTopMargin();
+	jQuery(window).resize(function(){
+		tspSetHeadingTopMargin();
+	});
+	jQuery(\'section.section1.fullScreen\').stellar();
+}
+
+// Position footer to bottom of window on shorter pages
+if ((jQuery(window).height() == jQuery(document).height()) || ((jQuery(window).height() > jQuery(document).height() - 50) && (jQuery(\'#wpadminbar\').is(\':visible\')))) { // See https://stackoverflow.com/questions/14035819/window-height-vs-document-height - doc height is set to window height when it is less than he window height
+	jQuery(\'footer\').addClass(\'bottom-align\');
+}',
+  'placeholder' => '',
+  'maxlength' => '',
+  'rows' => 24,
+  'new_lines' => '',
+  '_name' => 'js_window_load_theme',
+  '_valid' => 1,
+)array (
+  'ID' => 0,
+  'key' => 'field_5d800bcb97e1d',
+  'label' => '',
+  'name' => 'js_window_load_user',
+  'aria-label' => '',
+  'prefix' => 'acf',
+  'type' => 'textarea',
+  'value' => '',
+  'menu_order' => 16,
+  'instructions' => 'jQuery(window).on(\'load\', function(){',
+  'required' => 0,
+  'id' => '',
+  'class' => '',
+  'conditional_logic' => 0,
+  'parent' => 'group_5d7ac711e9db3',
+  'wrapper' => 
+  array (
+    'width' => '',
+    'class' => 'js',
+    'id' => '9990080',
+  ),
+  'default_value' => '',
+  'placeholder' => '',
+  'maxlength' => '',
+  'rows' => 24,
+  'new_lines' => '',
+  '_name' => 'js_window_load_user',
+  '_valid' => 1,
+)array (
+  'ID' => 0,
+  'key' => 'field_61b2bf756c686',
+  'label' => 'JavaScript for Sections',
+  'name' => 'js_sections',
+  'aria-label' => '',
+  'prefix' => 'acf',
+  'type' => 'repeater',
+  'value' => 
+  array (
+    0 => 
+    array (
+      'section_type' => 'Testimonials',
+      'js_dependencies' => 
+      array (
+      ),
+      'js_variables_section' => 'var testimonialTimer;',
+      'js_functions_section' => 'function setTestimonialTimer() {
+	testimonialTimer = window.setInterval(function(){ 
+		var childIndex = jQuery(\'section.testimonials p.testimonial-links a.current\').attr("href").replace(/[^0-9]/g,\'\');
+		childIndex++;
+		if (jQuery(\'section.testimonials p.testimonial-links a.testimonial-link\' + childIndex).length == 0) {
+		  childIndex = 0;
+		}
+		jQuery(\'section.testimonials p.testimonial-links a.testimonial-link\' + childIndex).trigger("click");
+	}, 5000 ); 
+}
+
+function setTestimonialSectionHeight() { // NB: If more than one Testimonial section is used on the page, all will be set to the minimum height
+	var maxHeight = 0;
+	jQuery(\'section.testimonials div.testimonial\').each(function(){
+		if (jQuery(this).height() > maxHeight) {
+			maxHeight = jQuery(this).height();
+		}
+	});
+	maxHeight = Math.ceil(maxHeight) + 10;
+	jQuery(\'section.testimonials .internalWrap\').height(maxHeight);
+}',
+      'js_document_ready_section' => '',
+      'js_window_load_section' => '// Testimonials animation
+if (jQuery(\'section.testimonials\').length) {
+
+	// Set Testimonials Height
+	setTestimonialSectionHeight();
+	jQuery(window).resize(function(){
+		setTestimonialSectionHeight();
+	});
+
+	// Set Testimonials Animation
+	if ( jQuery(\'section.testimonials div.testimonial\').length > 1 ) { // Don\'t start timer if only one testimonial
+
+		jQuery(\'section.testimonials p.testimonial-links a\').click(function(){
+			if (!jQuery(this).hasClass("current")) {
+
+				// Remove all "current" classes
+				jQuery(\'section.testimonials div.testimonial\').removeClass("current");
+				jQuery(\'section.testimonials p.testimonial-links a\').removeClass("current");
+
+				// Add an appropriate "current" class
+				var childIndex = jQuery(this).attr("href").replace(/[^0-9]/g,\'\');
+				jQuery(\'section.testimonials div.testimonial\' + childIndex).addClass("current");
+				jQuery(\'section.testimonials p.testimonial-links a.testimonial-link\' + childIndex).addClass("current");
+		  	}
+			return false;
+		});
+
+		// Set timer (and clear on hover)
+		setTestimonialTimer();
+		jQuery("section.testimonials div.col-xs-12").hover(function() {
+			window.clearInterval(testimonialTimer);
+		}, function() {
+			setTestimonialTimer();
+		});
+		jQuery("section.testimonials p.testimonial-links a").hover(function() {
+			window.clearInterval(testimonialTimer);
+		});
+
+	}
+}',
+    ),
+    1 => 
+    array (
+      'section_type' => 'Photo Gallery',
+      'js_dependencies' => 
+      array (
+        0 => 'imagesLoaded',
+        1 => 'masonry',
+      ),
+      'js_variables_section' => '',
+      'js_functions_section' => '// Initialise Masonry (used for Photo Gallery)
+var $grid = jQuery(\'.grid\').masonry({ // See https://masonry.desandro.com/options.html for options
+	columnWidth: \'.grid-sizer\',
+	itemSelector: \'.grid-item\',
+	percentPosition: true,
+	gutter: 20,
+	stagger: 30,
+});
+
+// Layout Masonry after each image loads
+$grid.imagesLoaded().progress( function() {
+	$grid.masonry(\'layout\');
+});',
+      'js_document_ready_section' => '',
+      'js_window_load_section' => '',
+    ),
+    2 => 
+    array (
+      'section_type' => 'Team',
+      'js_dependencies' => 
+      array (
+      ),
+      'js_variables_section' => '',
+      'js_functions_section' => '',
+      'js_document_ready_section' => '',
+      'js_window_load_section' => '// Toggle overlay photo in Team section
+if (jQuery(\'section.team\').length) {
+	jQuery(\'section.team img.hover\').hover(function(){
+		jQuery(this).toggleClass(\'hovered\');
+	})
+}',
+    ),
+  ),
+  'menu_order' => 40,
+  'instructions' => '',
+  'required' => 0,
+  'id' => '',
+  'class' => '',
+  'conditional_logic' => 0,
+  'parent' => 'group_5d7ac711e9db3',
+  'wrapper' => 
+  array (
+    'width' => '',
+    'class' => 'js sections',
+    'id' => '9990090',
+  ),
+  'collapsed' => 'field_61b2bfc16c687',
+  'min' => 0,
+  'max' => 0,
+  'layout' => 'block',
+  'button_label' => 'Add Section',
+  '_name' => 'js_sections',
+  '_valid' => 1,
+  'sub_fields' => 
+  array (
+    0 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_61b2bfc16c687',
+      'label' => 'Section Type',
+      'name' => 'section_type',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'text',
+      'value' => NULL,
+      'menu_order' => 0,
+      'instructions' => '',
+      'required' => 1,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_61b2bf756c686',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'default_value' => '',
+      'placeholder' => '',
+      'prepend' => '',
+      'append' => '',
+      'maxlength' => '',
+      '_name' => 'section_type',
+      '_valid' => 1,
+      'parent_repeater' => 'field_61b2bf756c686',
+    ),
+    1 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_61b2c12b15024',
+      'label' => 'Dependencies',
+      'name' => 'js_dependencies',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'select',
+      'value' => NULL,
+      'menu_order' => 1,
+      'instructions' => 'Please select any required JavaScript libraries. If other libraries are required, they will need to be manually added to the list in the field below, and also set up manually in the site functions file.',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_61b2bf756c686',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'choices' => 
+      array (
+        'gsap' => 'GSAP',
+        'scrollMagic' => 'Scroll Magic',
+        'scrollMagicDebug' => 'Scroll Magic Debug (use during development only)',
+        'imagesLoaded' => 'Images Loaded',
+        'masonry' => 'Masonry',
+      ),
+      'default_value' => 
+      array (
+      ),
+      'allow_null' => 1,
+      'multiple' => 1,
+      'ui' => 0,
+      'return_format' => 'value',
+      'ajax' => 0,
+      'placeholder' => '',
+      '_name' => 'js_dependencies',
+      '_valid' => 1,
+      'parent_repeater' => 'field_61b2bf756c686',
+    ),
+    2 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_61b2c20615025',
+      'label' => 'Variables',
+      'name' => 'js_variables_section',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'textarea',
+      'value' => NULL,
+      'menu_order' => 2,
+      'instructions' => '',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_61b2bf756c686',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => 'js',
+        'id' => '',
+      ),
+      'default_value' => '',
+      'placeholder' => '',
+      'maxlength' => '',
+      'rows' => 3,
+      'new_lines' => '',
+      '_name' => 'js_variables_section',
+      '_valid' => 1,
+      'parent_repeater' => 'field_61b2bf756c686',
+    ),
+    3 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_61b2c2cc15026',
+      'label' => 'Functions',
+      'name' => 'js_functions_section',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'textarea',
+      'value' => NULL,
+      'menu_order' => 3,
+      'instructions' => '',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_61b2bf756c686',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => 'js',
+        'id' => '',
+      ),
+      'default_value' => '',
+      'placeholder' => '',
+      'maxlength' => '',
+      'rows' => 12,
+      'new_lines' => '',
+      '_name' => 'js_functions_section',
+      '_valid' => 1,
+      'parent_repeater' => 'field_61b2bf756c686',
+    ),
+    4 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_61b2c2f815027',
+      'label' => 'Document Ready',
+      'name' => 'js_document_ready_section',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'textarea',
+      'value' => NULL,
+      'menu_order' => 4,
+      'instructions' => 'jQuery(document).ready(function($){',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_61b2bf756c686',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => 'js',
+        'id' => '',
+      ),
+      'default_value' => '',
+      'placeholder' => '',
+      'maxlength' => '',
+      'rows' => 12,
+      'new_lines' => '',
+      '_name' => 'js_document_ready_section',
+      '_valid' => 1,
+      'parent_repeater' => 'field_61b2bf756c686',
+    ),
+    5 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_61b2c33315028',
+      'label' => '',
+      'name' => '',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'message',
+      'value' => false,
+      'menu_order' => 5,
+      'instructions' => '',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_61b2bf756c686',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'message' => '});',
+      'new_lines' => 'wpautop',
+      'esc_html' => 0,
+      '_name' => '',
+      '_valid' => 1,
+      'parent_repeater' => 'field_61b2bf756c686',
+    ),
+    6 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_61b2c34515029',
+      'label' => 'Window Load',
+      'name' => 'js_window_load_section',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'textarea',
+      'value' => NULL,
+      'menu_order' => 6,
+      'instructions' => 'jQuery(window).on(\'load\', function(){',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_61b2bf756c686',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => 'js',
+        'id' => '',
+      ),
+      'default_value' => '',
+      'placeholder' => '',
+      'maxlength' => '',
+      'rows' => 12,
+      'new_lines' => '',
+      '_name' => 'js_window_load_section',
+      '_valid' => 1,
+      'parent_repeater' => 'field_61b2bf756c686',
+    ),
+    7 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_61b2c3791502a',
+      'label' => '',
+      'name' => '',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'message',
+      'value' => false,
+      'menu_order' => 7,
+      'instructions' => '',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_61b2bf756c686',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'message' => '});',
+      'new_lines' => 'wpautop',
+      'esc_html' => 0,
+      '_name' => '',
+      '_valid' => 1,
+      'parent_repeater' => 'field_61b2bf756c686',
+    ),
+  ),
+  'rows_per_page' => 20,
+)

@@ -1,0 +1,44 @@
+NO-JSCSS Options Fields
+
+Updated at 31/03/2023 12:22.48am UTC
+Referrer: /wp-admin/admin.php?page=acf-options-elements-css-editor
+array (
+  'ID' => 0,
+  'key' => 'field_622ec9f9ed6ae',
+  'label' => 'No JavaScript CSS',
+  'name' => 'no_javascript_css',
+  'aria-label' => '',
+  'prefix' => 'acf',
+  'type' => 'textarea',
+  'value' => 'section.kokako :is(h1, h2),
+section.kokako.textWithPhoto .row .image,
+section.kokako.multipleColumns .multiple-columns-col,
+section.kokako.multipleRows .multiple-rows-row,
+section.kokako.latestPosts .blog-grid.post {
+	opacity: 1 !important;
+	transform: translate(0) scale(1) !important;
+	transition: all [animation-duration] [animation-transition] !important;
+}',
+  'menu_order' => 137,
+  'instructions' => 'Please use full CSS with element selectors in this text area.<br /><br />
+
+<strong>This CSS  will be loaded only if there is no JavaScript detected - it will be compiled into a separate file named no-js.css .</strong> It can be used to reset all animations to a completed state.',
+  'required' => 0,
+  'id' => '',
+  'class' => '',
+  'conditional_logic' => 0,
+  'parent' => 'group_5cf866575f28d',
+  'wrapper' => 
+  array (
+    'width' => '',
+    'class' => 'css full no-js',
+    'id' => 'no-js-0010',
+  ),
+  'default_value' => '',
+  'placeholder' => '',
+  'maxlength' => '',
+  'rows' => 16,
+  'new_lines' => '',
+  '_name' => 'no_javascript_css',
+  '_valid' => 1,
+)

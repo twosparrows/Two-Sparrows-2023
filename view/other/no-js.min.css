@@ -1,0 +1,1 @@
+section.kokako :is(h1,h2),section.kokako.textWithPhoto .row .image,section.kokako.multipleColumns .multiple-columns-col,section.kokako.multipleRows .multiple-rows-row,section.kokako.latestPosts .blog-grid.post{opacity:1 !important;transform:translate(0) scale(1) !important;transition:all 1s ease-out !important;}
