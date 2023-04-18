@@ -25,7 +25,7 @@ DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be mad
 
 html {
     scroll-behavior: smooth;
-    font-size: 13pt; /* rem units are relative to the font size of the HTML element - see https://www.digitalocean.com/community/tutorials/css-rem-vs-em-units */
+    font-size: 15pt; /* rem units are relative to the font size of the HTML element - see https://www.digitalocean.com/community/tutorials/css-rem-vs-em-units */
 }
 
 body {
@@ -33,14 +33,14 @@ body {
     color: #222f29;
     font-family: "MetroSans-Regular", Arial, sans-serif;
     font-size: 1rem;
-    line-height: 1.7;
+    line-height: 1.5;
     -webkit-font-smoothing: antialiased; /* Fix for Google Chrome issue where a slider change can cause text to flicker */
 }
 
 p, li, td {
     font-family: "MetroSans-Regular", Arial, sans-serif;
     font-size: 1rem;
-    line-height: 1.7;
+    line-height: 1.5;
     margin: 15px 0;
     padding: 0;
 }
@@ -49,22 +49,22 @@ h1, h2, h3, h4, h5, h6 {
     font-family: "AddingtonCF-DemiBold", "MetroSans-Regular", Arial, sans-serif;
     font-weight: bold;
     color: #222f29;
-    line-height: 1.25;
+    line-height: 1.2;
     margin: 30px 0;
     padding: 0;
 }
 
 h1, h2 {
-    font-size: 2.5rem;
+    font-size: 3rem;
 }
 
 h3 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin: 30px 0 15px;
 }
 
 h4, h5, h6 {
-    font-size: 1rem;
+    font-size: 1.5rem;
     margin: 30px 0 15px;
 }
 
@@ -84,7 +84,7 @@ blockquote :is(p, li) {
     font-family: "MetroSans-Regular", Arial, sans-serif;
     font-weight: bold;
     font-size: 1.4rem;
-    line-height: 1.7;
+    line-height: 1.5;
 }
 
 /* Other text styles */
@@ -398,16 +398,17 @@ button, input[type="submit"], a.button, a.btn {
     background: #222f29;
     color: #fff;
     font-family: "MetroSans-Regular", Arial, sans-serif;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: normal;
+    line-height: 1.22222;
     text-transform: uppercase;
     text-align: left;
     text-decoration: none;
     border-bottom: none !important;
     margin: 15px 15px 15px 0;
-    padding: 10px 25px;
+    padding: 25px 30px;
     border: none;
-    border-radius: 25px;
+    border-radius: 20px;
     white-space: normal; /* or nowrap */
     transform: scale(1);
     transition: all 0.3s ease;
@@ -480,7 +481,7 @@ label {
 
 input, textarea {
     font-family: "MetroSans-Regular", Arial, sans-serif;
-    font-size: 13pt;
+    font-size: 15pt;
     border: 1px solid rgba(34,47,41,0.2);
     width: 100%;
     max-width: 600px; /* Was 450px */
@@ -696,7 +697,7 @@ header.scrolled .logo a.navbar-brand {
 	background: #222f29;
 	padding:5px 15px;
 	border: 1px #fff solid;
-	border-radius: 25px;
+	border-radius: 20px;
 	transform: translateY(-100%);
 	transition: 0.3s ease all;
 }
@@ -1361,7 +1362,54 @@ section.kokako.hide-section {
 
 /* Call To Action */
 
+.kokako.callToAction {
+	text-align: center;
+}
 
+.kokako.callToAction :is(h1, h2) {
+	font-size: 2rem;
+}
+
+.kokako.callToAction ul.social-media-links {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 30px;
+}
+
+.kokako.callToAction ul.social-media-links a {
+	width: 100%;
+	padding: 30px;
+	border-radius: 0;
+	border-bottom: 0 !important;
+}
+
+
+/* Colours */
+
+.kokako.callToAction ul.social-media-links li:nth-of-type(3n-2) a {
+	background: #b5691b;
+}
+
+.kokako.callToAction ul.social-media-links li:nth-of-type(3n-2) a:hover {
+	background: #ce8234;
+}
+
+.kokako.callToAction ul.social-media-links li:nth-of-type(3n-2) a:active {
+	background: #e29648;
+}
+
+.kokako.callToAction ul.social-media-links li:nth-of-type(3n) a {
+	color: #222f29;
+	background: #fff;
+}
+
+.kokako.callToAction ul.social-media-links li:nth-of-type(3n) a:hover {
+	background: #e6e6e6;
+}
+
+.kokako.callToAction ul.social-media-links li:nth-of-type(3n) a:active {
+	background: #d2d2d2;
+}
 
 /* Centred Images */
 
@@ -2005,25 +2053,6 @@ section.kokako.colour-scheme-light-tan :is(h1, h2, h3, h4, h5, h6) {
 
 section.kokako.colour-scheme-light-tan :is(p, li, td) {
     color: #222f29;
-}
-
-section.kokako.colour-scheme-light-tan :is(a, a:link, a:visited):not(.button, .btn) {
-    color: #222f29;
-    border-bottom: 2px solid #222f29;
-}
-
-section.kokako.colour-scheme-light-tan a:hover:not(.button, .btn) {
-    color: #3b4842;
-    border-bottom: 2px solid #3b4842;
-}
-
-section.kokako.colour-scheme-light-tan a:active:not(.button, .btn) {
-    color: #4f5c56;
-    border-bottom: 2px solid #4f5c56;
-}
-
-section.kokako.colour-scheme-light-tan a:not(.button, .social-media-link, .navbar-brand, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow):before {
-    background-color: #3b4842;
 }
 
 section.kokako.colour-scheme-light-tan :is(button, input[type="submit"], a.button, a.btn) {

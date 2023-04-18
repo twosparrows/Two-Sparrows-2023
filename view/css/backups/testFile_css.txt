@@ -1,7 +1,7 @@
 CSS Options Fields
 
-Updated at 18/04/2023 5:26.24am UTC
-Referrer: /wp-admin/admin.php?page=acf-options-elements-css-editor
+Updated at 18/04/2023 7:19.20am UTC
+Referrer: /wp-admin/admin.php?page=acf-options-structural-css-editor
 
 
 Shortcodes:
@@ -14,9 +14,9 @@ Shortcodes:
 [animation-start-translate-x] => 20px
 [animation-start-translate-y] => 20px
 [animation-transition] => ease-out
-[button-border-radius] => 25px
-[button-padding-horizontal] => 25px
-[button-padding-vertical] => 10px
+[button-border-radius] => 20px
+[button-padding-horizontal] => 30px
+[button-padding-vertical] => 25px
 [button-swell] => scale(1.05)
 [button-transition] => all 0.3s ease
 [color-anchor-underline-active-rgba => 79,92,86
@@ -303,7 +303,7 @@ Shortcodes:
 [colour-text] => #222f29
 [font-family-heading] => "AddingtonCF-DemiBold", "MetroSans-Regular", Arial, sans-serif
 [font-family] => "MetroSans-Regular", Arial, sans-serif
-[font-size] => 13pt
+[font-size] => 15pt
 [footer-logo-width] => 214px
 [golden-ratio-inverse] => 0.6180339888
 [golden-ratio] => 1.6180339887
@@ -316,8 +316,8 @@ Shortcodes:
 [header-transition] => 1s ease all
 [image-margin-horizontal] => 45px
 [image-margin-vertical] => 15px
-[line-height-headings] => 1.25
-[line-height] => 1.7
+[line-height-headings] => 1.2
+[line-height] => 1.5
 [nav-dropdown-menu-opacity] => 0.8
 [pi] => 3.1415926536
 [section-padding-vertical] => 90px
@@ -497,7 +497,7 @@ array (
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'text',
-  'value' => '13pt',
+  'value' => '15pt',
   'menu_order' => 53,
   'instructions' => 'Shortcode: [font-size]<br />This is the default font size (eg. p) that all other font sizes are referenced to.',
   'required' => 0,
@@ -526,7 +526,7 @@ array (
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'number',
-  'value' => '1.7',
+  'value' => '1.5',
   'menu_order' => 54,
   'instructions' => 'Shortcode: [line-height]<br />This is the default line height used for all elements.',
   'required' => 0,
@@ -1242,7 +1242,7 @@ How much the button swells in size on hover. Include the units, eg. 2px',
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'number',
-  'value' => '1.25',
+  'value' => '1.2',
   'menu_order' => 55,
   'instructions' => 'Shortcode: [line-height-headings]<br />This is the default line height used for all heading elements.',
   'required' => 0,
@@ -1371,7 +1371,7 @@ Set this to between 0 and 1.',
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'text',
-  'value' => '25px',
+  'value' => '[tsp-calc tm *4 /3]',
   'menu_order' => 85,
   'instructions' => 'Shortcode: [button-border-radius]',
   'required' => 0,
@@ -1991,7 +1991,7 @@ Also used by default for links in the footer.',
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'text',
-  'value' => '25px',
+  'value' => '[tsp-calc tm *2]',
   'menu_order' => 82,
   'instructions' => 'Shortcode: [button-padding-horizontal]<br /><br />
 
@@ -2022,7 +2022,7 @@ Include the units, eg. 25px',
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'text',
-  'value' => '10px',
+  'value' => '[tsp-calc tm *5 /3]',
   'menu_order' => 83,
   'instructions' => 'Shortcode: [button-padding-vertical]<br /><br />
 
@@ -2410,7 +2410,7 @@ padding: 0;',
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'textarea',
-  'value' => 'font-size: 2.5rem;',
+  'value' => 'font-size: 3rem;',
   'menu_order' => 65,
   'instructions' => '',
   'required' => 0,
@@ -2439,7 +2439,7 @@ padding: 0;',
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'textarea',
-  'value' => 'font-size: 1.5rem;
+  'value' => 'font-size: 2rem;
 margin: [tsp-calc {text-margin}*2] 0 [text-margin];
 ',
   'menu_order' => 66,
@@ -2470,7 +2470,7 @@ margin: [tsp-calc {text-margin}*2] 0 [text-margin];
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'textarea',
-  'value' => 'font-size: 1rem;
+  'value' => 'font-size: 1.5rem;
 margin: [tsp-calc {text-margin}*2] 0 [text-margin];',
   'menu_order' => 67,
   'instructions' => '',
@@ -3132,8 +3132,9 @@ display: inline-block;
 background: [colour-background-dark];
 color: [colour-text-light];
 font-family: [font-family];
-font-size: 1rem;
+font-size: 0.9rem;
 font-weight: normal;
+line-height: 1.22222;
 text-transform: uppercase;
 text-align: left;
 text-decoration: none;
@@ -6701,7 +6702,54 @@ section.kokako.section1:not(.pageBanner) {
     0 => 
     array (
       'section_type' => 'Call to Action',
-      'section_css' => '',
+      'section_css' => '.kokako.callToAction {
+	text-align: center;
+}
+
+.kokako.callToAction :is(h1, h2) {
+	font-size: 2rem;
+}
+
+.kokako.callToAction ul.social-media-links {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: [tsp-calc tm *2];
+}
+
+.kokako.callToAction ul.social-media-links a {
+	width: 100%;
+	padding: [tsp-calc tm *2];
+	border-radius: 0;
+	border-bottom: 0 !important;
+}
+
+
+/* Colours */
+
+.kokako.callToAction ul.social-media-links li:nth-of-type(3n-2) a {
+	background: [colour-brand-tan];
+}
+
+.kokako.callToAction ul.social-media-links li:nth-of-type(3n-2) a:hover {
+	background: [colour-brand-tan-hover];
+}
+
+.kokako.callToAction ul.social-media-links li:nth-of-type(3n-2) a:active {
+	background: [colour-brand-tan-active];
+}
+
+.kokako.callToAction ul.social-media-links li:nth-of-type(3n) a {
+	color: [colour-text-dark];
+	background: [colour-background-light];
+}
+
+.kokako.callToAction ul.social-media-links li:nth-of-type(3n) a:hover {
+	background: [colour-background-light-hover];
+}
+
+.kokako.callToAction ul.social-media-links li:nth-of-type(3n) a:active {
+	background: [colour-background-light-active];
+}',
       'section_responsivity' => false,
     ),
     1 => 
@@ -8339,13 +8387,10 @@ background: [colour-brand-light-tan];',
       ),
       'anchors' => 
       array (
-        'colour_scheme_anchor_css' => 'color: [colour-text-dark];
-border-bottom: 2px solid [colour-text-dark];',
-        'colour_scheme_anchor_hover_css' => 'color: [colour-text-dark-hover];
-border-bottom: 2px solid [colour-text-dark-hover];',
-        'colour_scheme_anchor_active_css' => 'color: [colour-text-dark-active];
-border-bottom: 2px solid [colour-text-dark-active];',
-        'colour_scheme_anchor_underline_css' => 'background-color: [colour-text-dark-hover];',
+        'colour_scheme_anchor_css' => '',
+        'colour_scheme_anchor_hover_css' => '',
+        'colour_scheme_anchor_active_css' => '',
+        'colour_scheme_anchor_underline_css' => '',
       ),
       'buttons' => 
       array (
