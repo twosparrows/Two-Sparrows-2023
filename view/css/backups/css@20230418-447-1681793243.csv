@@ -22,9 +22,9 @@ anchor_transition,"0.3s ease all"
 button_transition,"all 0.3s ease"
 header_height_scrolled,70px
 header_transition,"1s ease all"
-header_logo_width,185px
+header_logo_width,214px
 footer_logo_width,auto
-header_logo_width_scrolled,110px
+header_logo_width_scrolled,150px
 button_swell,scale(1.05)
 animation_start_opacity,0.5
 animation_start_scale,0.95
@@ -43,7 +43,7 @@ colour_background_dark,#000
 colour_background_light,#fff
 colour_scheme_default,textDarkBackgroundLight
 colours_brand,
-colour_header_background,[colour-background-dark]
+colour_header_background,#000
 colour_nav_hamburger,#fff
 colour_nav_text,#fff
 colour_nav_dropdown_text,#fff
@@ -116,6 +116,11 @@ section.kokako .col-xs-12 > :is(h1, h2):first-child {
 
 ul {
 	list-style-type: disc;
+}
+
+wbr:before { /* IE 8–11 (old) and Prince page pdf creator don’t recognize the ""wbr"" element, but a pseudo-element can achieve the same effect with IE 9+ and Prince (from https://css-tricks.com/better-line-breaks-for-long-urls/ ) */
+	content: ""\200B"";  /* Unicode zero width space */
+	white-space: normal;
 }
 
 
@@ -367,7 +372,7 @@ margin: [text-margin] [text-margin] [text-margin] 0;
 padding: [button-padding-vertical] [button-padding-horizontal];
 border: none;
 border-radius: [button-border-radius];
-white-space: nowrap;
+white-space: normal; /* or nowrap */
 transform: scale(1);
 transition: [button-transition];"
 button:hover,"color: [colour-text-light];
@@ -637,7 +642,7 @@ other_header_css,"/* Skip link */
 }
 
 .skip-link:focus-within {
-	z-index: 200;
+	z-index: 10001; /* Must be able to sit above logo */
 	transform: translateY(0%);
 }
 
@@ -1176,6 +1181,9 @@ footer a:active {
 	border-bottom: none;
 }
 
+footer a:before {
+	background: [colour-footer-text-hover] !important; /* !important is required to override :not() statement */
+}
 
 footer a.no-underline:hover img {
 	opacity: 1;
@@ -1276,7 +1284,7 @@ sectionkokako,"position: relative; /* Required for image overlays, hooks etc */
 padding: [section-padding-vertical] 0;
 overflow: hidden; /* Prevents animation beginning position from creating a scroll bar at bottom of window. Override as required (but check responsivity) */"
 sectionkokako_row,"position: relative;"
-,
+,export
 sectionkokako_:ish1_h2display,"display: inherit;"
 sectionkokako_:ish1_h2_h3_h4_h5_h6hide,"display: none;"
 sectionkokakosection1,"/* Now using header background div method, which allows for background gradients also. When header background div is hidden, set the top padding to [tsp-calc spv + {header-height}] /* border-top: [header-height] [colour-header-background] solid; /* formerly margin-top, not border-top for smoother header.scrolled transitions */"
@@ -1316,13 +1324,23 @@ section.kokako .cta-buttons p.centre {
 }"
 other_section_css,"/* Spacing */
 
-section.kokako .col > :is(h1, h2, h3, h4, h5, h6, p, img, ul, ol):first-child,
+/* section.kokako .col > :is(h1, h2, h3, h4, h5, h6, p, img, ul, ol):first-child,
 section.kokako .col > p:first-child > img:first-child  {
 	margin-top: 0;
 }
 
 section.kokako .col > :is(h1, h2, h3, h4, h5, h6, p, img, ul, ol):last-child,
 section.kokako .col > p:last-child > img:last-child {
+	margin-bottom: 0;
+} */
+
+section.kokako :is(.col, .internalWrap) > *:first-child,
+section.kokako :is(.col, .internalWrap) > *.hide:first-child + *,
+section.kokako :is(.col, .internalWrap) > p:first-child > img:first-child { /* First child, or second child if the first is hidden, or img within first child p tag */
+	margin-top: 0;
+}
+
+section.kokako .internalWrap > *:last-child {
 	margin-bottom: 0;
 }
 
@@ -1713,10 +1731,11 @@ sections_css,,section_css,"section.kokako.pageBanner {
 	display: flex;
 	justify-content: center;
 	align-items: center; /* Use flex-end if need to align items at the end */
-	/* background-image: url(data:image/png;base64,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); /* Noise placeholder - see http://jsfiddle.net/osserpse/6SZQY/ */
-	background-size: 10px 10px; /* Increase size to make it grainier */
+	/* background-image: url(data:image/png;base64,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); /* Noise placeholder - see http://jsfiddle.net/osserpse/6SZQY/ *
+	background-size: 10px 10px; /* Increase size to make it grainier *
 	background-repeat: repeat;
-	background-color: [colour-background-dark-rgba 0.2];
+	background-color: [colour-background-dark-rgba 0.2]; */
+	min-height: 550px;
 }
 
 section.kokako.pageBanner.section1 {
@@ -1905,7 +1924,11 @@ section.kokako.px-200 {
 	min-height: 200px;
 }"
 sections_css,,section_responsivity,,screen_size,lg_above
-sections_css,,section_responsivity,,css_at_screen_size,"section.kokako.pageBanner .overlay {
+sections_css,,section_responsivity,,css_at_screen_size,"section.kokako.pageBanner {
+	min-height: 700px;
+}
+
+section.kokako.pageBanner .overlay {
 	width: 100%;
 	top: [header-height];
 }"

@@ -4,14 +4,14 @@
 
 THEME SETUP
 
-Updated at 31/03/2023 12:22.48am UTC
+Updated at 18/04/2023 5:26.24am UTC
 
 Included via functions/site.php
 
 */
 
 
-$GLOBALS['updatedTimeStamp'] = 1680222168;
+$GLOBALS['updatedTimeStamp'] = 1681795584;
 
 // Development Modes
 $GLOBALS['kokakoDevelopmentMode'] = false;
@@ -26,13 +26,11 @@ $GLOBALS['availableSectionTypes'] = array( // NB: Text section is always availab
      "centred-images",
      "latest-posts",
      "multiple-columns",
-     "multiple-rows",
      "page-banner",
      "page-heading",
      "testimonials",
      "text",
      "text-with-photo",
-     "versions",
 );
 
 // JS Dependencies
@@ -76,8 +74,8 @@ $GLOBALS['jsDependencies'] = array(
 
 // Widget areas
 $GLOBALS['widgetAreas'] = array(
-     "header-widget" => true,
-     "number-of-footer-columns" => 4,
+     "header-widget" => false,
+     "number-of-footer-columns" => 1,
      "subfooter-widget" => false,
 );
 
@@ -89,20 +87,24 @@ $GLOBALS['colourSchemes'] = array(
      ),
      "colour-scheme-dark" => array(
           "description" => "Dark Colour Scheme (Dark background, light text)",
-          "background"  => "#000",
+          "background"  => "#222f29",
+     ),
+     "colour-scheme-light-tan" => array(
+          "description" => "Light Tan Colour Scheme (Light Tan background, dark text)",
+          "background"  => "#efebe5",
      ),
 );
 
 // Logos
-$GLOBALS['headerLogoWidth'] = 185;
-$GLOBALS['headerLogoWidthRetina'] = 370;
-$GLOBALS['footerLogoWidth'] = 255;
-$GLOBALS['footerLogoWidthRetina'] = 510;
+$GLOBALS['headerLogoWidth'] = 214;
+$GLOBALS['headerLogoWidthRetina'] = 428;
+$GLOBALS['footerLogoWidth'] = 214;
+$GLOBALS['footerLogoWidthRetina'] = 428;
 
 // Functions
 
 function tsp_updated_timeStamp() { // Can also be called as a function if required, although higher overhead than a variable
-     return 1680222168;
+     return 1681795584;
 }
 
 ?>

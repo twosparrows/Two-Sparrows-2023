@@ -7,6 +7,14 @@ DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be mad
 */
 
 
+/* Import font files */
+
+@import url("../../fonts/addington-cf/addington-cf-demi-bold.css");
+@import url("../../fonts/metro-sans/metro-sans-regular/metro-sans-regular.css");
+@import url("../../fonts/metro-sans/metro-sans-regular-italic/metro-sans-regular-italic.css");
+@import url("../../fonts/metro-sans/metro-sans-bold/metro-sans-bold.css");
+@import url("../../fonts/metro-sans/metro-sans-bold-italic/metro-sans-bold-italic.css");
+
 
 /* Elements */
 
@@ -22,15 +30,15 @@ html {
 
 body {
     background: #fff;
-    color: #000;
-    font-family: Arial, sans-serif;
+    color: #222f29;
+    font-family: "MetroSans-Regular", Arial, sans-serif;
     font-size: 1rem;
     line-height: 1.7;
     -webkit-font-smoothing: antialiased; /* Fix for Google Chrome issue where a slider change can cause text to flicker */
 }
 
 p, li, td {
-    font-family: Arial, sans-serif;
+    font-family: "MetroSans-Regular", Arial, sans-serif;
     font-size: 1rem;
     line-height: 1.7;
     margin: 15px 0;
@@ -38,9 +46,9 @@ p, li, td {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: Arial, sans-serif;
+    font-family: "AddingtonCF-DemiBold", "MetroSans-Regular", Arial, sans-serif;
     font-weight: bold;
-    color: #000;
+    color: #222f29;
     line-height: 1.25;
     margin: 30px 0;
     padding: 0;
@@ -73,11 +81,27 @@ blockquote {
 }
 
 blockquote :is(p, li) {
-    font-family: Arial, sans-serif;
+    font-family: "MetroSans-Regular", Arial, sans-serif;
     font-weight: bold;
     font-size: 1.4rem;
     line-height: 1.7;
 }
+
+/* Other text styles */
+
+em, i {
+	font-family: "MetroSans-RegularItalic", "MetroSans-Regular", Arial, sans-serif;
+}
+
+strong, b {
+	font-family: "MetroSans-Bold", "MetroSans-Regular", Arial, sans-serif;
+}
+
+:is(strong, b) :is(em, i),
+ :is(em, i) :is(strong, b) {
+	font-family: "MetroSans-BoldItalic", "MetroSans-Regular", Arial, sans-serif;
+}
+
 
 /* Screen Readers only */
 
@@ -128,7 +152,7 @@ ul.no-bullets li {
 	font-family: "fa-select";
 	content: '\2713';
 	color: #fff;
-	background: #000;
+	background: #222f29;
 	border-radius: 50%;
 	padding: 0 3px;
 	margin-right: 10px;
@@ -181,31 +205,31 @@ p.extra-margin-bottom {
 
 a {
     text-decoration: none;
-    border-bottom: 2px solid #000;
+    border-bottom: 2px solid #222f29;
     -webkit-transform:translate3d(0,0,0); /* Fix for Google Chrome flickers on subsequent anchor elements - see https://maximelafarie.com/avoid-css-flickering */
     transition: 0.3s ease all;
 }
 
 a:link, a:visited {
     text-decoration: none;
-    color: #000;
-    border-bottom: 2px solid #000;
+    color: #222f29;
+    border-bottom: 2px solid #222f29;
 }
 
 a:hover {
     text-decoration: none;
-    color: #191919;
-    border-bottom: 3px solid #000;
+    color: #3b4842;
+    border-bottom: 3px solid #222f29;
     transition: 0.3s ease all;
 }
 
 a:active {
-    color: #2d2d2d;
+    color: #4f5c56;
     transition: 0.3s ease all;
 }
 
 a:focus {
-    outline: solid #000 1px !important;
+    outline: solid #b5691b 1px !important;
 }
 
 :is(h1, h2, h3, h4, h5, h6) a {
@@ -243,7 +267,7 @@ a.social-media-link,
 a.social-media-link:link,
 a.social-media-link:visited {
 	color: #fff;
-	background: #000;
+	background: #222f29;
 	font-size: 1.4rem;
 	width: 35px;
 	height: 35px;
@@ -263,12 +287,12 @@ a.social-media-link:visited:last-of-type {
 
 a.social-media-link:hover {
 	color: #e6e6e6;
-	background: #191919;
+	background: #3b4842;
 }
 
 a.social-media-link:active {
 	color: #d2d2d2;
-	background: #2d2d2d;
+	background: #4f5c56;
 }
 
 a.social-media-link i {
@@ -330,7 +354,7 @@ a:not(.button, .social-media-link, .navbar-brand, .image-anchor, .footer-logo-a,
 	height: 3px;
 	bottom: -3px;
 	left: 50%;
-	background: #000;
+	background: #222f29;
 	visibility: hidden;
 	-webkit-transform: translate3d(0,0,0); /* Fix for Google Chrome flickers on subsequent anchor elements - see https://maximelafarie.com/avoid-css-flickering */
 	transition: 0.3s ease all;
@@ -371,9 +395,9 @@ li.disabled > a:first-child {
 button, input[type="submit"], a.button, a.btn {
     cursor: pointer;
     display: inline-block;
-    background: #000;
+    background: #222f29;
     color: #fff;
-    font-family: Arial, sans-serif;
+    font-family: "MetroSans-Regular", Arial, sans-serif;
     font-size: 1rem;
     font-weight: normal;
     text-transform: uppercase;
@@ -391,49 +415,49 @@ button, input[type="submit"], a.button, a.btn {
 
 button:hover:not(.navbar-toggler), input[type="submit"]:hover, a.button:hover, a.btn:hover {
     color: #fff;
-    background: #191919;
+    background: #3b4842;
     transform: scale(1.05);
 }
 
 button:active:not(.navbar-toggler), input[type="submit"]:active, a.button:active, a.btn:active {
-    background: #2d2d2d;
+    background: #4f5c56;
 }
 
 button:focus, input[type="submit"]:focus, a.button:focus, a.btn:focus {
     box-shadow: none;
     color: #fff;
-    background: #191919;
+    background: #3b4842;
     transform: scale(1.05);
 }
 
 button.alt, input.alt[type="submit"], a.button.alt, a.btn.alt { 
-    color: #000;
+    color: #222f29;
     background: #fff;
 }
 
 button.alt:hover:not(.navbar-toggler), input.alt[type="submit"]:hover, a.button.alt:hover, a.btn.alt:hover { 
-    color: #000;
+    color: #222f29;
     background: rgba(255,255,255,0.8);
 }
 
 button.alt:active:not(.navbar-toggler), input.alt[type="submit"]:active, a.button.alt:active, a.btn.alt:active { 
-    color: #000;
+    color: #222f29;
     background: rgba(255,255,255,0.7);
 }
 
 button.transparent, input.transparent[type="submit"], a.button.transparent, a.btn.transparent { 
-    color: #000;
+    color: #222f29;
     background: none;
-    border: 1px #000 solid;
+    border: 1px #222f29 solid;
 }
 
 button.transparent:hover:not(.navbar-toggler), input.transparent[type="submit"]:hover, a.button.transparent:hover, a.btn.transparent:hover { 
-    color: #000;
+    color: #222f29;
     background: rgba(255,255,255,0.2);
 }
 
 button.transparent:active:not(.navbar-toggler), input.transparent[type="submit"]:active, a.button.transparent:active, a.btn.transparent:active { 
-    color: #000;
+    color: #222f29;
     background: rgba(255,255,255,0.3);
 }
 
@@ -449,15 +473,15 @@ button.transparent:active:not(.navbar-toggler), input.transparent[type="submit"]
 /* Forms */
 
 label {
-    font-family: Arial, sans-serif;
+    font-family: "MetroSans-Regular", Arial, sans-serif;
     font-weight: bold;
     width: 100%;
 }
 
 input, textarea {
-    font-family: Arial, sans-serif;
+    font-family: "MetroSans-Regular", Arial, sans-serif;
     font-size: 13pt;
-    border: 1px solid rgba(0,0,0,0.2);
+    border: 1px solid rgba(34,47,41,0.2);
     width: 100%;
     max-width: 600px; /* Was 450px */
     padding: 6px;
@@ -474,7 +498,7 @@ input[type="submit"] {
 
 :is(input, textarea):focus {
     border: 1px solid #fff;
-    box-shadow: 0 0 4px rgba(0,0,0,0.2);
+    box-shadow: 0 0 4px rgba(34,47,41,0.2);
     outline: none;
 }
 
@@ -611,7 +635,7 @@ header.scrolled {
 
 header,
 .header-background {
-	background: #000;
+	background: #fff;
 }
 
 .header-background {
@@ -633,7 +657,7 @@ header.scrolled nav.navbar {
 
 header .logo {
 	height: 140px; /* For positioning drop down menu correctly */
-	width: 185px; /* 166px is width of logo at normal size (logo will resize to this) */
+	width: 214px; /* 166px is width of logo at normal size (logo will resize to this) */
 	display: flex;
 	align-items: center; /* Centres logo vertically */
 	z-index: 100;
@@ -653,68 +677,14 @@ header .logo a.navbar-brand {
 	position: relative;
 	top: 0;
 	/* margin: 20px 0 0 0; */
-	width: 185px;
+	width: 214px;
 	border-bottom: none !important;
 	transition: 1s ease all;
 }
 
 header.scrolled .logo a.navbar-brand {
-	width: 110px;
+	width: 150px;
 	transition: 1s ease all;
-}
-
-header .header-widget {
-	position: absolute;
-	/* right: 26px; */
-	right: 20px;
-	top: 20px;
-	text-align: right;
-	color: #fff;
-	transition: 1s ease all;
-}
-
-header .header-widget.header-widget-row-reverse {
-	left: 25px; /* To line up with the Home button */
-	right: unset;
-}
-
-header.scrolled .header-widget {
-	top: -70px; /* This is normally set to: ( header height - header.scrolled height ). Ideally, it should be set to about the height of the header widget (c. 70px?)  */
-	transition: 1s ease all;
-}
-
-header .header-widget :is(h3, p) {
-	color: #fff;
-	display: inline;
-}
-
-header .header-widget h3 {
-	line-height: 51px; /* Height of button, including margins */
-}
-
-header .header-widget .textwidget {
-	float: right;
-}
-
-header .header-widget :is(a, a:link, a:visited) {
-	color: #fff;
-	text-decoration: none;
-	border: none;
-}
-
-header .header-widget a:hover {
-	color: #e6e6e6;
-}
-
-header .header-widget a:active {
-	color: #d2d2d2;
-}
-
-header .header-widget :is(button, input[type="submit"], a.button, a.btn) {
-	color: #000;
-	margin-top: 0;
-	margin-right: 0;
-	margin-left: 15px;
 }
 
 /* Skip link */
@@ -723,7 +693,7 @@ header .header-widget :is(button, input[type="submit"], a.button, a.btn) {
 	position: absolute;
 	left: 0%;
 	color: #fff;
-	background: #000;
+	background: #222f29;
 	padding:5px 15px;
 	border: 1px #fff solid;
 	border-radius: 25px;
@@ -813,7 +783,7 @@ button.hamburger:active {
 .hamburger:not(.collapsed) .hamburger-inner,
 .hamburger:not(.collapsed) .hamburger-inner::before,
 .hamburger:not(.collapsed) .hamburger-inner::after {
-	background-color: #fff;
+	background-color: #222f29;
 }
 
 .hamburger-box {
@@ -834,7 +804,7 @@ button.hamburger:active {
 .hamburger-inner::after {
 	width: 40px;
 	height: 4px;
-	background-color: #fff;
+	background-color: #222f29;
 	/* border-radius: 4px; */
 	position: absolute;
 	transition-property: transform;
@@ -911,7 +881,7 @@ nav ul {
 nav ul li {
 	margin: 0;
 	white-space: nowrap; /* Prevent line breaks between words */
-	color: #fff;
+	color: #222f29;
 }
 
 .navbar-expand-lg .navbar-nav a.nav-link {
@@ -919,36 +889,36 @@ nav ul li {
 }
 
 nav ul li :is(a, a:link, a:visited) {
-	font-family: Arial, sans-serif;
+	font-family: "MetroSans-Regular", Arial, sans-serif;
 	width: 100%;
 	text-align: center;
 	text-transform: uppercase;
 	text-decoration: none;
 	font-weight: bold;
-	color: #fff;
+	color: #222f29;
 	border-bottom: 2px transparent solid;
 	transition: 0.3s ease all;
 }
 
 nav ul li a:hover,
 nav ul li.dropdown.show > a {
-	color: #e6e6e6;
+	color: #3b4842;
 	transition: 0.3s ease all;
 }
 
 nav ul li a:active {
-	color: #d2d2d2;
-	/* border-bottom: 2px #d2d2d2 solid; */
+	color: #4f5c56;
+	/* border-bottom: 2px #4f5c56 solid; */
 	transition: 0.3s ease all;
 }
 
 nav a.nav-link:before {
-	background: #e6e6e6;
+	background: #3b4842;
 }
 
 .navbar-nav .dropdown-menu {
-	background: #000; /* Fall back */
-	background: rgba(0,0,0,0.8);
+	background: #222f29; /* Fall back */
+	background: rgba(34,47,41,0.8);
 	border: none;
 	border-radius: 0;
 	padding: 0;
@@ -968,14 +938,14 @@ nav ul.dropdown-menu li:not(:last-child):after {
 
 .navbar-nav .dropdown-menu li a:hover {
 	color: #e6e6e6;
-	background: #191919; /* Fall back */
-	background: rgba(0,0,0,0.8);
+	background: #3b4842; /* Fall back */
+	background: rgba(34,47,41,0.8);
 	/* border-bottom: none; */
 }
 
 .navbar-nav .dropdown-menu li a:active {
 	color: #d2d2d2;
-	background: #2d2d2d;
+	background: #4f5c56;
 }
 
 .dropdown-toggle::after {
@@ -992,8 +962,9 @@ nav a.dropdown-item:before {
 footer {
     position: relative;
     padding: 90px 0; /* Ensure bottom padding prevents Google reCaptcha from obscuring footer (can happen on all screen sizes) */
-    background: #000;
+    background: #222f29;
     color: #fff;
+    text-align: center;
 }
 
 footer :is(p, li) {
@@ -1007,7 +978,7 @@ footer.bottom-align {
 }
 
 footer .footer-logo img {
-    width: 255px;
+    width: 214px;
 }
 
 footer ul.sub-menu {
@@ -1082,17 +1053,17 @@ footer a.social-media-link {
 }
 
 footer :is(a.social-media-link, a.social-media-link:link, a.social-media-link:visited) {
-	color: #000 !important;
+	color: #222f29 !important;
 	background: #fff !important;
 }
 
 footer a.social-media-link:hover {
-	color: #000 !important;
+	color: #222f29 !important;
 	background: #e6e6e6 !important;
 }
 
 footer a.social-media-link:active {
-	color: #000 !important;
+	color: #222f29 !important;
 	background: #d2d2d2 !important;
 }
 
@@ -1149,9 +1120,6 @@ footer .footer-col-4 h3 {
 
 img#shielded-logo {
 	width: 30px;
-}
-
-.aligncentre img#shielded-logo {
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -1169,6 +1137,10 @@ section.kokako .row {
     position: relative;
 }
 
+section.kokako :is(.container, .container-fluid) .row {
+    export
+}
+
 section.kokako :is(h1, h2).display {
     display: inherit;
 }
@@ -1178,7 +1150,7 @@ section.kokako :is(h1, h2, h3, h4, h5, h6).hide {
 }
 
 section.kokako.section1 {
-    /* Now using header background div method, which allows for background gradients also. When header background div is hidden, set the top padding to 230px /* border-top: 140px #000 solid; /* formerly margin-top, not border-top for smoother header.scrolled transitions */
+    /* Now using header background div method, which allows for background gradients also. When header background div is hidden, set the top padding to 230px /* border-top: 140px #fff solid; /* formerly margin-top, not border-top for smoother header.scrolled transitions */
 }
 
 section.kokako .internalWrap {
@@ -1510,53 +1482,6 @@ section.kokako.multipleColumns .multiple-columns-col > p:last-child > img:last-c
 }
 */
 
-/* Multiple Rows */
-
-/* NB: Some shared CSS under Multiple Columns section */
-
-section.kokako.multipleRows .row:not(.row-heading, .cta-buttons-wrapper) {
-	margin-bottom: 30px;
-}
-
-section.kokako.multipleRows .row:not(.row-heading, .quick-links, .cta-buttons-wrapper) {
-	background-color: rgba(0,0,0,0.3);
-}
-
-/* section.kokako.multipleRows .row:not(.row-heading) {
-	margin-left: 0;
-	margin-right: 0;
-} */
-
-section.kokako.multipleRows .col-md-4 {
-	padding-left: 0;
-	padding-right: 0;
-}
-
-section.kokako.multipleRows .row:not(.cta-buttons-wrapper) :is(.col-md-8, .col-md-12) {
-	padding-bottom: 15px;
-}
-
-section.kokako.multipleRows .row:not(.row-heading) :is(.col-md-8, .col-md-12) {
-	padding-left: 30px;
-	padding-right: 30px;
-}
-
-section.kokako.multipleRows .col-md-4.image-display-logo {
-	background-color: #fff;
-	padding: 10px 15px;
-	border-top: 1px solid rgba(0,0,0,0.2);
-	border-left: 1px solid rgba(0,0,0,0.2);
-	border-bottom: 1px solid rgba(0,0,0,0.2);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-}
-
-section.kokako.multipleRows a[name] {
-	top: -150px;
-}
-
 /* Page Banner */
 
 section.kokako.pageBanner {
@@ -1569,7 +1494,7 @@ section.kokako.pageBanner {
 	/* background-image: url(data:image/png;base64,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); /* Noise placeholder - see http://jsfiddle.net/osserpse/6SZQY/ *
 	background-size: 10px 10px; /* Increase size to make it grainier *
 	background-repeat: repeat;
-	background-color: rgba(0,0,0,0.2); */
+	background-color: rgba(34,47,41,0.2); */
 	min-height: 550px;
 }
 
@@ -1623,7 +1548,7 @@ section.kokako.pageBanner .overlay {
 	width: 40%;
 	min-width: 500px;
 	max-width: 80%;
-	background: rgba(0,0,0,0.7);
+	background: rgba(34,47,41,0.7);
 	/* padding: 21px 42px; */
 	padding:30px 15px;
 }
@@ -1640,8 +1565,8 @@ section.kokako.pageBanner .text-box {
 section.kokako.pageBanner :is(h1, h2, h3, h4, h5, h6, p, li) {
 	color: #fff;
 	/* text-align: center; */
-	/* text-shadow: 0 2px 4px rgba(0,0,0,0.8); */
-	text-shadow: 0 0 30px rgba(0,0,0,0.3); /* Subtler option */
+	/* text-shadow: 0 2px 4px rgba(34,47,41,0.8); */
+	text-shadow: 0 0 30px rgba(34,47,41,0.3); /* Subtler option */
 }
 
 section.kokako.pageBanner .overlay :is(h1, h2) {
@@ -1663,10 +1588,10 @@ section.kokako.pageBanner :is(button, a.button, a.btn) {
 
 section.kokako.pageBanner a:is(.button, .button:link, .button:visited) { /* Force alt colours */
 	background: #fff;
-	color: #000;
+	color: #222f29;
 	font-weight: bold;
-	/* box-shadow: 0 2px 4px rgba(0,0,0,0.8); */
-	box-shadow: 0 0 30px rgba(0,0,0,0.3); /* Subtler option */
+	/* box-shadow: 0 2px 4px rgba(34,47,41,0.8); */
+	box-shadow: 0 0 30px rgba(34,47,41,0.3); /* Subtler option */
 }
 
 section.kokako.pageBanner a.button:hover {
@@ -1771,7 +1696,7 @@ section.kokako.pageHeading {
 }
 
 section.kokako.pageHeading :is(h1, h2) {
-	color: #000;
+	color: #222f29;
 }
 
 section.kokako.pageHeading.section1 {
@@ -1806,17 +1731,17 @@ section.kokako.pageHeading :is(button, a.button, a.btn) {
 }
 
 section.kokako.pageHeading a:is(.button, .button:link, .button:visited) { /* Force alt colours */
-	background: #000;
+	background: #222f29;
 	color: #fff;
 	font-weight: bold;
 }
 
 section.kokako.pageHeading a.button:hover {
-	background: #191919;
+	background: #3b4842;
 }
 
 section.kokako.pageHeading a.button:active {
-	background: #2d2d2d;
+	background: #4f5c56;
 }
 
 /* Testimonials */
@@ -1897,13 +1822,13 @@ section.kokako.testimonials a.testimonial-link {
 	width: 13px;
 	height: 13px;
 	margin: 0 3px;
-	border: 1px #000 solid !important;
+	border: 1px #222f29 solid !important;
 	border-radius: 50%;
 	background: none;
 }
 
 section.kokako.testimonials a.testimonial-link.current {
-	background: #000;
+	background: #222f29;
 }
 
 /* Text With Photo */
@@ -1911,6 +1836,25 @@ section.kokako.testimonials a.testimonial-link.current {
 section.kokako.textWithPhoto.no-margin-bottom.no-padding .container-fluid .internalWrap {
 	padding-top: 60px;
 	padding-bottom: 60px;
+}
+
+
+/* Brand Colour Classes */
+
+section.kokako.heading-tan :is(h1,h2), section.kokako.headings-tan :is(h1,h2,h3,h4,h5,h6) {
+    color: #b5691b;
+}
+
+section.kokako.background-overlay.background-overlay-tan .image-overlay {
+    background: #b5691b;
+}
+
+section.kokako.heading-light-tan :is(h1,h2), section.kokako.headings-light-tan :is(h1,h2,h3,h4,h5,h6) {
+    color: #efebe5;
+}
+
+section.kokako.background-overlay.background-overlay-light-tan .image-overlay {
+    background: #efebe5;
 }
 
 
@@ -1928,7 +1872,7 @@ section.kokako.background-overlay .image-overlay { /* Note that the background c
 	top: 0;
 	width: 100%;
 	height: 100%;
-	background: #000; /* Default, will be overridden by colour scheme */
+	background: #222f29; /* Default, will be overridden by colour scheme */
 	opacity: 0.5; /* Default, opacity can be overridden on a per section basis */
 }
 
@@ -1936,50 +1880,50 @@ section.kokako.background-overlay .image-overlay { /* Note that the background c
 
 section.kokako.colour-scheme-light,
 section.kokako.colour-scheme-light :is(.container, .container-fluid) .row.text-row-background {
-    color: #000;
+    color: #222f29;
     background-color: #fff;
 }
 
 section.kokako.colour-scheme-light :is(h1, h2, h3, h4, h5, h6) {
-    color: #000;
+    color: #222f29;
 }
 
 section.kokako.colour-scheme-light :is(p, li, td) {
-    color: #000;
+    color: #222f29;
 }
 
 section.kokako.colour-scheme-light :is(a, a:link, a:visited):not(.button, .btn) {
-    color: #000;
-    border-bottom: 2px solid #000;
+    color: #222f29;
+    border-bottom: 2px solid #222f29;
 }
 
 section.kokako.colour-scheme-light a:hover:not(.button, .btn) {
-    color: #191919;
-    border-bottom: 2px solid #000;
+    color: #3b4842;
+    border-bottom: 2px solid #222f29;
 }
 
 section.kokako.colour-scheme-light a:active:not(.button, .btn) {
-    color: #2d2d2d;
-    border-bottom: 2px solid #000;
+    color: #4f5c56;
+    border-bottom: 2px solid #222f29;
 }
 
 section.kokako.colour-scheme-light a:not(.button, .social-media-link, .navbar-brand, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow):before {
-    background-color: #191919;
+    background-color: #3b4842;
 }
 
 section.kokako.colour-scheme-light :is(button, input[type="submit"], a.button, a.btn) {
     color: #fff;
-    background-color: #000;
+    background-color: #222f29;
 }
 
 section.kokako.colour-scheme-light :is(button, input[type="submit"], a.button, a.btn):hover {
     color: #fff;
-    background-color: #191919;
+    background-color: #3b4842;
 }
 
 section.kokako.colour-scheme-light :is(button, input[type="submit"], a.button, a.btn):active {
     color: #fff;
-    background-color: #2d2d2d;
+    background-color: #4f5c56;
 }
 
 /* Light Image Overlay (option always available) */
@@ -1992,7 +1936,7 @@ section.kokako.background-overlay.background-overlay-light .image-overlay {
 section.kokako.colour-scheme-dark,
 section.kokako.colour-scheme-dark :is(.container, .container-fluid) .row.text-row-background {
     color: #fff;
-    background-color: #000;
+    background-color: #222f29;
 }
 
 section.kokako.colour-scheme-dark :is(h1, h2, h3, h4, h5, h6) {
@@ -2023,29 +1967,77 @@ section.kokako.colour-scheme-dark a:not(.button, .social-media-link, .navbar-bra
 }
 
 section.kokako.colour-scheme-dark :is(button, input[type="submit"], a.button, a.btn) {
-    color: #000;
+    color: #222f29;
     background: #fff;
 }
 
 section.kokako.colour-scheme-dark :is(button, input[type="submit"], a.button, a.btn):hover {
-    color: #000;
+    color: #222f29;
     background: #e6e6e6;
 }
 
 section.kokako.colour-scheme-dark :is(button, input[type="submit"], a.button, a.btn):active {
-    color: #000;
+    color: #222f29;
     background: #d2d2d2;
 }
 
 /* Dark Image Overlay (option always available) */
 section.kokako.background-overlay.background-overlay-dark .image-overlay {
-	background: #000;
+	background: #222f29;
 }
 
 /* section.kokako.colour-scheme-dark .container-fluid {
 	border-top: 60px #fff solid;
 	border-bottom: 60px #fff solid;
 } */
+
+/* Colour Scheme Light Tan */
+
+section.kokako.colour-scheme-light-tan,
+section.kokako.colour-scheme-light-tan :is(.container, .container-fluid) .row.text-row-background {
+    color: #222f29;
+    background: #efebe5;
+}
+
+section.kokako.colour-scheme-light-tan :is(h1, h2, h3, h4, h5, h6) {
+    color: #222f29;
+}
+
+section.kokako.colour-scheme-light-tan :is(p, li, td) {
+    color: #222f29;
+}
+
+section.kokako.colour-scheme-light-tan :is(a, a:link, a:visited):not(.button, .btn) {
+    color: #222f29;
+    border-bottom: 2px solid #222f29;
+}
+
+section.kokako.colour-scheme-light-tan a:hover:not(.button, .btn) {
+    color: #3b4842;
+    border-bottom: 2px solid #3b4842;
+}
+
+section.kokako.colour-scheme-light-tan a:active:not(.button, .btn) {
+    color: #4f5c56;
+    border-bottom: 2px solid #4f5c56;
+}
+
+section.kokako.colour-scheme-light-tan a:not(.button, .social-media-link, .navbar-brand, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow):before {
+    background-color: #3b4842;
+}
+
+section.kokako.colour-scheme-light-tan :is(button, input[type="submit"], a.button, a.btn) {
+    color: #fff;
+    background-color: #222f29;
+}
+
+section.kokako.colour-scheme-light-tan :is(button, input[type="submit"], a.button, a.btn):hover {
+    background-color: #3b4842;
+}
+
+section.kokako.colour-scheme-light-tan :is(button, input[type="submit"], a.button, a.btn):active {
+    background-color: #4f5c56;
+}
 
 
 /* Blog */
@@ -2328,7 +2320,7 @@ section.kokako.latestPosts .blog-grid.post.appear {
 
 h4.accordion-toggle {
 	position: relative;
-	background: #000;
+	background: #222f29;
 	padding: 10px 20px;
 	margin-bottom: 0; /* Prevents jerkiness on scroll down and up - otherwise there is a gap between the heading and accordion content div during scroll */
 	-webkit-user-select: none;
@@ -2418,7 +2410,7 @@ body a.fbx-close {
 }
 
 .highlight {
-    color: #000;
+    color: #b5691b;
     font-weight: bold;
 }
 
@@ -2431,7 +2423,7 @@ body a.fbx-close {
 	left: 0;
 	bottom: 0;
 	background: #fff;
-	border: 2px #000 solid;
+	border: 2px #222f29 solid;
 	padding: 0px 10px;
 	width: auto;
 	z-index: 10;
@@ -2440,7 +2432,7 @@ body a.fbx-close {
 #bootstrap-test p {
 	font-weight: bold;
 	text-align: center;
-	color: #000;
+	color: #222f29;
 }
 
 #js-loaded {
@@ -2785,7 +2777,7 @@ body a.fbx-close {
     	position: relative;
     	top: 30px;
     	left: 0;
-    	background: #000;
+    	background: #222f29;
     	min-width: 0;
     	max-width: 100%;
     	padding: 40px 15px;
@@ -2875,7 +2867,7 @@ body a.fbx-close {
         
     header .logo a.navbar-brand {
     	margin-top: 0;
-    	width: 110px;
+    	width: 150px;
     	transition: 1s ease all;
     }
         
@@ -2910,7 +2902,7 @@ body a.fbx-close {
     /* Sections */
         
     section.kokako.section1 {
-    	/* border-top: 70px #000 solid; */
+    	/* border-top: 70px #fff solid; */
     	border-top: 0;
     }
         
@@ -2978,8 +2970,8 @@ body a.fbx-close {
     /* Nav Responsivity CSS */
         
     header {
-    	background: #000; /* Fall back */
-    	background: rgba(0,0,0,0.8)
+    	background: #fff; /* Fall back */
+    	background: rgba(255,255,255,0.8)
     }
         
     .header-background {
@@ -3017,8 +3009,8 @@ body a.fbx-close {
     }
         
     header nav.navbar #main-nav {
-    	background: #000; /* Fall back */
-    	background: rgba(0,0,0,0.8);
+    	background: #222f29; /* Fall back */
+    	background: rgba(34,47,41,0.8);
     	width: 100%;
     	z-index: 1000;
     	margin-bottom: 0;
@@ -3066,13 +3058,13 @@ body a.fbx-close {
         
     header #main-nav ul li a:hover {
     	color: #fff;
-    	background: #191919; /* Fall back */
-    	background: rgba(0,0,0,0.8);
+    	background: #3b4842; /* Fall back */
+    	background: rgba(34,47,41,0.8);
     }
         
     header #main-nav ul li a:active {
     	color: #fff;
-    	background: #2d2d2d;
+    	background: #4f5c56;
     }
         
     header .navbar-collapse {
@@ -3248,7 +3240,7 @@ body a.fbx-close {
     	position: relative;
     	top: 30px;
     	left: 0;
-    	background: #000;
+    	background: #222f29;
     	min-width: 0;
     	max-width: 100%;
     	padding: 40px 15px;
@@ -3296,7 +3288,7 @@ body a.fbx-close {
     /* Header & Nav */
         
     header {
-    	background: #000;
+    	background: #fff;
     }
         
     header,
@@ -3375,8 +3367,8 @@ body a.fbx-close {
     }
         
     .alt:is(button, input[type="submit"], a.button, a.btn) {
-    	border: 1px #000 solid;
-    	border-bottom: 1px #000 solid !important;
+    	border: 1px #222f29 solid;
+    	border-bottom: 1px #222f29 solid !important;
     }
         
         

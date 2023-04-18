@@ -12,6 +12,6 @@ if ( !defined( 'kokako_base_year' ) ) {
 
 // Set up words within emails (used to break email addresses at appropriate places)
 global $emailsWordList;
-$emailsWordList = array(); // Just add words to this array, and any email addresses that use the tsp_email() function will break on these words on smaller screens instead of overflowing the screen. Exmaple array: array( "imelda", "design", "web", "two", "sparrows" ) . The @ and . symbols will be automatically set to break after
+$emailsWordList = array( "imelda", "design", "web", "two", "sparrows" ); // Just add words to this array, and any email addresses that use the tsp_email() function will break on these words on smaller screens instead of overflowing the screen. Exmaple array: array( "imelda", "design", "web", "two", "sparrows" ) . The @ and . symbols will be automatically set to break after
 
 ?>

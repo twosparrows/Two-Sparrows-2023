@@ -1,6 +1,6 @@
 CSS Options Fields
 
-Updated at 31/03/2023 12:22.48am UTC
+Updated at 18/04/2023 5:26.24am UTC
 Referrer: /wp-admin/admin.php?page=acf-options-elements-css-editor
 
 
@@ -19,29 +19,29 @@ Shortcodes:
 [button-padding-vertical] => 10px
 [button-swell] => scale(1.05)
 [button-transition] => all 0.3s ease
-[color-anchor-underline-active-rgba => 45,45,45
-[color-anchor-underline-active] => #2d2d2d
-[color-anchor-underline-hover-rgba => 25,25,25
-[color-anchor-underline-hover] => #191919
-[color-anchor-underline-rgba => 0,0,0
-[color-anchor-underline-variation => 0,0,0
-[color-anchor-underline] => #000
+[color-anchor-underline-active-rgba => 79,92,86
+[color-anchor-underline-active] => #4f5c56
+[color-anchor-underline-hover-rgba => 59,72,66
+[color-anchor-underline-hover] => #3b4842
+[color-anchor-underline-rgba => 34,47,41
+[color-anchor-underline-variation => 34,47,41
+[color-anchor-underline] => #222f29
 [color-background-active-rgba => 210,210,210
 [color-background-active] => #d2d2d2
-[color-background-alt-active-rgba => 45,45,45
-[color-background-alt-active] => #2d2d2d
-[color-background-alt-hover-rgba => 25,25,25
-[color-background-alt-hover] => #191919
-[color-background-alt-rgba => 0,0,0
-[color-background-alt-variation => 0,0,0
-[color-background-alt] => #000
-[color-background-dark-active-rgba => 45,45,45
-[color-background-dark-active] => #2d2d2d
-[color-background-dark-hover-rgba => 25,25,25
-[color-background-dark-hover] => #191919
-[color-background-dark-rgba => 0,0,0
-[color-background-dark-variation => 0,0,0
-[color-background-dark] => #000
+[color-background-alt-active-rgba => 79,92,86
+[color-background-alt-active] => #4f5c56
+[color-background-alt-hover-rgba => 59,72,66
+[color-background-alt-hover] => #3b4842
+[color-background-alt-rgba => 34,47,41
+[color-background-alt-variation => 34,47,41
+[color-background-alt] => #222f29
+[color-background-dark-active-rgba => 79,92,86
+[color-background-dark-active] => #4f5c56
+[color-background-dark-hover-rgba => 59,72,66
+[color-background-dark-hover] => #3b4842
+[color-background-dark-rgba => 34,47,41
+[color-background-dark-variation => 34,47,41
+[color-background-dark] => #222f29
 [color-background-hover-rgba => 230,230,230
 [color-background-hover] => #e6e6e6
 [color-background-light-active-rgba => 210,210,210
@@ -54,14 +54,41 @@ Shortcodes:
 [color-background-rgba => 255,255,255
 [color-background-variation => 255,255,255
 [color-background] => #fff
-[color-brand-1] => #000
-[color-footer-background-active-rgba => 45,45,45
-[color-footer-background-active] => #2d2d2d
-[color-footer-background-hover-rgba => 25,25,25
-[color-footer-background-hover] => #191919
-[color-footer-background-rgba => 0,0,0
-[color-footer-background-variation => 0,0,0
-[color-footer-background] => #000
+[color-brand-1-active-rgba => 226,150,72
+[color-brand-1-active] => #e29648
+[color-brand-1-hover-rgba => 206,130,52
+[color-brand-1-hover] => #ce8234
+[color-brand-1-rgba => 181,105,27
+[color-brand-1-variation => 181,105,27
+[color-brand-1] => #b5691b
+[color-brand-2-active-rgba => 194,190,184
+[color-brand-2-active] => #c2beb8
+[color-brand-2-hover-rgba => 214,210,204
+[color-brand-2-hover] => #d6d2cc
+[color-brand-2-rgba => 239,235,229
+[color-brand-2-variation => 239,235,229
+[color-brand-2] => #efebe5
+[color-brand-light-tan-active-rgba => 194,190,184
+[color-brand-light-tan-active] => #c2beb8
+[color-brand-light-tan-hover-rgba => 214,210,204
+[color-brand-light-tan-hover] => #d6d2cc
+[color-brand-light-tan-rgba => 239,235,229
+[color-brand-light-tan-variation => 239,235,229
+[color-brand-light-tan] => #efebe5
+[color-brand-tan-active-rgba => 226,150,72
+[color-brand-tan-active] => #e29648
+[color-brand-tan-hover-rgba => 206,130,52
+[color-brand-tan-hover] => #ce8234
+[color-brand-tan-rgba => 181,105,27
+[color-brand-tan-variation => 181,105,27
+[color-brand-tan] => #b5691b
+[color-footer-background-active-rgba => 79,92,86
+[color-footer-background-active] => #4f5c56
+[color-footer-background-hover-rgba => 59,72,66
+[color-footer-background-hover] => #3b4842
+[color-footer-background-rgba => 34,47,41
+[color-footer-background-variation => 34,47,41
+[color-footer-background] => #222f29
 [color-footer-text-active-rgba => 210,210,210
 [color-footer-text-active] => #d2d2d2
 [color-footer-text-hover-rgba => 230,230,230
@@ -69,20 +96,20 @@ Shortcodes:
 [color-footer-text-rgba => 255,255,255
 [color-footer-text-variation => 255,255,255
 [color-footer-text] => #fff
-[color-header-background-active-rgba => 45,45,45
-[color-header-background-active] => #2d2d2d
-[color-header-background-hover-rgba => 25,25,25
-[color-header-background-hover] => #191919
-[color-header-background-rgba => 0,0,0
-[color-header-background-variation => 0,0,0
-[color-header-background] => #000
-[color-nav-dropdown-background-active-rgba => 45,45,45
-[color-nav-dropdown-background-active] => #2d2d2d
-[color-nav-dropdown-background-hover-rgba => 25,25,25
-[color-nav-dropdown-background-hover] => #191919
-[color-nav-dropdown-background-rgba => 0,0,0
-[color-nav-dropdown-background-variation => 0,0,0
-[color-nav-dropdown-background] => #000
+[color-header-background-active-rgba => 210,210,210
+[color-header-background-active] => #d2d2d2
+[color-header-background-hover-rgba => 230,230,230
+[color-header-background-hover] => #e6e6e6
+[color-header-background-rgba => 255,255,255
+[color-header-background-variation => 255,255,255
+[color-header-background] => #fff
+[color-nav-dropdown-background-active-rgba => 79,92,86
+[color-nav-dropdown-background-active] => #4f5c56
+[color-nav-dropdown-background-hover-rgba => 59,72,66
+[color-nav-dropdown-background-hover] => #3b4842
+[color-nav-dropdown-background-rgba => 34,47,41
+[color-nav-dropdown-background-variation => 34,47,41
+[color-nav-dropdown-background] => #222f29
 [color-nav-dropdown-text-active-rgba => 210,210,210
 [color-nav-dropdown-text-active] => #d2d2d2
 [color-nav-dropdown-text-hover-rgba => 230,230,230
@@ -90,23 +117,23 @@ Shortcodes:
 [color-nav-dropdown-text-rgba => 255,255,255
 [color-nav-dropdown-text-variation => 255,255,255
 [color-nav-dropdown-text] => #fff
-[color-nav-hamburger-active-rgba => 210,210,210
-[color-nav-hamburger-active] => #d2d2d2
-[color-nav-hamburger-hover-rgba => 230,230,230
-[color-nav-hamburger-hover] => #e6e6e6
-[color-nav-hamburger-rgba => 255,255,255
-[color-nav-hamburger-variation => 255,255,255
-[color-nav-hamburger] => #fff
-[color-nav-text-active-rgba => 210,210,210
-[color-nav-text-active] => #d2d2d2
-[color-nav-text-hover-rgba => 230,230,230
-[color-nav-text-hover] => #e6e6e6
-[color-nav-text-rgba => 255,255,255
-[color-nav-text-variation => 255,255,255
-[color-nav-text] => #fff
+[color-nav-hamburger-active-rgba => 79,92,86
+[color-nav-hamburger-active] => #4f5c56
+[color-nav-hamburger-hover-rgba => 59,72,66
+[color-nav-hamburger-hover] => #3b4842
+[color-nav-hamburger-rgba => 34,47,41
+[color-nav-hamburger-variation => 34,47,41
+[color-nav-hamburger] => #222f29
+[color-nav-text-active-rgba => 79,92,86
+[color-nav-text-active] => #4f5c56
+[color-nav-text-hover-rgba => 59,72,66
+[color-nav-text-hover] => #3b4842
+[color-nav-text-rgba => 34,47,41
+[color-nav-text-variation => 34,47,41
+[color-nav-text] => #222f29
 [color-scheme-default] => textDarkBackgroundLight
-[color-text-active-rgba => 45,45,45
-[color-text-active] => #2d2d2d
+[color-text-active-rgba => 79,92,86
+[color-text-active] => #4f5c56
 [color-text-alt-active-rgba => 210,210,210
 [color-text-alt-active] => #d2d2d2
 [color-text-alt-hover-rgba => 230,230,230
@@ -114,15 +141,15 @@ Shortcodes:
 [color-text-alt-rgba => 255,255,255
 [color-text-alt-variation => 255,255,255
 [color-text-alt] => #fff
-[color-text-dark-active-rgba => 45,45,45
-[color-text-dark-active] => #2d2d2d
-[color-text-dark-hover-rgba => 25,25,25
-[color-text-dark-hover] => #191919
-[color-text-dark-rgba => 0,0,0
-[color-text-dark-variation => 0,0,0
-[color-text-dark] => #000
-[color-text-hover-rgba => 25,25,25
-[color-text-hover] => #191919
+[color-text-dark-active-rgba => 79,92,86
+[color-text-dark-active] => #4f5c56
+[color-text-dark-hover-rgba => 59,72,66
+[color-text-dark-hover] => #3b4842
+[color-text-dark-rgba => 34,47,41
+[color-text-dark-variation => 34,47,41
+[color-text-dark] => #222f29
+[color-text-hover-rgba => 59,72,66
+[color-text-hover] => #3b4842
 [color-text-light-active-rgba => 210,210,210
 [color-text-light-active] => #d2d2d2
 [color-text-light-hover-rgba => 230,230,230
@@ -130,33 +157,33 @@ Shortcodes:
 [color-text-light-rgba => 255,255,255
 [color-text-light-variation => 255,255,255
 [color-text-light] => #fff
-[color-text-rgba => 0,0,0
-[color-text-variation => 0,0,0
-[color-text] => #000
+[color-text-rgba => 34,47,41
+[color-text-variation => 34,47,41
+[color-text] => #222f29
 [colors-brand] => 
-[colour-anchor-underline-active-rgba => 45,45,45
-[colour-anchor-underline-active] => #2d2d2d
-[colour-anchor-underline-hover-rgba => 25,25,25
-[colour-anchor-underline-hover] => #191919
-[colour-anchor-underline-rgba => 0,0,0
-[colour-anchor-underline-variation => 0,0,0
-[colour-anchor-underline] => #000
+[colour-anchor-underline-active-rgba => 79,92,86
+[colour-anchor-underline-active] => #4f5c56
+[colour-anchor-underline-hover-rgba => 59,72,66
+[colour-anchor-underline-hover] => #3b4842
+[colour-anchor-underline-rgba => 34,47,41
+[colour-anchor-underline-variation => 34,47,41
+[colour-anchor-underline] => #222f29
 [colour-background-active-rgba => 210,210,210
 [colour-background-active] => #d2d2d2
-[colour-background-alt-active-rgba => 45,45,45
-[colour-background-alt-active] => #2d2d2d
-[colour-background-alt-hover-rgba => 25,25,25
-[colour-background-alt-hover] => #191919
-[colour-background-alt-rgba => 0,0,0
-[colour-background-alt-variation => 0,0,0
-[colour-background-alt] => #000
-[colour-background-dark-active-rgba => 45,45,45
-[colour-background-dark-active] => #2d2d2d
-[colour-background-dark-hover-rgba => 25,25,25
-[colour-background-dark-hover] => #191919
-[colour-background-dark-rgba => 0,0,0
-[colour-background-dark-variation => 0,0,0
-[colour-background-dark] => #000
+[colour-background-alt-active-rgba => 79,92,86
+[colour-background-alt-active] => #4f5c56
+[colour-background-alt-hover-rgba => 59,72,66
+[colour-background-alt-hover] => #3b4842
+[colour-background-alt-rgba => 34,47,41
+[colour-background-alt-variation => 34,47,41
+[colour-background-alt] => #222f29
+[colour-background-dark-active-rgba => 79,92,86
+[colour-background-dark-active] => #4f5c56
+[colour-background-dark-hover-rgba => 59,72,66
+[colour-background-dark-hover] => #3b4842
+[colour-background-dark-rgba => 34,47,41
+[colour-background-dark-variation => 34,47,41
+[colour-background-dark] => #222f29
 [colour-background-hover-rgba => 230,230,230
 [colour-background-hover] => #e6e6e6
 [colour-background-light-active-rgba => 210,210,210
@@ -169,14 +196,41 @@ Shortcodes:
 [colour-background-rgba => 255,255,255
 [colour-background-variation => 255,255,255
 [colour-background] => #fff
-[colour-brand-1] => #000
-[colour-footer-background-active-rgba => 45,45,45
-[colour-footer-background-active] => #2d2d2d
-[colour-footer-background-hover-rgba => 25,25,25
-[colour-footer-background-hover] => #191919
-[colour-footer-background-rgba => 0,0,0
-[colour-footer-background-variation => 0,0,0
-[colour-footer-background] => #000
+[colour-brand-1-active-rgba => 226,150,72
+[colour-brand-1-active] => #e29648
+[colour-brand-1-hover-rgba => 206,130,52
+[colour-brand-1-hover] => #ce8234
+[colour-brand-1-rgba => 181,105,27
+[colour-brand-1-variation => 181,105,27
+[colour-brand-1] => #b5691b
+[colour-brand-2-active-rgba => 194,190,184
+[colour-brand-2-active] => #c2beb8
+[colour-brand-2-hover-rgba => 214,210,204
+[colour-brand-2-hover] => #d6d2cc
+[colour-brand-2-rgba => 239,235,229
+[colour-brand-2-variation => 239,235,229
+[colour-brand-2] => #efebe5
+[colour-brand-light-tan-active-rgba => 194,190,184
+[colour-brand-light-tan-active] => #c2beb8
+[colour-brand-light-tan-hover-rgba => 214,210,204
+[colour-brand-light-tan-hover] => #d6d2cc
+[colour-brand-light-tan-rgba => 239,235,229
+[colour-brand-light-tan-variation => 239,235,229
+[colour-brand-light-tan] => #efebe5
+[colour-brand-tan-active-rgba => 226,150,72
+[colour-brand-tan-active] => #e29648
+[colour-brand-tan-hover-rgba => 206,130,52
+[colour-brand-tan-hover] => #ce8234
+[colour-brand-tan-rgba => 181,105,27
+[colour-brand-tan-variation => 181,105,27
+[colour-brand-tan] => #b5691b
+[colour-footer-background-active-rgba => 79,92,86
+[colour-footer-background-active] => #4f5c56
+[colour-footer-background-hover-rgba => 59,72,66
+[colour-footer-background-hover] => #3b4842
+[colour-footer-background-rgba => 34,47,41
+[colour-footer-background-variation => 34,47,41
+[colour-footer-background] => #222f29
 [colour-footer-text-active-rgba => 210,210,210
 [colour-footer-text-active] => #d2d2d2
 [colour-footer-text-hover-rgba => 230,230,230
@@ -184,20 +238,20 @@ Shortcodes:
 [colour-footer-text-rgba => 255,255,255
 [colour-footer-text-variation => 255,255,255
 [colour-footer-text] => #fff
-[colour-header-background-active-rgba => 45,45,45
-[colour-header-background-active] => #2d2d2d
-[colour-header-background-hover-rgba => 25,25,25
-[colour-header-background-hover] => #191919
-[colour-header-background-rgba => 0,0,0
-[colour-header-background-variation => 0,0,0
-[colour-header-background] => #000
-[colour-nav-dropdown-background-active-rgba => 45,45,45
-[colour-nav-dropdown-background-active] => #2d2d2d
-[colour-nav-dropdown-background-hover-rgba => 25,25,25
-[colour-nav-dropdown-background-hover] => #191919
-[colour-nav-dropdown-background-rgba => 0,0,0
-[colour-nav-dropdown-background-variation => 0,0,0
-[colour-nav-dropdown-background] => #000
+[colour-header-background-active-rgba => 210,210,210
+[colour-header-background-active] => #d2d2d2
+[colour-header-background-hover-rgba => 230,230,230
+[colour-header-background-hover] => #e6e6e6
+[colour-header-background-rgba => 255,255,255
+[colour-header-background-variation => 255,255,255
+[colour-header-background] => #fff
+[colour-nav-dropdown-background-active-rgba => 79,92,86
+[colour-nav-dropdown-background-active] => #4f5c56
+[colour-nav-dropdown-background-hover-rgba => 59,72,66
+[colour-nav-dropdown-background-hover] => #3b4842
+[colour-nav-dropdown-background-rgba => 34,47,41
+[colour-nav-dropdown-background-variation => 34,47,41
+[colour-nav-dropdown-background] => #222f29
 [colour-nav-dropdown-text-active-rgba => 210,210,210
 [colour-nav-dropdown-text-active] => #d2d2d2
 [colour-nav-dropdown-text-hover-rgba => 230,230,230
@@ -205,22 +259,22 @@ Shortcodes:
 [colour-nav-dropdown-text-rgba => 255,255,255
 [colour-nav-dropdown-text-variation => 255,255,255
 [colour-nav-dropdown-text] => #fff
-[colour-nav-hamburger-active-rgba => 210,210,210
-[colour-nav-hamburger-active] => #d2d2d2
-[colour-nav-hamburger-hover-rgba => 230,230,230
-[colour-nav-hamburger-hover] => #e6e6e6
-[colour-nav-hamburger-rgba => 255,255,255
-[colour-nav-hamburger-variation => 255,255,255
-[colour-nav-hamburger] => #fff
-[colour-nav-text-active-rgba => 210,210,210
-[colour-nav-text-active] => #d2d2d2
-[colour-nav-text-hover-rgba => 230,230,230
-[colour-nav-text-hover] => #e6e6e6
-[colour-nav-text-rgba => 255,255,255
-[colour-nav-text-variation => 255,255,255
-[colour-nav-text] => #fff
-[colour-text-active-rgba => 45,45,45
-[colour-text-active] => #2d2d2d
+[colour-nav-hamburger-active-rgba => 79,92,86
+[colour-nav-hamburger-active] => #4f5c56
+[colour-nav-hamburger-hover-rgba => 59,72,66
+[colour-nav-hamburger-hover] => #3b4842
+[colour-nav-hamburger-rgba => 34,47,41
+[colour-nav-hamburger-variation => 34,47,41
+[colour-nav-hamburger] => #222f29
+[colour-nav-text-active-rgba => 79,92,86
+[colour-nav-text-active] => #4f5c56
+[colour-nav-text-hover-rgba => 59,72,66
+[colour-nav-text-hover] => #3b4842
+[colour-nav-text-rgba => 34,47,41
+[colour-nav-text-variation => 34,47,41
+[colour-nav-text] => #222f29
+[colour-text-active-rgba => 79,92,86
+[colour-text-active] => #4f5c56
 [colour-text-alt-active-rgba => 210,210,210
 [colour-text-alt-active] => #d2d2d2
 [colour-text-alt-hover-rgba => 230,230,230
@@ -228,15 +282,15 @@ Shortcodes:
 [colour-text-alt-rgba => 255,255,255
 [colour-text-alt-variation => 255,255,255
 [colour-text-alt] => #fff
-[colour-text-dark-active-rgba => 45,45,45
-[colour-text-dark-active] => #2d2d2d
-[colour-text-dark-hover-rgba => 25,25,25
-[colour-text-dark-hover] => #191919
-[colour-text-dark-rgba => 0,0,0
-[colour-text-dark-variation => 0,0,0
-[colour-text-dark] => #000
-[colour-text-hover-rgba => 25,25,25
-[colour-text-hover] => #191919
+[colour-text-dark-active-rgba => 79,92,86
+[colour-text-dark-active] => #4f5c56
+[colour-text-dark-hover-rgba => 59,72,66
+[colour-text-dark-hover] => #3b4842
+[colour-text-dark-rgba => 34,47,41
+[colour-text-dark-variation => 34,47,41
+[colour-text-dark] => #222f29
+[colour-text-hover-rgba => 59,72,66
+[colour-text-hover] => #3b4842
 [colour-text-light-active-rgba => 210,210,210
 [colour-text-light-active] => #d2d2d2
 [colour-text-light-hover-rgba => 230,230,230
@@ -244,19 +298,19 @@ Shortcodes:
 [colour-text-light-rgba => 255,255,255
 [colour-text-light-variation => 255,255,255
 [colour-text-light] => #fff
-[colour-text-rgba => 0,0,0
-[colour-text-variation => 0,0,0
-[colour-text] => #000
-[font-family-heading] => Arial, sans-serif
-[font-family] => Arial, sans-serif
+[colour-text-rgba => 34,47,41
+[colour-text-variation => 34,47,41
+[colour-text] => #222f29
+[font-family-heading] => "AddingtonCF-DemiBold", "MetroSans-Regular", Arial, sans-serif
+[font-family] => "MetroSans-Regular", Arial, sans-serif
 [font-size] => 13pt
-[footer-logo-width] => 255px
+[footer-logo-width] => 214px
 [golden-ratio-inverse] => 0.6180339888
 [golden-ratio] => 1.6180339887
 [header-height-scrolled] => 70px
 [header-height] => 140px
-[header-logo-width-scrolled] => 110px
-[header-logo-width] => 185px
+[header-logo-width-scrolled] => 150px
+[header-logo-width] => 214px
 [header-mobile-opacity] => 0.8
 [header-position] => fixed
 [header-transition] => 1s ease all
@@ -414,7 +468,7 @@ array (
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'text',
-  'value' => 'Arial, sans-serif',
+  'value' => '"MetroSans-Regular", Arial, sans-serif',
   'menu_order' => 51,
   'instructions' => 'Shortcode: [font-family]<br />CSS for importing fonts can be added in the expanded section below, and will appear at the top of the CSS file for cascading. When using the shortcode, add any higher font families first, eg. Times New Roman, [font_family];',
   'required' => 0,
@@ -890,7 +944,7 @@ In pixels (including px below). This is the default header height when the page 
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'text',
-  'value' => '185px',
+  'value' => '214px',
   'menu_order' => 6,
   'instructions' => 'Shortcode: [header-logo-width]<br /><br />
 
@@ -921,7 +975,7 @@ Please note: After updating this value, you may need to <a href="tools.php?page=
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'text',
-  'value' => 'auto',
+  'value' => '[header-logo-width]',
   'menu_order' => 67,
   'instructions' => 'Shortcode: [footer-logo-width]<br /><br />
 
@@ -954,7 +1008,7 @@ Please note: After updating this value, you may need to <a href="tools.php?page=
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'text',
-  'value' => '110px',
+  'value' => '150px',
   'menu_order' => 7,
   'instructions' => 'Shortcode: [header-logo-width-scrolled]',
   'required' => 0,
@@ -1346,7 +1400,7 @@ Set this to between 0 and 1.',
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'text',
-  'value' => '#000',
+  'value' => '#222f29',
   'menu_order' => 10,
   'instructions' => 'Shortcode: [colour-text-dark]',
   'required' => 0,
@@ -1404,7 +1458,7 @@ Set this to between 0 and 1.',
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'text',
-  'value' => '#000',
+  'value' => '#222f29',
   'menu_order' => 14,
   'instructions' => 'Shortcode: [colour-background-dark]',
   'required' => 0,
@@ -1498,7 +1552,21 @@ Set this to between 0 and 1.',
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'repeater',
-  'value' => false,
+  'value' => 
+  array (
+    0 => 
+    array (
+      'name' => 'Tan',
+      'colour' => '#b5691b',
+      'add_colour_scheme' => false,
+    ),
+    1 => 
+    array (
+      'name' => 'Light Tan',
+      'colour' => '#efebe5',
+      'add_colour_scheme' => false,
+    ),
+  ),
   'menu_order' => 21,
   'instructions' => '',
   'required' => 0,
@@ -1658,7 +1726,7 @@ Set this to between 0 and 1.',
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'text',
-  'value' => '#000',
+  'value' => '[colour-background-light]',
   'menu_order' => 28,
   'instructions' => 'Shortcode: [colour-header-background]',
   'required' => 0,
@@ -1687,7 +1755,7 @@ Set this to between 0 and 1.',
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'text',
-  'value' => '#fff',
+  'value' => '[colour-background-dark]',
   'menu_order' => 30,
   'instructions' => 'Shortcode: [colour-nav-hamburger]',
   'required' => 0,
@@ -1716,7 +1784,7 @@ Set this to between 0 and 1.',
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'text',
-  'value' => '#fff',
+  'value' => '[colour-text-dark]',
   'menu_order' => 32,
   'instructions' => 'Shortcode: [colour-nav-text]',
   'required' => 0,
@@ -1745,7 +1813,7 @@ Set this to between 0 and 1.',
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'text',
-  'value' => '#fff',
+  'value' => '[colour-text-light]',
   'menu_order' => 34,
   'instructions' => 'Shortcode: [colour-nav-dropdown-text]',
   'required' => 0,
@@ -1774,7 +1842,7 @@ Set this to between 0 and 1.',
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'text',
-  'value' => '#000',
+  'value' => '[colour-background-dark]',
   'menu_order' => 36,
   'instructions' => 'Shortcode: [colour-nav-dropdown-background]<br /><br />
 
@@ -1805,7 +1873,7 @@ This will have an opacity applied to it (which is set via the [nav-dropdown-menu
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'text',
-  'value' => '#000',
+  'value' => '[colour-text]',
   'menu_order' => 38,
   'instructions' => 'Shortcode: [colour-anchor-underline]',
   'required' => 0,
@@ -1834,7 +1902,7 @@ This will have an opacity applied to it (which is set via the [nav-dropdown-menu
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'text',
-  'value' => '#fff',
+  'value' => '[colour-text-light]',
   'menu_order' => 40,
   'instructions' => 'Shortcode: [colour-footer-text]<br /><br />
 
@@ -1865,7 +1933,7 @@ Also used by default for links in the footer.',
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'text',
-  'value' => '#000',
+  'value' => '[colour-background-dark]',
   'menu_order' => 42,
   'instructions' => 'Shortcode: [colour-footer-background]',
   'required' => 0,
@@ -1894,7 +1962,7 @@ Also used by default for links in the footer.',
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'text',
-  'value' => '[font-family]',
+  'value' => '"AddingtonCF-DemiBold", [font-family]',
   'menu_order' => 52,
   'instructions' => 'Shortcode: [font-family-heading]',
   'required' => 0,
@@ -2132,7 +2200,13 @@ Set this to between 0 and 1.',
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'textarea',
-  'value' => '',
+  'value' => '/* Import font files */
+
+@import url("../../fonts/addington-cf/addington-cf-demi-bold.css");
+@import url("../../fonts/metro-sans/metro-sans-regular/metro-sans-regular.css");
+@import url("../../fonts/metro-sans/metro-sans-regular-italic/metro-sans-regular-italic.css");
+@import url("../../fonts/metro-sans/metro-sans-bold/metro-sans-bold.css");
+@import url("../../fonts/metro-sans/metro-sans-bold-italic/metro-sans-bold-italic.css");',
   'menu_order' => 59,
   'instructions' => 'Enter full CSS for imported fonts below (wrapped in @font-face or @import).',
   'required' => 0,
@@ -2548,7 +2622,23 @@ line-height: [line-height];',
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'textarea',
-  'value' => '/* Screen Readers only */
+  'value' => '/* Other text styles */
+
+em, i {
+	font-family: "MetroSans-RegularItalic", [font-family];
+}
+
+strong, b {
+	font-family: "MetroSans-Bold", [font-family];
+}
+
+:is(strong, b) :is(em, i),
+ :is(em, i) :is(strong, b) {
+	font-family: "MetroSans-BoldItalic", [font-family];
+}
+
+
+/* Screen Readers only */
 
 .sr-only { /* From https://www.linkedin.com/learning/simplifying-web-development-with-accessibility-best-practices/how-to-hide-visual-content?autoSkip=true&autoplay=true&resume=false&u=92735081 */
 	position: absolute;
@@ -5709,7 +5799,8 @@ nav a.dropdown-item:before {
   'value' => 'position: relative;
 padding: [tsp-calc tm*6] 0; /* Ensure bottom padding prevents Google reCaptcha from obscuring footer (can happen on all screen sizes) */
 background: [colour-footer-background];
-color: [colour-footer-text];',
+color: [colour-footer-text];
+text-align: center;',
   'menu_order' => 70,
   'instructions' => '',
   'required' => 0,
@@ -6017,9 +6108,6 @@ footer .footer-col-4 h3 {
 
 img#shielded-logo {
 	width: 30px;
-}
-
-.aligncentre img#shielded-logo {
 	margin-left: auto;
 	margin-right: auto;
 }',
@@ -6151,7 +6239,7 @@ overflow: hidden; /* Prevents animation beginning position from creating a scrol
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'textarea',
-  'value' => '',
+  'value' => 'export',
   'menu_order' => 85,
   'instructions' => '',
   'required' => 0,
@@ -8237,6 +8325,36 @@ section.kokako.background-overlay.background-overlay-dark .image-overlay {
 	border-top: [tsp-calc tm*4] [colour-background] solid;
 	border-bottom: [tsp-calc tm*4] [colour-background] solid;
 } */',
+    ),
+    2 => 
+    array (
+      'colour_scheme_name' => 'Light Tan',
+      'colour_scheme_description' => 'Light Tan Colour Scheme (Light Tan background, dark text)',
+      'general' => 
+      array (
+        'colour_scheme_class_css' => 'color: [colour-text-dark];
+background: [colour-brand-light-tan];',
+        'colour_scheme_headings_css' => 'color: [colour-text-dark];',
+        'colour_scheme_text_css' => 'color: [colour-text-dark];',
+      ),
+      'anchors' => 
+      array (
+        'colour_scheme_anchor_css' => 'color: [colour-text-dark];
+border-bottom: 2px solid [colour-text-dark];',
+        'colour_scheme_anchor_hover_css' => 'color: [colour-text-dark-hover];
+border-bottom: 2px solid [colour-text-dark-hover];',
+        'colour_scheme_anchor_active_css' => 'color: [colour-text-dark-active];
+border-bottom: 2px solid [colour-text-dark-active];',
+        'colour_scheme_anchor_underline_css' => 'background-color: [colour-text-dark-hover];',
+      ),
+      'buttons' => 
+      array (
+        'colour_scheme_button_css' => 'color: [colour-text-light];
+background-color: [colour-background-dark];',
+        'colour_scheme_button_hover_css' => 'background-color: [colour-background-dark-hover];',
+        'colour_scheme_button_active_css' => 'background-color: [colour-background-dark-active];',
+      ),
+      'other_colour_scheme_css' => '',
     ),
   ),
   'menu_order' => 100,
