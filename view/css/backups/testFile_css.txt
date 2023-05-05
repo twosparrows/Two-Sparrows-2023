@@ -1,6 +1,6 @@
 CSS Options Fields
 
-Updated at 18/04/2023 7:19.20am UTC
+Updated at 05/05/2023 4:06.54am UTC
 Referrer: /wp-admin/admin.php?page=acf-options-structural-css-editor
 
 
@@ -6395,7 +6395,7 @@ overflow: hidden; /* Prevents animation beginning position from creating a scrol
 }
 
 section.kokako:not(.multipleRows) .cta-buttons {
-	margin-top: [tsp-calc tm*2];
+	margin-top: [tsp-calc tm *10 /3, round];
 }
 
 section.kokako .cta-buttons.buttons-align-centre,
@@ -7045,6 +7045,10 @@ section.kokako.multipleRows a[name] {
 	min-height: 550px;
 }
 
+section.kokako.pageBanner.text-box-bottom {
+	align-items: flex-end;
+}
+
 section.kokako.pageBanner.section1 {
 	margin-top: 0;
 }
@@ -7109,11 +7113,19 @@ section.kokako.pageBanner .text-box {
 	padding:[tsp-calc {text-margin} *2] [text-margin];
 }
 
+section.kokako.pageBanner .text-box  > * {
+	max-width: 80%;
+}
+
 section.kokako.pageBanner :is(h1, h2, h3, h4, h5, h6, p, li) {
 	color: [colour-text-alt];
 	/* text-align: center; */
 	/* text-shadow: 0 2px 4px [colour-background-alt-rgba 0.8]; */
 	text-shadow: 0 0 30px [colour-background-alt-rgba 0.3]; /* Subtler option */
+}
+
+section.kokako.pageBanner.colour-scheme-light :is(h1, h2, h3, h4, h5, h6, p, li) {
+	text-shadow: 0 0 30px [colour-background-rgba 0.3]; /* Subtler option */
 }
 
 section.kokako.pageBanner .overlay :is(h1, h2) {
@@ -7229,7 +7241,8 @@ section.kokako.px-300 {
 
 section.kokako.px-200 {
 	min-height: 200px;
-}',
+}
+',
       'section_responsivity' => 
       array (
         0 => 
@@ -7286,7 +7299,7 @@ section.kokako.pageBanner .overlay {
 } */
 
 section.kokako.pageBanner :is(h1, h2) {
-	font-size: 3.5rem;
+	/* font-size: 3.5rem; */
 	margin-bottom: [text-margin];
 }',
         ),
@@ -7448,14 +7461,6 @@ section.kokako.pageHeading a.button:active {
       'section_responsivity' => 
       array (
         0 => 
-        array (
-          'screen_size' => 'md',
-          'css_at_screen_size' => 'section.kokako.pageHeading :is(h1, h2) {
-	font-size: 3.5rem;
-	margin-bottom: [text-margin];
-}',
-        ),
-        1 => 
         array (
           'screen_size' => 'xs_only',
           'css_at_screen_size' => 'section.kokako.pageHeading :is(h1, h2) {
@@ -9273,11 +9278,15 @@ i.icon-basket + span.cart-count {
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'textarea',
-  'value' => '/* MetaSlider plugin *
+  'value' => '/* Motif: Heading Bar */
 
-.slider-margin {
-	margin-bottom: [tsp-calc tm *4];
-} */',
+.kokako .motif-bar-heading {
+	width: 350px;
+	max-width: 32%;
+	height: [tsp-calc tm *8 /3, round];
+	background: [colour-background-light];
+	margin-bottom: [tsp-calc tm *10 /3, round];
+}',
   'menu_order' => 109,
   'instructions' => 'Please use full CSS with element selectors in this text area.',
   'required' => 0,

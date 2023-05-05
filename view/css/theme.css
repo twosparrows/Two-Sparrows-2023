@@ -1168,7 +1168,7 @@ section.kokako .cta-buttons {
 }
 
 section.kokako:not(.multipleRows) .cta-buttons {
-	margin-top: 30px;
+	margin-top: 50px;
 }
 
 section.kokako .cta-buttons.buttons-align-centre,
@@ -1546,6 +1546,10 @@ section.kokako.pageBanner {
 	min-height: 550px;
 }
 
+section.kokako.pageBanner.text-box-bottom {
+	align-items: flex-end;
+}
+
 section.kokako.pageBanner.section1 {
 	margin-top: 0;
 }
@@ -1610,11 +1614,19 @@ section.kokako.pageBanner .text-box {
 	padding:30px 15px;
 }
 
+section.kokako.pageBanner .text-box  > * {
+	max-width: 80%;
+}
+
 section.kokako.pageBanner :is(h1, h2, h3, h4, h5, h6, p, li) {
 	color: #fff;
 	/* text-align: center; */
 	/* text-shadow: 0 2px 4px rgba(34,47,41,0.8); */
 	text-shadow: 0 0 30px rgba(34,47,41,0.3); /* Subtler option */
+}
+
+section.kokako.pageBanner.colour-scheme-light :is(h1, h2, h3, h4, h5, h6, p, li) {
+	text-shadow: 0 0 30px rgba(255,255,255,0.3); /* Subtler option */
 }
 
 section.kokako.pageBanner .overlay :is(h1, h2) {
@@ -1731,6 +1743,7 @@ section.kokako.px-300 {
 section.kokako.px-200 {
 	min-height: 200px;
 }
+
 
 /* Page Heading */
 
@@ -2155,11 +2168,15 @@ body.single .post-meta + img {
 
 /* Custom */
 
-/* MetaSlider plugin *
+/* Motif: Heading Bar */
 
-.slider-margin {
-	margin-bottom: 60px;
-} */
+.kokako .motif-bar-heading {
+	width: 350px;
+	max-width: 32%;
+	height: 40px;
+	background: #fff;
+	margin-bottom: 50px;
+}
 
 
 /* Animations */
@@ -3173,14 +3190,7 @@ body a.fbx-close {
     } */
         
     section.kokako.pageBanner :is(h1, h2) {
-    	font-size: 3.5rem;
-    	margin-bottom: 15px;
-    }
-        
-    /* Page Heading */
-        
-    section.kokako.pageHeading :is(h1, h2) {
-    	font-size: 3.5rem;
+    	/* font-size: 3.5rem; */
     	margin-bottom: 15px;
     }
         
