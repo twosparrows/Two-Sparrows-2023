@@ -29,6 +29,14 @@ function tspSetHeadingTopMargin() {
   	}
 }
 
+function skewedRandom() { // From https://stackoverflow.com/questions/16110758/generate-random-number-with-a-non-uniform-distribution
+    const a = Math.pow(Math.random(), 2);
+    if (Math.random() < 0.5) {
+        return a;
+    }
+    return 1 - a;
+}
+
 // Testimonials section
 
 function setTestimonialTimer() {
@@ -65,8 +73,9 @@ jQuery(document).ready(function($){
         $('#js-loaded').text("true"); // This will prevent "No JS" file from being loaded in footer.php (which is a fallback in case JS doesn't execute)
         
     // Animations
-        let heading1 = document.querySelector('section.kokako h1');
-        let heading2s = document.querySelectorAll('section.kokako h2');
+    // let heading1 = document.querySelector('section.kokako h1');
+    // let heading2s = document.querySelectorAll('section.kokako h2');
+        let headingMotifBars = document.querySelectorAll('.kokako .motif-bar-heading .bar');
         let textWithPhotoImages = document.querySelectorAll('section.textWithPhoto .image');
         let multipleColumns = document.querySelectorAll('section.multipleColumns .multiple-columns-col');
         let multipleRows = document.querySelectorAll('section.multipleRows .multiple-rows-row');
@@ -99,10 +108,11 @@ jQuery(document).ready(function($){
     	// let windowHeight = jQuery(window).height();
     	// let windowViewable = windowScroll + windowHeight;
     	let animationDelayInitial = 0.2;
-    	let animationDelayIncrease = 0.2;
+    	let animationDelayIncrease = 0.3;
     	let parentSection = "";
     	let previousParentSection = "";
         
+    	/*
     	// Heading 1
     	if ( inViewPort(heading1) ) {
     		heading1.classList.add('appear');
@@ -114,7 +124,7 @@ jQuery(document).ready(function($){
     		heading2s.forEach(function(heading2) {
     			if ( inViewPort(heading2) ) {
     				if ( performance.now() < 4000) { // If page has recently loaded, add a variation, so that headings in view don't display all at the same time
-    					heading2.style.animationDelay = animationDelay + 's'; // Animation delay doesn't need to be removed, as this code is only executing when a heading is in view with 4 seconds of the page loading, and the animation is never being re-triggered
+    					heading2.style.animationDelay = animationDelay + 's'; // Animation delay doesn't need to be removed, as this code is only executing when a heading is in view within 4 seconds of the page loading, and the animation is never being re-triggered
     					animationDelay += animationDelayIncrease;
     				}			
     				if ( !heading2. classList.contains('hide') ) {
@@ -123,6 +133,24 @@ jQuery(document).ready(function($){
     			}
     		});
     	}
+    	*/
+        
+    	// Heading Motif Bars
+        
+    	let animationDelay = animationDelayInitial; // Will add animationDelayInitial (in seconds) in case h1 and first h2 are in view together
+    	headingMotifBars.forEach(function(headingMotifBar) {
+    		if ( inViewPort(headingMotifBar) ) {
+    			if ( performance.now() < 4000) { // If page has recently loaded, add a variation, so that headings in view don't display all at the same time
+    				headingMotifBar.style.transitionDelay = animationDelay + 's'; // Animation delay doesn't need to be removed, as this code is only executing when a heading is in view with 4 seconds of the page loading, and the animation is never being re-triggered. NB: On the Heading Motif Bars, it is a transition delay, not an animation delay
+    				animationDelay += animationDelayIncrease;
+    			}
+    			if  ( !headingMotifBar. classList.contains('appear') ) {
+    				headingMotifBar.style.width = 70 + Math.round( skewedRandom() * 30) + '%'; // Between 70% and 100% 
+    				headingMotifBar.style.height = 30 + Math.round( skewedRandom() * 70) + '%'; // Between 50% and 100% 
+    				headingMotifBar.classList.add('appear');
+    			}
+    		}
+    	});
         
     	// Text with Photo images
     	animationDelay = animationDelayInitial; // Will add 300ms in case h1 and first h2 are in view together, to match headings

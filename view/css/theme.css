@@ -400,7 +400,7 @@ button, input[type="submit"], a.button, a.btn {
     font-family: "MetroSans-Regular", Arial, sans-serif;
     font-size: 0.9rem;
     font-weight: normal;
-    line-height: 1.22222;
+    line-height: 25px;
     text-transform: uppercase;
     text-align: left;
     text-decoration: none;
@@ -417,7 +417,7 @@ button, input[type="submit"], a.button, a.btn {
 button:hover:not(.navbar-toggler), input[type="submit"]:hover, a.button:hover, a.btn:hover {
     color: #fff;
     background: #3b4842;
-    transform: scale(1.05);
+    transform: scale(1);
 }
 
 button:active:not(.navbar-toggler), input[type="submit"]:active, a.button:active, a.btn:active {
@@ -428,7 +428,7 @@ button:focus, input[type="submit"]:focus, a.button:focus, a.btn:focus {
     box-shadow: none;
     color: #fff;
     background: #3b4842;
-    transform: scale(1.05);
+    transform: scale(1);
 }
 
 button.alt, input.alt[type="submit"], a.button.alt, a.btn.alt { 
@@ -468,6 +468,26 @@ button.transparent:active:not(.navbar-toggler), input.transparent[type="submit"]
 
 .cta-buttons :is(button, input[type="submit"], a.button, a.btn):last-child {
 	margin-right: 0;
+}
+
+:is(button, input[type="submit"], a.button, a.btn) i.icon-right {
+	color: #b5691b;
+	background: #fff;
+	border-radius: 50%;
+	display: inline-flex;
+	width:25px;
+	height: 25px;
+	font-size: 0.75rem;
+	justify-content: center;
+	align-items: center;
+	margin-left: 60px;
+	position: relative;
+	left: 0;
+	transition: all 0.3s ease-out;
+}
+
+:is(button, input[type="submit"], a.button, a.btn):hover i.icon-right {
+	left: 15px;
 }
 
 
@@ -1138,10 +1158,6 @@ section.kokako .row {
     position: relative;
 }
 
-section.kokako :is(.container, .container-fluid) .row {
-    export
-}
-
 section.kokako :is(h1, h2).display {
     display: inherit;
 }
@@ -1514,6 +1530,17 @@ section.kokako.multipleRows .row.row-heading + .row {
 	padding-top: 0;
 }
 
+.kokako.multipleColumns .mc-image {
+	height: 170px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.kokako.multipleColumns .mc-image img {
+	max-height: 100%;
+}
+
 section.kokako.multipleColumns .container.images-circle :is(.mc-image, img) {
 	border-radius: 50%;
 }
@@ -1529,6 +1556,10 @@ section.kokako.multipleColumns .multiple-columns-col > p:last-child > img:last-c
 	margin-bottom: 0;
 }
 */
+
+.kokako.multipleColumns .row-columns .multiple-columns-col:nth-child(n+2) {
+	border-left: 1px solid #707070;
+}
 
 /* Page Banner */
 
@@ -1615,7 +1646,7 @@ section.kokako.pageBanner .text-box {
 }
 
 section.kokako.pageBanner .text-box  > * {
-	max-width: 80%;
+	max-width: 85%;
 }
 
 section.kokako.pageBanner :is(h1, h2, h3, h4, h5, h6, p, li) {
@@ -1641,7 +1672,6 @@ section.kokako.pageBanner .cta-buttons {
 	text-align: left;
 }
 
-
 section.kokako.pageBanner :is(button, a.button, a.btn) {
 	text-shadow: none;
 }
@@ -1651,15 +1681,26 @@ section.kokako.pageBanner a:is(.button, .button:link, .button:visited) { /* Forc
 	color: #222f29;
 	font-weight: bold;
 	/* box-shadow: 0 2px 4px rgba(34,47,41,0.8); */
-	box-shadow: 0 0 30px rgba(34,47,41,0.3); /* Subtler option */
+	box-shadow: 0 0 30px rgba(34,47,41,0.1); /* Subtler option */
 }
 
-section.kokako.pageBanner a.button:hover {
-	background: #e6e6e6;
+section.kokako.pageBanner a.button:hover,
+section.kokako.pageBanner.colour-scheme a.button:hover {
+	/* background: #e6e6e6; */
+	color: #222f29;
+	background: #fbfbfb;
 }
 
-section.kokako.pageBanner a.button:active {
-	background: #d2d2d2;
+section.kokako.pageBanner a.button:active,
+section.kokako.pageBanner.colour-scheme a.button:active {
+	/* background: #d2d2d2; */
+	color: #222f29;
+	background: #f3f3f3;
+}
+
+.kokako.pageBanner :is(button, input[type="submit"], a.button, a.btn) i.icon-right {
+	color: #fff;
+	background: #b5691b;
 }
 
 
@@ -1899,10 +1940,14 @@ section.kokako.textWithPhoto.no-margin-bottom.no-padding .container-fluid .inter
 	padding-bottom: 60px;
 }
 
+.kokako.textWithPhoto:not(.colour-scheme) .motif-bar-heading .bar {
+	background: #efebe5;
+}
+
 
 /* Brand Colour Classes */
 
-section.kokako.heading-tan :is(h1,h2), section.kokako.headings-tan :is(h1,h2,h3,h4,h5,h6) {
+section.kokako.heading-tan :is(h1,h2), section.kokako.colour-scheme.heading-tan :is(h1,h2), section.kokako.headings-tan :is(h1,h2,h3,h4,h5,h6) {
     color: #b5691b;
 }
 
@@ -1910,12 +1955,20 @@ section.kokako.background-overlay.background-overlay-tan .image-overlay {
     background: #b5691b;
 }
 
-section.kokako.heading-light-tan :is(h1,h2), section.kokako.headings-light-tan :is(h1,h2,h3,h4,h5,h6) {
+section.kokako.heading-light-tan :is(h1,h2), section.kokako.colour-scheme.heading-light-tan :is(h1,h2), section.kokako.headings-light-tan :is(h1,h2,h3,h4,h5,h6) {
     color: #efebe5;
 }
 
 section.kokako.background-overlay.background-overlay-light-tan .image-overlay {
     background: #efebe5;
+}
+
+section.kokako.heading-dark-grey :is(h1,h2), section.kokako.colour-scheme.heading-dark-grey :is(h1,h2), section.kokako.headings-dark-grey :is(h1,h2,h3,h4,h5,h6) {
+    color: #707070;
+}
+
+section.kokako.background-overlay.background-overlay-dark-grey .image-overlay {
+    background: #707070;
 }
 
 
@@ -1935,6 +1988,13 @@ section.kokako.background-overlay .image-overlay { /* Note that the background c
 	height: 100%;
 	background: #222f29; /* Default, will be overridden by colour scheme */
 	opacity: 0.5; /* Default, opacity can be overridden on a per section basis */
+}
+
+
+/* Remove background if section already has a background image (otherwise interferes with background blend modes) */
+
+section.kokako.colour-scheme.has-background-image {
+	background: none;
 }
 
 /* Colour Scheme Light */
@@ -2047,10 +2107,10 @@ section.kokako.background-overlay.background-overlay-dark .image-overlay {
 	background: #222f29;
 }
 
-/* section.kokako.colour-scheme-dark .container-fluid {
-	border-top: 60px #fff solid;
-	border-bottom: 60px #fff solid;
-} */
+.kokako.colour-scheme-dark :is(button, input[type="submit"], a.button, a.btn) i.icon-right {
+	color: #fff;
+	background: #b5691b;
+}
 
 /* Colour Scheme Light Tan */
 
@@ -2069,16 +2129,23 @@ section.kokako.colour-scheme-light-tan :is(p, li, td) {
 }
 
 section.kokako.colour-scheme-light-tan :is(button, input[type="submit"], a.button, a.btn) {
-    color: #fff;
-    background-color: #222f29;
+    color: #222f29;
+    background: #fff;
 }
 
 section.kokako.colour-scheme-light-tan :is(button, input[type="submit"], a.button, a.btn):hover {
-    background-color: #3b4842;
+    color: #222f29;
+    background: #fbfbfb;
 }
 
 section.kokako.colour-scheme-light-tan :is(button, input[type="submit"], a.button, a.btn):active {
-    background-color: #4f5c56;
+    color: #222f29;
+    background: #f3f3f3;
+}
+
+.kokako.colour-scheme-light-tan :is(button, input[type="submit"], a.button, a.btn) i.icon-right {
+	color: #fff;
+	background: #b5691b;
 }
 
 
@@ -2171,17 +2238,54 @@ body.single .post-meta + img {
 /* Motif: Heading Bar */
 
 .kokako .motif-bar-heading {
-	width: 350px;
+	position: relative;
+	width: 400px;
 	max-width: 32%;
 	height: 40px;
+}
+
+.kokako .motif-bar-heading .bar {
+	position: absolute;
+	left: 0;
+	height: 0;
+	width: 0;
+	height: 0;
 	background: #fff;
 	margin-bottom: 50px;
+	transition: all 1.2s cubic-bezier(0.27, 0.26, 0, 0.58);
+}
+
+/* .kokako .motif-bar-heading .bar.appear {
+	width: 400px;
+} */
+
+
+/* Page Banner customisations */
+
+body#home-page .kokako.pageBanner.section1 h1 {
+	max-width: 790px;
+}
+
+body#home-page .kokako.pageBanner.section2 .text-box > * {
+	max-width: 65%;
+}
+
+body#home-page .kokako.pageBanner.section2 h2 {
+	max-width: 700px;
+}
+
+
+/* Style section headings as h3 */
+
+.kokako.heading-h3 :is(h1,h2) {
+	font-size: 2rem;
+	margin: 30px 0 15px;
 }
 
 
 /* Animations */
 
-section.kokako :is(h1, h2),
+/* section.kokako :is(h1, h2), */
 section.kokako.textWithPhoto .row .image,
 section.kokako.multipleColumns .multiple-columns-col,
 section.kokako.multipleRows .multiple-rows-row,
@@ -2190,7 +2294,7 @@ section.kokako.latestPosts .blog-grid.post {
 	transform: scale(0.95);
 }
 
-section.kokako:not(.textWithPhoto) :is(h1, h2) {
+/* section.kokako:not(.textWithPhoto) :is(h1, h2) {
 	transform: translateY(-20px) scale(0.95);
 }
 
@@ -2200,7 +2304,7 @@ section.kokako.textWithPhoto .row .text :is(h1,  h2) {
 
 section.kokako.textWithPhoto .row.flex-row-reverse .text :is(h1, h2) {
 	transform: translateX(-20px) scale(0.95);
-}
+} */
 
 section.kokako.textWithPhoto .row .image {
 	transform: translateX(-20px);
@@ -2210,7 +2314,7 @@ section.kokako.textWithPhoto .row.flex-row-reverse .image {
 	transform: translateX(20px);
 }
 
-section.kokako:not(.textWithPhoto) :is(h1, h2).appear,
+/* section.kokako:not(.textWithPhoto) :is(h1, h2).appear,
 section.kokako.multipleColumns .col-xs-12.appear :is(h1, h2) {
 	transform: translateY(-20px) scale(0.95);
 	animation: slideDownScale 1s ease-out forwards;
@@ -2224,7 +2328,7 @@ section.kokako.textWithPhoto .row .text :is(h1, h2).appear {
 section.kokako.textWithPhoto .row.flex-row-reverse .text :is(h1, h2).appear {
 	transform: translateX(-20px) scale(0.95);
 	animation: slideRightScale 1s ease-out forwards;
-}
+} */
 
 section.kokako.textWithPhoto .row .image.appear {
 	transform: translateX(-20px);
@@ -2652,11 +2756,11 @@ body a.fbx-close {
     }
         
     section.kokako.multipleColumns .row .col-lg-6:nth-of-type(odd) {
-    	padding-right: 30px;
+    	padding-right: 45px;
     }
         
     section.kokako.multipleColumns .row .col-lg-6:nth-of-type(even) {
-    	padding-left: 30px;
+    	padding-left: 45px;
     }
         
     /* Page Banner */
@@ -2760,6 +2864,13 @@ body a.fbx-close {
     section.kokako.textWithPhoto.image-sticky .internalWrap {
     	padding-top: 0;
     	padding-bottom: 0;
+    }
+        
+        
+    /* Heading Motif Bar */
+        
+    .kokako.textWithPhoto .col-lg-6 .motif-bar-heading {
+    	max-width: 64%;
     }
     
 }

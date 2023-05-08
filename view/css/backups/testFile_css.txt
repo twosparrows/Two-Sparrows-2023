@@ -1,7 +1,7 @@
 CSS Options Fields
 
-Updated at 05/05/2023 4:06.54am UTC
-Referrer: /wp-admin/admin.php?page=acf-options-structural-css-editor
+Updated at 08/05/2023 5:47.02am UTC
+Referrer: /wp-admin/admin.php?page=acf-options-js-editor
 
 
 Shortcodes:
@@ -15,9 +15,10 @@ Shortcodes:
 [animation-start-translate-y] => 20px
 [animation-transition] => ease-out
 [button-border-radius] => 20px
+[button-icon-size] => 25px
 [button-padding-horizontal] => 30px
 [button-padding-vertical] => 25px
-[button-swell] => scale(1.05)
+[button-swell] => scale(1)
 [button-transition] => all 0.3s ease
 [color-anchor-underline-active-rgba => 79,92,86
 [color-anchor-underline-active] => #4f5c56
@@ -68,6 +69,20 @@ Shortcodes:
 [color-brand-2-rgba => 239,235,229
 [color-brand-2-variation => 239,235,229
 [color-brand-2] => #efebe5
+[color-brand-3-active-rgba => 157,157,157
+[color-brand-3-active] => #9d9d9d
+[color-brand-3-hover-rgba => 137,137,137
+[color-brand-3-hover] => #898989
+[color-brand-3-rgba => 112,112,112
+[color-brand-3-variation => 112,112,112
+[color-brand-3] => #707070
+[color-brand-dark-grey-active-rgba => 157,157,157
+[color-brand-dark-grey-active] => #9d9d9d
+[color-brand-dark-grey-hover-rgba => 137,137,137
+[color-brand-dark-grey-hover] => #898989
+[color-brand-dark-grey-rgba => 112,112,112
+[color-brand-dark-grey-variation => 112,112,112
+[color-brand-dark-grey] => #707070
 [color-brand-light-tan-active-rgba => 194,190,184
 [color-brand-light-tan-active] => #c2beb8
 [color-brand-light-tan-hover-rgba => 214,210,204
@@ -210,6 +225,20 @@ Shortcodes:
 [colour-brand-2-rgba => 239,235,229
 [colour-brand-2-variation => 239,235,229
 [colour-brand-2] => #efebe5
+[colour-brand-3-active-rgba => 157,157,157
+[colour-brand-3-active] => #9d9d9d
+[colour-brand-3-hover-rgba => 137,137,137
+[colour-brand-3-hover] => #898989
+[colour-brand-3-rgba => 112,112,112
+[colour-brand-3-variation => 112,112,112
+[colour-brand-3] => #707070
+[colour-brand-dark-grey-active-rgba => 157,157,157
+[colour-brand-dark-grey-active] => #9d9d9d
+[colour-brand-dark-grey-hover-rgba => 137,137,137
+[colour-brand-dark-grey-hover] => #898989
+[colour-brand-dark-grey-rgba => 112,112,112
+[colour-brand-dark-grey-variation => 112,112,112
+[colour-brand-dark-grey] => #707070
 [colour-brand-light-tan-active-rgba => 194,190,184
 [colour-brand-light-tan-active] => #c2beb8
 [colour-brand-light-tan-hover-rgba => 214,210,204
@@ -314,6 +343,7 @@ Shortcodes:
 [header-mobile-opacity] => 0.8
 [header-position] => fixed
 [header-transition] => 1s ease all
+[heading-motif-bar-width-max] => 32%
 [image-margin-horizontal] => 45px
 [image-margin-vertical] => 15px
 [line-height-headings] => 1.2
@@ -370,6 +400,16 @@ array (
     array (
       'name' => 'width-xs-max',
       'value' => '560px',
+    ),
+    5 => 
+    array (
+      'name' => 'button-icon-size',
+      'value' => '25px',
+    ),
+    6 => 
+    array (
+      'name' => 'heading-motif-bar-width-max',
+      'value' => '32%',
     ),
   ),
   'menu_order' => 47,
@@ -1037,7 +1077,7 @@ Please note: After updating this value, you may need to <a href="tools.php?page=
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'text',
-  'value' => 'scale(1.05)',
+  'value' => 'scale(1)',
   'menu_order' => 84,
   'instructions' => 'Shortcode: [button-swell]<br /><br />
 
@@ -1564,6 +1604,12 @@ Set this to between 0 and 1.',
     array (
       'name' => 'Light Tan',
       'colour' => '#efebe5',
+      'add_colour_scheme' => false,
+    ),
+    2 => 
+    array (
+      'name' => 'Dark Grey',
+      'colour' => '#707070',
       'add_colour_scheme' => false,
     ),
   ),
@@ -3134,7 +3180,7 @@ color: [colour-text-light];
 font-family: [font-family];
 font-size: 0.9rem;
 font-weight: normal;
-line-height: 1.22222;
+line-height: [button-icon-size];
 text-transform: uppercase;
 text-align: left;
 text-decoration: none;
@@ -3469,6 +3515,26 @@ background: [colour-background-light-rgba 0.3];',
 
 .cta-buttons :is(button, input[type="submit"], a.button, a.btn):last-child {
 	margin-right: 0;
+}
+
+:is(button, input[type="submit"], a.button, a.btn) i.icon-right {
+	color: [color-brand-tan];
+	background: [colour-text-light];
+	border-radius: 50%;
+	display: inline-flex;
+	width:[button-icon-size];
+	height: [button-icon-size];
+	font-size: 0.75rem;
+	justify-content: center;
+	align-items: center;
+	margin-left: [tsp-calc tm * 4];
+	position: relative;
+	left: 0;
+	transition: [button-transition]-out;
+}
+
+:is(button, input[type="submit"], a.button, a.btn):hover i.icon-right {
+	left: [text-margin];
 }',
   'menu_order' => 102,
   'instructions' => 'Please use full CSS with element selectors in this text area.',
@@ -6240,7 +6306,7 @@ overflow: hidden; /* Prevents animation beginning position from creating a scrol
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'textarea',
-  'value' => 'export',
+  'value' => '',
   'menu_order' => 85,
   'instructions' => '',
   'required' => 0,
@@ -6914,6 +6980,17 @@ section.kokako.multipleRows .row.row-heading + .row {
 	padding-top: 0;
 }
 
+.kokako.multipleColumns .mc-image {
+	height: 170px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.kokako.multipleColumns .mc-image img {
+	max-height: 100%;
+}
+
 section.kokako.multipleColumns .container.images-circle :is(.mc-image, img) {
 	border-radius: 50%;
 }
@@ -6928,7 +7005,11 @@ section.kokako.multipleColumns .multiple-columns-col > :is(h1, h2, h3, h4, h5, h
 section.kokako.multipleColumns .multiple-columns-col > p:last-child > img:last-child {
 	margin-bottom: 0;
 }
-*/',
+*/
+
+.kokako.multipleColumns .row-columns .multiple-columns-col:nth-child(n+2) {
+	border-left: 1px solid [colour-brand-dark-grey];
+}',
       'section_responsivity' => 
       array (
         0 => 
@@ -6945,11 +7026,11 @@ section.kokako.multipleColumns .multiple-columns-col > :is(h1, h2, h3, h4, p, im
 }
 
 section.kokako.multipleColumns .row .col-lg-6:nth-of-type(odd) {
-	padding-right: [tsp-calc tm *2];
+	padding-right: [tsp-calc tm *3];
 }
 
 section.kokako.multipleColumns .row .col-lg-6:nth-of-type(even) {
-	padding-left: [tsp-calc tm *2];
+	padding-left: [tsp-calc tm *3];
 }',
         ),
         1 => 
@@ -7114,7 +7195,7 @@ section.kokako.pageBanner .text-box {
 }
 
 section.kokako.pageBanner .text-box  > * {
-	max-width: 80%;
+	max-width: 85%;
 }
 
 section.kokako.pageBanner :is(h1, h2, h3, h4, h5, h6, p, li) {
@@ -7140,7 +7221,6 @@ section.kokako.pageBanner .cta-buttons {
 	text-align: left;
 }
 
-
 section.kokako.pageBanner :is(button, a.button, a.btn) {
 	text-shadow: none;
 }
@@ -7150,15 +7230,26 @@ section.kokako.pageBanner a:is(.button, .button:link, .button:visited) { /* Forc
 	color: [colour-text];
 	font-weight: bold;
 	/* box-shadow: 0 2px 4px [colour-background-alt-rgba 0.8]; */
-	box-shadow: 0 0 30px [colour-background-alt-rgba 0.3]; /* Subtler option */
+	box-shadow: 0 0 30px [colour-background-alt-rgba 0.1]; /* Subtler option */
 }
 
-section.kokako.pageBanner a.button:hover {
-	background: [colour-background-hover];
+section.kokako.pageBanner a.button:hover,
+section.kokako.pageBanner.colour-scheme a.button:hover {
+	/* background: [colour-background-hover]; */
+	color: [colour-text-dark];
+	background: [colour-background-variation -4];
 }
 
-section.kokako.pageBanner a.button:active {
-	background: [colour-background-active];
+section.kokako.pageBanner a.button:active,
+section.kokako.pageBanner.colour-scheme a.button:active {
+	/* background: [colour-background-active]; */
+	color: [colour-text-dark];
+	background: [colour-background-variation -12];
+}
+
+.kokako.pageBanner :is(button, input[type="submit"], a.button, a.btn) i.icon-right {
+	color: [color-text-light];
+	background: [colour-brand-tan];
 }
 
 
@@ -7936,6 +8027,10 @@ section.kokako.testimonials .testimonials-heading :is(h1, h2, h3) {
       'section_css' => 'section.kokako.textWithPhoto.no-margin-bottom.no-padding .container-fluid .internalWrap {
 	padding-top: 60px;
 	padding-bottom: 60px;
+}
+
+.kokako.textWithPhoto:not(.colour-scheme) .motif-bar-heading .bar {
+	background: [colour-brand-light-tan];
 }',
       'section_responsivity' => 
       array (
@@ -7964,13 +8059,13 @@ section.kokako.textWithPhoto .col-lg-6.text {
         array (
           'screen_size' => 'lg_above',
           'css_at_screen_size' => 'section.kokako.textWithPhoto .row .col-lg-6.text .internalWrap {
-	padding-left: 45px;
+	padding-left: [tsp-calc tm *3];
 	padding-right: 0;
 }
 
 section.kokako.textWithPhoto .row.flex-row-reverse .col-lg-6.text .internalWrap {
 	padding-left: 0;
-	padding-right: 45px;
+	padding-right: [tsp-calc tm *3];
 }
 
 section.kokako.textWithPhoto.padding-none .col-lg-6.text .internalWrap {
@@ -7997,6 +8092,13 @@ section.kokako.textWithPhoto.image-sticky div.image .sticky-image {
 section.kokako.textWithPhoto.image-sticky .internalWrap {
 	padding-top: 0;
 	padding-bottom: 0;
+}
+
+
+/* Heading Motif Bar */
+
+.kokako.textWithPhoto .col-lg-6 .motif-bar-heading {
+	max-width: [tsp-calc {heading-motif-bar-width-max} *2];
 }',
         ),
         2 => 
@@ -8273,6 +8375,13 @@ section.kokako.background-overlay .image-overlay { /* Note that the background c
 	height: 100%;
 	background: [colour-background-dark]; /* Default, will be overridden by colour scheme */
 	opacity: 0.5; /* Default, opacity can be overridden on a per section basis */
+}
+
+
+/* Remove background if section already has a background image (otherwise interferes with background blend modes) */
+
+section.kokako.colour-scheme.has-background-image {
+	background: none;
 }',
   'menu_order' => 99,
   'instructions' => 'Use full CSS.',
@@ -8374,10 +8483,10 @@ section.kokako.background-overlay.background-overlay-dark .image-overlay {
 	background: [colour-background-dark];
 }
 
-/* section.kokako.colour-scheme-dark .container-fluid {
-	border-top: [tsp-calc tm*4] [colour-background] solid;
-	border-bottom: [tsp-calc tm*4] [colour-background] solid;
-} */',
+.kokako.colour-scheme-dark :is(button, input[type="submit"], a.button, a.btn) i.icon-right {
+	color: [color-text-light];
+	background: [colour-brand-tan];
+}',
     ),
     2 => 
     array (
@@ -8399,12 +8508,17 @@ background: [colour-brand-light-tan];',
       ),
       'buttons' => 
       array (
-        'colour_scheme_button_css' => 'color: [colour-text-light];
-background-color: [colour-background-dark];',
-        'colour_scheme_button_hover_css' => 'background-color: [colour-background-dark-hover];',
-        'colour_scheme_button_active_css' => 'background-color: [colour-background-dark-active];',
+        'colour_scheme_button_css' => 'color: [colour-text-dark];
+background: [colour-background-light];',
+        'colour_scheme_button_hover_css' => 'color: [colour-text-dark];
+background: [colour-background-light-variation -4];',
+        'colour_scheme_button_active_css' => 'color: [colour-text-dark];
+background: [colour-background-light-variation -12];',
       ),
-      'other_colour_scheme_css' => '',
+      'other_colour_scheme_css' => '.kokako.colour-scheme-light-tan :is(button, input[type="submit"], a.button, a.btn) i.icon-right {
+	color: [color-text-light];
+	background: [colour-brand-tan];
+}',
     ),
   ),
   'menu_order' => 100,
@@ -9281,11 +9395,48 @@ i.icon-basket + span.cart-count {
   'value' => '/* Motif: Heading Bar */
 
 .kokako .motif-bar-heading {
-	width: 350px;
-	max-width: 32%;
+	position: relative;
+	width: 400px;
+	max-width: [heading-motif-bar-width-max];
 	height: [tsp-calc tm *8 /3, round];
+}
+
+.kokako .motif-bar-heading .bar {
+	position: absolute;
+	left: 0;
+	height: 0;
+	width: 0;
+	height: 0;
 	background: [colour-background-light];
 	margin-bottom: [tsp-calc tm *10 /3, round];
+	transition: all 1.2s cubic-bezier(0.27, 0.26, 0, 0.58);
+}
+
+/* .kokako .motif-bar-heading .bar.appear {
+	width: 400px;
+} */
+
+
+/* Page Banner customisations */
+
+body#home-page .kokako.pageBanner.section1 h1 {
+	max-width: 790px;
+}
+
+body#home-page .kokako.pageBanner.section2 .text-box > * {
+	max-width: 65%;
+}
+
+body#home-page .kokako.pageBanner.section2 h2 {
+	max-width: 700px;
+}
+
+
+/* Style section headings as h3 */
+
+.kokako.heading-h3 :is(h1,h2) {
+	font-size: 2rem;
+	margin: [tsp-calc {text-margin}*2] 0 [text-margin];
 }',
   'menu_order' => 109,
   'instructions' => 'Please use full CSS with element selectors in this text area.',
@@ -9315,7 +9466,7 @@ i.icon-basket + span.cart-count {
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'textarea',
-  'value' => 'section.kokako :is(h1, h2),
+  'value' => '/* section.kokako :is(h1, h2), */
 section.kokako.textWithPhoto .row .image,
 section.kokako.multipleColumns .multiple-columns-col,
 section.kokako.multipleRows .multiple-rows-row,
@@ -9324,7 +9475,7 @@ section.kokako.latestPosts .blog-grid.post {
 	transform: scale([animation-start-scale]);
 }
 
-section.kokako:not(.textWithPhoto) :is(h1, h2) {
+/* section.kokako:not(.textWithPhoto) :is(h1, h2) {
 	transform: translateY(-[animation-start-translate-y]) scale([animation-start-scale]);
 }
 
@@ -9334,7 +9485,7 @@ section.kokako.textWithPhoto .row .text :is(h1,  h2) {
 
 section.kokako.textWithPhoto .row.flex-row-reverse .text :is(h1, h2) {
 	transform: translateX(-[animation-start-translate-x]) scale([animation-start-scale]);
-}
+} */
 
 section.kokako.textWithPhoto .row .image {
 	transform: translateX(-[animation-start-translate-x]);
@@ -9404,7 +9555,7 @@ section.kokako.textWithPhoto .row.flex-row-reverse .image {
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'textarea',
-  'value' => 'section.kokako:not(.textWithPhoto) :is(h1, h2).appear,
+  'value' => '/* section.kokako:not(.textWithPhoto) :is(h1, h2).appear,
 section.kokako.multipleColumns .col-xs-12.appear :is(h1, h2) {
 	transform: translateY(-[animation-start-translate-y]) scale([animation-start-scale]);
 	animation: slideDownScale [animation-duration] [animation-transition] forwards;
@@ -9418,7 +9569,7 @@ section.kokako.textWithPhoto .row .text :is(h1, h2).appear {
 section.kokako.textWithPhoto .row.flex-row-reverse .text :is(h1, h2).appear {
 	transform: translateX(-[animation-start-translate-x]) scale([animation-start-scale]);
 	animation: slideRightScale [animation-duration] [animation-transition] forwards;
-}
+} */
 
 section.kokako.textWithPhoto .row .image.appear {
 	transform: translateX(-[animation-start-translate-x]);
