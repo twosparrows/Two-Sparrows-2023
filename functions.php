@@ -6,7 +6,7 @@
 // Base Year - the year the website went active, ie. year zero for the website
 
 if ( !defined( 'kokako_base_year' ) ) {
-	define( 'kokako_base_year', 2023 );
+	define( 'kokako_base_year', 2018 );
 }
 
 

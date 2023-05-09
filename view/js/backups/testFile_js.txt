@@ -1,6 +1,6 @@
 JS Options Fields
 
-Updated at 08/05/2023 5:47.02am UTC
+Updated at 09/05/2023 4:41.53am UTC
 
 
 Shortcodes:
@@ -221,6 +221,7 @@ function animateOnScroll() {
 	}
 	*/
 
+
 	// Heading Motif Bars
 
 	let animationDelay = animationDelayInitial; // Will add animationDelayInitial (in seconds) in case h1 and first h2 are in view together
@@ -230,10 +231,28 @@ function animateOnScroll() {
 				headingMotifBar.style.transitionDelay = animationDelay + \'s\'; // Animation delay doesn\'t need to be removed, as this code is only executing when a heading is in view with 4 seconds of the page loading, and the animation is never being re-triggered. NB: On the Heading Motif Bars, it is a transition delay, not an animation delay
 				animationDelay += animationDelayIncrease;
 			}
-			if  ( !headingMotifBar. classList.contains(\'appear\') ) {
-				headingMotifBar.style.width = 70 + Math.round( skewedRandom() * 30) + \'%\'; // Between 70% and 100% 
-				headingMotifBar.style.height = 30 + Math.round( skewedRandom() * 70) + \'%\'; // Between 50% and 100% 
-				headingMotifBar.classList.add(\'appear\');
+			if  ( !headingMotifBar.classList.contains(\'appear\') ) {
+				let hmbWidth = 70 + Math.round( skewedRandom() * 30); // Between 70% and 100%
+				let hmbHeight = 30 + Math.round( skewedRandom() * 70); // Between 50% and 100%
+				headingMotifBar.style.width = hmbWidth + \'%\';
+				headingMotifBar.style.height = hmbHeight + \'%\';
+				headingMotifBar.classList.add( \'appear\' );
+				if ( headingMotifBar.closest(\'.kokako.latestPosts\') ) { // For aligning heading when side by side
+					if ( $(window).width() > 991 ) {
+						let hmbParentWidth = headingMotifBar.closest(\'.motif-bar-heading\'). offsetWidth;
+						if ( headingMotifBar.closest(\'.motif-bar-heading\').nextElementSibling ) {
+							let hmbHeading = headingMotifBar.closest(\'.motif-bar-heading\'). nextElementSibling;
+							if ( hmbHeading.classList && hmbHeading.classList.contains(\'display\') ) {
+								hmbHeading.style.left = ( ( Math.floor( hmbParentWidth * ( ( 100 - hmbWidth ) / 100 ) ) ) * -1 ) + \'px\';
+							}
+						}
+					} else if ( headingMotifBar.closest(\'.motif-bar-heading\').nextElementSibling ) {
+						let hmbHeading = headingMotifBar.closest(\'.motif-bar-heading\').nextElementSibling;
+						if ( hmbHeading.classList && hmbHeading.classList.contains(\'display\') ) {
+							hmbHeading.style.left = \'0px\';
+						}
+					}
+				}
 			}
 		}
 	});

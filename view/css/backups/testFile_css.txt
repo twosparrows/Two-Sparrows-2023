@@ -1,7 +1,7 @@
 CSS Options Fields
 
-Updated at 08/05/2023 5:47.02am UTC
-Referrer: /wp-admin/admin.php?page=acf-options-js-editor
+Updated at 09/05/2023 4:41.53am UTC
+Referrer: /wp-admin/admin.php?page=acf-options-structural-css-editor
 
 
 Shortcodes:
@@ -18,7 +18,7 @@ Shortcodes:
 [button-icon-size] => 25px
 [button-padding-horizontal] => 30px
 [button-padding-vertical] => 25px
-[button-swell] => scale(1)
+[button-swell] => scale(1.05)
 [button-transition] => all 0.3s ease
 [color-anchor-underline-active-rgba => 79,92,86
 [color-anchor-underline-active] => #4f5c56
@@ -1077,7 +1077,7 @@ Please note: After updating this value, you may need to <a href="tools.php?page=
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'text',
-  'value' => 'scale(1)',
+  'value' => 'scale(1.05)',
   'menu_order' => 84,
   'instructions' => 'Shortcode: [button-swell]<br /><br />
 
@@ -6147,7 +6147,25 @@ footer li {
 }
 
 
-/* Last column of Footer */
+/* Two Sparrows supports.... (mobile first) */
+
+footer .two-sparrows-supports .col-sm-6 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+footer .two-sparrows-supports img {
+	margin: [tsp-calc tm *4 /3, round] auto;
+}
+
+footer .two-sparrows-supports img#shielded-logo {
+	width: 35px;
+}
+
+
+
+/* Last column of Footer *
 
 footer .footer-col-4 h3 {
 	margin: 0;
@@ -6156,12 +6174,12 @@ footer .footer-col-4 h3 {
 	text-transform: uppercase;
 }
 
-/* footer .footer-col-4 p:not(:last-of-type) {
+footer .footer-col-4 p:not(:last-of-type) {
 	margin: 0;
-} */
+} *
 
 
-/* Sub footer */
+/* Sub footer *
 
 #subfooter .col-sm-12:first-of-type .widgetArea .textwidget {
 	display: flex;
@@ -6171,13 +6189,13 @@ footer .footer-col-4 h3 {
 
 #subfooter img {
 	margin: 15px;
-}
+} *
 
 img#shielded-logo {
 	width: 30px;
 	margin-left: auto;
 	margin-right: auto;
-}',
+} */',
   'menu_order' => 75,
   'instructions' => 'Please use full CSS with element selectors in this text area.',
   'required' => 0,
@@ -6306,7 +6324,7 @@ overflow: hidden; /* Prevents animation beginning position from creating a scrol
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'textarea',
-  'value' => '',
+  'value' => 'export',
   'menu_order' => 85,
   'instructions' => '',
   'required' => 0,
@@ -6943,7 +6961,24 @@ section.kokako.centredImages .col-md-12.centre-images-across-width:is(.image-cou
     array (
       'section_type' => 'Latest Posts',
       'section_css' => '',
-      'section_responsivity' => false,
+      'section_responsivity' => 
+      array (
+        0 => 
+        array (
+          'screen_size' => 'lg_above',
+          'css_at_screen_size' => 'section.kokako.latestPosts .motif-bar-heading {
+	float: left;
+	margin-top: 20px;
+}
+
+.kokako.latestPosts .motif-bar-heading + :is(h1, h2).display {
+	position: relative; /* For JS positioning */
+	float: left;
+	margin-top: 0;
+	margin-left: [tsp-calc tm *3];
+}',
+        ),
+      ),
     ),
     3 => 
     array (
@@ -7005,11 +7040,7 @@ section.kokako.multipleColumns .multiple-columns-col > :is(h1, h2, h3, h4, h5, h
 section.kokako.multipleColumns .multiple-columns-col > p:last-child > img:last-child {
 	margin-bottom: 0;
 }
-*/
-
-.kokako.multipleColumns .row-columns .multiple-columns-col:nth-child(n+2) {
-	border-left: 1px solid [colour-brand-dark-grey];
-}',
+*/',
       'section_responsivity' => 
       array (
         0 => 
@@ -7031,6 +7062,10 @@ section.kokako.multipleColumns .row .col-lg-6:nth-of-type(odd) {
 
 section.kokako.multipleColumns .row .col-lg-6:nth-of-type(even) {
 	padding-left: [tsp-calc tm *3];
+}
+
+.kokako.multipleColumns .row-columns .multiple-columns-col:nth-child(n+2) {
+	border-left: 1px solid [colour-brand-dark-grey];
 }',
         ),
         1 => 
@@ -7370,7 +7405,7 @@ section.kokako.pageBanner .text-box {
           'screen_size' => 'md',
           'css_at_screen_size' => 'section.kokako.pageBanner.section1 {
 	position: relative;
-	top: -[header-height-scrolled];
+	/* top: -[header-height-scrolled]; */
 	margin-bottom: -[header-height-scrolled];
 	/* border-top: [header-height-scrolled] transparent solid; */
 	border-top: 0;
@@ -8117,6 +8152,20 @@ section.kokako.textWithPhoto.image-sticky .internalWrap {
 
 section.kokako.textWithPhoto .internalWrap :is(h1, h2) {
 	margin-top: 0;
+}
+
+.kokako.textWithPhoto .text {
+	max-width: [width-md];
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: [section-padding-vertical];
+}',
+        ),
+        4 => 
+        array (
+          'screen_size' => 'sm',
+          'css_at_screen_size' => '.kokako.textWithPhoto .text {
+	max-width: [width-sm];
 }',
         ),
       ),
@@ -9399,6 +9448,10 @@ i.icon-basket + span.cart-count {
 	width: 400px;
 	max-width: [heading-motif-bar-width-max];
 	height: [tsp-calc tm *8 /3, round];
+	margin-bottom: [tsp-calc tm *10 /3, round];
+	display: flex;
+	justify-content: left;
+	align-items: center;
 }
 
 .kokako .motif-bar-heading .bar {
@@ -9408,7 +9461,6 @@ i.icon-basket + span.cart-count {
 	width: 0;
 	height: 0;
 	background: [colour-background-light];
-	margin-bottom: [tsp-calc tm *10 /3, round];
 	transition: all 1.2s cubic-bezier(0.27, 0.26, 0, 0.58);
 }
 
@@ -10403,6 +10455,19 @@ footer .footer-col-4 h3 {
 
 footer .tsp-social-links {
 	justify-content: left;
+}
+
+footer .two-sparrows-supports .col-sm-6.trees-that-count {
+	justify-content: flex-end;
+}
+
+footer .two-sparrows-supports .col-sm-6.shielded {
+	justify-content: flex-start;
+}
+
+footer .two-sparrows-supports img {
+	margin-left: [tsp-calc tm *3];
+	margin-right: [tsp-calc tm *3];
 }',
   'menu_order' => 145,
   'instructions' => '<strong>LG &amp; ABOVE</strong><br /><br />
@@ -10885,7 +10950,11 @@ Between 768px and 991px window width. Full CSS must be used.',
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'textarea',
-  'value' => '',
+  'value' => '/* Footer */
+
+footer .two-sparrows-supports .col-sm-6.shielded {
+	border-left: 1px [colour-text-light] solid;
+}',
   'menu_order' => 155,
   'instructions' => '<strong>SM &amp; ABOVE</strong><br /><br />
 <strong>@media (min-width: 577px)</strong><br /><br />

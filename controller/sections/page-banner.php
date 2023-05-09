@@ -34,20 +34,21 @@ tsp_open_section();
 					if ( $section["developer"]["page_banner_image"] == "backgroundImage" ) {
 						if ( ( !array_key_exists( "page_banner_image_position", $section["developer"] ) ) || ( "" == $section["developer"]["page_banner_image_position"] ) ) {
 							$section["developer"]["page_banner_image_position"] = "center center";
-						} ?>
-						<style type="text/css">								
-							section.kokako.pageBanner.section<?= $section["index"] ?> {<?php
+						}
+						?><style type="text/css"><?php						
+							?>section.kokako.pageBanner.section<?= $section["index"] ?>{<?php
 								if ( tsp_section_has_class( "banner-gradient-light" ) ) {
 									?>background-image:url(<?= $section["background_required"]["image"]["sizes"]["page-banner-retina"] ?>),linear-gradient(58deg, #FFFFFF 0%, #FFFFFF00 100%);background-size:cover,100% 100%;background-blend-mode:soft-light;<?php
 								} else {
 									?>background-image:url(<?= $section["background_required"]["image"]["sizes"]["page-banner-retina"] ?>);background-size:cover;<?php
 								}
-								?>background-attachment: <?= $section["developer"]["background_image_scroll"] ?>;
-								background-position: <?= $section["developer"]["page_banner_image_position"] ?>;
-							}
+								?>background-attachment:<?= $section["developer"]["background_image_scroll"] ?>;<?php
+								?>background-position:<?= $section["developer"]["page_banner_image_position"] ?>;<?php
+								?>background-repeat:no-repeat;<?php
+							?>}<?php
 							
-							@media (min-width: 992px) {
-								section.kokako.pageBanner.section<?= $section["index"] ?> {<?php
+							?>@media(min-width:992px){<?php
+								?>section.kokako.pageBanner.section<?= $section["index"] ?> {<?php
 									if ( tsp_section_has_class( "banner-gradient-light" ) ) {
 										?>background-image:url(<?= $section["background_required"]["image"]["url"] ?>),linear-gradient(58deg,#FFFFFF 0%,#FFFFFF00 100%);background-size:cover, 100% 100%;background-blend-mode:soft-light;<?php
 										/* ?>background-image: url(<?= $section["background_required"]["image"]["url"] ?>), linear-gradient(180deg, #6C40676A 0%, #2C4A9A 100%);
@@ -59,12 +60,12 @@ tsp_open_section();
 									} else {
 										?>background-image:url(<?= $section["background_required"]["image"]["url"] ?>);background-size:cover;<?php
 									}
-									?>background-attachment:<?= $section["developer"]["background_image_scroll"] ?>;
-									background-position:<?= $section["developer"]["page_banner_image_position"] ?>;
-								}
-							}
-						</style>
-					<?php } else { // Default to normal image ?>
+									?>background-attachment:<?= $section["developer"]["background_image_scroll"] ?>;<?php
+									?>background-position:<?= $section["developer"]["page_banner_image_position"] ?>;<?php
+								?>}<?php
+							?>}<?php
+						?></style><?php
+					} else { // Default to normal image ?>
 						<img src="<?= $section["background_required"]["image"]["url"] ?>" srcset="<?= $section["background_required"]["image"]["sizes"]["page-banner"] ?> <?= $section["background_required"]["image"]["sizes"]["page-banner-width"] ?>w, <?= $section["background_required"]["image"]["sizes"]["page-banner-retina"] ?> <?= $section["background_required"]["image"]["sizes"]["page-banner-retina-width"] ?>w" width="<?= $section["background_required"]["image"]["width"] ?>" />
 					<?php }
 				}

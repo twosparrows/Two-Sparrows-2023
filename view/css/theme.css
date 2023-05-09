@@ -417,7 +417,7 @@ button, input[type="submit"], a.button, a.btn {
 button:hover:not(.navbar-toggler), input[type="submit"]:hover, a.button:hover, a.btn:hover {
     color: #fff;
     background: #3b4842;
-    transform: scale(1);
+    transform: scale(1.05);
 }
 
 button:active:not(.navbar-toggler), input[type="submit"]:active, a.button:active, a.btn:active {
@@ -428,7 +428,7 @@ button:focus, input[type="submit"]:focus, a.button:focus, a.btn:focus {
     box-shadow: none;
     color: #fff;
     background: #3b4842;
-    transform: scale(1);
+    transform: scale(1.05);
 }
 
 button.alt, input.alt[type="submit"], a.button.alt, a.btn.alt { 
@@ -1113,7 +1113,25 @@ footer li {
 }
 
 
-/* Last column of Footer */
+/* Two Sparrows supports.... (mobile first) */
+
+footer .two-sparrows-supports .col-sm-6 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+footer .two-sparrows-supports img {
+	margin: 20px auto;
+}
+
+footer .two-sparrows-supports img#shielded-logo {
+	width: 35px;
+}
+
+
+
+/* Last column of Footer *
 
 footer .footer-col-4 h3 {
 	margin: 0;
@@ -1122,12 +1140,12 @@ footer .footer-col-4 h3 {
 	text-transform: uppercase;
 }
 
-/* footer .footer-col-4 p:not(:last-of-type) {
+footer .footer-col-4 p:not(:last-of-type) {
 	margin: 0;
-} */
+} *
 
 
-/* Sub footer */
+/* Sub footer *
 
 #subfooter .col-sm-12:first-of-type .widgetArea .textwidget {
 	display: flex;
@@ -1137,13 +1155,13 @@ footer .footer-col-4 h3 {
 
 #subfooter img {
 	margin: 15px;
-}
+} *
 
 img#shielded-logo {
 	width: 30px;
 	margin-left: auto;
 	margin-right: auto;
-}
+} */
 
 
 /* Sections */
@@ -1156,6 +1174,10 @@ section.kokako {
 
 section.kokako .row {
     position: relative;
+}
+
+section.kokako :is(.container, .container-fluid) .row {
+    export
 }
 
 section.kokako :is(h1, h2).display {
@@ -1556,10 +1578,6 @@ section.kokako.multipleColumns .multiple-columns-col > p:last-child > img:last-c
 	margin-bottom: 0;
 }
 */
-
-.kokako.multipleColumns .row-columns .multiple-columns-col:nth-child(n+2) {
-	border-left: 1px solid #707070;
-}
 
 /* Page Banner */
 
@@ -2242,6 +2260,10 @@ body.single .post-meta + img {
 	width: 400px;
 	max-width: 32%;
 	height: 40px;
+	margin-bottom: 50px;
+	display: flex;
+	justify-content: left;
+	align-items: center;
 }
 
 .kokako .motif-bar-heading .bar {
@@ -2251,7 +2273,6 @@ body.single .post-meta + img {
 	width: 0;
 	height: 0;
 	background: #fff;
-	margin-bottom: 50px;
 	transition: all 1.2s cubic-bezier(0.27, 0.26, 0, 0.58);
 }
 
@@ -2742,7 +2763,34 @@ body a.fbx-close {
     footer .tsp-social-links {
     	justify-content: left;
     }
+        
+    footer .two-sparrows-supports .col-sm-6.trees-that-count {
+    	justify-content: flex-end;
+    }
+        
+    footer .two-sparrows-supports .col-sm-6.shielded {
+    	justify-content: flex-start;
+    }
+        
+    footer .two-sparrows-supports img {
+    	margin-left: 45px;
+    	margin-right: 45px;
+    }
     
+    /* Latest Posts */
+        
+    section.kokako.latestPosts .motif-bar-heading {
+    	float: left;
+    	margin-top: 20px;
+    }
+        
+    .kokako.latestPosts .motif-bar-heading + :is(h1, h2).display {
+    	position: relative; /* For JS positioning */
+    	float: left;
+    	margin-top: 0;
+    	margin-left: 45px;
+    }
+        
     /* Multiple Columns */
         
     section.multipleColumns.five-columns :is(.col-lg-3, .col-lg-2) {
@@ -2761,6 +2809,10 @@ body a.fbx-close {
         
     section.kokako.multipleColumns .row .col-lg-6:nth-of-type(even) {
     	padding-left: 45px;
+    }
+        
+    .kokako.multipleColumns .row-columns .multiple-columns-col:nth-child(n+2) {
+    	border-left: 1px solid #707070;
     }
         
     /* Page Banner */
@@ -3281,7 +3333,7 @@ body a.fbx-close {
         
     section.kokako.pageBanner.section1 {
     	position: relative;
-    	top: -70px;
+    	/* top: -70px; */
     	margin-bottom: -70px;
     	/* border-top: 70px transparent solid; */
     	border-top: 0;
@@ -3330,7 +3382,26 @@ body a.fbx-close {
     section.kokako.textWithPhoto .internalWrap :is(h1, h2) {
     	margin-top: 0;
     }
+        
+    .kokako.textWithPhoto .text {
+    	max-width: 720px;
+    	margin-left: auto;
+    	margin-right: auto;
+    	margin-top: 90px;
+    }
     
+}
+
+/* SM and above */
+@media (min-width: 577px) {
+
+    /* Footer */
+        
+    footer .two-sparrows-supports .col-sm-6.shielded {
+    	border-left: 1px #fff solid;
+    }
+    
+
 }
 
 /* SM and below */
@@ -3417,6 +3488,12 @@ body a.fbx-close {
         
     section.kokako.testimonials .testimonials-heading :is(h1, h2, h3) {
     	text-align: center;
+    }
+        
+    /* Text With Photo */
+        
+    .kokako.textWithPhoto .text {
+    	max-width: 540px;
     }
     
 }
