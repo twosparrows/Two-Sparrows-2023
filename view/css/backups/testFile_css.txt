@@ -1,6 +1,6 @@
 CSS Options Fields
 
-Updated at 09/05/2023 4:41.53am UTC
+Updated at 09/05/2023 7:32.28am UTC
 Referrer: /wp-admin/admin.php?page=acf-options-structural-css-editor
 
 
@@ -7246,10 +7246,6 @@ section.kokako.pageBanner.colour-scheme-light :is(h1, h2, h3, h4, h5, h6, p, li)
 
 section.kokako.pageBanner .overlay :is(h1, h2) {
 	text-transform: uppercase;
-}
-
-section.kokako.pageBanner p {
-	font-size: 1.2rem;
 }
 
 section.kokako.pageBanner .cta-buttons {

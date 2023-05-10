@@ -1682,10 +1682,6 @@ section.kokako.pageBanner .overlay :is(h1, h2) {
 	text-transform: uppercase;
 }
 
-section.kokako.pageBanner p {
-	font-size: 1.2rem;
-}
-
 section.kokako.pageBanner .cta-buttons {
 	text-align: left;
 }
