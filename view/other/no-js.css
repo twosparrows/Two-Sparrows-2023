@@ -15,5 +15,5 @@ section.kokako.multipleRows .multiple-rows-row,
 section.kokako.latestPosts .blog-grid.post {
 	opacity: 1 !important;
 	transform: translate(0) scale(1) !important;
-	transition: all 1s ease-out !important;
+	transition: all 0.6s ease-out !important;
 }

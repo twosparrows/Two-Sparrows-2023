@@ -1,6 +1,6 @@
 CSS Options Fields
 
-Updated at 09/05/2023 7:32.28am UTC
+Updated at 11/05/2023 6:40.07am UTC
 Referrer: /wp-admin/admin.php?page=acf-options-structural-css-editor
 
 
@@ -8,7 +8,7 @@ Shortcodes:
 
 [anchor-transition] => 0.3s ease all
 [anchor-underline-exclusions] => :not(.button, .social-media-link, .navbar-brand, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow)
-[animation-duration] => 1s
+[animation-duration] => 0.6s
 [animation-start-opacity] => 0.5
 [animation-start-scale] => 0.95
 [animation-start-translate-x] => 20px
@@ -360,8 +360,8 @@ Shortcodes:
 [width-sm] => 540px
 [width-xl] => 1140px
 [width-xs-max] => 560px
-colors-brand-key => 141
-colours-brand-key => 141
+colors-brand-key => 140
+colours-brand-key => 140
 
 
 CSS:
@@ -821,7 +821,7 @@ In pixels (including px below). This is the default header height, and is used f
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'select',
-  'value' => '-lg',
+  'value' => 'never',
   'menu_order' => 21,
   'instructions' => 'The navigation menu is expanded at this Bootstrap size and above (and collapsed to a hamburger button below this size).<br /><br />
 
@@ -1195,7 +1195,7 @@ How much the button swells in size on hover. Include the units, eg. 2px',
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'text',
-  'value' => '1s',
+  'value' => '0.6s',
   'menu_order' => 119,
   'instructions' => 'Shortcode: [animation-duration]',
   'required' => 0,
@@ -4485,11 +4485,11 @@ header .header-widget {
 * END: FOR NAV TESTING */
 
 
-/* Logged in */
+/* Logged in *
 
-body.header-fixed.logged-in.admin-bar header { /* Not required when header is positioned relative */
+body.header-fixed.logged-in.admin-bar header { /* Not required when header is positioned relative *
 	top: 32px;
-}',
+} */',
   'menu_order' => 17,
   'instructions' => 'Enter full CSS below.',
   'required' => 0,
@@ -4514,14 +4514,12 @@ body.header-fixed.logged-in.admin-bar header { /* Not required when header is po
   'ID' => 0,
   'key' => 'field_5de46ed2cd0d1',
   'label' => 'Hamburger Base CSS',
-  'name' => 'hamburger_-_base_css',
+  'name' => 'hamburger_base_css',
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'textarea',
   'value' => '.hamburger {
 	padding: 15px; /* Was 15px 15px 5px 15px; */
- 	/* display: inline-block; */
-	/* height: [header-height]; */
 	display: flex;
 	align-items: center;
  	cursor: pointer;
@@ -4603,7 +4601,18 @@ button.hamburger:active {
   'required' => 0,
   'id' => '',
   'class' => '',
-  'conditional_logic' => 0,
+  'conditional_logic' => 
+  array (
+    0 => 
+    array (
+      0 => 
+      array (
+        'field' => 'field_5de46d18cd0d0',
+        'operator' => '!=',
+        'value' => 'none',
+      ),
+    ),
+  ),
   'parent' => 'group_5cf866575f28d',
   'wrapper' => 
   array (
@@ -4612,8 +4621,9 @@ button.hamburger:active {
     'id' => '120010',
   ),
   'default_value' => '.hamburger {
-	padding: 15px 15px 5px 15px;
- 	display: inline-block;
+	padding: 15px; /* Was 15px 15px 5px 15px; */
+	display: flex;
+	align-items: center;
  	cursor: pointer;
  	transition-property: opacity, filter;
  	transition-duration: 0.15s;
@@ -4627,6 +4637,14 @@ button.hamburger:active {
 	overflow: visible;
 }
 
+button.hamburger:focus {
+	outline: none;
+}
+
+button.hamburger:active {
+	background: transparent;
+}
+
 .hamburger:hover {
 	opacity: 0.7;
 }
@@ -4635,8 +4653,10 @@ button.hamburger:active {
 	opacity: 0.7;
 }
 
-.hamburger:not(.collapsed) .hamburger-inner, .hamburger:not(.collapsed) .hamburger-inner::before, .hamburger:not(.collapsed) .hamburger-inner::after {
-	background-color: #000;
+.hamburger:not(.collapsed) .hamburger-inner,
+.hamburger:not(.collapsed) .hamburger-inner::before,
+.hamburger:not(.collapsed) .hamburger-inner::after {
+	background-color: [colour-nav-hamburger];
 }
 
 .hamburger-box {
@@ -4652,18 +4672,21 @@ button.hamburger:active {
 	margin-top: -2px;
 }
 
-.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
 	width: 40px;
 	height: 4px;
-	background-color: #000;
-	border-radius: 4px;
+	background-color: [colour-nav-hamburger];
+	/* border-radius: 4px; */
 	position: absolute;
 	transition-property: transform;
 	transition-duration: 0.15s;
 	transition-timing-function: ease;
 }
 
-.hamburger-inner::before, .hamburger-inner::after {
+.hamburger-inner::before,
+.hamburger-inner::after {
 	content: "";
 	display: block;
 }
@@ -4675,11 +4698,11 @@ button.hamburger:active {
 .hamburger-inner::after {
 	bottom: -10px;
 }',
-  'placeholder' => '',
   'maxlength' => '',
   'rows' => 16,
+  'placeholder' => '',
   'new_lines' => '',
-  '_name' => 'hamburger_-_base_css',
+  '_name' => 'hamburger_base_css',
   '_valid' => 1,
 )array (
   'ID' => 0,
@@ -7377,6 +7400,49 @@ section.kokako.px-200 {
 section.kokako.pageBanner .overlay {
 	width: 100%;
 	top: [header-height];
+}
+
+       
+/* Page Banner - Vertical Height */
+
+section.kokako.vh-100 {
+	min-height: calc(100vh - 140px);
+}
+
+section.kokako.vh-95 {
+	min-height: calc(95vh - 140px);
+}
+
+section.kokako.vh-90 {
+	min-height: calc(90vh - 140px);
+}
+
+section.kokako.vh-85 {
+	min-height: calc(85vh - 140px);
+}
+
+section.kokako.vh-80 {
+	min-height: calc(80vh - 140px);
+}
+
+section.kokako.vh-70 {
+	min-height: calc(70vh - 140px);
+}
+
+section.kokako.vh-60 {
+	min-height: calc(60vh - 140px);
+}
+
+section.kokako.vh-50 {
+	min-height: calc(50vh - 140px);
+}
+
+section.kokako.vh-40 {
+	min-height: calc(40vh - 140px);
+}
+
+section.kokako.vh-30 {
+	min-height: calc(30vh - 140px);
 }',
         ),
         1 => 
@@ -9514,11 +9580,12 @@ body#home-page .kokako.pageBanner.section2 h2 {
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'textarea',
-  'value' => '/* section.kokako :is(h1, h2), */
+  'value' => '/* section.kokako :is(h1, h2),
 section.kokako.textWithPhoto .row .image,
 section.kokako.multipleColumns .multiple-columns-col,
 section.kokako.multipleRows .multiple-rows-row,
-section.kokako.latestPosts .blog-grid.post {
+section.kokako.latestPosts .blog-grid.post */
+button, input[type="submit"], a.button, a.btn {
 	opacity: [animation-start-opacity];
 	transform: scale([animation-start-scale]);
 }
@@ -9533,7 +9600,7 @@ section.kokako.textWithPhoto .row .text :is(h1,  h2) {
 
 section.kokako.textWithPhoto .row.flex-row-reverse .text :is(h1, h2) {
 	transform: translateX(-[animation-start-translate-x]) scale([animation-start-scale]);
-} */
+}
 
 section.kokako.textWithPhoto .row .image {
 	transform: translateX(-[animation-start-translate-x]);
@@ -9541,7 +9608,7 @@ section.kokako.textWithPhoto .row .image {
 
 section.kokako.textWithPhoto .row.flex-row-reverse .image {
 	transform: translateX([animation-start-translate-x]);
-}',
+} */',
   'menu_order' => 122,
   'instructions' => 'Please use full CSS with element selectors in this text area.<br /><br />
 
@@ -9604,12 +9671,17 @@ section.kokako.textWithPhoto .row.flex-row-reverse .image {
   'prefix' => 'acf',
   'type' => 'textarea',
   'value' => '/* section.kokako:not(.textWithPhoto) :is(h1, h2).appear,
-section.kokako.multipleColumns .col-xs-12.appear :is(h1, h2) {
-	transform: translateY(-[animation-start-translate-y]) scale([animation-start-scale]);
-	animation: slideDownScale [animation-duration] [animation-transition] forwards;
+section.kokako.multipleColumns .col-xs-12.appear :is(h1, h2) */
+button.appear,
+input[type="submit"].appear,
+a.button.appear,
+a.btn.appear {
+	/* transform: translateY(-[animation-start-translate-y]) scale([animation-start-scale]); */
+	transform: scale([animation-start-scale]);
+	animation: slideDownBounceScale [animation-duration] [animation-transition] forwards;
 }
 
-section.kokako.textWithPhoto .row .text :is(h1, h2).appear {
+/* section.kokako.textWithPhoto .row .text :is(h1, h2).appear {
 	transform: translateX([animation-start-translate-x]) scale([animation-start-scale]);
 	animation: slideLeftScale [animation-duration] [animation-transition] forwards;
 }
@@ -9617,7 +9689,7 @@ section.kokako.textWithPhoto .row .text :is(h1, h2).appear {
 section.kokako.textWithPhoto .row.flex-row-reverse .text :is(h1, h2).appear {
 	transform: translateX(-[animation-start-translate-x]) scale([animation-start-scale]);
 	animation: slideRightScale [animation-duration] [animation-transition] forwards;
-} */
+}
 
 section.kokako.textWithPhoto .row .image.appear {
 	transform: translateX(-[animation-start-translate-x]);
@@ -9634,7 +9706,7 @@ section.kokako.multipleRows .multiple-rows-row.appear,
 section.kokako.latestPosts .blog-grid.post.appear {
 	transform: scale([animation-start-scale]);
 	animation: scale [animation-duration] [animation-transition] forwards;
-}',
+} */',
   'menu_order' => 123,
   'instructions' => 'Please use full CSS with element selectors in this text area.',
   'required' => 0,
@@ -9725,6 +9797,22 @@ section.kokako.latestPosts .blog-grid.post.appear {
 	}
 	to {
 		transform: translateY(0) scale(1);
+		opacity: 1;
+	}
+}
+
+
+@keyframes slideDownBounceScale {
+	0% {
+		transform: scale([animation-start-scale]);
+		opacity: [animation-start-opacity];
+	}
+	70% {
+		transform: scale(1.02);
+		opacity: 1;
+	}
+	100% {
+		transform: scale(1);
 		opacity: 1;
 	}
 }
@@ -10746,144 +10834,6 @@ footer ul.menu > li > a {
 
 footer ul.sub-menu li {
 	text-indent: 0;
-}
-
-
-/* Nav Responsivity CSS */
-
-header {
-	background: [colour-header-background]; /* Fall back */
-	background: [colour-header-background-rgba {header-mobile-opacity}]
-}
-
-.header-background {
-	display: none !important;
-}
-
-header .navbar-collapse {
-	position: absolute;
-	width: calc(100% + 60px);
-	top: [header-height-scrolled];
-	left: -30px;
-	align-items: normal; /* This is important for a smooth transition when menu collapsed! */
-	transition: [header-transition];
-	margin-top: 0;
-	transition: [header-transition];
-}
-
-header.scrolled .navbar-collapse,
-header .navbar-collapse.show {
-	transition: [header-transition];
-}
-
-header .navbar-collapse.collapse {
-	height: 0;
-	transition: [header-transition];
-}
-
-header .navbar-collapse.collapse.show {
-	height: auto;
-	transition: [header-transition];
-}
-
-header .navbar .logo {
-	z-index: 10000;
-}
-
-header nav.navbar #main-nav {
-	background: [colour-nav-dropdown-background]; /* Fall back */
-	background: [colour-nav-dropdown-background-rgba {nav-dropdown-menu-opacity}];
-	width: 100%;
-	z-index: 1000;
-	margin-bottom: 0;
-}
-
-header.scrolled .logo a.navbar-brand {
-	margin-top: 0;
-}
-
-header nav button:focus {
-	outline: none;
-}
-
-nav .collapse:not(.show) {
-	display: none !important; /* Required to override the !important statement on the .d-flex class - otherwise menu always shows */
-}
-
-header nav button.navbar-toggler {
-	position: relative;
-	top: 0;
-	border-radius: 0;
-	transition: [header-transition];
-	z-index: 1000;
-}
-
-header nav ul li:not(:last-child):after {
-	content: "";
-}
-
-header #main-nav ul li {
-	margin: 0;
-}
-
-header #main-nav ul li a {
-	display: block;
-	width: 100%;
-	margin: 0;
-	text-align: center;
-}
-
-header #main-nav ul li :is(a, a:link, a:visited) {
-	color: [colour-nav-dropdown-text];
-	background: transparent;
-}
-
-header #main-nav ul li a:hover {
-	color: [colour-nav-dropdown-text];
-	background: [colour-nav-dropdown-background-hover]; /* Fall back */
-	background: [colour-nav-dropdown-background-rgba {nav-dropdown-menu-opacity}];
-}
-
-header #main-nav ul li a:active {
-	color: [colour-nav-dropdown-text];
-	background: [colour-nav-dropdown-background-active];
-}
-
-header .navbar-collapse {
-	z-index: 100;
-}
-
-.navbar-nav .dropdown-menu {
-	text-align: center;
-	transform: inherit;
-	background: transparent;
-}
-
-.navbar-nav .dropdown-menu .dropdown-menu {
-	width: 100%;
-}
-
-nav a.nav-link:before, nav a.dropdown-item:before {
-	background: transparent;
-}
-
-header #main-nav ul li a:is(.dropdown-item, .dropdown-item:link, .dropdown-item:visited) {
-	color: [colour-nav-dropdown-text-rgba 0.7];
-}
-
-header #main-nav ul li a.dropdown-item:hover {
-	color: [colour-nav-dropdown-text-rgba 0.6];
-}
-
-header #main-nav ul li a.dropdown-item:active {
-	color: [colour-nav-dropdown-text-rgba 0.55];
-}
-
-
-/* Admin bar positioning */
-
-body.header-fixed.logged-in.admin-bar header { /* Not required when header is positioned relative */
-	top: 0;
 }',
   'menu_order' => 151,
   'instructions' => '<strong>MD &amp; BELOW</strong><br /><br />
@@ -11200,7 +11150,140 @@ Less than 576px window width. Full CSS must be used.',
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'textarea',
-  'value' => '',
+  'value' => 'header {
+	background: [colour-header-background]; /* Fall back */
+	background: [colour-header-background-rgba {header-mobile-opacity}]
+}
+
+/* .header-background {
+	display: none !important;
+} */
+
+header .navbar-collapse {
+	position: absolute;
+	width: calc(100% + 60px);
+	top: [header-height-scrolled];
+	left: -30px;
+	align-items: normal; /* This is important for a smooth transition when menu collapsed! */
+	transition: [header-transition];
+	margin-top: 0;
+	transition: [header-transition];
+}
+
+header.scrolled .navbar-collapse,
+header .navbar-collapse.show {
+	transition: [header-transition];
+}
+
+header .navbar-collapse.collapse {
+	height: 0;
+	transition: [header-transition];
+}
+
+header .navbar-collapse.collapse.show {
+	height: auto;
+	transition: [header-transition];
+}
+
+header .navbar .logo {
+	z-index: 10000;
+}
+
+header nav.navbar #main-nav {
+	background: [colour-nav-dropdown-background]; /* Fall back */
+	background: [colour-nav-dropdown-background-rgba {nav-dropdown-menu-opacity}];
+	width: 100%;
+	z-index: 1000;
+	margin-bottom: 0;
+}
+
+header.scrolled .logo a.navbar-brand {
+	margin-top: 0;
+}
+
+header nav button:focus {
+	outline: none;
+}
+
+nav .collapse:not(.show) {
+	display: none !important; /* Required to override the !important statement on the .d-flex class - otherwise menu always shows */
+}
+
+header nav button.navbar-toggler {
+	position: relative;
+	top: 0;
+	border-radius: 0;
+	transition: [header-transition];
+	z-index: 1000;
+}
+
+header nav ul li:not(:last-child):after {
+	content: "";
+}
+
+header #main-nav ul li {
+	margin: 0;
+}
+
+header #main-nav ul li a {
+	display: block;
+	width: 100%;
+	margin: 0;
+	text-align: center;
+}
+
+header #main-nav ul li :is(a, a:link, a:visited) {
+	color: [colour-nav-dropdown-text];
+	background: transparent;
+}
+
+header #main-nav ul li a:hover {
+	color: [colour-nav-dropdown-text];
+	background: [colour-nav-dropdown-background-hover]; /* Fall back */
+	background: [colour-nav-dropdown-background-rgba {nav-dropdown-menu-opacity}];
+}
+
+header #main-nav ul li a:active {
+	color: [colour-nav-dropdown-text];
+	background: [colour-nav-dropdown-background-active];
+}
+
+header .navbar-collapse {
+	z-index: 100;
+}
+
+.navbar-nav .dropdown-menu {
+	text-align: center;
+	transform: inherit;
+	background: transparent;
+}
+
+.navbar-nav .dropdown-menu .dropdown-menu {
+	width: 100%;
+}
+
+nav a.nav-link:before, nav a.dropdown-item:before {
+	background: transparent;
+}
+
+header #main-nav ul li a:is(.dropdown-item, .dropdown-item:link, .dropdown-item:visited) {
+	color: [colour-nav-dropdown-text-rgba 0.7];
+}
+
+header #main-nav ul li a.dropdown-item:hover {
+	color: [colour-nav-dropdown-text-rgba 0.6];
+}
+
+header #main-nav ul li a.dropdown-item:active {
+	color: [colour-nav-dropdown-text-rgba 0.55];
+}
+
+
+/* Admin bar positioning */
+
+body.header-fixed.logged-in.admin-bar header { /* Not required when header is positioned relative */
+	top: 0;
+}',
   'menu_order' => 163,
   'instructions' => 'This area contains the responsivity for the Header navigation. It is dynamically added to the correct area of the responsivity tab when the CSS file is created, based on the setting of Navbar Expand on  the Nav tab. Nav CSS for specific screen sizes - in particular, XS - should be entered elsewhere above.<br /><br />
 

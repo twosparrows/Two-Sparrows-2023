@@ -30,11 +30,11 @@ function tspSetHeadingTopMargin() {
 }
 
 function skewedRandom() { // From https://stackoverflow.com/questions/16110758/generate-random-number-with-a-non-uniform-distribution
-    const a = Math.pow(Math.random(), 2);
-    if (Math.random() < 0.5) {
-        return a;
-    }
-    return 1 - a;
+	const a = Math.pow(Math.random(), 2);
+	if ( Math.random() < 0.5 ) {
+		return a;
+	}
+	return 1 - a;
 }
 
 // Testimonials section
@@ -76,10 +76,11 @@ jQuery(document).ready(function($){
     // let heading1 = document.querySelector('section.kokako h1');
     // let heading2s = document.querySelectorAll('section.kokako h2');
         let headingMotifBars = document.querySelectorAll('.kokako .motif-bar-heading .bar');
-        let textWithPhotoImages = document.querySelectorAll('section.textWithPhoto .image');
-        let multipleColumns = document.querySelectorAll('section.multipleColumns .multiple-columns-col');
-        let multipleRows = document.querySelectorAll('section.multipleRows .multiple-rows-row');
-        let latestPosts = document.querySelectorAll('section.kokako.latestPosts .blog-grid.post');
+    let allButtons = document.querySelectorAll('button, input[type="submit"], a.button, a.btn');
+    // let textWithPhotoImages = document.querySelectorAll('section.textWithPhoto .image');
+    // let multipleColumns = document.querySelectorAll('section.multipleColumns .multiple-columns-col');
+    // let multipleRows = document.querySelectorAll('section.multipleRows .multiple-rows-row');
+    // let latestPosts = document.querySelectorAll('section.kokako.latestPosts .blog-grid.post');
         
     /* heading2s.forEach(
     	(item) => ( item.style.animationDelay = (Math.random() * 0.5) + 's' )
@@ -171,6 +172,24 @@ jQuery(document).ready(function($){
     		}
     	});
         
+        
+        
+        
+    	// All Buttons
+    	
+    	let animationDelayButtons = animationDelayInitial; // Will add animationDelayInitial (in seconds) in case h1 and first h2 are in view together
+    	allButtons.forEach(function(aButton) {
+    		if ( inViewPort(aButton) ) {
+    			if ( ( !aButton.classList.contains('appear') ) || ( performance.now() < 3000) ) { // If page has recently loaded, add a variation, so that headings in view don't display all at the same time
+    				aButton.style.animationDelay = animationDelayButtons + 's'; // Animation delay doesn't need to be removed, as this code is only executing when a heading is in view with 4 seconds of the page loading, and the animation is never being re-triggered
+    				animationDelayButtons += animationDelayIncrease;
+    			}
+    			aButton.classList.add('appear');
+    		}
+    	});
+        
+        
+    	/*
     	// Text with Photo images
     	animationDelay = animationDelayInitial; // Will add 300ms in case h1 and first h2 are in view together, to match headings
     	textWithPhotoImages.forEach(function(textWithPhotoImage) {
@@ -182,7 +201,9 @@ jQuery(document).ready(function($){
     			textWithPhotoImage.classList.add('appear');
     		}
     	});
+    	*/
         
+    	/*
     	// Multiple Columns columns
     	animationDelay = animationDelayInitial;
     	parentSection = "";
@@ -228,6 +249,7 @@ jQuery(document).ready(function($){
     			latestPostsPost.classList.add('appear');
     		}
     	});
+    	*/
         
     	window.requestAnimationFrame(animateOnScroll);
     }

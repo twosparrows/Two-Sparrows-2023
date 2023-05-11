@@ -757,121 +757,14 @@ header .header-widget {
 * END: FOR NAV TESTING */
 
 
-/* Logged in */
+/* Logged in *
 
-body.header-fixed.logged-in.admin-bar header { /* Not required when header is positioned relative */
+body.header-fixed.logged-in.admin-bar header { /* Not required when header is positioned relative *
 	top: 32px;
-}
+} */
 
 
 /* Nav */
-
-.hamburger {
-	padding: 15px; /* Was 15px 15px 5px 15px; */
- 	/* display: inline-block; */
-	/* height: 140px; */
-	display: flex;
-	align-items: center;
- 	cursor: pointer;
- 	transition-property: opacity, filter;
- 	transition-duration: 0.15s;
-	transition-timing-function: linear;
- 	font: inherit;
-	color: inherit;
-	text-transform: none;
-	background-color: transparent;
-	border: 0;
-	margin: 0;
-	overflow: visible;
-}
-
-button.hamburger:focus {
-	outline: none;
-}
-
-button.hamburger:active {
-	background: transparent;
-}
-
-.hamburger:hover {
-	opacity: 0.7;
-}
-
-.hamburger:not(.collapsed):hover {
-	opacity: 0.7;
-}
-
-.hamburger:not(.collapsed) .hamburger-inner,
-.hamburger:not(.collapsed) .hamburger-inner::before,
-.hamburger:not(.collapsed) .hamburger-inner::after {
-	background-color: #222f29;
-}
-
-.hamburger-box {
-	width: 40px;
-	height: 24px;
-	display: inline-block;
-	position: relative;
-}
-
-.hamburger-inner {
-	display: block;
-	top: 50%;
-	margin-top: -2px;
-}
-
-.hamburger-inner,
-.hamburger-inner::before,
-.hamburger-inner::after {
-	width: 40px;
-	height: 4px;
-	background-color: #222f29;
-	/* border-radius: 4px; */
-	position: absolute;
-	transition-property: transform;
-	transition-duration: 0.15s;
-	transition-timing-function: ease;
-}
-
-.hamburger-inner::before,
-.hamburger-inner::after {
-	content: "";
-	display: block;
-}
-
-.hamburger-inner::before {
-	top: -10px;
-}
-
-.hamburger-inner::after {
-	bottom: -10px;
-}
-
-.hamburger--3dx .hamburger-box {
-	perspective: 80px;
-}
-
-.hamburger--3dx .hamburger-inner {
-	transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-.hamburger--3dx .hamburger-inner::before,
-.hamburger--3dx .hamburger-inner::after {
-	transition: transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-.hamburger--3dx:not(.collapsed) .hamburger-inner {
-	background-color: transparent !important;
-	transform: rotateY(180deg);
-}
-
-.hamburger--3dx:not(.collapsed) .hamburger-inner::before {
-	transform: translate3d(0, 10px, 0) rotate(45deg);
-}
-
-.hamburger--3dx:not(.collapsed) .hamburger-inner::after {
-	transform: translate3d(0, -10px, 0) rotate(-45deg);
-}
 
 header nav.navbar {
 	padding-top: 0;
@@ -2302,11 +2195,12 @@ body#home-page .kokako.pageBanner.section2 h2 {
 
 /* Animations */
 
-/* section.kokako :is(h1, h2), */
+/* section.kokako :is(h1, h2),
 section.kokako.textWithPhoto .row .image,
 section.kokako.multipleColumns .multiple-columns-col,
 section.kokako.multipleRows .multiple-rows-row,
-section.kokako.latestPosts .blog-grid.post {
+section.kokako.latestPosts .blog-grid.post */
+button, input[type="submit"], a.button, a.btn {
 	opacity: 0.5;
 	transform: scale(0.95);
 }
@@ -2321,7 +2215,7 @@ section.kokako.textWithPhoto .row .text :is(h1,  h2) {
 
 section.kokako.textWithPhoto .row.flex-row-reverse .text :is(h1, h2) {
 	transform: translateX(-20px) scale(0.95);
-} */
+}
 
 section.kokako.textWithPhoto .row .image {
 	transform: translateX(-20px);
@@ -2329,40 +2223,45 @@ section.kokako.textWithPhoto .row .image {
 
 section.kokako.textWithPhoto .row.flex-row-reverse .image {
 	transform: translateX(20px);
-}
+} */
 
 /* section.kokako:not(.textWithPhoto) :is(h1, h2).appear,
-section.kokako.multipleColumns .col-xs-12.appear :is(h1, h2) {
-	transform: translateY(-20px) scale(0.95);
-	animation: slideDownScale 1s ease-out forwards;
+section.kokako.multipleColumns .col-xs-12.appear :is(h1, h2) */
+button.appear,
+input[type="submit"].appear,
+a.button.appear,
+a.btn.appear {
+	/* transform: translateY(-20px) scale(0.95); */
+	transform: scale(0.95);
+	animation: slideDownBounceScale 0.6s ease-out forwards;
 }
 
-section.kokako.textWithPhoto .row .text :is(h1, h2).appear {
+/* section.kokako.textWithPhoto .row .text :is(h1, h2).appear {
 	transform: translateX(20px) scale(0.95);
-	animation: slideLeftScale 1s ease-out forwards;
+	animation: slideLeftScale 0.6s ease-out forwards;
 }
 
 section.kokako.textWithPhoto .row.flex-row-reverse .text :is(h1, h2).appear {
 	transform: translateX(-20px) scale(0.95);
-	animation: slideRightScale 1s ease-out forwards;
-} */
+	animation: slideRightScale 0.6s ease-out forwards;
+}
 
 section.kokako.textWithPhoto .row .image.appear {
 	transform: translateX(-20px);
-	animation: slideRight 1s ease-out forwards;
+	animation: slideRight 0.6s ease-out forwards;
 }
 
 section.kokako.textWithPhoto .row.flex-row-reverse .image.appear {
 	transform: translateX(20px);
-	animation: slideLeft 1s ease-out forwards;
+	animation: slideLeft 0.6s ease-out forwards;
 }
 
 section.kokako.multipleColumns .multiple-columns-col.appear,
 section.kokako.multipleRows .multiple-rows-row.appear,
 section.kokako.latestPosts .blog-grid.post.appear {
 	transform: scale(0.95);
-	animation: scale 1s ease-out forwards;
-}
+	animation: scale 0.6s ease-out forwards;
+} */
 
 @keyframes slideUpScale {
 	from {
@@ -2393,6 +2292,22 @@ section.kokako.latestPosts .blog-grid.post.appear {
 	}
 	to {
 		transform: translateY(0) scale(1);
+		opacity: 1;
+	}
+}
+
+
+@keyframes slideDownBounceScale {
+	0% {
+		transform: scale(0.95);
+		opacity: 0.5;
+	}
+	70% {
+		transform: scale(1.02);
+		opacity: 1;
+	}
+	100% {
+		transform: scale(1);
 		opacity: 1;
 	}
 }
@@ -2822,8 +2737,7 @@ body a.fbx-close {
     	top: 140px;
     }
         
-    /* Page Banner */
-        
+           
     /* Page Banner - Vertical Height */
         
     section.kokako.vh-100 {
@@ -3169,144 +3083,6 @@ body a.fbx-close {
         
     footer ul.sub-menu li {
     	text-indent: 0;
-    }
-        
-        
-    /* Nav Responsivity CSS */
-        
-    header {
-    	background: #fff; /* Fall back */
-    	background: rgba(255,255,255,0.8)
-    }
-        
-    .header-background {
-    	display: none !important;
-    }
-        
-    header .navbar-collapse {
-    	position: absolute;
-    	width: calc(100% + 60px);
-    	top: 70px;
-    	left: -30px;
-    	align-items: normal; /* This is important for a smooth transition when menu collapsed! */
-    	transition: 1s ease all;
-    	margin-top: 0;
-    	transition: 1s ease all;
-    }
-        
-    header.scrolled .navbar-collapse,
-    header .navbar-collapse.show {
-    	transition: 1s ease all;
-    }
-        
-    header .navbar-collapse.collapse {
-    	height: 0;
-    	transition: 1s ease all;
-    }
-        
-    header .navbar-collapse.collapse.show {
-    	height: auto;
-    	transition: 1s ease all;
-    }
-        
-    header .navbar .logo {
-    	z-index: 10000;
-    }
-        
-    header nav.navbar #main-nav {
-    	background: #222f29; /* Fall back */
-    	background: rgba(34,47,41,0.8);
-    	width: 100%;
-    	z-index: 1000;
-    	margin-bottom: 0;
-    }
-        
-    header.scrolled .logo a.navbar-brand {
-    	margin-top: 0;
-    }
-        
-    header nav button:focus {
-    	outline: none;
-    }
-        
-    nav .collapse:not(.show) {
-    	display: none !important; /* Required to override the !important statement on the .d-flex class - otherwise menu always shows */
-    }
-        
-    header nav button.navbar-toggler {
-    	position: relative;
-    	top: 0;
-    	border-radius: 0;
-    	transition: 1s ease all;
-    	z-index: 1000;
-    }
-        
-    header nav ul li:not(:last-child):after {
-    	content: "";
-    }
-        
-    header #main-nav ul li {
-    	margin: 0;
-    }
-        
-    header #main-nav ul li a {
-    	display: block;
-    	width: 100%;
-    	margin: 0;
-    	text-align: center;
-    }
-        
-    header #main-nav ul li :is(a, a:link, a:visited) {
-    	color: #fff;
-    	background: transparent;
-    }
-        
-    header #main-nav ul li a:hover {
-    	color: #fff;
-    	background: #3b4842; /* Fall back */
-    	background: rgba(34,47,41,0.8);
-    }
-        
-    header #main-nav ul li a:active {
-    	color: #fff;
-    	background: #4f5c56;
-    }
-        
-    header .navbar-collapse {
-    	z-index: 100;
-    }
-        
-    .navbar-nav .dropdown-menu {
-    	text-align: center;
-    	transform: inherit;
-    	background: transparent;
-    }
-        
-    .navbar-nav .dropdown-menu .dropdown-menu {
-    	width: 100%;
-    }
-        
-    nav a.nav-link:before, nav a.dropdown-item:before {
-    	background: transparent;
-    }
-        
-    header #main-nav ul li a:is(.dropdown-item, .dropdown-item:link, .dropdown-item:visited) {
-    	color: rgba(255,255,255,0.7);
-    }
-        
-    header #main-nav ul li a.dropdown-item:hover {
-    	color: rgba(255,255,255,0.6);
-    }
-        
-    header #main-nav ul li a.dropdown-item:active {
-    	color: rgba(255,255,255,0.55);
-    }
-        
-        
-    /* Admin bar positioning */
-        
-    body.header-fixed.logged-in.admin-bar header { /* Not required when header is positioned relative */
-    	top: 0;
     }
     
     /* Centred Images */
@@ -3664,4 +3440,137 @@ body a.fbx-close {
     	min-height: 180px;
     }
     
+}header {
+	background: #fff; /* Fall back */
+	background: rgba(255,255,255,0.8)
+}
+
+/* .header-background {
+	display: none !important;
+} */
+
+header .navbar-collapse {
+	position: absolute;
+	width: calc(100% + 60px);
+	top: 70px;
+	left: -30px;
+	align-items: normal; /* This is important for a smooth transition when menu collapsed! */
+	transition: 1s ease all;
+	margin-top: 0;
+	transition: 1s ease all;
+}
+
+header.scrolled .navbar-collapse,
+header .navbar-collapse.show {
+	transition: 1s ease all;
+}
+
+header .navbar-collapse.collapse {
+	height: 0;
+	transition: 1s ease all;
+}
+
+header .navbar-collapse.collapse.show {
+	height: auto;
+	transition: 1s ease all;
+}
+
+header .navbar .logo {
+	z-index: 10000;
+}
+
+header nav.navbar #main-nav {
+	background: #222f29; /* Fall back */
+	background: rgba(34,47,41,0.8);
+	width: 100%;
+	z-index: 1000;
+	margin-bottom: 0;
+}
+
+header.scrolled .logo a.navbar-brand {
+	margin-top: 0;
+}
+
+header nav button:focus {
+	outline: none;
+}
+
+nav .collapse:not(.show) {
+	display: none !important; /* Required to override the !important statement on the .d-flex class - otherwise menu always shows */
+}
+
+header nav button.navbar-toggler {
+	position: relative;
+	top: 0;
+	border-radius: 0;
+	transition: 1s ease all;
+	z-index: 1000;
+}
+
+header nav ul li:not(:last-child):after {
+	content: "";
+}
+
+header #main-nav ul li {
+	margin: 0;
+}
+
+header #main-nav ul li a {
+	display: block;
+	width: 100%;
+	margin: 0;
+	text-align: center;
+}
+
+header #main-nav ul li :is(a, a:link, a:visited) {
+	color: #fff;
+	background: transparent;
+}
+
+header #main-nav ul li a:hover {
+	color: #fff;
+	background: #3b4842; /* Fall back */
+	background: rgba(34,47,41,0.8);
+}
+
+header #main-nav ul li a:active {
+	color: #fff;
+	background: #4f5c56;
+}
+
+header .navbar-collapse {
+	z-index: 100;
+}
+
+.navbar-nav .dropdown-menu {
+	text-align: center;
+	transform: inherit;
+	background: transparent;
+}
+
+.navbar-nav .dropdown-menu .dropdown-menu {
+	width: 100%;
+}
+
+nav a.nav-link:before, nav a.dropdown-item:before {
+	background: transparent;
+}
+
+header #main-nav ul li a:is(.dropdown-item, .dropdown-item:link, .dropdown-item:visited) {
+	color: rgba(255,255,255,0.7);
+}
+
+header #main-nav ul li a.dropdown-item:hover {
+	color: rgba(255,255,255,0.6);
+}
+
+header #main-nav ul li a.dropdown-item:active {
+	color: rgba(255,255,255,0.55);
+}
+
+
+/* Admin bar positioning */
+
+body.header-fixed.logged-in.admin-bar header { /* Not required when header is positioned relative */
+	top: 0;
 }
