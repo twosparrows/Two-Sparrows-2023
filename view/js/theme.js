@@ -76,7 +76,7 @@ jQuery(document).ready(function($){
     // let heading1 = document.querySelector('section.kokako h1');
     // let heading2s = document.querySelectorAll('section.kokako h2');
         let headingMotifBars = document.querySelectorAll('.kokako .motif-bar-heading .bar');
-    let allButtons = document.querySelectorAll('button, input[type="submit"], a.button, a.btn');
+    let allButtons = document.querySelectorAll('button:not(.menu-toggler), input[type="submit"], a.button, a.btn');
     // let textWithPhotoImages = document.querySelectorAll('section.textWithPhoto .image');
     // let multipleColumns = document.querySelectorAll('section.multipleColumns .multiple-columns-col');
     // let multipleRows = document.querySelectorAll('section.multipleRows .multiple-rows-row');

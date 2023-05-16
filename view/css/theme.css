@@ -410,14 +410,14 @@ button, input[type="submit"], a.button, a.btn {
     border: none;
     border-radius: 20px;
     white-space: normal; /* or nowrap */
-    transform: scale(1);
+    /* transform: scale(1); */
     transition: all 0.3s ease;
 }
 
 button:hover:not(.navbar-toggler), input[type="submit"]:hover, a.button:hover, a.btn:hover {
     color: #fff;
     background: #3b4842;
-    transform: scale(1.05);
+    /* transform: scale(1.03); */
 }
 
 button:active:not(.navbar-toggler), input[type="submit"]:active, a.button:active, a.btn:active {
@@ -428,7 +428,7 @@ button:focus, input[type="submit"]:focus, a.button:focus, a.btn:focus {
     box-shadow: none;
     color: #fff;
     background: #3b4842;
-    transform: scale(1.05);
+    /* transform: scale(1.03); */
 }
 
 button.alt, input.alt[type="submit"], a.button.alt, a.btn.alt { 
@@ -766,6 +766,34 @@ body.header-fixed.logged-in.admin-bar header { /* Not required when header is po
 
 /* Nav */
 
+nav button.menu-toggler {
+	padding-left: 0;
+	padding-right: 90px;
+	margin: 0;
+	color: #222f29;
+	background: transparent;
+	background-image: url(../../img/menu-icon.svg);
+	background-position: right top;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	transform: scale(1);
+}
+
+header.scrolled nav button.menu-toggler {
+	padding: 15px 70px 15px 0; /* 10px less top and bottom, 20px less on right to keep circular background image in relationship to text */
+}
+
+nav button.menu-toggler:hover,
+nav button.menu-toggler:active {
+	color: #222f29;
+	background: transparent;
+	background-image: url(../../img/menu-icon.svg);
+	background-position: right top;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	transform: scale(1.03);
+}
+
 header nav.navbar {
 	padding-top: 0;
 	padding-bottom: 0;
@@ -778,7 +806,7 @@ header nav.navbar #main-nav { /* Push nav menu up (is positioned flex) */
 	transition: 1s ease all;
 }
 
-header .navbar-collapse {
+/* header .navbar-collapse {
 	margin-top: 70px;
 	transition: 1s ease all;
 }
@@ -786,7 +814,7 @@ header .navbar-collapse {
 header.scrolled .navbar-collapse {
 	margin-top: 0;
 	transition: 1s ease all;
-}
+} */
 
 nav ul {
 	margin: 0;
@@ -1313,9 +1341,9 @@ section.kokako.hide-section {
 	font-size: 2rem;
 }
 
-.kokako.callToAction ul.social-media-links {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+.kokako.callToAction ul.social-media-links { /* Mobile first */
+	display: flex;
+	flex-direction: column;
 	grid-gap: 30px;
 }
 
@@ -2212,7 +2240,10 @@ section.kokako.textWithPhoto .row .image,
 section.kokako.multipleColumns .multiple-columns-col,
 section.kokako.multipleRows .multiple-rows-row,
 section.kokako.latestPosts .blog-grid.post */
-button, input[type="submit"], a.button, a.btn {
+button:not(.menu-toggler),
+input[type="submit"],
+a.button,
+a.btn {
 	opacity: 0.5;
 	transform: scale(0.95);
 }
@@ -2239,7 +2270,7 @@ section.kokako.textWithPhoto .row.flex-row-reverse .image {
 
 /* section.kokako:not(.textWithPhoto) :is(h1, h2).appear,
 section.kokako.multipleColumns .col-xs-12.appear :is(h1, h2) */
-button.appear,
+button.appear:not(.menu-toggler),
 input[type="submit"].appear,
 a.button.appear,
 a.btn.appear {
@@ -3159,7 +3190,7 @@ body a.fbx-close {
     /* Footer */
         
     footer {
-    	background-position: left calc(50% + 223px) bottom -120px;
+    	background-position: left calc(50% + 296px) bottom -120px;
     }
         
     footer .two-sparrows-supports .col-sm-6.shielded {
@@ -3188,7 +3219,13 @@ body a.fbx-close {
     	border-right: 1px #fff solid;
     }
     
-
+    /* Call To Action */
+        
+    .kokako.callToAction ul.social-media-links {
+    	display: grid;
+    	grid-template-columns: repeat(3, 1fr);
+    }
+    
 }
 
 /* SM and below */

@@ -1,6 +1,6 @@
 CSS Options Fields
 
-Updated at 16/05/2023 12:06.51am UTC
+Updated at 16/05/2023 4:40.24am UTC
 Referrer: /wp-admin/admin.php?page=acf-options-structural-css-editor
 
 
@@ -18,7 +18,7 @@ Shortcodes:
 [button-icon-size] => 25px
 [button-padding-horizontal] => 30px
 [button-padding-vertical] => 25px
-[button-swell] => scale(1.05)
+[button-swell] => scale(1.03)
 [button-transition] => all 0.3s ease
 [color-anchor-underline-active-rgba => 79,92,86
 [color-anchor-underline-active] => #4f5c56
@@ -1077,7 +1077,7 @@ Please note: After updating this value, you may need to <a href="tools.php?page=
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'text',
-  'value' => 'scale(1.05)',
+  'value' => 'scale(1.03)',
   'menu_order' => 84,
   'instructions' => 'Shortcode: [button-swell]<br /><br />
 
@@ -3190,8 +3190,8 @@ padding: [button-padding-vertical] [button-padding-horizontal];
 border: none;
 border-radius: [button-border-radius];
 white-space: normal; /* or nowrap */
-transform: scale(1);
-transition: [button-transition];',
+/* transform: scale(1); */
+transition: [button-transition]; ',
   'menu_order' => 97,
   'instructions' => '',
   'required' => 0,
@@ -3233,7 +3233,7 @@ transition: 0.1s ease all;',
   'type' => 'textarea',
   'value' => 'color: [colour-text-light];
 background: [colour-background-dark-hover];
-transform: [button-swell];',
+/* transform: [button-swell]; */',
   'menu_order' => 98,
   'instructions' => '',
   'required' => 0,
@@ -3296,7 +3296,7 @@ padding: 12px 27px;',
   'value' => 'box-shadow: none;
 color: [colour-text-light];
 background: [colour-background-dark-hover];
-transform: [button-swell];',
+/* transform: [button-swell]; */',
   'menu_order' => 100,
   'instructions' => '',
   'required' => 0,
@@ -5608,7 +5608,35 @@ button.hamburger:active {
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'textarea',
-  'value' => 'header nav.navbar {
+  'value' => 'nav button.menu-toggler {
+	padding-left: 0;
+	padding-right: 90px;
+	margin: 0;
+	color: [colour-nav-text];
+	background: transparent;
+	background-image: url(../../img/menu-icon.svg);
+	background-position: right top;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	transform: scale(1);
+}
+
+header.scrolled nav button.menu-toggler {
+	padding: [text-margin] 70px [text-margin] 0; /* 10px less top and bottom, 20px less on right to keep circular background image in relationship to text */
+}
+
+nav button.menu-toggler:hover,
+nav button.menu-toggler:active {
+	color: [colour-nav-text];
+	background: transparent;
+	background-image: url(../../img/menu-icon.svg);
+	background-position: right top;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	transform: [button-swell];
+}
+
+header nav.navbar {
 	padding-top: 0;
 	padding-bottom: 0;
 	height: [header-height];
@@ -5620,7 +5648,7 @@ header nav.navbar #main-nav { /* Push nav menu up (is positioned flex) */
 	transition: [header-transition];
 }
 
-header .navbar-collapse {
+/* header .navbar-collapse {
 	margin-top: 70px;
 	transition: [header-transition];
 }
@@ -5628,7 +5656,7 @@ header .navbar-collapse {
 header.scrolled .navbar-collapse {
 	margin-top: 0;
 	transition: [header-transition];
-}
+} */
 
 nav ul {
 	margin: 0;
@@ -6829,9 +6857,9 @@ section.kokako.section1:not(.pageBanner) {
 	font-size: 2rem;
 }
 
-.kokako.callToAction ul.social-media-links {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+.kokako.callToAction ul.social-media-links { /* Mobile first */
+	display: flex;
+	flex-direction: column;
 	grid-gap: [tsp-calc tm *2];
 }
 
@@ -6869,7 +6897,17 @@ section.kokako.section1:not(.pageBanner) {
 .kokako.callToAction ul.social-media-links li:nth-of-type(3n) a:active {
 	background: [colour-background-light-active];
 }',
-      'section_responsivity' => false,
+      'section_responsivity' => 
+      array (
+        0 => 
+        array (
+          'screen_size' => 'sm_above',
+          'css_at_screen_size' => '.kokako.callToAction ul.social-media-links {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}',
+        ),
+      ),
     ),
     1 => 
     array (
@@ -9597,7 +9635,10 @@ section.kokako.textWithPhoto .row .image,
 section.kokako.multipleColumns .multiple-columns-col,
 section.kokako.multipleRows .multiple-rows-row,
 section.kokako.latestPosts .blog-grid.post */
-button, input[type="submit"], a.button, a.btn {
+button:not(.menu-toggler),
+input[type="submit"],
+a.button,
+a.btn {
 	opacity: [animation-start-opacity];
 	transform: scale([animation-start-scale]);
 }
@@ -9684,7 +9725,7 @@ section.kokako.textWithPhoto .row.flex-row-reverse .image {
   'type' => 'textarea',
   'value' => '/* section.kokako:not(.textWithPhoto) :is(h1, h2).appear,
 section.kokako.multipleColumns .col-xs-12.appear :is(h1, h2) */
-button.appear,
+button.appear:not(.menu-toggler),
 input[type="submit"].appear,
 a.button.appear,
 a.btn.appear {
@@ -10889,7 +10930,7 @@ Between 768px and 991px window width. Full CSS must be used.',
   'value' => '/* Footer */
 
 footer {
-	background-position: left calc(50% + 223px) bottom -120px;
+	background-position: left calc(50% + 296px) bottom -120px;
 }
 
 footer .two-sparrows-supports .col-sm-6.shielded {

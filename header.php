@@ -102,12 +102,7 @@ if ( !is_front_page() ) {
 				<?php } ?>
 
 				
-				<button class="navbar-toggler hamburger hamburger--<?php the_field('hamburger_animation', 'option'); ?> collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-					<?php // Integrates "Hamburgers" by Jonathan Suh. See https://jonsuh.com/hamburgers/ ?>
-					<span class="hamburger-box">
-						<span class="hamburger-inner"></span>
-					</span>
-				</button>
+				<button class="menu-toggler" type="button" aria-expanded="false" aria-label="Toggle menu">Menu</button>
 				
 				<div class="collapse navbar-collapse d-flex<?php if ( "right" != $logoPosition ) { echo " flex-row-reverse"; } ?>" id="navbarCollapse"><?php // d-flex and flex-row-reverse classes align the menu to the right. See https://getbootstrap.com/docs/4.1/utilities/flex/ . Note that these classes may require overrides to collapse the menu at mobile sizes as they set the display to flex (instead of none) */ ?>
 
@@ -117,10 +112,9 @@ if ( !is_front_page() ) {
 							'theme_location'    => 'main-menu',
 							'depth'             => 2,
 							'container'         => 'div',
-							'container_class'   => '', // collapse navbar-collapse',
+							'container_class'   => '',
 							'container_id'      => 'main-nav',
-							// 'menu_class'        => 'nav navbar-nav flex-row ml-auto', // navbar-right
-							'menu_class'        => 'navbar-nav mx-auto', // navbar-right
+							'menu_class'        => 'nav',
 							'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
 							'walker'            => new WP_Bootstrap_Navwalker()
 						)

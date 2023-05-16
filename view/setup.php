@@ -4,14 +4,14 @@
 
 THEME SETUP
 
-Updated at 16/05/2023 12:06.51am UTC
+Updated at 16/05/2023 4:40.24am UTC
 
 Included via functions/site.php
 
 */
 
 
-$GLOBALS['updatedTimeStamp'] = 1684195611;
+$GLOBALS['updatedTimeStamp'] = 1684212024;
 
 // Development Modes
 $GLOBALS['kokakoDevelopmentMode'] = false;
@@ -104,7 +104,7 @@ $GLOBALS['footerLogoWidthRetina'] = 428;
 // Functions
 
 function tsp_updated_timeStamp() { // Can also be called as a function if required, although higher overhead than a variable
-     return 1684195611;
+     return 1684212024;
 }
 
 ?>
