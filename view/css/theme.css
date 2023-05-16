@@ -877,6 +877,11 @@ footer {
     position: relative;
     padding: 90px 0; /* Ensure bottom padding prevents Google reCaptcha from obscuring footer (can happen on all screen sizes) */
     background: #222f29;
+    background-image: url(../../img/leaves.svg);
+    background-repeat: no-repeat;
+    background-size: 189px auto;
+    /* background-position: left 64% bottom -120px; */
+    background-position: right bottom -120px; /* Mobile first */
     color: #fff;
     text-align: center;
 }
@@ -895,12 +900,29 @@ footer .footer-logo img {
     width: 214px;
 }
 
-footer ul.sub-menu {
+footer ul#menu-footer-menu {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	grid-gap: 15px 30px;
+	margin-top: 45px;
+	margin-bottom: 0;
+}
+
+footer :not(ul#menu-footer-menu) li {
+	margin-top: 10px;
+}
+
+footer ul#menu-footer-menu li {
 	margin: 0;
 }
 
-footer li {
-	margin-top: 10px;
+footer li a {
+	border-bottom: none;
+}
+
+/* footer ul.sub-menu {
+	margin: 0;
 }
 
 footer ul.sub-menu li {
@@ -908,23 +930,13 @@ footer ul.sub-menu li {
 	margin-top: 0;
 }
 
-footer ul li:first-child {
-	margin-top: 0
-}
-
-footer li a {
-	border-bottom: none;
-	text-transform: uppercase;
-	font-weight: bold;
-}
-
 footer ul.sub-menu li a {
 	text-transform: capitalize;
 	font-weight: normal;
-}
+} */
 
 footer :is(a, a:link, a:visited) {
-	display: inline-block;
+	/* display: inline-block; */
 	color: #fff;
 	text-decoration: none;
 	border-bottom: none;
@@ -2674,19 +2686,6 @@ body a.fbx-close {
     footer .tsp-social-links {
     	justify-content: left;
     }
-        
-    footer .two-sparrows-supports .col-sm-6.trees-that-count {
-    	justify-content: flex-end;
-    }
-        
-    footer .two-sparrows-supports .col-sm-6.shielded {
-    	justify-content: flex-start;
-    }
-        
-    footer .two-sparrows-supports img {
-    	margin-left: 45px;
-    	margin-right: 45px;
-    }
     
     /* Latest Posts */
         
@@ -3040,13 +3039,8 @@ body a.fbx-close {
     	margin-bottom: 30px;
     }
         
-    footer .footer-col-4 h3 {
+    /* footer .footer-col-4 h3 {
     	margin-top: 15px;
-    }
-        
-    footer img#shielded-logo {
-    	margin-left: auto !important;
-    	margin-right: auto !important;
     }
         
     footer #subfooter span.footer-copyright-separator:before {
@@ -3054,7 +3048,7 @@ body a.fbx-close {
     	white-space: pre;
     }
         
-    footer #subfooter span.footer-copyright-separator { /* Hide vertical bar and make it a line break instead */
+    footer #subfooter span.footer-copyright-separator { /* Hide vertical bar and make it a line break instead *
     	display: block;
     	z-index: -1000;
     	opacity: 0;
@@ -3072,18 +3066,13 @@ body a.fbx-close {
     }
         
     footer ul.menu {
-    	margin-top: 0;
+    	margin-top: 45px;
     	margin-bottom: 0;
-    }
-        
-    footer ul.menu > li > a {
-    	display: inline-block;
-    	margin-top: 15px;
     }
         
     footer ul.sub-menu li {
     	text-indent: 0;
-    }
+    } */
     
     /* Centred Images */
         
@@ -3169,8 +3158,34 @@ body a.fbx-close {
 
     /* Footer */
         
+    footer {
+    	background-position: left calc(50% + 223px) bottom -120px;
+    }
+        
     footer .two-sparrows-supports .col-sm-6.shielded {
     	border-left: 1px #fff solid;
+    }
+        
+    footer .two-sparrows-supports .col-sm-6.trees-that-count {
+    	justify-content: flex-end;
+    }
+        
+    footer .two-sparrows-supports .col-sm-6.shielded {
+    	justify-content: flex-start;
+    }
+        
+    footer .two-sparrows-supports img {
+    	margin-left: 45px;
+    	margin-right: 45px;
+    }
+        
+    footer ul#menu-footer-menu {
+    	grid-gap: 15px;
+    }
+        
+    footer ul#menu-footer-menu li:not(:last-child) {
+    	padding-right: 15px;
+    	border-right: 1px #fff solid;
     }
     
 

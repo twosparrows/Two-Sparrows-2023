@@ -108,30 +108,31 @@ if ( $footerCtaOverride != "hide" ) { // Show defaults
 						<?php }
 					}
 
+					?><p>Copyright &copy; <?php tsp_copyright_line( kokako_base_year ); ?><br /><a href="<?= get_option( 'home' ); ?>"><?php bloginfo() ?></a></p><?php
+					/* <p>Website created for <span class="non-breaking-spaces"><?php bloginfo() ?></span> by <?php tsp_website_link_line(); ?></p> */
+
 					// All columns: Add Widget
 					if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar( "Footer Column " . $c ) ) :
 					endif;
 					
 					// Final Column only: Add Copyright line
 					// if ( $c == $GLOBALS['widgetAreas']['number-of-footer-columns'] ) {
-						// if ( false == $GLOBALS['widgetAreas']['subfooter-widget'] ) { // Display the copyright line here if no Subfooter (otherwise displayed in Subfooter ?>
+					// if ( false == $GLOBALS['widgetAreas']['subfooter-widget'] ) { // Display the copyright line here if no Subfooter (otherwise displayed in Subfooter ?>
 
-							<p>Copyright &copy; <?php tsp_copyright_line( kokako_base_year ); ?><br /><a href="<?= get_option( 'home' ); ?>"><?php bloginfo() ?></a></p>
-							<?php /* <p>Website created for <span class="non-breaking-spaces"><?php bloginfo() ?></span> by <?php tsp_website_link_line(); ?></p> */ ?>
-						</div>
 					</div>
+				</div>
 
-					<div class="row two-sparrows-supports">
-						<div class="col-xs-12 col-sm-6 trees-that-count">
-							<a href="//www.treesthatcount.co.nz/" class="no-underline" target="_blank"><img class="alignright" src="<?php bloginfo('stylesheet_directory'); ?>/img/TreesThatCount_supporter_whitebubble_withgreen.png" srcset="<?php bloginfo('stylesheet_directory'); ?>/img/TreesThatCount_supporter_whitebubble_withgreen@2x.png 354w" alt="Trees That Count - Te Rahi o Tāne - Native tree supporter" title="Trees That Count - Te Rahi o Tāne - Native tree supporter" width="177" height="177" /></a>
-						</div>
-						<div class="col-xs-12 col-sm-6 shielded">
-							<?php if ( true == $shieldedSite ) {
-								include( TEMPLATEPATH . '/template-parts/shielded_site.php' );
-							}
-						?></div>
-					 
+				<div class="row two-sparrows-supports">
+					<div class="col-xs-12 col-sm-6 trees-that-count">
+						<a href="//www.treesthatcount.co.nz/" class="no-underline" target="_blank"><img class="alignright" src="<?php bloginfo('stylesheet_directory'); ?>/img/TreesThatCount_supporter_whitebubble_withgreen.png" srcset="<?php bloginfo('stylesheet_directory'); ?>/img/TreesThatCount_supporter_whitebubble_withgreen@2x.png 354w" alt="Trees That Count - Te Rahi o Tāne - Native tree supporter" title="Trees That Count - Te Rahi o Tāne - Native tree supporter" width="177" height="177" /></a>
 					</div>
+					<div class="col-xs-12 col-sm-6 shielded">
+						<?php if ( true == $shieldedSite ) {
+							include( TEMPLATEPATH . '/template-parts/shielded_site.php' );
+						}
+					?></div>
+					
+				</div>
 
 			<?php } ?>
 				

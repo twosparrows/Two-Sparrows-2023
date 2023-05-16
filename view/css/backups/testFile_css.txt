@@ -1,6 +1,6 @@
 CSS Options Fields
 
-Updated at 11/05/2023 6:40.07am UTC
+Updated at 16/05/2023 12:06.51am UTC
 Referrer: /wp-admin/admin.php?page=acf-options-structural-css-editor
 
 
@@ -5889,6 +5889,11 @@ nav a.dropdown-item:before {
   'value' => 'position: relative;
 padding: [tsp-calc tm*6] 0; /* Ensure bottom padding prevents Google reCaptcha from obscuring footer (can happen on all screen sizes) */
 background: [colour-footer-background];
+background-image: url(../../img/leaves.svg);
+background-repeat: no-repeat;
+background-size: 189px auto;
+/* background-position: left 64% bottom -120px; */
+background-position: right bottom -120px; /* Mobile first */
 color: [colour-footer-text];
 text-align: center;',
   'menu_order' => 70,
@@ -6012,12 +6017,29 @@ bottom: 0;',
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'textarea',
-  'value' => 'footer ul.sub-menu {
+  'value' => 'footer ul#menu-footer-menu {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	grid-gap: [text-margin] [tsp-calc tm *2];
+	margin-top: [tsp-calc tm *3];
+	margin-bottom: 0;
+}
+
+footer :not(ul#menu-footer-menu) li {
+	margin-top: 10px;
+}
+
+footer ul#menu-footer-menu li {
 	margin: 0;
 }
 
-footer li {
-	margin-top: 10px;
+footer li a {
+	border-bottom: none;
+}
+
+/* footer ul.sub-menu {
+	margin: 0;
 }
 
 footer ul.sub-menu li {
@@ -6025,23 +6047,13 @@ footer ul.sub-menu li {
 	margin-top: 0;
 }
 
-footer ul li:first-child {
-	margin-top: 0
-}
-
-footer li a {
-	border-bottom: none;
-	text-transform: uppercase;
-	font-weight: bold;
-}
-
 footer ul.sub-menu li a {
 	text-transform: capitalize;
 	font-weight: normal;
-}
+} */
 
 footer :is(a, a:link, a:visited) {
-	display: inline-block;
+	/* display: inline-block; */
 	color: [colour-footer-text];
 	text-decoration: none;
 	border-bottom: none;
@@ -10540,19 +10552,7 @@ footer .footer-col-4 h3 {
 footer .tsp-social-links {
 	justify-content: left;
 }
-
-footer .two-sparrows-supports .col-sm-6.trees-that-count {
-	justify-content: flex-end;
-}
-
-footer .two-sparrows-supports .col-sm-6.shielded {
-	justify-content: flex-start;
-}
-
-footer .two-sparrows-supports img {
-	margin-left: [tsp-calc tm *3];
-	margin-right: [tsp-calc tm *3];
-}',
+',
   'menu_order' => 145,
   'instructions' => '<strong>LG &amp; ABOVE</strong><br /><br />
 <strong>@media (min-width: 992px)</strong><br /><br />
@@ -10791,13 +10791,8 @@ footer .footer-logo {
 	margin-bottom: 30px;
 }
 
-footer .footer-col-4 h3 {
+/* footer .footer-col-4 h3 {
 	margin-top: 15px;
-}
-
-footer img#shielded-logo {
-	margin-left: auto !important;
-	margin-right: auto !important;
 }
 
 footer #subfooter span.footer-copyright-separator:before {
@@ -10805,7 +10800,7 @@ footer #subfooter span.footer-copyright-separator:before {
 	white-space: pre;
 }
 
-footer #subfooter span.footer-copyright-separator { /* Hide vertical bar and make it a line break instead */
+footer #subfooter span.footer-copyright-separator { /* Hide vertical bar and make it a line break instead *
 	display: block;
 	z-index: -1000;
 	opacity: 0;
@@ -10823,18 +10818,13 @@ footer img.alignleft {
 }
 
 footer ul.menu {
-	margin-top: 0;
+	margin-top: [tsp-calc tm *3];
 	margin-bottom: 0;
-}
-
-footer ul.menu > li > a {
-	display: inline-block;
-	margin-top: 15px;
 }
 
 footer ul.sub-menu li {
 	text-indent: 0;
-}',
+} */',
   'menu_order' => 151,
   'instructions' => '<strong>MD &amp; BELOW</strong><br /><br />
 <strong>@media (max-width: 991px)</strong><br /><br />
@@ -10898,8 +10888,34 @@ Between 768px and 991px window width. Full CSS must be used.',
   'type' => 'textarea',
   'value' => '/* Footer */
 
+footer {
+	background-position: left calc(50% + 223px) bottom -120px;
+}
+
 footer .two-sparrows-supports .col-sm-6.shielded {
 	border-left: 1px [colour-text-light] solid;
+}
+
+footer .two-sparrows-supports .col-sm-6.trees-that-count {
+	justify-content: flex-end;
+}
+
+footer .two-sparrows-supports .col-sm-6.shielded {
+	justify-content: flex-start;
+}
+
+footer .two-sparrows-supports img {
+	margin-left: [tsp-calc tm *3];
+	margin-right: [tsp-calc tm *3];
+}
+
+footer ul#menu-footer-menu {
+	grid-gap: [text-margin];
+}
+
+footer ul#menu-footer-menu li:not(:last-child) {
+	padding-right: [text-margin];
+	border-right: 1px [colour-text-light] solid;
 }',
   'menu_order' => 155,
   'instructions' => '<strong>SM &amp; ABOVE</strong><br /><br />
