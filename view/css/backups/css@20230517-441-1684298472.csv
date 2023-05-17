@@ -1,0 +1,4249 @@
+Field_Name,Field_Value_or_Group_Info,Subfield_Name,Subfield_Value,Subsubfield_Name,Subsubfield_Value
+custom_shortcodes,,name,width-xl
+custom_shortcodes,,value,1140px
+custom_shortcodes,,name,width-lg
+custom_shortcodes,,value,960px
+custom_shortcodes,,name,width-md
+custom_shortcodes,,value,720px
+custom_shortcodes,,name,width-sm
+custom_shortcodes,,value,540px
+custom_shortcodes,,name,width-xs-max
+custom_shortcodes,,value,560px
+custom_shortcodes,,name,button-icon-size
+custom_shortcodes,,value,25px
+custom_shortcodes,,name,heading-motif-bar-width-max
+custom_shortcodes,,value,32%
+custom_shortcodes,,name,slide-navigation-width
+custom_shortcodes,,value,16em
+custom_shortcodes,,name,slide-navigation-transition
+custom_shortcodes,,value,"left 0.6s ease"
+font_family,"""MetroSans-Regular"", Arial, sans-serif"
+font_size,15pt
+line_height,1.5
+text_margin,15px
+hover_index,+25
+active_index,+45
+header_position,fixed
+header_height,140px
+navbar_expand,never
+anchor_transition,"0.3s ease all"
+button_transition,"all 0.3s ease"
+header_height_scrolled,70px
+header_transition,"1s ease all"
+header_logo_width,214px
+footer_logo_width,[header-logo-width]
+header_logo_width_scrolled,150px
+button_swell,scale(1.03)
+animation_start_opacity,0.5
+animation_start_scale,0.95
+animation_transition,ease-out
+animation_duration,0.6s
+animation_start_translate_x,20px
+animation_start_translate_y,20px
+line_height_headings,1.2
+anchor_underline_exclusions,":not(.button, .social-media-link, .navbar-brand, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow)"
+nav_dropdown_menu_opacity,0.8
+header_logo_position,left
+button_border_radius,"[tsp-calc tm *4 /3]"
+colour_text_dark,#222f29
+colour_text_light,#fff
+colour_background_dark,#222f29
+colour_background_light,#fff
+colour_scheme_default,textDarkBackgroundLight
+colours_brand,,name,Tan
+colours_brand,,colour,#b5691b
+colours_brand,,add_colour_scheme,
+colours_brand,,name,"Light Tan"
+colours_brand,,colour,#efebe5
+colours_brand,,add_colour_scheme,
+colours_brand,,name,"Dark Grey"
+colours_brand,,colour,#707070
+colours_brand,,add_colour_scheme,
+colour_header_background,[colour-background-light]
+colour_nav_hamburger,[colour-background-dark]
+colour_nav_text,[colour-text-light]
+colour_nav_dropdown_text,[colour-text-light]
+colour_nav_dropdown_background,[colour-background-dark]
+colour_anchor_underline,[colour-text]
+colour_footer_text,[colour-text-light]
+colour_footer_background,[colour-background-dark]
+font_family_heading,"""AddingtonCF-DemiBold"", [font-family]"
+button_padding_horizontal,"[tsp-calc tm *2]"
+button_padding_vertical,"[tsp-calc tm *5 /3]"
+image_margin_horizontal,"[tsp-calc tm*3]"
+image_margin_vertical,[text-margin]
+header_mobile_opacity,0.8
+section_padding_vertical,"[tsp-calc tm *6]"
+:root,
+font_import,"/* Grid set up here (see below) so it is at the top of the CSS stylesheet */
+
+/* Import font files */
+
+@import url(""../../fonts/addington-cf/addington-cf-demi-bold.css"");
+@import url(""../../fonts/metro-sans/metro-sans-regular/metro-sans-regular.css"");
+@import url(""../../fonts/metro-sans/metro-sans-regular-italic/metro-sans-regular-italic.css"");
+@import url(""../../fonts/metro-sans/metro-sans-bold/metro-sans-bold.css"");
+@import url(""../../fonts/metro-sans/metro-sans-bold-italic/metro-sans-bold-italic.css"");
+
+
+/* Grid set up */
+
+body.site {
+	display: grid;
+	grid-template-areas:
+		""header""
+		""content""
+		""footer"";
+	transition:[slide-navigation-transition];
+	overflow-x: hidden;
+}
+
+header#masthead,
+.header-background {
+	grid-area: header;
+}
+
+main#main {
+	grid-area: content;
+	max-width: 100vw;
+}
+
+footer#footer {
+	grid-area: footer;
+}
+
+#website-navigation {
+	position: relative;
+	width:[slide-navigation-width];
+	max-width: 100vw;
+	left: -[slide-navigation-width];
+	grid-column: 1;
+	grid-row: 1/-1;
+	z-index: 10000;
+	background: [colour-nav-dropdown-background];
+	transition:[slide-navigation-transition];
+}
+
+.reveal-menu #website-navigation {
+	left: 0;
+}
+
+#website-navigation ul {
+	position: fixed;
+	display: none;
+	flex-direction: column;
+	width: [slide-navigation-width];
+}
+
+#website-navigation.open ul {
+	display: flex;
+}
+
+#website-navigation button.menu-closer {
+	display: none;
+}
+
+#website-navigation.open button.menu-closer {
+	display: flex;
+}
+
+/* .menu-toggler {
+	position: fixed;
+	display: block;
+	top: 1.5em;
+	left: .2em;
+}
+
+body.reveal-menu .menu-toggler {
+	left: 14.5em;
+} */"
+*,"margin: 0;
+padding: 0;"
+html,"scroll-behavior: smooth;
+font-size: [font-size]; /* rem units are relative to the font size of the HTML element - see https://www.digitalocean.com/community/tutorials/css-rem-vs-em-units */"
+body,"background: [colour-background];
+color: [colour-text];
+font-family: [font-family];
+font-size: 1rem;
+line-height: [line-height];
+-webkit-font-smoothing: antialiased; /* Fix for Google Chrome issue where a slider change can cause text to flicker */"
+p_li_td,"font-family: [font-family];
+font-size: 1rem;
+line-height: [line-height];
+margin: [text-margin] 0;
+padding: 0;"
+h1_h2_h3_h4_h5_h6,"font-family: [font-family-heading];
+font-weight: normal;
+color: [colour-text];
+line-height: [line-height-headings];
+margin: [tsp-calc tm*2] 0;
+padding: 0;"
+h1_h2,"font-size: 3rem;"
+h3,"font-size: 2rem;
+margin: [tsp-calc {text-margin}*2] 0 [text-margin];
+"
+h4_h5_h6,"font-size: 1.5rem;
+margin: [tsp-calc {text-margin}*2] 0 [text-margin];"
+ol_ul,"margin: [text-margin] 0;"
+li,"margin: [tsp-calc tm / 3, round] 0 [tsp-calc tm / 3, round] [tsp-calc tm * 2];"
+blockquote,"margin: [tsp-calc tm*2];"
+blockquote_:isp_li,"font-family: [font-family];
+font-weight: bold;
+font-size: 1.4rem;
+line-height: [line-height];"
+other_elements,"/* Other text styles */
+
+em, i {
+	font-family: ""MetroSans-RegularItalic"", [font-family];
+}
+
+strong, b {
+	font-family: ""MetroSans-Bold"", [font-family];
+}
+
+:is(strong, b) :is(em, i),
+ :is(em, i) :is(strong, b) {
+	font-family: ""MetroSans-BoldItalic"", [font-family];
+}
+
+
+/* Screen Readers only */
+
+.sr-only { /* From https://www.linkedin.com/learning/simplifying-web-development-with-accessibility-best-practices/how-to-hide-visual-content?autoSkip=true&autoplay=true&resume=false&u=92735081 */
+	position: absolute;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+}
+
+
+/* Other elements */
+
+section.kokako .col-xs-12 > :is(h1, h2):first-child {
+	margin-top: 0;
+}
+
+ul {
+	list-style-type: disc;
+}
+
+wbr:before { /* IE 8–11 (old) and Prince page pdf creator don’t recognize the ""wbr"" element, but a pseudo-element can achieve the same effect with IE 9+ and Prince (from https://css-tricks.com/better-line-breaks-for-long-urls/ ) */
+	content: ""\200B"";  /* Unicode zero width space */
+	white-space: normal;
+}
+
+
+/* List items */
+
+ul.no-bullets li {
+	list-style-type: none;
+	margin: 0 0 10px 0;
+}
+
+:is(ul.tick, ul.ticks, section.kokako.ul-ticks ul) li {
+	list-style-type: none;
+	position: relative;
+	margin: 0 0 10px 35px;
+}
+
+:is(ul.tick, ul.ticks, section.kokako.ul-ticks ul) li:before {
+	position: absolute;
+	left: -35px;
+	font-family: ""fa-select"";
+	content: '\2713';
+	color: [colour-text-light];
+	background: [colour-background-dark];
+	border-radius: 50%;
+	padding: 0 3px;
+	margin-right: 10px;
+}
+
+
+/* Blockquotes */
+
+blockquote h3 {
+	font-size: 2rem;
+	line-height: 1.5;
+	margin-top: 15px;
+	margin-bottom: 0;
+}
+
+blockquote h3 + p {
+	margin-top: 0;
+}
+
+
+/* Small */
+
+small {
+	display: inline-block;
+	font-size: 0.923075rem; /* This works out to 16px (min for accessibility) at a base size of 13pt */
+	line-height: 1.2;
+}
+
+
+/* Extra text classes */
+
+p.extra-margin-top {
+	margin-top: [tsp-calc tm*2];
+}
+
+p.extra-margin-bottom {
+	margin-bottom: [tsp-calc tm*2];
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.lowercase {
+	text-transform: lowercase;
+}"
+a,"text-decoration: none;
+border-bottom: 2px solid [colour-text];
+-webkit-transform:translate3d(0,0,0); /* Fix for Google Chrome flickers on subsequent anchor elements - see https://maximelafarie.com/avoid-css-flickering */
+transition: [anchor-transition];"
+a:link_a:visited,"text-decoration: none;
+color: [colour-text];
+border-bottom: 2px solid [colour-text];"
+a:hover,"text-decoration: none;
+color: [colour-text-hover];
+border-bottom: 3px solid [colour-anchor-underline];
+transition: [anchor-transition];"
+a:active,"color: [colour-text-active];
+transition: [anchor-transition];"
+a:focus,"outline: solid [colour-brand-1] 1px !important;"
+:ish1_h2_h3_h4_h5_h6_a,"text-decoration: none;
+border-bottom: none !important;"
+other_anchors,"/* Social Media links (and additional icons) */
+
+ul.social-media-links {
+	display: flex;
+	grid-gap:[text-margin];
+	list-style-type: none;
+}
+
+ul.social-media-links, /* Default */
+ul.social-media-links.align-centre,
+ul.social-media-links.align-center {
+	justify-content: center;
+}
+
+ul.social-media-links.align-left {
+	justify-content: left;
+}
+
+ul.social-media-links.align-right {
+	justify-content: right;
+}
+
+ul.social-media-links li {
+	margin-left: 0;
+}
+
+a.social-media-link,
+a.social-media-link:link,
+a.social-media-link:visited {
+	color: [colour-text-light];
+	background: [colour-background-dark];
+	font-size: 1.4rem;
+	width: 35px;
+	height: 35px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+
+a.social-media-link:last-of-type,
+a.social-media-link:link:last-of-type,
+a.social-media-link:visited:last-of-type {
+	margin-right: 0;
+}
+
+a.social-media-link:hover {
+	color: [colour-text-light-hover];
+	background: [colour-background-dark-hover];
+}
+
+a.social-media-link:active {
+	color: [colour-text-light-active];
+	background: [colour-background-dark-active];
+}
+
+a.social-media-link i {
+	position: relative;
+	top: 1px;
+}
+
+.icon-deezer:before {
+	content: '\20';
+	background-image: url(../../../kokako-by-two-sparrows/fonts/other-icons/deezer-black.svg);
+	background-size: 100% 100%;
+	white-space: pre;
+}
+
+.icon-kofi:before {
+	content: '\20';
+	background-image: url(../../../kokako-by-two-sparrows/fonts/other-icons/kofi-black.svg);
+	background-size: 130% 130%;
+	background-position: -1px -2px;
+	white-space: pre;
+}
+
+.icon-tiktok:before {
+	content: '\20';
+	background-image: url(../../../kokako-by-two-sparrows/fonts/other-icons/tiktok-white.svg);
+	background-size: 100% 100%;
+	white-space: pre;
+}
+
+.icon-amazon {
+	font-size: 90%;
+}
+
+.icon-soundcloud {
+	 font-size: 90%;
+	position: relative;
+	left: -2px;
+}
+
+
+/* New hover - adapted from https://codepen.io/Kseso/pen/bfzjC */
+
+*:after, *:before {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+a[anchor-underline-exclusions] {
+	position: relative;
+	outline: none;
+	text-decoration: none;
+	z-index: 1;
+}
+
+a[anchor-underline-exclusions]:before {
+	content: """";
+	position: absolute;
+	width: 0;
+	height: 3px;
+	bottom: -3px;
+	left: 50%;
+	background: [colour-anchor-underline];
+	visibility: hidden;
+	-webkit-transform: translate3d(0,0,0); /* Fix for Google Chrome flickers on subsequent anchor elements - see https://maximelafarie.com/avoid-css-flickering */
+	transition: [anchor-transition];
+}
+
+a[anchor-underline-exclusions]:hover:before {
+	visibility: visible;
+	-webkit-transform: translate3d(0,0,0);
+	width: 100%;
+	left: 0;
+	transition: [anchor-transition];
+}
+
+
+/* Miscellaneous anchors (named anchors etc) */
+
+a[name] {
+	position: relative;
+	top: -[header-height-scrolled];
+}
+
+a:is(.no-border, .no-underline) {
+	border-bottom: none !important;
+}
+
+
+/* Disabled Anchors - only use this for WordPress menus, not recommended for other use. See https://css-tricks.com/how-to-disable-links/ */
+
+a.disabled,
+li.disabled > a:first-child {
+	cursor: default;
+	pointer-events: none;
+}"
+button,"cursor: pointer;
+display: inline-block;
+background: [colour-background-dark];
+color: [colour-text-light];
+font-family: [font-family];
+font-size: 0.9rem;
+font-weight: normal;
+line-height: [button-icon-size];
+text-transform: uppercase;
+text-align: left;
+text-decoration: none;
+border-bottom: none !important;
+margin: [text-margin] [text-margin] [text-margin] 0;
+padding: [button-padding-vertical] [button-padding-horizontal];
+border: none;
+border-radius: [button-border-radius];
+white-space: normal; /* or nowrap */
+/* transform: scale(1); */
+transition: [button-transition]; "
+button:hover,"color: [colour-text-light];
+background: [colour-background-dark-hover];
+/* transform: [button-swell]; */"
+button:active,"background: [colour-background-dark-active];"
+button:focus,"box-shadow: none;
+color: [colour-text-light];
+background: [colour-background-dark-hover];
+/* transform: [button-swell]; */"
+button_classes,,button_class_name,alt
+button_classes,,button_class_css,"color: [colour-text];
+background: [colour-background];"
+button_classes,,button_class_hover_css,"color: [colour-text];
+background: [colour-background-rgba 0.8];"
+button_classes,,button_class_active_css,"color: [colour-text];
+background: [colour-background-rgba 0.7];"
+button_classes,,button_class_name,transparent
+button_classes,,button_class_css,"color: [colour-text];
+background: none;
+border: 1px [colour-text] solid;"
+button_classes,,button_class_hover_css,"color: [colour-text];
+background: [colour-background-light-rgba 0.2];"
+button_classes,,button_class_active_css,"color: [colour-text];
+background: [colour-background-light-rgba 0.3];"
+other_buttons,".cta-buttons :is(button, input[type=""submit""], a.button, a.btn):first-child {
+	margin-left: 0;
+}
+
+.cta-buttons :is(button, input[type=""submit""], a.button, a.btn):last-child {
+	margin-right: 0;
+}
+
+:is(button, input[type=""submit""], a.button, a.btn) i.icon-right {
+	color: [color-brand-tan];
+	background: [colour-text-light];
+	border-radius: 50%;
+	display: inline-flex;
+	width:[button-icon-size];
+	height: [button-icon-size];
+	font-size: 0.75rem;
+	justify-content: center;
+	align-items: center;
+	margin-left: [tsp-calc tm * 4];
+	position: relative;
+	left: 0;
+	transition: [button-transition]-out;
+}
+
+:is(button, input[type=""submit""], a.button, a.btn):hover i.icon-right {
+	left: [text-margin];
+}"
+label,"font-family: [font-family];
+font-weight: bold;
+width: 100%;"
+input_textarea,"font-family: [font-family];
+font-size: [font-size];
+border: 1px solid [colour-text-dark-rgba 0.2];
+width: 100%;
+max-width: 600px; /* Was 450px */
+padding: 6px;"
+textarea,"min-height: 40px;
+height: 120px;"
+inputtype=submit,"width: initial;"
+:isinput_textarea:focus,"border: 1px solid [colour-background];
+box-shadow: 0 0 4px [colour-text-dark-rgba 0.2];
+outline: none;"
+other_forms,"input[type=checkbox] {
+	width: auto;
+}
+
+.wpcf7 input:not[type=""submit""],
+.wpcf7 textarea {
+	margin-top: 0.5rem;
+}
+
+.wpcf7 form.wpcf7-form p:last-of-type {
+	margin-top: 20px;
+}
+
+input[type=checkbox] {
+	width: auto;
+	margin-right: [text-margin];
+}
+
+.wpcf7-checkbox .wpcf7-list-item {
+	display: block;
+}
+
+.wpcf7-checkbox .wpcf7-list-item.first {
+	margin-top: 10px;
+}
+
+input[type=date] {
+	max-width: 250px;
+}
+
+.wpcf7-checkbox .wpcf7-list-item {
+	margin-left: 0;
+}
+
+.wpcf7-checkbox .wpcf7-list-item-label {
+	display: inline-block;
+	padding-left: 30px;
+	margin-top: -25px;
+}
+
+.wpcf7-response-output {
+	padding: [text-margin] !important;
+	border-radius: [tsp-calc tm /2, round];
+}
+
+
+/* Search Form */
+
+form.searchform label {
+	display: none;
+}"
+img_svg,"max-width: 100%;
+height: auto;
+border: none;"
+:isimg_svgalignnone,"margin: [image-margin-vertical] 0;"
+:isimg_svgalignleft,"float: left;
+margin: 0 [image-margin-horizontal] [image-margin-vertical] 0;"
+:isimg_svgalignright,"float: right;
+margin: 0 0 [image-margin-vertical] [image-margin-horizontal];"
+:isimg_svg:isaligncentre_aligncenter,"display: block;
+margin: [tsp-calc {image-margin-vertical}*2] auto; /* Double the vertical margin when image is centred */"
+other_images_css,"/* WP Captions */
+
+div.wp-caption {
+	margin-top: [tsp-calc tm *3];
+	margin-bottom: [tsp-calc tm *3];
+}
+
+.wp-caption.aligncenter {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption.alignleft {
+	float: left;
+	text-align: center;
+	margin-right: 15px;
+}
+
+.wp-caption.alignright {
+	float: right;
+	text-align: center;
+	margin-left: 15px;
+}
+
+.wp-caption p {
+	font-style: italic;
+}"
+iframe_css,"iframe:not([title=reCAPTCHA]) {
+	max-width: 100%;
+	margin-bottom: [text-margin];
+}"
+video_css,
+header,"position: [header-position];
+left: 0;
+top: 0;
+height: [header-height];
+padding-top: 0;
+z-index: 10;
+transition: [header-transition];"
+headerscrolled,"height: [header-height-scrolled];
+transition: [header-transition];"
+additional_header_scrolled_css,"header,
+.header-background {
+	background: [colour-header-background];
+}
+
+.header-background {
+	width: 100%;
+	height: [header-height];
+	z-index: -1;
+}
+
+header nav.navbar {
+	top: 0;
+	transition: [header-transition];
+}
+
+header.scrolled nav.navbar {
+	top: 0;
+	height: [header-height-scrolled];
+	transition: [header-transition];
+}"
+header_logo_css,"header .logo {
+	height: [header-height]; /* For positioning drop down menu correctly */
+	width: [header-logo-width]; /* 166px is width of logo at normal size (logo will resize to this) */
+	display: flex;
+	align-items: center; /* Centres logo vertically */
+	z-index: 100;
+	transition: [header-transition];
+}
+
+header nav.flex-row-reverse .logo {
+	justify-content: right;
+}
+
+header.scrolled .logo {
+	height: [header-height-scrolled];
+	transition: [header-transition];
+}
+
+header .logo a.navbar-brand {
+	position: relative;
+	top: 0;
+	/* margin: 20px 0 0 0; */
+	width: [header-logo-width];
+	border-bottom: none !important;
+	transition: [header-transition];
+}
+
+header.scrolled .logo a.navbar-brand {
+	width: [header-logo-width-scrolled];
+	transition: [header-transition];
+}"
+header_widget_css,"header .header-widget {
+	position: absolute;
+	/* right: 26px; */
+	right: 20px;
+	top: 20px;
+	text-align: right;
+	color: [colour-text-light];
+	transition: [header-transition];
+}
+
+header .header-widget.header-widget-row-reverse {
+	left: 25px; /* To line up with the Home button */
+	right: unset;
+}
+
+header.scrolled .header-widget {
+	top: -[header-height-scrolled]; /* This is normally set to: ( header height - header.scrolled height ). Ideally, it should be set to about the height of the header widget (c. 70px?)  */
+	transition: [header-transition];
+}
+
+header .header-widget :is(h3, p) {
+	color: [colour-text-light];
+	display: inline;
+}
+
+header .header-widget h3 {
+	line-height: 51px; /* Height of button, including margins */
+}
+
+header .header-widget .textwidget {
+	float: right;
+}
+
+header .header-widget :is(a, a:link, a:visited) {
+	color: [colour-text-light];
+	text-decoration: none;
+	border: none;
+}
+
+header .header-widget a:hover {
+	color: [colour-text-light-hover];
+}
+
+header .header-widget a:active {
+	color: [colour-text-light-active];
+}
+
+header .header-widget :is(button, input[type=""submit""], a.button, a.btn) {
+	color: [colour-text-dark];
+	margin-top: 0;
+	margin-right: 0;
+	margin-left: [text-margin];
+}"
+other_header_css,"/* Skip link */
+
+.skip-link {
+	position: absolute;
+	left: 0%;
+	color: [colour-nav-dropdown-text];
+	background: [colour-nav-dropdown-background];
+	padding:[tsp-calc tm /3, round] [text-margin];
+	border: 1px [colour-nav-dropdown-text] solid;
+	border-radius: [button-border-radius];
+	transform: translateY(-100%);
+	transition: [anchor-transition];
+}
+
+.skip-link:focus-within {
+	z-index: 10001; /* Must be able to sit above logo */
+	transform: translateY(0%);
+}
+
+.skip-link :is(a, a:link, a:visited) {
+	color: [colour-nav-dropdown-text];
+}
+
+.skip-link a:hover {
+	color: [colour-nav-dropdown-text-hover];
+}
+
+.skip-link a:active {
+	color: [colour-nav-dropdown-text-active];
+}
+
+
+/* FOR NAV TESTING *
+
+header nav.navbar {
+	border: 1px #00f solid;
+}
+
+header .logo {
+	border: 1px #f00 solid;
+}
+
+header .header-widget {
+	border: 1px #0f0 solid;
+}
+
+* END: FOR NAV TESTING */
+
+
+/* Logged in *
+
+body.header-fixed.logged-in.admin-bar header { /* Not required when header is positioned relative *
+	top: 32px;
+} */"
+hamburger_base_css,".hamburger {
+	padding: 15px; /* Was 15px 15px 5px 15px; */
+	display: flex;
+	align-items: center;
+ 	cursor: pointer;
+ 	transition-property: opacity, filter;
+ 	transition-duration: 0.15s;
+	transition-timing-function: linear;
+ 	font: inherit;
+	color: inherit;
+	text-transform: none;
+	background-color: transparent;
+	border: 0;
+	margin: 0;
+	overflow: visible;
+}
+
+button.hamburger:focus {
+	outline: none;
+}
+
+button.hamburger:active {
+	background: transparent;
+}
+
+.hamburger:hover {
+	opacity: 0.7;
+}
+
+.hamburger:not(.collapsed):hover {
+	opacity: 0.7;
+}
+
+.hamburger:not(.collapsed) .hamburger-inner,
+.hamburger:not(.collapsed) .hamburger-inner::before,
+.hamburger:not(.collapsed) .hamburger-inner::after {
+	background-color: [colour-nav-hamburger];
+}
+
+.hamburger-box {
+	width: 40px;
+	height: 24px;
+	display: inline-block;
+	position: relative;
+}
+
+.hamburger-inner {
+	display: block;
+	top: 50%;
+	margin-top: -2px;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+	width: 40px;
+	height: 4px;
+	background-color: [colour-nav-hamburger];
+	/* border-radius: 4px; */
+	position: absolute;
+	transition-property: transform;
+	transition-duration: 0.15s;
+	transition-timing-function: ease;
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+	content: """";
+	display: block;
+}
+
+.hamburger-inner::before {
+	top: -10px;
+}
+
+.hamburger-inner::after {
+	bottom: -10px;
+}"
+3dx_css,".hamburger--3dx .hamburger-box {
+	perspective: 80px;
+}
+
+.hamburger--3dx .hamburger-inner {
+	transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.hamburger--3dx .hamburger-inner::before,
+.hamburger--3dx .hamburger-inner::after {
+	transition: transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.hamburger--3dx:not(.collapsed) .hamburger-inner {
+	background-color: transparent !important;
+	transform: rotateY(180deg);
+}
+
+.hamburger--3dx:not(.collapsed) .hamburger-inner::before {
+	transform: translate3d(0, 10px, 0) rotate(45deg);
+}
+
+.hamburger--3dx:not(.collapsed) .hamburger-inner::after {
+	transform: translate3d(0, -10px, 0) rotate(-45deg);
+}"
+3dx-r_css,".hamburger--3dx-r .hamburger-box {
+	perspective: 80px;
+}
+
+.hamburger--3dx-r .hamburger-inner {
+	transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.hamburger--3dx-r .hamburger-inner::before,
+.hamburger--3dx-r .hamburger-inner::after {
+    transition: transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.hamburger--3dx-r:not(.collapsed) .hamburger-inner {
+	background-color: transparent !important;
+	transform: rotateY(-180deg);
+}
+
+.hamburger--3dx-r:not(.collapsed) .hamburger-inner::before {
+	transform: translate3d(0, 10px, 0) rotate(45deg);
+}
+
+.hamburger--3dx-r:not(.collapsed) .hamburger-inner::after {
+	transform: translate3d(0, -10px, 0) rotate(-45deg);
+}"
+3dy_css,".hamburger--3dy .hamburger-box {
+	perspective: 80px;
+}
+
+.hamburger--3dy .hamburger-inner {
+	transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.hamburger--3dy .hamburger-inner::before,
+.hamburger--3dy .hamburger-inner::after {
+	transition: transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.hamburger--3dy:not(.collapsed) .hamburger-inner {
+	background-color: transparent !important;
+	transform: rotateX(-180deg);
+}
+
+.hamburger--3dy:not(.collapsed) .hamburger-inner::before {
+	transform: translate3d(0, 10px, 0) rotate(45deg);
+}
+
+.hamburger--3dy:not(.collapsed) .hamburger-inner::after {
+	transform: translate3d(0, -10px, 0) rotate(-45deg);
+}"
+3dy-r_css,".hamburger--3dy-r .hamburger-box {
+	perspective: 80px;
+}
+
+.hamburger--3dy-r .hamburger-inner {
+	transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.hamburger--3dy-r .hamburger-inner::before,
+.hamburger--3dy-r .hamburger-inner::after {
+	transition: transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.hamburger--3dy-r:not(.collapsed) .hamburger-inner {
+	background-color: transparent !important;
+	transform: rotateX(180deg);
+}
+
+.hamburger--3dy-r:not(.collapsed) .hamburger-inner::before {
+	transform: translate3d(0, 10px, 0) rotate(45deg);
+}
+
+.hamburger--3dy-r:not(.collapsed) .hamburger-inner::after {
+	transform: translate3d(0, -10px, 0) rotate(-45deg);
+}"
+3dxy_css,".hamburger--3dxy .hamburger-box {
+	perspective: 80px;
+}
+
+.hamburger--3dxy .hamburger-inner {
+	transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.hamburger--3dxy .hamburger-inner::before,
+.hamburger--3dxy .hamburger-inner::after {
+	transition: transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.hamburger--3dxy:not(.collapsed) .hamburger-inner {
+	background-color: transparent !important;
+	transform: rotateX(180deg) rotateY(180deg);
+}
+
+.hamburger--3dxy:not(.collapsed) .hamburger-inner::before {
+	transform: translate3d(0, 10px, 0) rotate(45deg);
+}
+
+.hamburger--3dxy:not(.collapsed) .hamburger-inner::after {
+	transform: translate3d(0, -10px, 0) rotate(-45deg);
+}"
+3dxy-r_css,".hamburger--3dxy-r .hamburger-box {
+	perspective: 80px;
+}
+
+.hamburger--3dxy-r .hamburger-inner {
+	transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.hamburger--3dxy-r .hamburger-inner::before,
+.hamburger--3dxy-r .hamburger-inner::after {
+	transition: transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.hamburger--3dxy-r:not(.collapsed) .hamburger-inner {
+	background-color: transparent !important;
+	transform: rotateX(180deg) rotateY(180deg) rotateZ(-180deg);
+}
+
+.hamburger--3dxy-r:not(.collapsed) .hamburger-inner::before {
+	transform: translate3d(0, 10px, 0) rotate(45deg);
+}
+
+.hamburger--3dxy-r:not(.collapsed) .hamburger-inner::after {
+	transform: translate3d(0, -10px, 0) rotate(-45deg);
+}"
+boring_css,".hamburger--boring .hamburger-inner,
+.hamburger--boring .hamburger-inner::before,
+.hamburger--boring .hamburger-inner::after {
+	transition-property: none;
+}
+
+.hamburger--boring:not(.collapsed) .hamburger-inner {
+	transform: rotate(45deg);
+}
+
+.hamburger--boring:not(.collapsed) .hamburger-inner::before {
+	top: 0;
+	opacity: 0;
+}
+
+.hamburger--boring:not(.collapsed) .hamburger-inner::after {
+	bottom: 0;
+	transform: rotate(-90deg);
+}"
+minus_css,".hamburger--minus .hamburger-inner::before,
+.hamburger--minus .hamburger-inner::after {
+	transition: bottom 0.08s 0s ease-out, top 0.08s 0s ease-out, opacity 0s linear;
+}
+
+.hamburger--minus:not(.collapsed) .hamburger-inner::before,
+.hamburger--minus:not(.collapsed) .hamburger-inner::after {
+	opacity: 0;
+	transition: bottom 0.08s ease-out, top 0.08s ease-out, opacity 0s 0.08s linear;
+}
+
+.hamburger--minus:not(.collapsed) .hamburger-inner::before {
+	top: 0;
+}
+
+.hamburger--minus:not(.collapsed) .hamburger-inner::after {
+	bottom: 0;
+}"
+vortex_css,".hamburger--vortex .hamburger-inner {
+	transition-duration: 0.2s;
+	transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.hamburger--vortex .hamburger-inner::before,
+.hamburger--vortex .hamburger-inner::after {
+	transition-duration: 0s;
+	transition-delay: 0.1s;
+	transition-timing-function: linear;
+}
+
+.hamburger--vortex .hamburger-inner::before {
+	transition-property: top, opacity;
+}
+
+.hamburger--vortex .hamburger-inner::after {
+	transition-property: bottom, transform;
+}
+
+.hamburger--vortex:not(.collapsed) .hamburger-inner {
+	transform: rotate(765deg);
+	transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.hamburger--vortex:not(.collapsed) .hamburger-inner::before,
+.hamburger--vortex:not(.collapsed) .hamburger-inner::after {
+	transition-delay: 0s;
+}
+
+.hamburger--vortex:not(.collapsed) .hamburger-inner::before {
+	top: 0;
+	opacity: 0;
+}
+
+.hamburger--vortex:not(.collapsed) .hamburger-inner::after {
+	bottom: 0;
+	transform: rotate(90deg);
+}"
+vortex-r_css,".hamburger--vortex-r .hamburger-inner {
+	transition-duration: 0.2s;
+	transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.hamburger--vortex-r .hamburger-inner::before,
+.hamburger--vortex-r .hamburger-inner::after {
+	transition-duration: 0s;
+	transition-delay: 0.1s;
+	transition-timing-function: linear;
+}
+
+.hamburger--vortex-r .hamburger-inner::before {
+	transition-property: top, opacity;
+}
+
+.hamburger--vortex-r .hamburger-inner::after {
+	transition-property: bottom, transform;
+}
+
+.hamburger--vortex-r:not(.collapsed) .hamburger-inner {
+	transform: rotate(-765deg);
+	transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.hamburger--vortex-r:not(.collapsed) .hamburger-inner::before,
+.hamburger--vortex-r:not(.collapsed) .hamburger-inner::after {
+	transition-delay: 0s;
+}
+
+.hamburger--vortex-r:not(.collapsed) .hamburger-inner::before {
+	top: 0;
+	opacity: 0;
+}
+
+.hamburger--vortex-r:not(.collapsed) .hamburger-inner::after {
+	bottom: 0;
+	transform: rotate(-90deg);
+}"
+main_nav_css,"nav button.menu-toggler {
+	/* padding-left: 0;
+	padding-right: 90px; */
+	padding: 30px 95px 30px 5px; /* 5px extra surrounding for outline on focus */
+	margin: 0;
+	color: [colour-text-dark];
+	background: transparent;
+	background-image: url(../../img/menu-icon.svg);
+	background-position: right 5px center;
+	background-size: auto calc(100% - 10px);
+	background-repeat: no-repeat;
+	transform: scale(1);
+}
+
+nav button.menu-closer {
+	position: fixed;
+	/* left: calc([slide-navigation-width] - [tsp-calc tm *5 /3 +10, round]); /* width + margin */
+	left: calc(0% - [tsp-calc tm *5 /3 +6, round]);
+	top: 8px;
+	/* background: #f00; */
+	z-index: 1000;
+	padding: 5px;
+	width: [tsp-calc tm *5 /3, round];
+	height: [tsp-calc tm *5 /3, round];
+	border-radius:[tsp-calc tm /3, round];
+	/* margin: 10px 10px 0 0; */
+	margin: 0;
+	justify-content: center;
+	align-items: center;
+	transition: [slide-navigation-transition];
+}
+
+.reveal-menu nav button.menu-closer {
+	/* left: calc([slide-navigation-width] - [tsp-calc tm *5 /3 +10, round]); /* width + margin */
+	left: [slide-navigation-width];
+}
+
+nav button.menu-closer:focus {
+	outline: 1px [color-brand-tan] solid;
+}
+
+nav button.menu-closer .close-x {
+	background: [color-text-light];
+	width: 100%;
+	height: 3px;
+	display: inline-block;
+	position: absolute;
+	transform: rotate(90deg);
+	transition: transform 0.6s ease;
+}
+
+.reveal-menu nav button.menu-closer .close-x {
+	transform: rotate(45deg);
+}
+
+nav button.menu-closer .close-x:last-of-type {
+	transform: rotate(-90deg);
+}
+
+.reveal-menu nav button.menu-closer .close-x:last-of-type {
+	transform: rotate(-45deg);
+}
+
+header.scrolled nav button.menu-toggler {
+	/* padding: [text-margin] 70px [text-margin] 0; /* 10px less top and bottom, 20px less on right to keep circular background image in relationship to text */
+	padding: [tsp-calc tm *4 /3, round] 75px [tsp-calc tm *4 /3, round] 5px; /* Same as above statement, but +5px in all directions */
+}
+
+nav button.menu-toggler:hover,
+nav button.menu-toggler:active,
+nav button.menu-toggler:focus {
+	color: [colour-text-dark];
+	background: transparent; /* Background redeclaration are necessary to override default button:hover statements */
+	background-image: url(../../img/menu-icon.svg);
+	background-position: right 5px center;
+	background-size: auto calc(100% - 10px);
+	background-repeat: no-repeat;
+	transform: [button-swell];
+}
+
+header nav.navbar {
+	padding-top: 0;
+	padding-bottom: 0;
+	height: [header-height];
+	transition: [header-transition];
+}
+
+header nav.navbar #main-nav { /* Push nav menu up (is positioned flex) */
+	/* margin-bottom: 30px; */
+	transition: [header-transition];
+}
+
+/* header .navbar-collapse {
+	margin-top: 70px;
+	transition: [header-transition];
+}
+
+header.scrolled .navbar-collapse {
+	margin-top: 0;
+	transition: [header-transition];
+} */
+
+nav ul {
+	margin: 37px 0 30px;
+	max-width: 100vw;
+}
+
+nav ul li {
+	margin: 0;
+	white-space: nowrap; /* Prevent line breaks between words */
+	color: [colour-nav-text];
+}"
+nav_anchor_css,"/* .navbar-expand-lg .navbar-nav a.nav-link {
+	padding: [tsp-calc tm *2 /3] [tsp-calc tm *4 /3];
+} */
+
+nav ul li :is(a, a:link, a:visited) {
+	font-family: [font-family];
+	width: 100%;
+	text-align: left;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-weight: bold;
+	color: [colour-nav-text];
+	background: [color-nav-dropdown-background];
+	border-bottom: 2px transparent solid;
+	transition: [anchor-transition];
+	padding: [tsp-calc tm *2 /3, round] [tsp-calc tm *2];
+}
+
+nav ul li a:hover,
+nav ul li.dropdown.show > a {
+	color: [colour-nav-text-hover];
+	background: [color-nav-dropdown-background-hover];
+	transition: [anchor-transition];
+}
+
+nav ul li a:active {
+	color: [colour-nav-text-active];
+	background: [color-nav-dropdown-background-active];
+	/* border-bottom: 2px [colour-nav-text-active] solid; */
+	transition: [anchor-transition];
+}
+
+nav a.nav-link:before {
+	background: [colour-nav-text-hover];
+}"
+nav_dropdown_css,".navbar-nav .dropdown-menu {
+	background: [colour-nav-dropdown-background]; /* Fall back */
+	background: [colour-nav-dropdown-background-rgba {nav-dropdown-menu-opacity}];
+	border: none;
+	border-radius: 0;
+	padding: 0;
+}
+
+nav ul.dropdown-menu li:not(:last-child):after {
+	content: """";
+}
+
+.navbar-nav .dropdown-menu li a {
+	color: [colour-nav-dropdown-text];
+	display: block;
+	text-transform: capitalize;
+	font-weight: normal;
+	text-align: left;
+}
+
+.navbar-nav .dropdown-menu li a:hover {
+	color: [colour-nav-dropdown-text-hover];
+	background: [colour-nav-dropdown-background-hover]; /* Fall back */
+	background: [colour-nav-dropdown-background-rgba {nav-dropdown-menu-opacity}];
+	/* border-bottom: none; */
+}
+
+.navbar-nav .dropdown-menu li a:active {
+	color: [colour-nav-dropdown-text-active];
+	background: [colour-nav-dropdown-background-active];
+}
+
+.dropdown-toggle::after {
+	display: none !important;
+}
+
+nav a.dropdown-item:before {
+	background: transparent;
+}"
+footer,"position: relative;
+padding: [tsp-calc tm*6] 0; /* Ensure bottom padding prevents Google reCaptcha from obscuring footer (can happen on all screen sizes) */
+background: [colour-footer-background];
+background-image: url(../../img/leaves.svg);
+background-repeat: no-repeat;
+background-size: 189px auto;
+/* background-position: left 64% bottom -120px; */
+background-position: right bottom -120px; /* Mobile first */
+color: [colour-footer-text];
+text-align: center;"
+footer_:isp_li,"color: [colour-footer-text];
+font-size: 0.9rem"
+footerbottom-align,"position: absolute;
+bottom: 0;"
+footer_footer-logo_img,"width: [footer-logo-width];"
+footer_anchor_css,"footer ul#menu-footer-menu {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	grid-gap: [text-margin] [tsp-calc tm *2];
+	margin-top: [tsp-calc tm *3];
+	margin-bottom: 0;
+}
+
+footer :not(ul#menu-footer-menu) li {
+	margin-top: 10px;
+}
+
+footer ul#menu-footer-menu li {
+	margin: 0;
+}
+
+footer li a {
+	border-bottom: none;
+}
+
+/* footer ul.sub-menu {
+	margin: 0;
+}
+
+footer ul.sub-menu li {
+	text-indent: 20px;
+	margin-top: 0;
+}
+
+footer ul.sub-menu li a {
+	text-transform: capitalize;
+	font-weight: normal;
+} */
+
+footer :is(a, a:link, a:visited) {
+	/* display: inline-block; */
+	color: [colour-footer-text];
+	text-decoration: none;
+	border-bottom: none;
+}
+
+footer a:hover {
+	color: [colour-footer-text-hover];
+	border-bottom: none;
+}
+
+footer a:active {
+	color: [colour-footer-text-active];
+	border-bottom: none;
+}
+
+footer a:before {
+	background: [colour-footer-text-hover] !important; /* !important is required to override :not() statement */
+}
+
+footer a.no-underline:hover img {
+	opacity: 1;
+	transition: [anchor-transition];
+}
+
+footer a.no-underline:hover img {
+	opacity: 0.95;
+	transition: [anchor-transition];
+}
+
+footer .footer-col-4 a {
+	white-space: nowrap;
+}
+
+
+/* Social Media Links */
+
+footer a.social-media-link {
+	font-size: 1.4rem;
+	padding: 0 10px;
+}
+
+footer :is(a.social-media-link, a.social-media-link:link, a.social-media-link:visited) {
+	color: [colour-text-dark] !important;
+	background: [colour-background-light] !important;
+}
+
+footer a.social-media-link:hover {
+	color: [colour-text-dark] !important;
+	background: [colour-background-light-hover] !important;
+}
+
+footer a.social-media-link:active {
+	color: [colour-text-dark] !important;
+	background: [colour-background-light-active] !important;
+}
+
+footer a.social-media-link .icon-deezer:before,
+.icon-deezer.invert:before {
+	background-image: url(../../../kokako-by-two-sparrows/fonts/other-icons/deezer-black.svg);
+}
+
+footer a.social-media-link .icon-tiktok:before,
+.icon-tiktok.invert:before {
+	background-image: url(../../../kokako-by-two-sparrows/fonts/other-icons/tiktok-black.svg);
+}"
+other_footer_css,"footer h4 {
+	text-transform: uppercase;
+}
+
+footer p:is(.align-left, .align-right) {
+	float: left;
+	width: 50%;
+}
+
+footer li {
+	list-style-type: none;
+	margin-left: 0;
+}
+
+
+/* Two Sparrows supports.... (mobile first) */
+
+footer .two-sparrows-supports .col-sm-6 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+footer .two-sparrows-supports img {
+	margin: [tsp-calc tm *4 /3, round] auto;
+}
+
+footer .two-sparrows-supports img#shielded-logo {
+	width: 35px;
+}
+
+
+
+/* Last column of Footer *
+
+footer .footer-col-4 h3 {
+	margin: 0;
+	font-size: 0.9rem;
+	font-weight: normal;
+	text-transform: uppercase;
+}
+
+footer .footer-col-4 p:not(:last-of-type) {
+	margin: 0;
+} *
+
+
+/* Sub footer *
+
+#subfooter .col-sm-12:first-of-type .widgetArea .textwidget {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#subfooter img {
+	margin: 15px;
+} *
+
+img#shielded-logo {
+	width: 30px;
+	margin-left: auto;
+	margin-right: auto;
+} */"
+sectionkokako,"position: relative; /* Required for image overlays, hooks etc */
+padding: [section-padding-vertical] 0;
+overflow: hidden; /* Prevents animation beginning position from creating a scroll bar at bottom of window. Override as required (but check responsivity) */"
+sectionkokako_row,"position: relative;"
+,export
+sectionkokako_:ish1_h2display,"display: inherit;"
+sectionkokako_:ish1_h2_h3_h4_h5_h6hide,"display: none;"
+sectionkokakosection1,"/* Now using header background div method, which allows for background gradients also. When header background div is hidden, set the top padding to [tsp-calc spv + {header-height}] /* border-top: [header-height] [colour-header-background] solid; /* formerly margin-top, not border-top for smoother header.scrolled transitions */"
+sectionkokakointernalwrap,"padding: [tsp-calc tm *3] [tsp-calc tm *5 /3, round] [tsp-calc tm *6];"
+cta_buttons_css,"section.kokako .cta-buttons {
+	display: flex;
+	width: 100%;
+	grid-gap: [text-margin];
+	justify-content: left; /* Default, also for .align-left */
+	align-items: center;
+	min-height: 52px;
+}
+
+section.kokako:not(.multipleRows) .cta-buttons {
+	margin-top: [tsp-calc tm *10 /3, round];
+}
+
+section.kokako .cta-buttons.buttons-align-centre,
+section.kokako.text-align-centre .cta-buttons,
+section.kokako:is(.text-align-centre, .text-align-right) .cta-buttons.buttons-align-left { /* Button alignment has a higher priority than section text alignment */
+	justify-content: center;
+}
+
+section.kokako .cta-buttons.buttons-align-right,
+section.kokako.text-align-right .cta-buttons,
+section.kokako:is(.text-align-left, .text-align-centre) .cta-buttons.buttons-align-right {
+	justify-content: right;
+}
+
+section.kokako .cta-buttons a {
+	margin: 0 !Important;
+}
+
+section.kokako .cta-buttons p.centre {
+	display: inline;
+	text-align: center; /* This will align the multiple buttons */
+}"
+other_section_css,"/* Spacing */
+
+/* section.kokako .col > :is(h1, h2, h3, h4, h5, h6, p, img, ul, ol):first-child,
+section.kokako .col > p:first-child > img:first-child  {
+	margin-top: 0;
+}
+
+section.kokako .col > :is(h1, h2, h3, h4, h5, h6, p, img, ul, ol):last-child,
+section.kokako .col > p:last-child > img:last-child {
+	margin-bottom: 0;
+} */
+
+section.kokako :is(.col, .internalWrap) > *:first-child,
+section.kokako :is(.col, .internalWrap) > *.hide:first-child + *,
+section.kokako :is(.col, .internalWrap) > p:first-child > img:first-child { /* First child, or second child if the first is hidden, or img within first child p tag */
+	margin-top: 0;
+}
+
+section.kokako .internalWrap > *:last-child {
+	margin-bottom: 0;
+}
+
+section.kokako:is(.padding-top-none, .padding-none) {
+	padding-top: 0 !important;
+}
+
+section.kokako:is(.padding-bottom-none, .padding-none) {
+	padding-bottom: 0 !important;
+}
+
+section.kokako:is(.padding-top-small, .padding-small) {
+	padding-top: [tsp-calc spv /2, round] !important;
+}
+
+section.kokako:is(.padding-bottom-small, .padding-small) {
+	padding-bottom: [tsp-calc spv /2, round] !important;
+}
+
+section.kokako:is(.padding-top-reduced, .padding-reduced) {
+	padding-top: [tsp-calc spv *3 /4, round] !important;
+}
+
+section.kokako:is(.padding-bottom-reduced, .padding-reduced) {
+	padding-bottom: [tsp-calc spv *3 /4, round] !important;
+}
+
+section.kokako:is(.padding-top-standard, .padding-standard) {
+	padding-top: [section-padding-vertical] !important;
+}
+
+section.kokako:is(.padding-bottom-standard, .padding-standard) {
+	padding-bottom: [section-padding-vertical] !important;
+}
+
+section.kokako:is(.padding-top-large, .padding-large) {
+	padding-top: [tsp-calc spv *1.5] !important;
+}
+
+section.kokako:is(.padding-bottom-large, .padding-large) {
+	padding-bottom: [tsp-calc spv *1.5] !important;
+}
+
+section.kokako:is(.padding-top-extra-large, .padding-extra-large) {
+	padding-top: [tsp-calc spv *2] !important;
+}
+
+section.kokako:is(.padding-bottom-extra-large, .padding-extra-large) {
+	padding-bottom: [tsp-calc spv *2] !important;
+}
+
+section.kokako:is(.margin-top-none, .margin-none) {
+	margin-top: 0 !important;
+}
+
+section.kokako:is(.margin-bottom-none, .margin-none) {
+	margin-bottom: 0 !important;
+}
+
+section.kokako:is(.margin-top-small, .margin-small) {
+	margin-top: [tsp-calc spv /2, round] !important;
+}
+
+section.kokako:is(.margin-bottom-small, .margin-small) {
+	margin-bottom: [tsp-calc spv /2, round] !important;
+}
+
+section.kokako:is(.margin-top-reduced, .margin-reduced) {
+	margin-top: [tsp-calc spv *3 /4, round] !important;
+}
+
+section.kokako:is(.margin-bottom-reduced, .margin-reduced) {
+	margin-bottom: [tsp-calc spv *3 /4, round] !important;
+}
+
+section.kokako:is(.margin-top-standard, .margin-standard) {
+	margin-top: [section-padding-vertical] !important;
+}
+
+section.kokako:is(.margin-bottom-standard, .margin-standard) {
+	margin-bottom: [section-padding-vertical] !important;
+}
+
+section.kokako:is(.margin-top-large, .margin-large) {
+	margin-top: [tsp-calc spv *1.5] !important;
+}
+
+section.kokako:is(.margin-bottom-large, .margin-large) {
+	margin-bottom: [tsp-calc spv *1.5] !important;
+}
+
+section.kokako:is(.margin-top-extra-large, .margin-extra-large) {
+	margin-top: [tsp-calc spv *2] !important;
+}
+
+section.kokako:is(.margin-bottom-extra-large, .margin-extra-large) {
+	margin-bottom: [tsp-calc spv *2] !important;
+}
+
+
+/* Other Section CSS */
+
+section.kokako:not(.colour-scheme) :is(.container, .container-fluid) .row:not(.no-background) {
+	background: [colour-background];
+}
+
+ section.kokako:not(.no-padding) .container .row.extra-top-padding:first-of-type {
+	padding-top: [tsp-calc spv *4 /9, round];
+}
+
+section.kokako:not(.no-padding) .container .row.extra-bottom-padding:last-of-type {
+	padding-bottom: [tsp-calc spv *4 /9, round];
+}
+
+
+/* section.kokako.no-padding .internalWrap {
+	padding-top: [section-padding-vertical];
+	padding-bottom: [section-padding-vertical];
+}
+
+section.kokako .row:first-child.extra-row-padding,
+section.kokako .row.extra-row-padding-top {
+	padding-top: [tsp-calc spv *4 /9, round];
+}
+
+section.kokako .row:last-child.extra-row-padding,
+section.kokako .row.extra-row-padding-bottom {
+	padding-bottom: [tsp-calc spv *4 /9, round];
+} */
+
+/* .center-block, .centre-block {
+	display: block;
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.footnote {
+	font-size: 80%;
+	font-style: italic;
+} */
+
+
+/* HIde section - NB: this is a fallback, as the section should actually not be added to the code via loop_acf.php */
+
+section.kokako.hide-section {
+	display: none !important;
+}"
+sections_css,,section_type,"Call to Action"
+sections_css,,section_css,".kokako.callToAction {
+	text-align: center;
+}
+
+.kokako.callToAction :is(h1, h2) {
+	font-size: 2rem;
+}
+
+.kokako.callToAction ul.social-media-links { /* Mobile first */
+	display: flex;
+	flex-direction: column;
+	grid-gap: [tsp-calc tm *2];
+}
+
+.kokako.callToAction ul.social-media-links a {
+	width: 100%;
+	padding: [tsp-calc tm *2];
+	border-radius: 0;
+	border-bottom: 0 !important;
+}
+
+
+/* Colours */
+
+.kokako.callToAction ul.social-media-links li:nth-of-type(3n-2) a {
+	background: [colour-brand-tan];
+}
+
+.kokako.callToAction ul.social-media-links li:nth-of-type(3n-2) a:hover {
+	background: [colour-brand-tan-hover];
+}
+
+.kokako.callToAction ul.social-media-links li:nth-of-type(3n-2) a:active {
+	background: [colour-brand-tan-active];
+}
+
+.kokako.callToAction ul.social-media-links li:nth-of-type(3n) a {
+	color: [colour-text-dark];
+	background: [colour-background-light];
+}
+
+.kokako.callToAction ul.social-media-links li:nth-of-type(3n) a:hover {
+	background: [colour-background-light-hover];
+}
+
+.kokako.callToAction ul.social-media-links li:nth-of-type(3n) a:active {
+	background: [colour-background-light-active];
+}"
+sections_css,,section_responsivity,,screen_size,sm_above
+sections_css,,section_responsivity,,css_at_screen_size,".kokako.callToAction ul.social-media-links {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}"
+sections_css,,section_type,"Centred Images"
+sections_css,,section_css,"section.kokako.centredImages {
+	padding: 0;
+	margin: [section-padding-vertical] 0;
+	overflow: hidden;
+}
+
+section.kokako.centredImages + footer {
+	margin-top: -[section-padding-vertical];
+}
+
+section.kokako.centredImages :is(h1, h2) {
+	text-align: center;
+}
+
+/*
+section.kokako.centredImages .row.extra-row-padding:first-child {
+	padding-top: 40px;
+}
+
+section.kokako.centredImages .row.extra-row-padding:last-child {
+	padding-bottom: 40px;
+}
+*/
+
+section.kokako.centredImages :is(img, img.alignnone) {
+	margin: 0;
+}
+
+section.kokako.centredImages .centredImagesCol {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+section.kokako.centredImages .col-md-12.centre-images-across-width {
+	padding: 0;
+}
+
+section.kokako.centredImages .col-md-12.centre-images-across-width.image-count-6 img {
+	width: 16.6%;
+}
+
+section.kokako.centredImages .col-md-12.centre-images-across-width.image-count-5 img {
+	width: 20%;
+}
+
+section.kokako.centredImages .col-md-12.centre-images-across-width.image-count-4 img {
+	width: 25%;
+}
+
+section.kokako.centredImages .col-md-12.centre-images-across-width.image-count-3 img {
+	width: 33.3%%;
+}
+
+section.kokako.centredImages .col-md-12.centre-images-across-width.image-count-2 img {
+	width: 50%;
+}
+
+section.kokako.centredImages .col-md-12.centre-images-across-width.image-count-1 img {
+	width: 100%;
+}"
+sections_css,,section_responsivity,,screen_size,xl_only
+sections_css,,section_responsivity,,css_at_screen_size,"section.kokako.centredImages .col-md-12.centre-images-across-width:is(.image-count-6, .image-count-5) img {
+	width: 25%;
+}
+
+section.kokako.centredImages .col-md-12.centre-images-across-width:is(.image-count-6, .image-count-5) img:nth-of-type(n+5) { /* Hide all but first 4 images */
+	display: none;
+}"
+sections_css,,section_responsivity,,screen_size,lg
+sections_css,,section_responsivity,,css_at_screen_size,"section.kokako.centredImages .col-md-12.centre-images-across-width:is(.image-count-6, .image-count-5, .image-count-4) img {
+	width: 33.33%;
+}
+
+section.kokako.centredImages .col-md-12.centre-images-across-width:is(.image-count-6, .image-count-5, .image-count-4) img:nth-of-type(n+4) { /* Hide all but first 3 images */
+	display: none;
+}"
+sections_css,,section_responsivity,,screen_size,md
+sections_css,,section_responsivity,,css_at_screen_size,"section.kokako.centredImages .col-md-12.centre-images-across-width:is(.image-count-6, .image-count-5, .image-count-4, .image-count-3) img {
+	width: 50%;
+}
+
+section.kokako.centredImages .col-md-12.centre-images-across-width:is(.image-count-6, .image-count-5, .image-count-4, .image-count-3) img:nth-of-type(n+3) { /* Hide all but first 2 images */
+	display: none;
+}"
+sections_css,,section_responsivity,,screen_size,sm
+sections_css,,section_responsivity,,css_at_screen_size,"section.kokako.centredImages .col-md-12.centre-images-across-width:is(.image-count-6, .image-count-5, .image-count-4, .image-count-3) img {
+	width: 50%;
+}
+
+section.kokako.centredImages .col-md-12.centre-images-across-width:is(.image-count-6, .image-count-5, .image-count-4, .image-count-3) img:nth-of-type(n+3) { /* Hide all but first 2 images */
+	display: none;
+}"
+sections_css,,section_responsivity,,screen_size,xs_only
+sections_css,,section_responsivity,,css_at_screen_size,"section.kokako.centredImages .container-fluid {
+	padding-left: 0;
+	padding-right: 0;
+}"
+sections_css,,section_type,"Latest Posts"
+sections_css,,section_css,
+sections_css,,section_responsivity,,screen_size,lg_above
+sections_css,,section_responsivity,,css_at_screen_size,"section.kokako.latestPosts .motif-bar-heading {
+	float: left;
+	margin-top: 20px;
+}
+
+.kokako.latestPosts .motif-bar-heading + :is(h1, h2).display {
+	position: relative; /* For JS positioning */
+	float: left;
+	margin-top: 0;
+	margin-left: [tsp-calc tm *3];
+}"
+sections_css,,section_type,"Multiple Columns"
+sections_css,,section_css,"section.kokako:is(.multipleColumns, .icons) .row.margin-left-1-col .col-lg-2:first-child {
+	margin-left: [tsp-calc ""100%"" /12, round4];
+}
+
+section.kokako.multipleColumns .row {
+	display: flex;
+	justify-content: center;
+}
+
+section.kokako.multipleColumns .rowColumns h2 { /* Make it appear as an h3 */
+	font-size: 1.5rem;
+}
+
+section.kokako.multipleColumns .container .row.row-heading,
+section.kokako.multipleRows .row.row-heading {
+	padding-bottom: 0;
+	margin-bottom: [tsp-calc tm *4];
+}
+
+section.kokako:is(.multipleColumns, .multipleRows) .row.row-heading :is(h1, h2) {
+	margin-bottom: 0;
+}
+
+section.kokako:is(.multipleColumns, .multipleRows) .row.row-heading :is(h1, h2) + p {
+	margin-top: [tsp-calc tm *2];
+}
+
+section.kokako.multipleColumns .container .row.row-heading + .row,
+section.kokako.multipleRows .row.row-heading + .row {
+	padding-top: 0;
+}
+
+.kokako.multipleColumns .mc-image {
+	height: 170px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.kokako.multipleColumns .mc-image img {
+	max-height: 100%;
+}
+
+section.kokako.multipleColumns .container.images-circle :is(.mc-image, img) {
+	border-radius: 50%;
+}
+
+/* ADDED TO ALL SECTIONS UNDER ""SPACING"", SO NO LONGER REQUIRED HERE
+section.kokako.multipleColumns .multiple-columns-col > :is(h1, h2, h3, h4, p, img):first-child,
+section.kokako.multipleColumns .multiple-columns-col > p:first-child > img:first-child  {
+	margin-top: 0;
+}
+
+section.kokako.multipleColumns .multiple-columns-col > :is(h1, h2, h3, h4, h5, h6, p, img, ul, ol):last-child,
+section.kokako.multipleColumns .multiple-columns-col > p:last-child > img:last-child {
+	margin-bottom: 0;
+}
+*/"
+sections_css,,section_responsivity,,screen_size,lg_above
+sections_css,,section_responsivity,,css_at_screen_size,"section.multipleColumns.five-columns :is(.col-lg-3, .col-lg-2) {
+	-ms-flex: 0 0 20%;
+	flex: 0 0 20%;
+	max-width: 20%;
+}
+
+section.kokako.multipleColumns .multiple-columns-col > :is(h1, h2, h3, h4, p, img, a):last-child {
+	margin-bottom: 0;
+}
+
+section.kokako.multipleColumns .row .col-lg-6:nth-of-type(odd) {
+	padding-right: [tsp-calc tm *3];
+}
+
+section.kokako.multipleColumns .row .col-lg-6:nth-of-type(even) {
+	padding-left: [tsp-calc tm *3];
+}
+
+.kokako.multipleColumns .row-columns .multiple-columns-col:nth-child(n+2) {
+	border-left: 1px solid [colour-brand-dark-grey];
+}"
+sections_css,,section_responsivity,,screen_size,lg_only
+sections_css,,section_responsivity,,css_at_screen_size,"section.kokako.multipleColumns .row + .col-lg-5 { /* Add 1 column space on left, as 1 col is not added via HTML */
+	margin-left: 8.333333%;
+}"
+sections_css,,section_responsivity,,screen_size,md
+sections_css,,section_responsivity,,css_at_screen_size,"section.kokako.multipleColumns .row > .multiple-columns-col.col-md-12:nth-of-type(n+2) { /* Affects 2nd item onwards */
+	margin-top: [tsp-calc tm *5]; /* Lines up well with paragraphs etc */
+}"
+sections_css,,section_responsivity,,screen_size,xs_only
+sections_css,,section_responsivity,,css_at_screen_size,"section.kokako.multipleColumns .row .col-lg-6:nth-of-type(odd) {
+	padding-right: 15px;
+}
+
+section.kokako.multipleColumns .row .col-lg-6:nth-of-type(even) {
+	padding-left: 15px;
+}"
+sections_css,,section_type,"Multiple Rows"
+sections_css,,section_css,"/* NB: Some shared CSS under Multiple Columns section */
+
+section.kokako.multipleRows .row:not(.row-heading, .cta-buttons-wrapper) {
+	margin-bottom: 30px;
+}
+
+section.kokako.multipleRows .row:not(.row-heading, .quick-links, .cta-buttons-wrapper) {
+	background-color: [colour-background-alt-rgba 0.3];
+}
+
+/* section.kokako.multipleRows .row:not(.row-heading) {
+	margin-left: 0;
+	margin-right: 0;
+} */
+
+section.kokako.multipleRows .col-md-4 {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+section.kokako.multipleRows .row:not(.cta-buttons-wrapper) :is(.col-md-8, .col-md-12) {
+	padding-bottom: 15px;
+}
+
+section.kokako.multipleRows .row:not(.row-heading) :is(.col-md-8, .col-md-12) {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+section.kokako.multipleRows .col-md-4.image-display-logo {
+	background-color: [colour-background-light];
+	padding: 10px 15px;
+	border-top: 1px solid [colour-text-dark-rgba 0.2];
+	border-left: 1px solid [colour-text-dark-rgba 0.2];
+	border-bottom: 1px solid [colour-text-dark-rgba 0.2];
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+section.kokako.multipleRows a[name] {
+	top: -150px;
+}"
+sections_css,,section_responsivity,
+sections_css,,section_type,"Page Banner"
+sections_css,,section_css,"section.kokako.pageBanner {
+	position: relative;
+	padding: 0;
+	margin: [section-padding-vertical] 0;
+	display: flex;
+	justify-content: center;
+	align-items: center; /* Use flex-end if need to align items at the end */
+	/* background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAB71JREFUaEN12mtO5EoQhNHuH6wI1sSsqVkTrKmvssSxPlJ9kUbGdj3yERkZZeb+/f39drvdbl9fX7f39/fbv3//bt/f3+f+8/NzXt0+Pj5uj8fj3M/7+Zn7n5+fM2fez+/9mffWnDHWmnH+GT/jns/nue2cvp/59/v9rGPf+X3Gz/39dru9zSJzMw8ZWQc4wugaPE7P3HFwGz/j598YMFcGCNTMmb29n/mzl7GCN+9njnfzvj/HyXGEMTYahxglQnM/G4uuqIrKLDzPGGmezJo/Y2ZO53F4DJ35glJ7Gv0ZLxPsvD+fz7eZOJPmIXhJ9zyfDSZy84yTsiM6NQxERFs057l1mg2IEGX2zNoM5ZRsQQ9InozAu0mz0BgmijNpjAETDoMU3O66aS01Yzs4MgLeDc7MA62NFEg6Y6bYJ+KKsUUOKq+KDoTG+NYA2CCNudaAWWsXPoOaZWNmvMBCS+eD+v3z8/OtTpR9GKXIQAaMmknzOIAs5vmknzFqxFrGy4KgyvIOoqDMuPkBv/vj8Tg1Ai42MMgGMlXqlA3Ylxk1IUCoc8bNO1FmRBkT9gubZkqNIAUZ/kO/m+PLFGpkQw8RwHEdt6lsiaZ6kdFmSSD3XDBX9HoKG09GUJmIYQ1RYXzTL+VIoZlsP0IQMlz6Bb/dLzjOaBksNTdgs9+VEc7UiC7IENH8vyi2EEvVrZ0GDgray7QCjmK/TRKUxgnW0C/6gzeNr73E5lhCRlBwsd8NRK71VEiVyjW6LYM4a57s61MX/b5ilDZBeC0BYLL2GA0TBHT3cQx1yvLcc37wDta6O2QIiqvsIChZOvRb+cEwRtlAE8NIEw0azKJ1fjYgJtHvLmSF6orFrLsZtD1r67KrIYJMqRBTVRCKqDSLOli6bzZkHDwLQxCVMe/aRNtct4xixyUaNzV2snTOmArHwsUG1ULzDDlUCGKjwmYzVFmudSbLUAS2JyMtslJuudzvYED8VR9Jd2nchpzSuSs3dpNluCBs5YucGtTTRzYsLIC/yYWmvU626+/e07rYzbRsZA9jwLH9qqq4jDrPrz6CsxVzI0gVi3ilRxe3aXHc6DJWVnRr9dTM1DF1IAMCXyVyziNtcnRN4dE+YzFi0GIKuYKSw52DeUBu9sGAahESGIwBS73tVWfNaYgWQ7GMacExSnYcjHoEUGsVfmrBux3p1oHeBBWChWRmLjtQPUT8yYjNbN6IlFYxHByLmEbYDXseL8sx0nlFtNt8RV3WdfISDal0yXg01pTRPNVc5EM3bjeWsUoaGJeNUjHYUrMlHntASpmzsD3QmhrBFCAhM41EnWljK5024tVBOja1wAhG9yjQOgHtQraw67eA+/v7+zkhcqJs1eiQ2nWWlOBkixJbybC1tnhsDTEcOVS27+N4G+Kh33HE+VsBV9E6MKHW6inPesIcw8ypNOmJDq6beZTNYJqvHx5AfdfwjL0OVk2jJtaMVLXKmqJX0BgIC7ZOGu0eYzfVysYrVaElVMcpiz8f6EqNG6uiS4PJWkVkKZZTxff8bo/SuGw0gK3P6iuS6Pqe9fsZ9cj4FrtFKzuardZFOR1mGcvhwgyEMdXu6NYTpP31Rd3pN1Ucp0a68P4CIhMtLuwj1TAvcoWAd4igxd+9ZMqV0aD2is7V6FyP+mUseaKhWYzh1WHGyqBTHidgvE5vB63XTBmv9+xawbB19FD9QMtZQPFWjFlQLcB+tZI+oTGCX6GDtWTfnmWpkohMEpakSFFgjbleDRGm1cNJ1+9ZWobK5RyyWBVqdZn3KLokYA/Hg7n3BbFQk31Q2qVw1vE1XvQaXYxTAuCoxmhxxhcKekGDQ1uBRvVZi3yCWDRsIcu26wPGFPtOV7UQQ6u7GLuN7p8HNkxRa3tIGXDGV86X1vUzzwphLHlBCwQKGfRWJ7BHqU9NtfdMRDlGDRRKujOH2+T0CnXSoMgyZ8Dx+oqCs0XGAE5sya5uQMyVxBYQ/aiyolS+G2plTY3eh6+q8KvY4ba0K8otLJOrOtVPqRpxwLHI1hl10zVRrzqtKpg1dHO1VJK4+sgYtAXhroU6Jf1jUA86bXjwWzg2s7Ko6akFgdjqoI6WLcfuIxptzhne91OmYu3BCXw0tHJ/sW9ODW3Da9fmnJ5S1WAdmcJkcz2isZDSeGB3Jm0pMZs1anXAvMJvU/MubHM2fPpJtqqgZxqIOJ29FMso0atsKa6No6H6zatNT5btUTlC/G2YdG9oQRolFcx1in20VvHe6Il6edsmjWo7rudUQEUggxFD/4ja/vJK472ifSR1MuTP09ijHVQ6vQOBFrfoo9QKwQYIlSrs1iPDCx927D4jkHoSQrrOIzudbUo1kiFtVjLSxlV5gXZFXUDKcC3+Hq/bTOmwmQ/K0PLnL1Y79f2YYFPG9B1HkAaGO2zyq5mMLxvBPUrWu7rO7hkTlKoGe18ZISdEqxCA+8Jjd2Q1QacV5+rEfIYoXA4UNiBbMqlTJaFZ5/oab9FK9pko5YzA4YigvM8JjtsY2002fYgDV71h5va/OvWwp9BLCN33NMT935xmgOy044JBI1TDW/TGgoEOD56y5dp6K/03WAIJSuDLyYu1VD+D2qRoHzUkwu0DrZPSNmPb/WWa5NDUyo49gZYU+tGutv4HtHGyk+gPhK4AAAAASUVORK5CYII=); /* Noise placeholder - see http://jsfiddle.net/osserpse/6SZQY/ *
+	background-size: 10px 10px; /* Increase size to make it grainier *
+	background-repeat: repeat;
+	background-color: [colour-background-dark-rgba 0.2]; */
+	min-height: 550px;
+}
+
+section.kokako.pageBanner.text-box-bottom {
+	align-items: flex-end;
+}
+
+section.kokako.pageBanner.section1 {
+	margin-top: 0;
+}
+
+section.kokako.pageBanner + a + section.kokako.colour-scheme {
+	margin-top: -[section-padding-vertical];
+}
+
+/* section.kokako.pageBanner .banner-overlay {
+	position: absolute;
+	left: 0;
+	width: 50%;
+	height: 70%;
+	background-size: 100% 100%;
+	background-position: left bottom;
+	z-index: 1;
+} */
+
+section.kokako.pageBanner .container-fluid {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+section.kokako.pageBanner .container-fluid img {
+	width: 100%;
+	height: auto;
+}
+
+section.kokako.pageBanner .container-fluid .row img {
+	width: auto;
+}
+
+section.kokako.pageBanner .container-fluid .row {
+	background: none !important;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+section.kokako.pageBanner .container-fluid .row :is(.col-xs-12, .col-sm-12) {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+section.kokako.pageBanner .overlay {
+	/* position: absolute;
+	top: 27%;
+	left: 10%; */
+	width: 40%;
+	min-width: 500px;
+	max-width: 80%;
+	background: [colour-background-dark-rgba 0.7];
+	/* padding: 21px 42px; */
+	padding:[tsp-calc {text-margin} *2] [text-margin];
+}
+
+section.kokako.pageBanner .text-box {
+	width: 100%; /* Default, max widths set for all sizes below */
+	max-width: [width-xl];
+	margin-left: auto;
+	margin-right: auto;
+	/* padding: 21px 42px; */
+	padding:[tsp-calc {text-margin} *2] [text-margin];
+}
+
+section.kokako.pageBanner .text-box  > * {
+	max-width: 85%;
+}
+
+section.kokako.pageBanner :is(h1, h2, h3, h4, h5, h6, p, li) {
+	color: [colour-text-alt];
+	/* text-align: center; */
+	/* text-shadow: 0 2px 4px [colour-background-alt-rgba 0.8]; */
+	text-shadow: 0 0 30px [colour-background-alt-rgba 0.3]; /* Subtler option */
+}
+
+section.kokako.pageBanner.colour-scheme-light :is(h1, h2, h3, h4, h5, h6, p, li) {
+	text-shadow: 0 0 30px [colour-background-rgba 0.3]; /* Subtler option */
+}
+
+section.kokako.pageBanner .overlay :is(h1, h2) {
+	text-transform: uppercase;
+}
+
+section.kokako.pageBanner .cta-buttons {
+	text-align: left;
+}
+
+section.kokako.pageBanner :is(button, a.button, a.btn) {
+	text-shadow: none;
+}
+
+section.kokako.pageBanner a:is(.button, .button:link, .button:visited) { /* Force alt colours */
+	background: [colour-background];
+	color: [colour-text];
+	font-weight: bold;
+	/* box-shadow: 0 2px 4px [colour-background-alt-rgba 0.8]; */
+	box-shadow: 0 0 30px [colour-background-alt-rgba 0.1]; /* Subtler option */
+}
+
+section.kokako.pageBanner a.button:hover,
+section.kokako.pageBanner.colour-scheme a.button:hover {
+	/* background: [colour-background-hover]; */
+	color: [colour-text-dark];
+	background: [colour-background-variation -4];
+}
+
+section.kokako.pageBanner a.button:active,
+section.kokako.pageBanner.colour-scheme a.button:active {
+	/* background: [colour-background-active]; */
+	color: [colour-text-dark];
+	background: [colour-background-variation -12];
+}
+
+.kokako.pageBanner :is(button, input[type=""submit""], a.button, a.btn) i.icon-right {
+	color: [color-text-light];
+	background: [colour-brand-tan];
+}
+
+
+/* Page Banner - Vertical Height */
+
+section.kokako:is(.vh-100, .vh-95, .vh-90, .vh-85, .vh-80, .vh-70, .vh-60, .vh-50, .vh-40, .vh-30, .px-700, .px-600, .px-500, .px-400, .px-300, .px-200) {
+	/* overflow: hidden; */
+	max-height: fit-content; /* min-height takes precedence over max-height - see https://ishadeed.com/article/min-max-css/ */
+}
+
+section.kokako:is(.vh-100, .vh-95, .vh-90, .vh-85, .vh-80, .vh-70, .vh-60, .vh-50, .vh-40, .vh-30, .px-700, .px-600, .px-500, .px-400, .px-300, .px-200) :is(.container-fluid, .container) { /* Works with max-height:fit-content to ensure spacing */
+	padding-top: [section-padding-vertical];
+	padding-bottom: [section-padding-vertical];
+}
+
+section.kokako.vh-100 {
+	min-height: 100vh;
+}
+
+section.kokako.vh-95 {
+	min-height: 95vh;
+}
+
+section.kokako.vh-90 {
+	min-height: 90vh;
+}
+
+section.kokako.vh-85 {
+	min-height: 85vh;
+}
+
+section.kokako.vh-80 {
+	min-height: 80vh;
+}
+
+section.kokako.vh-70 {
+	min-height: 70vh;
+}
+
+section.kokako.vh-60 {
+	min-height: 60vh;
+}
+
+section.kokako.vh-50 {
+	min-height: 50vh;
+}
+
+section.kokako.vh-40 {
+	min-height: 40vh;
+}
+
+section.kokako.vh-30 {
+	min-height: 30vh;
+}
+
+/* section.kokako:is(.px-700, .px-600, .px-500, .px-400, .px-300, .px-200) {
+	overflow: hidden;
+	height: calc(100vh - [header-height]); /* default height, max height set below 
+} */
+
+section.kokako.px-700 {
+	min-height: 700px;
+}
+
+section.kokako.px-600 {
+	min-height: 600px;
+}
+
+section.kokako.px-500 {
+	min-height: 500px;
+}
+
+section.kokako.px-400 {
+	min-height: 400px;
+}
+
+section.kokako.px-300 {
+	min-height: 300px;
+}
+
+section.kokako.px-200 {
+	min-height: 200px;
+}
+"
+sections_css,,section_responsivity,,screen_size,lg_above
+sections_css,,section_responsivity,,css_at_screen_size,"section.kokako.pageBanner {
+	min-height: 700px;
+}
+
+section.kokako.pageBanner .overlay {
+	width: 100%;
+	top: [header-height];
+}
+
+       
+/* Page Banner - Vertical Height */
+
+section.kokako.vh-100 {
+	min-height: calc(100vh - 140px);
+}
+
+section.kokako.vh-95 {
+	min-height: calc(95vh - 140px);
+}
+
+section.kokako.vh-90 {
+	min-height: calc(90vh - 140px);
+}
+
+section.kokako.vh-85 {
+	min-height: calc(85vh - 140px);
+}
+
+section.kokako.vh-80 {
+	min-height: calc(80vh - 140px);
+}
+
+section.kokako.vh-70 {
+	min-height: calc(70vh - 140px);
+}
+
+section.kokako.vh-60 {
+	min-height: calc(60vh - 140px);
+}
+
+section.kokako.vh-50 {
+	min-height: calc(50vh - 140px);
+}
+
+section.kokako.vh-40 {
+	min-height: calc(40vh - 140px);
+}
+
+section.kokako.vh-30 {
+	min-height: calc(30vh - 140px);
+}"
+sections_css,,section_responsivity,,screen_size,lg
+sections_css,,section_responsivity,,css_at_screen_size,"section.kokako.pageBanner .overlay {
+	position: relative;
+	top: 30px;
+	left: 0;
+	background: [colour-background-dark];
+	min-width: 0;
+	max-width: 100%;
+	padding: 40px 15px;
+}
+
+section.kokako.pageBanner .text-box {
+	max-width: [width-lg];
+}"
+sections_css,,section_responsivity,,screen_size,md
+sections_css,,section_responsivity,,css_at_screen_size,"section.kokako.pageBanner.section1 {
+	position: relative;
+	/* top: -[header-height-scrolled]; */
+	margin-bottom: -[header-height-scrolled];
+	/* border-top: [header-height-scrolled] transparent solid; */
+	border-top: 0;
+}
+
+section.kokako.pageBanner .text-box {
+	max-width: [width-md];
+}
+
+section.kokako.pageBanner .overlay {
+	width: 100%;
+	top: [header-height];
+}
+
+/* section.kokako.pageBanner.backgroundImage.max-vh-100 {
+	min-height: 700px;
+} */
+
+section.kokako.pageBanner :is(h1, h2) {
+	/* font-size: 3.5rem; */
+	margin-bottom: [text-margin];
+}"
+sections_css,,section_responsivity,,screen_size,sm
+sections_css,,section_responsivity,,css_at_screen_size,"section.kokako.pageBanner .overlay {
+	position: relative;
+	top: 30px;
+	left: 0;
+	background: [colour-background-dark];
+	min-width: 0;
+	max-width: 100%;
+	padding: 40px 15px;
+}
+
+section.kokako.pageBanner .text-box {
+	max-width: [width-sm];
+}"
+sections_css,,section_responsivity,,screen_size,xs_only
+sections_css,,section_responsivity,,css_at_screen_size,"section.kokako.pageBanner {
+	max-height: none;
+}
+
+section.kokako.pageBanner.backgroundImage.max-vh-100 {
+	min-height: 600px;
+}
+
+section.kokako.pageBanner :is(.overlay, .text-box) {
+	width: [width-xs-max];
+	min-width: 0;
+	max-width: 100%;
+}
+
+/* section.kokako.pageBanner .text-box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+} */
+
+section.kokako.pageBanner :is(h1, h2) {
+	font-size: 3rem;
+}
+
+section.kokako.pageBanner :is(p, p.small-print) {
+	display: none;
+}"
+sections_css,,section_responsivity,,screen_size,navbar_expanded
+sections_css,,section_responsivity,,css_at_screen_size,"/* Page Banner - Vertical Height */
+
+section.kokako.vh-100 {
+	min-height: calc(100vh - [header-height]);
+}
+
+section.kokako.vh-95 {
+	min-height: calc(95vh - [header-height]);
+}
+
+section.kokako.vh-90 {
+	min-height: calc(90vh - [header-height]);
+}
+
+section.kokako.vh-85 {
+	min-height: calc(85vh - [header-height]);
+}
+
+section.kokako.vh-80 {
+	min-height: calc(80vh - [header-height]);
+}
+
+section.kokako.vh-70 {
+	min-height: calc(70vh - [header-height]);
+}
+
+section.kokako.vh-60 {
+	min-height: calc(60vh - [header-height]);
+}
+
+section.kokako.vh-50 {
+	min-height: calc(50vh - [header-height]);
+}
+
+section.kokako.vh-40 {
+	min-height: calc(40vh - [header-height]);
+}
+
+section.kokako.vh-30 {
+	min-height: calc(30vh - [header-height]);
+}"
+sections_css,,section_type,"Page Heading"
+sections_css,,section_css,"section.kokako.pageHeading {
+	position: relative;
+	padding: [section-padding-vertical] 0 0; /* No bottom padding by default */
+	display: flex;
+	justify-content: center;
+	align-items: center; /* Use flex-end if need to align items at the end */
+	background: [colour-background];
+}
+
+section.kokako.pageHeading :is(h1, h2) {
+	color: [colour-text];
+}
+
+section.kokako.pageHeading.section1 {
+	margin-top: 0;
+}
+
+section.kokako.pageHeading .container-fluid {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+section.kokako.pageHeading .container-fluid .row {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+section.kokako.pageHeading .container-fluid .row :is(.col-xs-12, .col-sm-12) {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+/* section.kokako.pageHeading .text-box { /* Uncomment if background colour is required for text box *
+	padding: 21px 42px; *
+} */
+
+section.kokako.pageHeading .cta-buttons {
+	text-align: left;
+}
+
+section.kokako.pageHeading :is(button, a.button, a.btn) {
+	text-shadow: none;
+}
+
+section.kokako.pageHeading a:is(.button, .button:link, .button:visited) { /* Force alt colours */
+	background: [colour-background-alt];
+	color: [colour-text-alt];
+	font-weight: bold;
+}
+
+section.kokako.pageHeading a.button:hover {
+	background: [colour-background-alt-hover];
+}
+
+section.kokako.pageHeading a.button:active {
+	background: [colour-background-alt-active];
+}"
+sections_css,,section_responsivity,,screen_size,xs_only
+sections_css,,section_responsivity,,css_at_screen_size,"section.kokako.pageHeading :is(h1, h2) {
+	font-size: 3rem;
+}
+
+section.kokako.pageHeading :is(p, p.small-print) {
+	display: none;
+}"
+sections_css,,section_type,Quote
+sections_css,,section_css,"section.kokako.quote {
+	position: relative;
+	padding: [section-padding-vertical] 0 0; /* No bottom padding by default */
+	display: flex;
+	justify-content: center;
+	align-items: center; /* Use flex-end if need to align items at the end */
+	background: [colour-background];
+}
+
+section.kokako.quote :is(h1, h2) {
+	color: [colour-text];
+}
+
+section.kokako.quote.section1 {
+	margin-top: 0;
+}
+
+section.kokako.quote .container-fluid {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+section.kokako.quote .container-fluid .row {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+section.kokako.quote .container-fluid .row :is(.col-xs-12, .col-sm-12) {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+/* section.kokako.quote .text-box { /* Uncomment if background colour is required for text box *
+	padding: 21px 42px; *
+} */
+
+section.kokako.quote .cta-buttons {
+	text-align: left;
+}
+
+section.kokako.quote :is(button, a.button, a.btn) {
+	text-shadow: none;
+}
+
+section.kokako.quote a:is(.button, .button:link, .button:visited) { /* Force alt colours */
+	background: [colour-background-alt];
+	color: [colour-text-alt];
+	font-weight: bold;
+}
+
+section.kokako.quote a.button:hover {
+	background: [colour-background-alt-hover];
+}
+
+section.kokako.quote a.button:active {
+	background: [colour-background-alt-active];
+}"
+sections_css,,section_responsivity,,screen_size,md
+sections_css,,section_responsivity,,css_at_screen_size,"section.kokako.quote :is(h1, h2) {
+	font-size: 3.5rem;
+	margin-bottom: [text-margin];
+}"
+sections_css,,section_responsivity,,screen_size,xs_only
+sections_css,,section_responsivity,,css_at_screen_size,"section.kokako.quote :is(h1, h2) {
+
+	font-size: 3rem;
+}
+
+section.kokako.quote :is(p, p.small-print) {
+	display: none;
+}"
+sections_css,,section_type,Slider
+sections_css,,section_css,"section.kokako.slider {
+	position: relative;
+	padding: 0;
+}
+
+section.kokako.slider .carousel.slide {
+	height: 500px;
+	overflow: hidden;
+	background: [colour-background-dark-rgba 0.1];
+}
+
+section.kokako.slider .carousel-inner {
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+section.kokako.slider :is(.carousel-item-next, .carousel-item-prev, .carousel-item.active) {
+	display: flex;
+}
+
+section.kokako.slider .carousel-mobile-placeholder {
+	display: none;
+}
+
+section.kokako.slider .carousel-item-overlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: [colour-brand-1-rgba 0.53];
+}
+
+section.kokako.slider .carousel-caption {
+	background: [colour-brand-1-rgba 0.8];
+	bottom: 0;
+	width: 950px;
+	left: calc(50% - 475px);
+	text-align: left;
+	padding: 35px 42px 50px;
+}
+
+section.kokako.slider .carousel-indicators {
+	margin-bottom: 5px;
+}
+
+section.kokako.slider p {
+	font-size: 1.3rem;
+}
+
+section.kokako.slider h2 + p {
+	margin-top: -5px;
+}
+
+section.kokako.slider .cta-buttons {
+	text-align: left;
+}
+
+section.kokako.slider h3 {
+	font-weight: normal;
+	color: [colour-text-light];
+	text-transform: uppercase;
+	font-size: 1.1rem;
+	margin: 0;
+}"
+sections_css,,section_responsivity,,screen_size,lg_above
+sections_css,,section_responsivity,,css_at_screen_size,"section.kokako.slider .carousel-indicators {
+	margin-bottom: 5px;
+}
+
+section.kokako.slider .carousel-indicators li {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+section.kokako.slider .carousel-caption {
+	width: 100%;
+	left: 0;
+	padding: 15px 50px 25px;
+}
+
+section.kokako.slider .carousel-caption {
+	height: 100%;
+	padding-top: 10vh;
+}
+
+section.kokako.slider .carousel-caption h2 {
+	font-size: 3rem;
+	line-height: 1;
+}
+
+section.kokako.slider .carousel-caption :is(h3, p) {
+	font-size: 1rem;
+}
+
+section.kokako.slider .cta-buttons {
+	margin-top: 10px;
+}"
+sections_css,,section_responsivity,,screen_size,lg
+sections_css,,section_responsivity,,css_at_screen_size,"section.kokako.slider .carousel-caption img {
+	max-width: 22px;
+}"
+sections_css,,section_responsivity,,screen_size,md
+sections_css,,section_responsivity,,css_at_screen_size,"section.kokako.slider .carousel-indicators {
+	margin-bottom: 5px;
+}
+
+section.kokako.slider .carousel-indicators li {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+section.kokako.slider .carousel-caption {
+	width: 100%;
+	left: 0;
+	padding: 15px 50px 25px;
+}
+
+section.kokako.slider .carousel-caption {
+	height: 100%;
+	padding-top: 10vh;
+}
+
+section.kokako.slider .carousel-caption h2 {
+	font-size: 3rem;
+	line-height: 1;
+}
+
+section.kokako.slider .carousel-caption :is(h3, p) {
+	font-size: 1rem;
+}
+
+section.kokako.slider .cta-buttons {
+	margin-top: 10px;
+}"
+sections_css,,section_responsivity,,screen_size,xs_only
+sections_css,,section_responsivity,,css_at_screen_size,"section.kokako.slider .carousel.slide {
+	height: 350px;
+}
+
+section.kokako.slider .carousel-caption {
+	padding: 5vh 15px 0;
+}
+
+section.kokako.slider .carousel-caption :is(h3, img) {
+	display: none;
+}
+
+section.kokako.slider .carousel-caption h2 {
+	font-size: 2rem;
+}"
+sections_css,,section_type,Team
+sections_css,,section_css,"section.kokako.team .team-member-row img {
+	margin-top: [tsp-calc tm *2];
+}
+
+section.kokako.team h3 {
+	margin-bottom: [tsp-calc tm /3, round];
+}
+
+section.kokako.team h4 {
+	margin: [tsp-calc tm /3, round] 0;
+}"
+sections_css,,section_responsivity,
+sections_css,,section_type,Testimonials
+sections_css,,section_css,"section.kokako.testimonials {
+	padding-bottom: 0; /* Due to testimonial links being moved up by [section-padding-vertical] */
+}
+
+section.kokako.testimonials .container .row:last-child { /* Testimonial Links */
+	position: relative;
+	top: -[section-padding-vertical];
+	background: none;
+}
+
+section.kokako.testimonials .container .row :is(.col-md-12, .col-md-10) {
+	overflow: hidden;
+}
+
+section.kokako.testimonials .internalWrap {
+	min-height: 130px;
+	padding: 0;
+}
+
+section.kokako.testimonials .internalWrap.includeStarRating {
+	min-height: 180px;
+}
+
+section.kokako.testimonials .testimonial {
+	/* display: none; */
+	position: absolute;
+	width: 100%; /* Fallback - not correctly centred */
+	width: calc(100% - 30px);
+	opacity: 0;
+	transition: all 0.5s ease;
+}
+
+section.kokako.testimonials .testimonial.current {
+	/* display: block !important; */
+	opacity: 1;
+}
+
+section.kokako.testimonials .testimonial img.alignleft {
+	margin-right: 30px;
+}
+
+section.kokako.testimonials .testimonial img {
+	float: left;
+	border-radius: 50%;
+}
+
+section.kokako.testimonials p.testimonial-rating {
+	text-align: center;
+}
+
+section.kokako.testimonials .testimonial p.testimonial-text {
+	max-width: 900px;
+	margin: 0 auto 30px;
+	text-align: center;
+}
+
+section.kokako.testimonials .testimonial :is(p.testimonial-text, img) { /* For initial centring */
+	transition: margin 0.5s ease;
+}
+
+section.kokako.testimonials .testimonial p.name-company {
+	text-transform: uppercase;
+	text-align: center;
+	margin: 0 auto 15px;
+	max-width: 900px;
+}
+
+section.kokako.testimonials p.testimonial-links {
+	text-align: center;
+}
+
+section.kokako.testimonials a.testimonial-link {
+	display: inline-block;
+	width: 13px;
+	height: 13px;
+	margin: 0 3px;
+	border: 1px [colour-background-alt] solid !important;
+	border-radius: 50%;
+	background: none;
+}
+
+section.kokako.testimonials a.testimonial-link.current {
+	background: [colour-background-alt];
+}"
+sections_css,,section_responsivity,,screen_size,lg_above
+sections_css,,section_responsivity,,css_at_screen_size,"section.kokako.testimonials {
+	padding-bottom: 50px; /* Due to testimonial links being moved up by 10px */
+}
+
+section.kokako.testimonials .container .row:last-child { /* Testimonial Links */
+	top: -10px;
+}"
+sections_css,,section_responsivity,,screen_size,lg_only
+sections_css,,section_responsivity,,css_at_screen_size,"section.kokako.testimonials .testimonial.col-lg-6 {
+	flex: 0 0 calc(50% - 15px);
+}
+
+section.kokako.testimonials .testimonial.col-lg-6:nth-child(odd) {
+	margin-right: 15px;
+}
+
+section.kokako.testimonials .testimonial.col-lg-6:nth-child(even) {
+	margin-left: 15px;
+}"
+sections_css,,section_responsivity,,screen_size,lg
+sections_css,,section_responsivity,,css_at_screen_size,"section.kokako.testimonials .testimonials-heading img.alignleft {
+	float: none;
+	padding-right: 0;
+	border-right: none;
+	margin: 15px auto 0;
+	display: block;
+	width: 112px;
+}
+
+section.kokako.testimonials .testimonials-heading h1 {
+	margin: 40px 28px;
+}
+
+section.kokako.testimonials .testimonials-heading :is(h1, h2, h3) {
+	text-align: center;
+}"
+sections_css,,section_responsivity,,screen_size,md
+sections_css,,section_responsivity,,css_at_screen_size,"section.kokako.testimonials {
+	padding-bottom: 50px; /* Due to testimonial links being moved up by 10px */
+}
+
+section.kokako.testimonials .container .row:last-child { /* Testimonial Links */
+	top: -10px;
+}
+
+section.kokako.testimonials a.testimonial-link {
+	width: 20px;
+	height: 20px;
+	margin: 0 5px;
+}"
+sections_css,,section_responsivity,,screen_size,sm_only
+sections_css,,section_responsivity,,css_at_screen_size,"section.kokako.testimonials .internalWrap {
+	min-height: 150px;
+}"
+sections_css,,section_responsivity,,screen_size,sm
+sections_css,,section_responsivity,,css_at_screen_size,"section.kokako.testimonials .testimonials-heading img.alignleft {
+	float: none;
+	padding-right: 0;
+	border-right: none;
+	margin: 15px auto 0;
+	display: block;
+	width: 112px;
+}
+
+section.kokako.testimonials .testimonials-heading h1 {
+	margin: 40px 28px;
+}
+
+section.kokako.testimonials .testimonials-heading :is(h1, h2, h3) {
+	text-align: center;
+}"
+sections_css,,section_responsivity,,screen_size,xs_only
+sections_css,,section_responsivity,,css_at_screen_size,"section.kokako.testimonials .internalWrap {
+	min-height: 180px;
+}"
+sections_css,,section_type,"Text with Photo"
+sections_css,,section_css,"section.kokako.textWithPhoto.no-margin-bottom.no-padding .container-fluid .internalWrap {
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+
+.kokako.textWithPhoto:not(.colour-scheme) .motif-bar-heading .bar {
+	background: [colour-brand-light-tan];
+}"
+sections_css,,section_responsivity,,screen_size,xl_only
+sections_css,,section_responsivity,,css_at_screen_size,"/* Set max width on Text with Photo section */
+
+section.kokako.textWithPhoto .col-lg-6.text {
+	max-width: 570px; 
+}
+
+@media (min-width: 2100px) {
+	section.kokako.textWithPhoto .container-fluid .col-lg-6.image {
+		max-width: 30%;
+		margin-left: 20%;
+	}
+
+	section.kokako.textWithPhoto .container-fluid .row.flex-row-reverse .col-lg-6.image {
+		margin-right: 20%;
+		margin-left: 0;
+	}
+}"
+sections_css,,section_responsivity,,screen_size,lg_above
+sections_css,,section_responsivity,,css_at_screen_size,"section.kokako.textWithPhoto .row .col-lg-6.text .internalWrap {
+	padding-left: [tsp-calc tm *3];
+	padding-right: 0;
+}
+
+section.kokako.textWithPhoto .row.flex-row-reverse .col-lg-6.text .internalWrap {
+	padding-left: 0;
+	padding-right: [tsp-calc tm *3];
+}
+
+section.kokako.textWithPhoto.padding-none .col-lg-6.text .internalWrap {
+	padding-top: [section-padding-vertical];
+	padding-bottom: [section-padding-vertical];
+}
+
+
+/* Sticky Images */
+
+section.kokako.textWithPhoto.image-sticky {
+	overflow: visible; /* Required for sticky elements to work - won't work when overflow is set to hidden */
+}
+
+section.kokako.textWithPhoto.image-sticky div.image .sticky-image {
+	width: 100%;
+	aspect-ratio: 1/1;
+	position: -webkit-sticky; /* Safari */
+	position: sticky;
+	top: [tsp-calc spv *2 /3 + {header-height-scrolled}, round];
+	max-height: calc(100vh - [tsp-calc spv *4 /3 + {header-height-scrolled}, round]);
+}
+
+section.kokako.textWithPhoto.image-sticky .internalWrap {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+
+/* Heading Motif Bar */
+
+.kokako.textWithPhoto .col-lg-6 .motif-bar-heading {
+	max-width: [tsp-calc {heading-motif-bar-width-max} *2];
+}"
+sections_css,,section_responsivity,,screen_size,lg_only
+sections_css,,section_responsivity,,css_at_screen_size,"section.kokako.textWithPhoto .col-lg-6.text { /* Set max width on Text with Photo section */
+	max-width: 480px;
+}"
+sections_css,,section_responsivity,,screen_size,md
+sections_css,,section_responsivity,,css_at_screen_size,"section.kokako.textWithPhoto .internalWrap {
+	padding: 0;
+}
+
+section.kokako.textWithPhoto .internalWrap :is(h1, h2) {
+	margin-top: 0;
+}
+
+.kokako.textWithPhoto .text {
+	max-width: [width-md];
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: [section-padding-vertical];
+}"
+sections_css,,section_responsivity,,screen_size,sm
+sections_css,,section_responsivity,,css_at_screen_size,".kokako.textWithPhoto .text {
+	max-width: [width-sm];
+}"
+sectionkokakocolour-scheme_:iscontainer_container-fluid_row,"background: none;"
+other_general_colour_scheme_css,"/* Image overlays base */
+
+section.kokako.background-overlay .image-overlay { /* Note that the background colour classes themselves are created dynamically by ticking the ""Add Image Overlay Colours"" option under Elements CSS > Colours, and are added automatically to the CSS at the start of the Colour Schemes section */
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: [colour-background-dark]; /* Default, will be overridden by colour scheme */
+	opacity: 0.5; /* Default, opacity can be overridden on a per section basis */
+}
+
+
+/* Remove background if section already has a background image (otherwise interferes with background blend modes) */
+
+section.kokako.colour-scheme.has-background-image {
+	background: none;
+}"
+colour_schemes,"***group_start :: Light***",colour_scheme_name,Light
+colour_schemes,,colour_scheme_description,"Light Colour Scheme (Light background, dark text)"
+colour_schemes,,general,,colour_scheme_class_css,"color: [colour-text-dark];
+background-color: [colour-background-light];"
+colour_schemes,,general,,colour_scheme_headings_css,"color: [colour-text-dark];"
+colour_schemes,,general,,colour_scheme_text_css,"color: [colour-text-dark];"
+colour_schemes,,anchors,,colour_scheme_anchor_css,"color: [colour-text-dark];
+border-bottom: 2px solid [colour-text-dark];"
+colour_schemes,,anchors,,colour_scheme_anchor_hover_css,"color: [colour-text-dark-hover];
+border-bottom: 2px solid [colour-text-dark];"
+colour_schemes,,anchors,,colour_scheme_anchor_active_css,"color: [colour-text-dark-active];
+border-bottom: 2px solid [colour-text-dark];"
+colour_schemes,,anchors,,colour_scheme_anchor_underline_css,"background-color: [colour-text-dark-hover];"
+colour_schemes,,buttons,,colour_scheme_button_css,"color: [colour-text-light];
+background-color: [colour-background-dark];"
+colour_schemes,,buttons,,colour_scheme_button_hover_css,"color: [colour-text-light];
+background-color: [colour-background-dark-hover];"
+colour_schemes,,buttons,,colour_scheme_button_active_css,"color: [colour-text-light];
+background-color: [colour-background-dark-active];"
+colour_schemes,"***group_end :: Light***",other_colour_scheme_css,"/* Light Image Overlay (option always available) */
+section.kokako.background-overlay.background-overlay-light .image-overlay {
+	background: [colour-background-light];
+}"
+colour_schemes,"***group_start :: Dark***",colour_scheme_name,Dark
+colour_schemes,,colour_scheme_description,"Dark Colour Scheme (Dark background, light text)"
+colour_schemes,,general,,colour_scheme_class_css,"color: [colour-text-light];
+background-color: [colour-background-dark];"
+colour_schemes,,general,,colour_scheme_headings_css,"color: [colour-text-light];"
+colour_schemes,,general,,colour_scheme_text_css,"color: [colour-text-light];"
+colour_schemes,,anchors,,colour_scheme_anchor_css,"color: [colour-text-light];
+border-bottom: 2px solid [colour-text-light];"
+colour_schemes,,anchors,,colour_scheme_anchor_hover_css,"color: [colour-text-light-hover];
+border-bottom: 2px solid [colour-text-light-hover];"
+colour_schemes,,anchors,,colour_scheme_anchor_active_css,"color: [colour-text-light-active];
+border-bottom: 2px solid [colour-text-light-active];"
+colour_schemes,,anchors,,colour_scheme_anchor_underline_css,"background-color: [colour-text-light-hover];"
+colour_schemes,,buttons,,colour_scheme_button_css,"color: [colour-text-dark];
+background: [colour-background-light];"
+colour_schemes,,buttons,,colour_scheme_button_hover_css,"color: [colour-text-dark];
+background: [colour-background-light-hover];"
+colour_schemes,,buttons,,colour_scheme_button_active_css,"color: [colour-text-dark];
+background: [colour-background-light-active];"
+colour_schemes,"***group_end :: Dark***",other_colour_scheme_css,"/* Dark Image Overlay (option always available) */
+section.kokako.background-overlay.background-overlay-dark .image-overlay {
+	background: [colour-background-dark];
+}
+
+.kokako.colour-scheme-dark :is(button, input[type=""submit""], a.button, a.btn) i.icon-right {
+	color: [color-text-light];
+	background: [colour-brand-tan];
+}"
+colour_schemes,"***group_start :: Light Tan***",colour_scheme_name,"Light Tan"
+colour_schemes,,colour_scheme_description,"Light Tan Colour Scheme (Light Tan background, dark text)"
+colour_schemes,,general,,colour_scheme_class_css,"color: [colour-text-dark];
+background: [colour-brand-light-tan];"
+colour_schemes,,general,,colour_scheme_headings_css,"color: [colour-text-dark];"
+colour_schemes,,general,,colour_scheme_text_css,"color: [colour-text-dark];"
+colour_schemes,,anchors,,colour_scheme_anchor_css,
+colour_schemes,,anchors,,colour_scheme_anchor_hover_css,
+colour_schemes,,anchors,,colour_scheme_anchor_active_css,
+colour_schemes,,anchors,,colour_scheme_anchor_underline_css,
+colour_schemes,,buttons,,colour_scheme_button_css,"color: [colour-text-dark];
+background: [colour-background-light];"
+colour_schemes,,buttons,,colour_scheme_button_hover_css,"color: [colour-text-dark];
+background: [colour-background-light-variation -4];"
+colour_schemes,,buttons,,colour_scheme_button_active_css,"color: [colour-text-dark];
+background: [colour-background-light-variation -12];"
+colour_schemes,"***group_end :: Light Tan***",other_colour_scheme_css,".kokako.colour-scheme-light-tan :is(button, input[type=""submit""], a.button, a.btn) i.icon-right {
+	color: [color-text-light];
+	background: [colour-brand-tan];
+}"
+archives_&_categories,"body:is(.blog, .archive, .single) {
+	background: [colour-background-light];
+}
+
+body:is(.blog, .archive) section.kokako.pageBanner.section1 {
+	min-height: 450px;
+}
+
+body:is(.blog, .archive) .blog-grid h4.breadcrumbs {
+	margin: 15px 0 0;
+}
+
+body:is(.blog, .archive) .blog-grid h2 {
+	margin: 5px 0 15px;
+	font-size: 2.2rem;
+}
+
+body.archive h1 {
+	margin-top: 0;
+	margin-bottom: 5px;
+}
+
+body.archive h1 + h4.breadcrumbs {
+	margin-top: 5px;
+	margin-bottom: 0;
+}
+
+/* body.blog .row.extra-row-padding-top {
+	padding-top: [tsp-calc spv /2, round];
+} */
+
+body.blog section.kokako.latestPosts .row .blog-grid.post:first-of-type h3 {
+	margin-top: [tsp-calc tm *2];
+}
+
+body.blog section.pageHeading {
+	padding-bottom: [tsp-calc spv /2, round];
+}
+
+body.blog section.pageHeading + section.latestPosts {
+	padding-top: 0;
+}
+
+body#blog-posts-page section.pageHeading h1 {
+	margin-top: 0;
+}
+
+body.blog section.latestPosts .row.row-content .col-xs-12 {
+	margin-bottom: [tsp-calc tm *5];
+}
+
+a.read-more-link { /* Fix for hover not appearing when the link is on it's own line */
+	display: inline-block;
+}"
+singles,"body.single :is(h1, h2, h3, h4, h5, h6) {
+	clear: both;
+}
+
+:is(.post-meta h4, h4.breadcrumbs) {
+	font-weight: normal;
+	font-size: 1rem;
+}
+
+.post-meta h4 {
+	margin-bottom: 50px;
+	font-style: italic;
+}
+
+h4.breadcrumbs {
+	margin: 0 0 30px;
+	text-transform: uppercase;
+}
+
+body.single .post-meta + img {
+	margin-bottom: [tsp-calc tm *2];
+}"
+other_blog_css,
+shop_css,".woocommerce a { /* Required because of bottom border on hover */
+	min-height: 27px;
+}
+
+.woocommerce a.added_to_cart {
+	min-height: 39px;
+}
+
+.woocommerce :is(button, input[type=""submit""], a.button, a.btn, button:hover, input[type=""submit""]:hover, a.button:hover, a.btn:hover, button:active, input[type=""submit""]:active, a.button:active, a.btn:active) {
+	padding: .618em 1em;
+	margin: 0;
+}
+
+a.button:is(.checkout-button, .checkout-button:link, .checkout-button:visited, .checkout-button:hover, .checkout-button:active) {
+	margin: 0;
+}
+
+#add_payment_method .wc-proceed-to-checkout a.checkout-button:hover,
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button:hover,
+.woocommerce-checkout .wc-proceed-to-checkout a.checkout-button:hover {
+	padding: 1em;
+}
+
+.woocommerce input.input-text.qty.text {
+	padding: 4px 0 4px 15px;
+}
+
+p#calc_shipping_state_field span:first-child {
+	width: 100%;
+}
+
+ul#shipping_method input[type=radio] {
+	width: inherit;
+}
+
+.woocommerce-checkout :is(.col-1, .col-2) {
+	max-width: 100%;
+}
+
+#ship-to-different-address label input {
+	width: initial;
+}
+
+#ship-to-different-address label span {
+	margin-left: 10px;
+	max-width: calc(100% - 20px);
+}
+
+#order_comments_field span {
+	width: 100%;
+}
+
+nav.woocommerce-MyAccount-navigation li.woocommerce-MyAccount-navigation-link {
+	margin-left: 15px; /* Respect Bootstrap padding */
+}
+
+nav.woocommerce-MyAccount-navigation  ul li :is(a, a:link, a:visited) {
+	padding: 0;
+	margin-left: 15px;
+	margin-bottom: 10px;
+}
+
+.woocommerce div.product div.images a.woocommerce-product-gallery__trigger {
+	font-size: 22px !important;
+	text-align: center;
+	text-indent: 0;
+	border-bottom: 0;
+}
+
+.woocommerce div.product div.images .woocommerce-product-gallery__trigger::before {
+	display: none;
+}
+
+:is(.woocommerce, .woocommerce-page) section.kokako h2 { /* Override fade ins on Shop pages */
+	opacity: 1 !important;
+	transform: scale(1) !important;
+}
+
+.woocommerce-page li {
+	margin: 0;
+}
+
+.woocommerce-page span.woocommerce-input-wrapper {
+	min-width: 230px;
+}
+
+:is(.woocommerce, .woocommerce-page) form .form-row .input-text {
+	padding: 6px 10px;
+	min-width: 230px;
+}
+
+.woocommerce-page input#coupon_code {
+	min-width: 155px;
+}
+
+:is(.woocommerce, .woocommerce-page) a.remove:before { /* Remove borders on buttons */
+	height: 0;
+}
+
+.woocommerce-order-received :is(.woocommerce, .woocommerce-page) .col2-set :is(.col-1, .col-2) {
+	margin-left: -15px;
+	margin-right: -15px;
+}
+
+
+/* Cart icon in header - add count */
+
+i.icon-basket + span.cart-count {
+	position: relative;
+	left: -12px;
+	top: -10px;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	font-size: 70%;
+	font-weight: normal;
+	line-height: 70%;
+	background: [colour-background-light];
+	color: [colour-nav-text];
+	border: 1px solid [colour-nav-text];
+	border-radius: 50%;
+	padding: 5px 4px 4px 4px;
+}
+
+
+/* Stripe Payments */
+
+.woocommerce :is(.stripe-card-group, #stripe-exp-element, #stripe-cvc-element) {
+	width: 100%;
+	max-width: 300px;
+}
+
+.woocommerce-checkout #payment ul.payment_methods li input {
+	margin-top: 9px;
+	margin-right: [text-margin];
+}
+
+.woocommerce label[for=wc-stripe-new-payment-method] {
+	display: inline;
+	float: left;
+ 	width: calc(100% - 30px);
+}"
+custom_css,"/* Motif: Heading Bar */
+
+.kokako .motif-bar-heading {
+	position: relative;
+	width: 400px;
+	max-width: [heading-motif-bar-width-max];
+	height: [tsp-calc tm *8 /3, round];
+	margin-bottom: [tsp-calc tm *10 /3, round];
+	display: flex;
+	justify-content: left;
+	align-items: center;
+}
+
+.kokako .motif-bar-heading .bar {
+	position: absolute;
+	left: 0;
+	height: 0;
+	width: 0;
+	height: 0;
+	background: [colour-background-light];
+	transition: all 1.2s cubic-bezier(0.27, 0.26, 0, 0.58);
+}
+
+/* .kokako .motif-bar-heading .bar.appear {
+	width: 400px;
+} */
+
+
+/* Page Banner customisations */
+
+body#home-page .kokako.pageBanner.section1 h1 {
+	max-width: 790px;
+}
+
+body#home-page .kokako.pageBanner.section2 .text-box > * {
+	max-width: 65%;
+}
+
+body#home-page .kokako.pageBanner.section2 h2 {
+	max-width: 700px;
+}
+
+
+/* Style section headings as h3 */
+
+.kokako.heading-h3 :is(h1,h2) {
+	font-size: 2rem;
+	margin: [tsp-calc {text-margin}*2] 0 [text-margin];
+}"
+initial_states_css,"/* section.kokako :is(h1, h2),
+section.kokako.textWithPhoto .row .image,
+section.kokako.multipleColumns .multiple-columns-col,
+section.kokako.multipleRows .multiple-rows-row,
+section.kokako.latestPosts .blog-grid.post */
+button:not(.menu-toggler, .menu-closer),
+input[type=""submit""],
+a.button,
+a.btn {
+	opacity: [animation-start-opacity];
+	transform: scale([animation-start-scale]);
+}
+
+/* section.kokako:not(.textWithPhoto) :is(h1, h2) {
+	transform: translateY(-[animation-start-translate-y]) scale([animation-start-scale]);
+}
+
+section.kokako.textWithPhoto .row .text :is(h1,  h2) {
+	transform: translateX([animation-start-translate-x]) scale([animation-start-scale]);
+}
+
+section.kokako.textWithPhoto .row.flex-row-reverse .text :is(h1, h2) {
+	transform: translateX(-[animation-start-translate-x]) scale([animation-start-scale]);
+}
+
+section.kokako.textWithPhoto .row .image {
+	transform: translateX(-[animation-start-translate-x]);
+}
+
+section.kokako.textWithPhoto .row.flex-row-reverse .image {
+	transform: translateX([animation-start-translate-x]);
+} */"
+animations_css,"/* section.kokako:not(.textWithPhoto) :is(h1, h2).appear,
+section.kokako.multipleColumns .col-xs-12.appear :is(h1, h2) */
+button.appear:not(.menu-toggler, .menu-closer),
+input[type=""submit""].appear,
+a.button.appear,
+a.btn.appear {
+	/* transform: translateY(-[animation-start-translate-y]) scale([animation-start-scale]); */
+	transform: scale([animation-start-scale]);
+	animation: slideDownBounceScale [animation-duration] [animation-transition] forwards;
+}
+
+/* section.kokako.textWithPhoto .row .text :is(h1, h2).appear {
+	transform: translateX([animation-start-translate-x]) scale([animation-start-scale]);
+	animation: slideLeftScale [animation-duration] [animation-transition] forwards;
+}
+
+section.kokako.textWithPhoto .row.flex-row-reverse .text :is(h1, h2).appear {
+	transform: translateX(-[animation-start-translate-x]) scale([animation-start-scale]);
+	animation: slideRightScale [animation-duration] [animation-transition] forwards;
+}
+
+section.kokako.textWithPhoto .row .image.appear {
+	transform: translateX(-[animation-start-translate-x]);
+	animation: slideRight [animation-duration] [animation-transition] forwards;
+}
+
+section.kokako.textWithPhoto .row.flex-row-reverse .image.appear {
+	transform: translateX([animation-start-translate-x]);
+	animation: slideLeft [animation-duration] [animation-transition] forwards;
+}
+
+section.kokako.multipleColumns .multiple-columns-col.appear,
+section.kokako.multipleRows .multiple-rows-row.appear,
+section.kokako.latestPosts .blog-grid.post.appear {
+	transform: scale([animation-start-scale]);
+	animation: scale [animation-duration] [animation-transition] forwards;
+} */"
+keyframes_css,"@keyframes slideUpScale {
+	from {
+		transform: translateY([animation-start-translate-y]) scale([animation-start-scale]);
+		opacity: [animation-start-opacity];
+	}
+	to {
+		transform: translateY(0) scale(1);
+		opacity: 1;
+	}
+}
+
+@keyframes slideRightScale {
+	from {
+		transform: translateX(-[animation-start-translate-x]) scale([animation-start-scale]);
+		opacity: [animation-start-opacity];
+	}
+	to {
+		transform: translateX(0) scale(1);
+		opacity: 1;
+	}
+}
+
+@keyframes slideDownScale {
+	from {
+		transform: translateY(-[animation-start-translate-y]) scale([animation-start-scale]);
+		opacity: [animation-start-opacity];
+	}
+	to {
+		transform: translateY(0) scale(1);
+		opacity: 1;
+	}
+}
+
+
+@keyframes slideDownBounceScale {
+	0% {
+		transform: scale([animation-start-scale]);
+		opacity: [animation-start-opacity];
+	}
+	70% {
+		transform: scale(1.02);
+		opacity: 1;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+@keyframes slideLeftScale {
+	from {
+		transform: translateX([animation-start-translate-x]) scale([animation-start-scale]);
+		opacity: [animation-start-opacity];
+	}
+	to {
+		transform: translateX(0) scale(1);
+		opacity: 1;
+	}
+}
+
+@keyframes slideUp {
+	from {
+		transform: translateY([animation-start-translate-y]);
+		opacity: [animation-start-opacity];
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes slideRight {
+	from {
+		transform: translateX(-[animation-start-translate-x]);
+		opacity: [animation-start-opacity];
+	}
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes slideDown {
+	from {
+		transform: translateY(-[animation-start-translate-y]);
+		opacity: [animation-start-opacity];
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes slideLeft {
+	from {
+		transform: translateX([animation-start-translate-x]);
+		opacity: [animation-start-opacity];
+	}
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes scale {
+	from {
+		transform: scale([animation-start-scale]);
+		opacity: [animation-start-opacity];
+	}
+	to {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+@keyframes clear {
+	to {
+		transform: none;
+		opacity: 1;
+	}
+}"
+text_alignment_classes,".text-align-centre {
+	text-align: center;
+}
+
+.text-align-left {
+	text-align: left;
+}
+
+.text-align-right {
+	text-align: right;
+}"
+accordions,"h4.accordion-toggle {
+	position: relative;
+	background: [colour-background-alt];
+	padding: 10px 20px;
+	margin-bottom: 0; /* Prevents jerkiness on scroll down and up - otherwise there is a gap between the heading and accordion content div during scroll */
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+h4.accordion-toggle:hover {
+	cursor: pointer;
+}
+
+h4.accordion-toggle i.icon-plus {
+	position: absolute;
+	right: 20px;
+	top: 10px;
+	font-size: 110%;
+	transition: all 0.4s ease;
+}
+
+h4.accordion-toggle i.icon-plus:before {
+	transform: rotate(0deg);
+	transition: all 0.4s ease;
+}
+
+h4.accordion-toggle i.icon-plus.open:before {
+	transform: rotate(45deg);
+	transition: all 0.4s ease;
+}
+
+div.accordion-content {
+	display: none;
+	padding-top: [text-margin];
+}
+
+div.accordion-content.open { /* Not required for action, but allows an initial open state to be set */
+	display: block;
+}
+
+div.accordion-content *:last-child {
+	margin-bottom: 0;
+}
+
+div.accordion-content + a.button {
+	margin-top: [tsp-calc tm *2];
+}"
+misc,".clear {
+	clear: both;
+}
+
+.non-breaking-spaces {
+	white-space: nowrap;
+}
+
+
+/* Video Containers */
+
+.video-container { /* see https://stackoverflow.com/questions/35814653/automatic-height-when-embedding-a-youtube-video */
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	height: 0;
+}
+
+.video-container iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+
+/* Lightbox Gallery overrides */
+
+body .fbx-rounded .fbx-inner {
+	border: none;
+	border-radius: 0;
+}
+
+body .fbx-rounded :is(.fbx-item-current, .fbx-item-image, .fbx-prev, .fbx-item-next) {
+	border-radius: 0;
+}
+
+body a.fbx-close {
+	z-index: 1000000; /* Yes, really! It needs to be this high */
+}"
+highlight,"color: [colour-brand-1];
+font-weight: bold;"
+two_sparrows_workings_css,".tsp {
+	color: #f00 !important;
+}
+
+#bootstrap-test {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	background: [colour-background-light];
+	border: 2px [colour-text-dark] solid;
+	padding: 0px 10px;
+	width: auto;
+	z-index: 10;
+}
+
+#bootstrap-test p {
+	font-weight: bold;
+	text-align: center;
+	color: [colour-text-dark];
+}
+
+#js-loaded {
+	display: none !important;
+}
+
+
+/* Development Mode notices */
+
+/* Kokako Development Mode Activation Notice */
+
+#wpadminbar .kdman :is(a, a:link, a:visited) {
+	background: #d08; /* #f0a - 34 */
+	margin-left: 10px;
+}
+
+#wpadminbar .kdman a:hover {
+	background: #e09 !important; /* #d08 + 17 */
+}
+
+#wpadminbar .kdman a:active {
+	background: #f0a !important;
+}
+
+/* Kokako ""No JavaScript"" Test Mode Active Notice */
+
+#wpadminbar .knjstan :is(a, a:link, a:visited) {
+	background: #e52b2e;
+	margin-left: 10px;
+}
+
+#wpadminbar .knjstan a:hover {
+	background: #f63c3f !important; /* #e52b2e + 17 */
+}
+
+#wpadminbar .knjstan a:active {
+	background: #ff4d50 !important; /* #e52b2e + 34 */
+}"
+xl_only,"/* Header */
+
+header .header-widget {
+	left: 50%;
+}
+
+header nav.navbar #main-nav {
+	margin-bottom: 0;
+}
+
+header.scrolled .logo a.navbar-brand {
+	margin: 0;
+}
+
+/* header nav button:focus {
+	outline: none;
+}
+
+nav .collapse:not(.show) {
+	display: none !important; /* Required to override the !important statement on the .d-flex class - otherwise menu always shows *
+} */
+
+header nav button.navbar-toggler {
+	position: relative;
+	top: 0;
+	border-radius: 0;
+	transition: all 1s ease;
+}
+
+header.scrolled nav button.navbar-toggler {
+	top: -25px;
+	transition: all 1s ease;
+}
+
+header .navbar-collapse {
+	z-index: 100;
+}
+
+
+/* Sections */
+
+body.blog section.kokako.latestPosts .row .col-xl-4.blog-grid.post:nth-of-type(3) h3 {
+	margin-top: [tsp-calc tm *2];
+}"
+lg_above,"/* Elements */
+
+section.kokako div:not(.col-lg-12, .col-xl-12) :is(input, textarea) {
+	max-width: calc(100% - [text-margin]);
+}
+
+
+/* Header */
+
+header .header-widget h2 {
+	font-size: 1.8rem;
+}
+
+
+/* Blog */
+
+body.blog section.kokako.latestPosts .row .blog-grid.post:nth-of-type(2) h3 {
+	margin-top: [tsp-calc tm *2];
+}
+
+
+/* Footer */
+
+footer .footer-logo {
+	margin-bottom: 30px;
+}
+
+footer .footer-col-4 h3 {
+	margin-top: 15px;
+}
+
+footer .tsp-social-links {
+	justify-content: left;
+}
+"
+lg,"/* Header */
+
+header .logo {
+	max-width: 50vw;
+}
+
+header .header-widget {
+	/* right: 30px; */
+	text-align: right;
+}
+
+header .header-widget h2 {
+	font-size: 2rem;
+}
+
+
+/* Footer */
+
+footer p:is(.align-left, .align-right) {
+	float: none;
+	width: 100%;
+	text-align: left;
+}
+
+footer #subfooter span.footer-copyright-separator:before {
+	content: ""\A"";
+	white-space: pre;
+}
+
+footer #subfooter span.footer-copyright-separator { /* Hide vertical bar and make it a line break instead */
+	display: block;
+	z-index: -1000;
+	opacity: 0;
+	height: 0;
+	-webkit-user-select: none;
+ 	-moz-user-select: none;
+ 	-ms-user-select: none;
+ 	user-select: none;
+}"
+lg_only,"/* Footer */
+
+footer a.social-media-link:last-of-type {
+	padding-right: 0;
+}"
+md_above,
+md,"/* Header - Set header to height to scrolled height by default */
+
+header {
+	position: relative;
+	height: [header-height-scrolled];
+	background: transparent;
+}
+
+.header-background {
+	height: [header-height-scrolled];
+}
+
+header nav button.menu-toggler {
+	/* padding: [text-margin] 70px [text-margin] 0; /* 10px less top and bottom, 20px less on right to keep circular background image in relationship to text */
+	padding: [tsp-calc tm *4 /3, round] 75px [tsp-calc tm *4 /3, round] [tsp-calc tm /3, round] ; /* Same as above statement, but +5px in all directions */
+}
+
+header nav.navbar {
+	top: 0;
+	height: [header-height-scrolled];
+}
+
+header .logo {
+	height: [header-height-scrolled];
+}
+
+header .logo a.navbar-brand {
+	margin-top: 0;
+	width: [header-logo-width-scrolled];
+	transition: [header-transition];
+}
+
+header .header-widget {
+	right: 110px;
+	top: auto;
+}
+
+header .header-widget.header-widget-row-reverse {
+	left: 110px;
+}
+
+header.scrolled .header-widget {
+	top: -[header-height-scrolled]; /* This is normally set to: ( header height - header.scrolled height ). Ideally, it should be set to about the height of the header widget (c. 70px?)  */
+}
+
+header.container-fluid .container {
+	max-width: 100%;
+}
+
+header .header-widget h2 {
+	font-size: 1.8rem;
+}
+
+@media (max-width: 782px) { /* Not required when header is positioned relative */
+	body.header-fixed.logged-in.admin-bar header {
+		top: 46px;
+	}
+}
+
+
+/* Sections */
+
+section.kokako.section1 {
+	/* border-top: [header-height-scrolled] [colour-header-background] solid; */
+	border-top: 0;
+}
+
+section.kokako.text :is(h1, h2) { /* in case of floated images */
+	clear: both;
+}
+
+
+/* Footer */
+
+footer {
+	text-align: center;
+}
+
+footer .footer-logo {
+	margin-bottom: 30px;
+}
+
+/* footer .footer-col-4 h3 {
+	margin-top: 15px;
+}
+
+footer #subfooter span.footer-copyright-separator:before {
+	content: ""\A"";
+	white-space: pre;
+}
+
+footer #subfooter span.footer-copyright-separator { /* Hide vertical bar and make it a line break instead *
+	display: block;
+	z-index: -1000;
+	opacity: 0;
+	height: 0;
+	-webkit-user-select: none;
+ 	-moz-user-select: none;
+ 	-ms-user-select: none;
+ 	user-select: none;
+}
+
+footer img.alignleft {
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+footer ul.menu {
+	margin-top: [tsp-calc tm *3];
+	margin-bottom: 0;
+}
+
+footer ul.sub-menu li {
+	text-indent: 0;
+} */"
+md_only,
+sm_above,"/* Footer */
+
+footer {
+	background-position: left calc(50% + 296px) bottom -120px;
+}
+
+footer .two-sparrows-supports .col-sm-6.shielded {
+	border-left: 1px [colour-text-light] solid;
+}
+
+footer .two-sparrows-supports .col-sm-6.trees-that-count {
+	justify-content: flex-end;
+}
+
+footer .two-sparrows-supports .col-sm-6.shielded {
+	justify-content: flex-start;
+}
+
+footer .two-sparrows-supports img {
+	margin-left: [tsp-calc tm *3];
+	margin-right: [tsp-calc tm *3];
+}
+
+footer ul#menu-footer-menu {
+	grid-gap: [text-margin];
+}
+
+footer ul#menu-footer-menu li:not(:last-child) {
+	padding-right: [text-margin];
+	border-right: 1px [colour-text-light] solid;
+}"
+sm,"/* Header */
+
+header .logo {
+	max-width: 50vw;
+}
+
+header .header-widget {
+	display: none;
+}
+
+header .header-widget h2 {
+	font-size: 2rem;
+}
+
+
+/* CTA Buttons */
+
+section.kokako .cta-buttons:is(.buttons-align-centre, .buttons-align-left, .buttons-align-right) {
+	flex-direction: column;
+}
+
+
+/* Images */
+
+:is(img, svg) :is(.alignnone, .alignleft, .alignright, .aligncenter, .aligncenter) {
+	float: none;
+	display: block;
+	margin: [image-margin-vertical] auto;
+}
+
+/* Footer */
+
+footer p:is(.align-left, .align-right) {
+	float: none;
+	width: 100%;
+	text-align: left;
+}"
+sm_only,
+xs_only,"/* Header & Nav */
+
+header {
+	background: [colour-header-background];
+}
+
+header,
+header nav.navbar {
+	position: relative;
+}
+
+header .navbar-collapse {
+	top: [header-height-scrolled];
+}
+
+header.scrolled .navbar-collapse {
+	top: [header-height-scrolled];
+	transition: [header-transition];
+}
+
+header .navbar-collapse,
+header.scrolled .navbar-collapse,
+header .navbar-collapse.show {
+	border-top: none;
+}
+
+body.header-fixed.logged-in.admin-bar header {
+	top: 0;
+}
+
+header .logo {
+	max-width: 55vw;
+}
+
+/* nav .navbar-collapse {
+	left: -30px;
+	width: 100%;
+	width: calc(100% + 60px);
+} */
+
+@media (max-width: 450px) {
+	header nav button.menu-toggler {
+		padding: [tsp-calc tm *4 /3, round] [tsp-calc tm /3, round];
+		background: transparent !important;
+	}
+}
+
+
+/* General Sections */
+
+section.kokako.section1 {
+	border-top: 0;
+	margin-top: 0 !important; /* Just in case */
+}
+
+section.kokako .row {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+section.kokako .container-fluid .row .col-lg-6.image { /* Bootstrap overides */
+	width: calc(100% + 60px);
+	margin-left: -30px;
+	margin-right: -30px;
+}
+
+section.kokako .internalWrap {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+section.kokako .container,
+section.kokako:not(.centredImages) .container-fluid {
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+
+/* Buttons */
+
+button,
+input[type=""submit""],
+a.button,
+a.btn{
+	white-space: normal;
+	margin-right: 0;
+}
+
+.alt:is(button, input[type=""submit""], a.button, a.btn) {
+	border: 1px [colour-text-dark] solid;
+	border-bottom: 1px [colour-text-dark] solid !important;
+}
+
+
+/* Footer */
+
+footer {
+    padding-bottom: 200px;
+}"
+nav_responsivity,"header {
+	background: [colour-header-background]; /* Fall back */
+	background: [colour-header-background-rgba {header-mobile-opacity}]
+}
+
+/* .header-background {
+	display: none !important;
+} */
+
+header .navbar-collapse {
+	position: absolute;
+	width: calc(100% + 60px);
+	top: [header-height-scrolled];
+	left: -30px;
+	align-items: normal; /* This is important for a smooth transition when menu collapsed! */
+	transition: [header-transition];
+	margin-top: 0;
+	transition: [header-transition];
+}
+
+header.scrolled .navbar-collapse,
+header .navbar-collapse.show {
+	transition: [header-transition];
+}
+
+header .navbar-collapse.collapse {
+	height: 0;
+	transition: [header-transition];
+}
+
+header .navbar-collapse.collapse.show {
+	height: auto;
+	transition: [header-transition];
+}
+
+header .navbar .logo {
+	z-index: 9999;
+}
+
+header nav.navbar #main-nav {
+	background: [colour-nav-dropdown-background]; /* Fall back */
+	background: [colour-nav-dropdown-background-rgba {nav-dropdown-menu-opacity}];
+	width: 100%;
+	z-index: 1000;
+	margin-bottom: 0;
+}
+
+header.scrolled .logo a.navbar-brand {
+	margin-top: 0;
+}
+
+header nav button:focus {
+	outline-color: [colour-brand-tan];
+}
+
+nav .collapse:not(.show) {
+	display: none !important; /* Required to override the !important statement on the .d-flex class - otherwise menu always shows */
+}
+
+header nav button.navbar-toggler {
+	position: relative;
+	top: 0;
+	border-radius: 0;
+	transition: [header-transition];
+	z-index: 1000;
+}
+
+header nav ul li:not(:last-child):after {
+	content: """";
+}
+
+header #main-nav ul li {
+	margin: 0;
+}
+
+header #main-nav ul li a {
+	display: block;
+	width: 100%;
+	margin: 0;
+	text-align: center;
+}
+
+header #main-nav ul li :is(a, a:link, a:visited) {
+	color: [colour-nav-dropdown-text];
+	background: transparent;
+}
+
+header #main-nav ul li a:hover {
+	color: [colour-nav-dropdown-text];
+	background: [colour-nav-dropdown-background-hover]; /* Fall back */
+	background: [colour-nav-dropdown-background-rgba {nav-dropdown-menu-opacity}];
+}
+
+header #main-nav ul li a:active {
+	color: [colour-nav-dropdown-text];
+	background: [colour-nav-dropdown-background-active];
+}
+
+header .navbar-collapse {
+	z-index: 100;
+}
+
+.navbar-nav .dropdown-menu {
+	text-align: center;
+	transform: inherit;
+	background: transparent;
+}
+
+.navbar-nav .dropdown-menu .dropdown-menu {
+	width: 100%;
+}
+
+nav a.nav-link:before, nav a.dropdown-item:before {
+	background: transparent;
+}
+
+header #main-nav ul li a:is(.dropdown-item, .dropdown-item:link, .dropdown-item:visited) {
+	color: [colour-nav-dropdown-text-rgba 0.7];
+}
+
+header #main-nav ul li a.dropdown-item:hover {
+	color: [colour-nav-dropdown-text-rgba 0.6];
+}
+
+header #main-nav ul li a.dropdown-item:active {
+	color: [colour-nav-dropdown-text-rgba 0.55];
+}
+
+
+/* Admin bar positioning */
+
+body.header-fixed.logged-in.admin-bar header { /* Not required when header is positioned relative */
+	top: 0;
+}"
+high_pixel_density_images,

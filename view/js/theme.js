@@ -43,6 +43,7 @@ function skewedRandom() { // From https://stackoverflow.com/questions/16110758/g
 
 const SITE = document.querySelector('.site');
 const TRIGGER = document.querySelector('.menu-toggler');
+const CLOSER = document.querySelector('.menu-closer');
 const REVEAL = document.querySelector('#website-navigation');
 const MENUITEMS = REVEAL.querySelectorAll('#website-navigation a');
 const MENUARRAY = Array.apply(null, MENUITEMS);
@@ -56,6 +57,14 @@ function revealMenu() {
 	screenReaderText.innerHTML == 'Open ' ? screenReaderText.innerHTML = 'Close ' : screenReaderText.innerHTML = 'Open ';
 }
 
+// Explicitly hide menu
+function hideMenu() {
+	SITE.classList.remove('reveal-menu');
+	REVEAL.classList.remove('open');
+	TRIGGER.setAttribute('aria-expanded', false);
+	screenReaderText.innerHTML = 'Open ';
+}
+
 // Hide nav area when focus shifts away:
 function catchFocus() {
 	if ( TRIGGER.getAttribute('aria-expanded') == 'true' && !( MENUARRAY.includes(document.activeElement) || document.activeElement === TRIGGER ) ) {
@@ -65,7 +74,7 @@ function catchFocus() {
 	}
 }
 
-function removeMenu() {
+function menuClosed() {
 	if ( TRIGGER.getAttribute('aria-expanded') == 'false') {
 		REVEAL.classList.remove('open');
 	}
@@ -81,6 +90,7 @@ function clickTarget(e) {
 
 // Listen for clicks on TRIGGER button:
 TRIGGER.addEventListener('click', revealMenu, false);
+CLOSER.addEventListener('click', hideMenu, false); // Fine to just toggle, as closer button can only be clicked when it is on screen
 
 // Listen for focus changes:
 SITE.addEventListener('focusin', catchFocus, true);
@@ -88,7 +98,7 @@ SITE.addEventListener('focusin', catchFocus, true);
 // Listen for clicks:
 SITE.addEventListener('click', function(e) { clickTarget(e); }, true);
 
-SITE.addEventListener('transitionend', removeMenu, false);
+SITE.addEventListener('transitionend', menuClosed, false);
 
 // Testimonials section
 
@@ -129,7 +139,7 @@ jQuery(document).ready(function($){
     // let heading1 = document.querySelector('section.kokako h1');
     // let heading2s = document.querySelectorAll('section.kokako h2');
         let headingMotifBars = document.querySelectorAll('.kokako .motif-bar-heading .bar');
-    let allButtons = document.querySelectorAll('button:not(.menu-toggler), input[type="submit"], a.button, a.btn');
+    let allButtons = document.querySelectorAll('button:not(.menu-toggler, .menu-closer), input[type="submit"], a.button, a.btn');
     // let textWithPhotoImages = document.querySelectorAll('section.textWithPhoto .image');
     // let multipleColumns = document.querySelectorAll('section.multipleColumns .multiple-columns-col');
     // let multipleRows = document.querySelectorAll('section.multipleRows .multiple-rows-row');
@@ -395,6 +405,11 @@ jQuery(document).ready(function($){
     		// jQuery('section.section1').removeClass("scrolled"); // No longer required
     	}
     });
+    
+    // Site
+    
+    // Remove dropdown links from keyboard focus (dropdown menus are explicitly opened now)
+    $('nav ul li a.dropdown-toggle').attr('tabindex','-1');
     
 });
 

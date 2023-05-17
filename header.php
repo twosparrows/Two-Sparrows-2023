@@ -110,8 +110,8 @@ if ( !is_front_page() ) {
 	</header>
 
 	<nav id="website-navigation"<?php /* class="collapse navbar-collapse d-flex<?php if ( "right" != $logoPosition ) { echo " flex-row-reverse"; } ?>" id="navbarCollapse" */ ?>><?php // d-flex and flex-row-reverse classes align the menu to the right. See https://getbootstrap.com/docs/4.1/utilities/flex/ . Note that these classes may require overrides to collapse the menu at mobile sizes as they set the display to flex (instead of none) */ ?>
-
 		<?php
+
 		wp_nav_menu( array(
 				'menu'              => 'main-menu',
 				'theme_location'    => 'main-menu',
@@ -138,7 +138,10 @@ if ( !is_front_page() ) {
 			foreach( $socialMediaAccounts as $sm ) {
 				?><a class="sm-link" href="<?= $sm["url"] ?>" target="_blank"><i class="fab fa-<?= $sm["account"] ?>"></i></a><?php
 			} ?></p><?php
-		} */ ?>		     
+		} */ ?>
+
+		<button class="menu-closer" type="button" aria-label="Close menu"><span class="sr-only">Close Menu</span><span class="close-x"></span><span class="close-x"></span></button>
+
 	</nav>
 
 	<div class="header-background"></div><?php // This section is the background of the header, so that there never appears to be a gap between section 1 and the header when header is sliding up and down. Works better than section 1 border top method as allows for gradients on header background better ?>
