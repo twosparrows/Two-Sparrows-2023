@@ -1,6 +1,6 @@
 JS Options Fields
 
-Updated at 16/05/2023 4:40.24am UTC
+Updated at 17/05/2023 2:09.33am UTC
 
 
 Shortcodes:
@@ -126,7 +126,56 @@ function skewedRandom() { // From https://stackoverflow.com/questions/16110758/g
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'textarea',
-  'value' => '',
+  'value' => '// Slide in menu. Adapted from https://www.linkedin.com/learning/css-advanced-layouts-with-grid/off-screen-to-cover-navigation-overview?autoplay=true&resume=false&u=92735081
+
+const SITE = document.querySelector(\'.site\');
+const TRIGGER = document.querySelector(\'.menu-toggler\');
+const REVEAL = document.querySelector(\'#website-navigation\');
+const MENUITEMS = REVEAL.querySelectorAll(\'#website-navigation a\');
+const MENUARRAY = Array.apply(null, MENUITEMS);
+let screenReaderText = document.querySelector(\'.menu-toggler .sr-only\');
+
+// Toggle reveal class on body element, set aria-expanded and screen reader text on TRIGGER:
+function revealMenu() {
+	SITE.classList.toggle(\'reveal-menu\');
+	REVEAL.classList.add(\'open\');
+	TRIGGER.getAttribute(\'aria-expanded\') == \'false\' ? TRIGGER.setAttribute(\'aria-expanded\', true) : TRIGGER.setAttribute(\'aria-expanded\', false);
+	screenReaderText.innerHTML == \'Open \' ? screenReaderText.innerHTML = \'Close \' : screenReaderText.innerHTML = \'Open \';
+}
+
+// Hide nav area when focus shifts away:
+function catchFocus() {
+	if ( TRIGGER.getAttribute(\'aria-expanded\') == \'true\' && !( MENUARRAY.includes(document.activeElement) || document.activeElement === TRIGGER ) ) {
+		revealMenu();
+	} else {
+		return;
+	}
+}
+
+function removeMenu() {
+	if ( TRIGGER.getAttribute(\'aria-expanded\') == \'false\') {
+		REVEAL.classList.remove(\'open\');
+	}
+}
+
+// Hide nav area when touch or click happens elsewhere:
+function clickTarget(e) {
+	if ( TRIGGER.getAttribute(\'aria-expanded\') == \'true\' && !REVEAL.contains(e.target) && !TRIGGER.contains(e.target) ) { // Needs to check that the click isn\'t within the menu (REVEAL) or TRIGGER button, otherwise revealMenu() will be called twice, ie. open and close the menu
+		revealMenu();
+	}
+}
+
+
+// Listen for clicks on TRIGGER button:
+TRIGGER.addEventListener(\'click\', revealMenu, false);
+
+// Listen for focus changes:
+SITE.addEventListener(\'focusin\', catchFocus, true);
+
+// Listen for clicks:
+SITE.addEventListener(\'click\', function(e) { clickTarget(e); }, true);
+
+SITE.addEventListener(\'transitionend\', removeMenu, false);',
   'menu_order' => 9,
   'instructions' => '',
   'required' => 0,

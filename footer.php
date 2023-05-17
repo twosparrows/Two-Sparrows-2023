@@ -1,4 +1,4 @@
-</main><?php
+<?php
 
 // Get setup variables
 global $logo;
@@ -83,6 +83,8 @@ if ( $footerCtaOverride != "hide" ) { // Show defaults
 
 
 ?>
+</main>
+
 <footer id="footer" class="container-fluid" tabindex="-1"><?php // #footer required for skip to footer accessibility link at top of header ?>
 	<div class="container">
 		<div class="row">

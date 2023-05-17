@@ -33,12 +33,12 @@
 <?php
 
 // Add an interior-page class to the body tag if not home page
-$bodyClass = $GLOBALS['additionalBodyClasses'];
+$bodyClass = trim( 'site ' . $GLOBALS['additionalBodyClasses'] );
 if ( !is_front_page() ) {
 	$bodyClass .= ' interior-page';
 } ?>
 	
-<body<?= tsp_create_element_id(); body_class( trim( $bodyClass ) ) ?>><?php
+<body<?php echo tsp_create_element_id(); echo body_class( trim( $bodyClass ) ); ?>><?php
 
 	// Analytics - Body
 	$analyticsBody = get_field( "analytics_code_body", "option") ;
@@ -47,7 +47,7 @@ if ( !is_front_page() ) {
 
 	?>
 	
-	<header class="container-fluid">
+	<header id="masthead" class="container-fluid">
 		
 		<div class="skip-link">
 			<a href='#main'>Skip to content</a> or <a href="#footer">skip to footer</a>
@@ -102,43 +102,44 @@ if ( !is_front_page() ) {
 				<?php } ?>
 
 				
-				<button class="menu-toggler" type="button" aria-expanded="false" aria-label="Toggle menu">Menu</button>
+				<button class="menu-toggler" type="button" aria-expanded="false" aria-label="Toggle menu"><span class="sr-only">Open </span>Menu</button><?php // .sr-only is for screen readers ?>
 				
-				<div class="collapse navbar-collapse d-flex<?php if ( "right" != $logoPosition ) { echo " flex-row-reverse"; } ?>" id="navbarCollapse"><?php // d-flex and flex-row-reverse classes align the menu to the right. See https://getbootstrap.com/docs/4.1/utilities/flex/ . Note that these classes may require overrides to collapse the menu at mobile sizes as they set the display to flex (instead of none) */ ?>
-
-					<?php
-					wp_nav_menu( array(
-							'menu'              => 'main-menu',
-							'theme_location'    => 'main-menu',
-							'depth'             => 2,
-							'container'         => 'div',
-							'container_class'   => '',
-							'container_id'      => 'main-nav',
-							'menu_class'        => 'nav',
-							'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
-							'walker'            => new WP_Bootstrap_Navwalker()
-						)
-					);
-								
-					// Social Media Accounts, contactdetails
-					global $socialMediaAccounts, $contactDetails; // Declared globally as used in footer also
-					$socialMediaAccounts = get_field( 'social_media_accounts', 'option' );
-					$contactDetails = array(
-						"email" => get_field( 'email', 'option' ),
-						"phone" => get_field( 'phone', 'option' ),
-					);
-					
-					/*if ( ( $socialMediaAccounts != "" ) && ( !empty( $socialMediaAccounts) ) ) {
-						?><p><span class="connect">Connect: </span><?php
-						foreach( $socialMediaAccounts as $sm ) {
-							?><a class="sm-link" href="<?= $sm["url"] ?>" target="_blank"><i class="fab fa-<?= $sm["account"] ?>"></i></a><?php
-						} ?></p><?php
-					} */ ?>		     
-				</div>
 		    </nav>
 		
 		</div>
 	</header>
+
+	<nav id="website-navigation"<?php /* class="collapse navbar-collapse d-flex<?php if ( "right" != $logoPosition ) { echo " flex-row-reverse"; } ?>" id="navbarCollapse" */ ?>><?php // d-flex and flex-row-reverse classes align the menu to the right. See https://getbootstrap.com/docs/4.1/utilities/flex/ . Note that these classes may require overrides to collapse the menu at mobile sizes as they set the display to flex (instead of none) */ ?>
+
+		<?php
+		wp_nav_menu( array(
+				'menu'              => 'main-menu',
+				'theme_location'    => 'main-menu',
+				'depth'             => 2,
+				'container'         => 'div',
+				'container_class'   => '',
+				'container_id'      => 'main-nav',
+				'menu_class'        => 'nav',
+				'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+				'walker'            => new WP_Bootstrap_Navwalker()
+			)
+		);
+					
+		// Social Media Accounts, contactdetails
+		global $socialMediaAccounts, $contactDetails; // Declared globally as used in footer also
+		$socialMediaAccounts = get_field( 'social_media_accounts', 'option' );
+		$contactDetails = array(
+			"email" => get_field( 'email', 'option' ),
+			"phone" => get_field( 'phone', 'option' ),
+		);
+
+		/*if ( ( $socialMediaAccounts != "" ) && ( !empty( $socialMediaAccounts) ) ) {
+			?><p><span class="connect">Connect: </span><?php
+			foreach( $socialMediaAccounts as $sm ) {
+				?><a class="sm-link" href="<?= $sm["url"] ?>" target="_blank"><i class="fab fa-<?= $sm["account"] ?>"></i></a><?php
+			} ?></p><?php
+		} */ ?>		     
+	</nav>
 
 	<div class="header-background"></div><?php // This section is the background of the header, so that there never appears to be a gap between section 1 and the header when header is sliding up and down. Works better than section 1 border top method as allows for gradients on header background better ?>
 

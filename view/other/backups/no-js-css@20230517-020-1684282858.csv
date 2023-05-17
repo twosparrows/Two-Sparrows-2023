@@ -1,0 +1,10 @@
+Field_Name,Field_Value_or_Group_Info,Subfield_Name,Subfield_Value,Subsubfield_Name,Subsubfield_Value
+no_javascript_css,"section.kokako :is(h1, h2),
+section.kokako.textWithPhoto .row .image,
+section.kokako.multipleColumns .multiple-columns-col,
+section.kokako.multipleRows .multiple-rows-row,
+section.kokako.latestPosts .blog-grid.post {
+	opacity: 1 !important;
+	transform: translate(0) scale(1) !important;
+	transition: all [animation-duration] [animation-transition] !important;
+}"

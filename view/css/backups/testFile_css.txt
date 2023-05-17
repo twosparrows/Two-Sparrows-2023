@@ -1,6 +1,6 @@
 CSS Options Fields
 
-Updated at 16/05/2023 4:40.24am UTC
+Updated at 17/05/2023 2:09.33am UTC
 Referrer: /wp-admin/admin.php?page=acf-options-structural-css-editor
 
 
@@ -139,13 +139,13 @@ Shortcodes:
 [color-nav-hamburger-rgba => 34,47,41
 [color-nav-hamburger-variation => 34,47,41
 [color-nav-hamburger] => #222f29
-[color-nav-text-active-rgba => 79,92,86
-[color-nav-text-active] => #4f5c56
-[color-nav-text-hover-rgba => 59,72,66
-[color-nav-text-hover] => #3b4842
-[color-nav-text-rgba => 34,47,41
-[color-nav-text-variation => 34,47,41
-[color-nav-text] => #222f29
+[color-nav-text-active-rgba => 210,210,210
+[color-nav-text-active] => #d2d2d2
+[color-nav-text-hover-rgba => 230,230,230
+[color-nav-text-hover] => #e6e6e6
+[color-nav-text-rgba => 255,255,255
+[color-nav-text-variation => 255,255,255
+[color-nav-text] => #fff
 [color-scheme-default] => textDarkBackgroundLight
 [color-text-active-rgba => 79,92,86
 [color-text-active] => #4f5c56
@@ -295,13 +295,13 @@ Shortcodes:
 [colour-nav-hamburger-rgba => 34,47,41
 [colour-nav-hamburger-variation => 34,47,41
 [colour-nav-hamburger] => #222f29
-[colour-nav-text-active-rgba => 79,92,86
-[colour-nav-text-active] => #4f5c56
-[colour-nav-text-hover-rgba => 59,72,66
-[colour-nav-text-hover] => #3b4842
-[colour-nav-text-rgba => 34,47,41
-[colour-nav-text-variation => 34,47,41
-[colour-nav-text] => #222f29
+[colour-nav-text-active-rgba => 210,210,210
+[colour-nav-text-active] => #d2d2d2
+[colour-nav-text-hover-rgba => 230,230,230
+[colour-nav-text-hover] => #e6e6e6
+[colour-nav-text-rgba => 255,255,255
+[colour-nav-text-variation => 255,255,255
+[colour-nav-text] => #fff
 [colour-text-active-rgba => 79,92,86
 [colour-text-active] => #4f5c56
 [colour-text-alt-active-rgba => 210,210,210
@@ -351,6 +351,8 @@ Shortcodes:
 [nav-dropdown-menu-opacity] => 0.8
 [pi] => 3.1415926536
 [section-padding-vertical] => 90px
+[slide-navigation-transition] => left 0.6s ease
+[slide-navigation-width] => 16em
 [text-margin] => 15px
 [tsp-calc => 
 [tsp-calculate => 
@@ -410,6 +412,16 @@ array (
     array (
       'name' => 'heading-motif-bar-width-max',
       'value' => '32%',
+    ),
+    7 => 
+    array (
+      'name' => 'slide-navigation-width',
+      'value' => '16em',
+    ),
+    8 => 
+    array (
+      'name' => 'slide-navigation-transition',
+      'value' => 'left 0.6s ease',
     ),
   ),
   'menu_order' => 47,
@@ -1830,7 +1842,7 @@ Set this to between 0 and 1.',
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'text',
-  'value' => '[colour-text-dark]',
+  'value' => '[colour-text-light]',
   'menu_order' => 32,
   'instructions' => 'Shortcode: [colour-nav-text]',
   'required' => 0,
@@ -2246,13 +2258,80 @@ Set this to between 0 and 1.',
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'textarea',
-  'value' => '/* Import font files */
+  'value' => '/* Grid set up here (see below) so it is at the top of the CSS stylesheet */
+
+/* Import font files */
 
 @import url("../../fonts/addington-cf/addington-cf-demi-bold.css");
 @import url("../../fonts/metro-sans/metro-sans-regular/metro-sans-regular.css");
 @import url("../../fonts/metro-sans/metro-sans-regular-italic/metro-sans-regular-italic.css");
 @import url("../../fonts/metro-sans/metro-sans-bold/metro-sans-bold.css");
-@import url("../../fonts/metro-sans/metro-sans-bold-italic/metro-sans-bold-italic.css");',
+@import url("../../fonts/metro-sans/metro-sans-bold-italic/metro-sans-bold-italic.css");
+
+
+/* Grid set up */
+
+body.site {
+	display: grid;
+	grid-template-areas:
+		"header"
+		"content"
+		"footer";
+	transition:[slide-navigation-transition];
+	overflow-x: hidden;
+}
+
+header#masthead,
+.header-background {
+	grid-area: header;
+}
+
+main#main {
+	grid-area: content;
+	max-width: 100vw;
+}
+
+footer#footer {
+	grid-area: footer;
+}
+
+#website-navigation {
+	position: relative;
+	width:[slide-navigation-width];
+	max-width: 100vw;
+	left: -[slide-navigation-width];
+	grid-column: 1;
+	grid-row: 1/-1;
+	z-index: 10000;
+	background: [colour-nav-dropdown-background];
+	transition:[slide-navigation-transition];
+}
+
+.reveal-menu #website-navigation {
+	left: 0;
+}
+
+#website-navigation ul {
+	position: fixed;
+	display: none;
+	flex-direction: column;
+	width: [slide-navigation-width];
+}
+
+#website-navigation.open ul {
+	display: flex;
+}
+
+/* .menu-toggler {
+	position: fixed;
+	display: block;
+	top: 1.5em;
+	left: .2em;
+}
+
+body.reveal-menu .menu-toggler {
+	left: 14.5em;
+} */',
   'menu_order' => 59,
   'instructions' => 'Enter full CSS for imported fonts below (wrapped in @font-face or @import).',
   'required' => 0,
@@ -2418,7 +2497,7 @@ padding: 0;',
   'prefix' => 'acf',
   'type' => 'textarea',
   'value' => 'font-family: [font-family-heading];
-font-weight: bold;
+font-weight: normal;
 color: [colour-text];
 line-height: [line-height-headings];
 margin: [tsp-calc tm*2] 0;
@@ -5609,29 +5688,32 @@ button.hamburger:active {
   'prefix' => 'acf',
   'type' => 'textarea',
   'value' => 'nav button.menu-toggler {
-	padding-left: 0;
-	padding-right: 90px;
+	/* padding-left: 0;
+	padding-right: 90px; */
+	padding: 30px 95px 30px 5px; /* 5px extra surrounding for outline on focus */
 	margin: 0;
-	color: [colour-nav-text];
+	color: [colour-text-dark];
 	background: transparent;
 	background-image: url(../../img/menu-icon.svg);
-	background-position: right top;
-	background-size: auto 100%;
+	background-position: right 5px center;
+	background-size: auto calc(100% - 10px);
 	background-repeat: no-repeat;
 	transform: scale(1);
 }
 
 header.scrolled nav button.menu-toggler {
-	padding: [text-margin] 70px [text-margin] 0; /* 10px less top and bottom, 20px less on right to keep circular background image in relationship to text */
+	/* padding: [text-margin] 70px [text-margin] 0; /* 10px less top and bottom, 20px less on right to keep circular background image in relationship to text */
+	padding: [tsp-calc tm *4 /3, round] 75px [tsp-calc tm *4 /3, round] 5px; /* Same as above statement, but +5px in all directions */
 }
 
 nav button.menu-toggler:hover,
-nav button.menu-toggler:active {
-	color: [colour-nav-text];
-	background: transparent;
+nav button.menu-toggler:active,
+nav button.menu-toggler:focus {
+	color: [colour-text-dark];
+	background: transparent; /* Background redeclaration are necessary to override default button:hover statements */
 	background-image: url(../../img/menu-icon.svg);
-	background-position: right top;
-	background-size: auto 100%;
+	background-position: right 5px center;
+	background-size: auto calc(100% - 10px);
 	background-repeat: no-repeat;
 	transform: [button-swell];
 }
@@ -5659,7 +5741,8 @@ header.scrolled .navbar-collapse {
 } */
 
 nav ul {
-	margin: 0;
+	margin: 30px 0;
+	max-width: 100vw;
 }
 
 nav ul li {
@@ -5727,30 +5810,34 @@ nav ul li {
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'textarea',
-  'value' => '.navbar-expand-lg .navbar-nav a.nav-link {
+  'value' => '/* .navbar-expand-lg .navbar-nav a.nav-link {
 	padding: [tsp-calc tm *2 /3] [tsp-calc tm *4 /3];
-}
+} */
 
 nav ul li :is(a, a:link, a:visited) {
 	font-family: [font-family];
 	width: 100%;
-	text-align: center;
+	text-align: left;
 	text-transform: uppercase;
 	text-decoration: none;
 	font-weight: bold;
 	color: [colour-nav-text];
+	background: [color-nav-dropdown-background];
 	border-bottom: 2px transparent solid;
 	transition: [anchor-transition];
+	padding: [tsp-calc tm *2 /3, round] [tsp-calc tm *2];
 }
 
 nav ul li a:hover,
 nav ul li.dropdown.show > a {
 	color: [colour-nav-text-hover];
+	background: [color-nav-dropdown-background-hover];
 	transition: [anchor-transition];
 }
 
 nav ul li a:active {
 	color: [colour-nav-text-active];
+	background: [color-nav-dropdown-background-active];
 	/* border-bottom: 2px [colour-nav-text-active] solid; */
 	transition: [anchor-transition];
 }
@@ -10500,11 +10587,11 @@ header.scrolled .logo a.navbar-brand {
 	margin: 0;
 }
 
-header nav button:focus {
+/* header nav button:focus {
 	outline: none;
 }
 
-/* nav .collapse:not(.show) {
+nav .collapse:not(.show) {
 	display: none !important; /* Required to override the !important statement on the .d-flex class - otherwise menu always shows *
 } */
 
@@ -10765,6 +10852,15 @@ header {
 	position: relative;
 	height: [header-height-scrolled];
 	background: transparent;
+}
+
+.header-background {
+	height: [header-height-scrolled];
+}
+
+header nav button.menu-toggler {
+	/* padding: [text-margin] 70px [text-margin] 0; /* 10px less top and bottom, 20px less on right to keep circular background image in relationship to text */
+	padding: [tsp-calc tm *4 /3, round] 75px [tsp-calc tm *4 /3, round] [tsp-calc tm /3, round] ; /* Same as above statement, but +5px in all directions */
 }
 
 header nav.navbar {
@@ -11120,10 +11216,17 @@ header .logo {
 	max-width: 55vw;
 }
 
-nav .navbar-collapse {
+/* nav .navbar-collapse {
 	left: -30px;
 	width: 100%;
 	width: calc(100% + 60px);
+} */
+
+@media (max-width: 450px) {
+	header nav button.menu-toggler {
+		padding: [tsp-calc tm *4 /3, round] [tsp-calc tm /3, round];
+		background: transparent !important;
+	}
 }
 
 
@@ -11243,7 +11346,7 @@ header .navbar-collapse.collapse.show {
 }
 
 header .navbar .logo {
-	z-index: 10000;
+	z-index: 9999;
 }
 
 header nav.navbar #main-nav {
@@ -11259,7 +11362,7 @@ header.scrolled .logo a.navbar-brand {
 }
 
 header nav button:focus {
-	outline: none;
+	outline-color: [colour-brand-tan];
 }
 
 nav .collapse:not(.show) {

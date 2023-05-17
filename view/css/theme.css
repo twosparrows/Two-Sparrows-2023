@@ -7,6 +7,8 @@ DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be mad
 */
 
 
+/* Grid set up here (see below) so it is at the top of the CSS stylesheet */
+
 /* Import font files */
 
 @import url("../../fonts/addington-cf/addington-cf-demi-bold.css");
@@ -14,6 +16,71 @@ DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be mad
 @import url("../../fonts/metro-sans/metro-sans-regular-italic/metro-sans-regular-italic.css");
 @import url("../../fonts/metro-sans/metro-sans-bold/metro-sans-bold.css");
 @import url("../../fonts/metro-sans/metro-sans-bold-italic/metro-sans-bold-italic.css");
+
+
+/* Grid set up */
+
+body.site {
+	display: grid;
+	grid-template-areas:
+		"header"
+		"content"
+		"footer";
+	transition:left 0.6s ease;
+	overflow-x: hidden;
+}
+
+header#masthead,
+.header-background {
+	grid-area: header;
+}
+
+main#main {
+	grid-area: content;
+	max-width: 100vw;
+}
+
+footer#footer {
+	grid-area: footer;
+}
+
+#website-navigation {
+	position: relative;
+	width:16em;
+	max-width: 100vw;
+	left: -16em;
+	grid-column: 1;
+	grid-row: 1/-1;
+	z-index: 10000;
+	background: #222f29;
+	transition:left 0.6s ease;
+}
+
+.reveal-menu #website-navigation {
+	left: 0;
+}
+
+#website-navigation ul {
+	position: fixed;
+	display: none;
+	flex-direction: column;
+	width: 16em;
+}
+
+#website-navigation.open ul {
+	display: flex;
+}
+
+/* .menu-toggler {
+	position: fixed;
+	display: block;
+	top: 1.5em;
+	left: .2em;
+}
+
+body.reveal-menu .menu-toggler {
+	left: 14.5em;
+} */
 
 
 /* Elements */
@@ -47,7 +114,7 @@ p, li, td {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: "AddingtonCF-DemiBold", "MetroSans-Regular", Arial, sans-serif;
-    font-weight: bold;
+    font-weight: normal;
     color: #222f29;
     line-height: 1.2;
     margin: 30px 0;
@@ -767,29 +834,32 @@ body.header-fixed.logged-in.admin-bar header { /* Not required when header is po
 /* Nav */
 
 nav button.menu-toggler {
-	padding-left: 0;
-	padding-right: 90px;
+	/* padding-left: 0;
+	padding-right: 90px; */
+	padding: 30px 95px 30px 5px; /* 5px extra surrounding for outline on focus */
 	margin: 0;
 	color: #222f29;
 	background: transparent;
 	background-image: url(../../img/menu-icon.svg);
-	background-position: right top;
-	background-size: auto 100%;
+	background-position: right 5px center;
+	background-size: auto calc(100% - 10px);
 	background-repeat: no-repeat;
 	transform: scale(1);
 }
 
 header.scrolled nav button.menu-toggler {
-	padding: 15px 70px 15px 0; /* 10px less top and bottom, 20px less on right to keep circular background image in relationship to text */
+	/* padding: 15px 70px 15px 0; /* 10px less top and bottom, 20px less on right to keep circular background image in relationship to text */
+	padding: 20px 75px 20px 5px; /* Same as above statement, but +5px in all directions */
 }
 
 nav button.menu-toggler:hover,
-nav button.menu-toggler:active {
+nav button.menu-toggler:active,
+nav button.menu-toggler:focus {
 	color: #222f29;
-	background: transparent;
+	background: transparent; /* Background redeclaration are necessary to override default button:hover statements */
 	background-image: url(../../img/menu-icon.svg);
-	background-position: right top;
-	background-size: auto 100%;
+	background-position: right 5px center;
+	background-size: auto calc(100% - 10px);
 	background-repeat: no-repeat;
 	transform: scale(1.03);
 }
@@ -817,45 +887,50 @@ header.scrolled .navbar-collapse {
 } */
 
 nav ul {
-	margin: 0;
+	margin: 30px 0;
+	max-width: 100vw;
 }
 
 nav ul li {
 	margin: 0;
 	white-space: nowrap; /* Prevent line breaks between words */
-	color: #222f29;
+	color: #fff;
 }
 
-.navbar-expand-lg .navbar-nav a.nav-link {
+/* .navbar-expand-lg .navbar-nav a.nav-link {
 	padding: 10px 20px;
-}
+} */
 
 nav ul li :is(a, a:link, a:visited) {
 	font-family: "MetroSans-Regular", Arial, sans-serif;
 	width: 100%;
-	text-align: center;
+	text-align: left;
 	text-transform: uppercase;
 	text-decoration: none;
 	font-weight: bold;
-	color: #222f29;
+	color: #fff;
+	background: #222f29;
 	border-bottom: 2px transparent solid;
 	transition: 0.3s ease all;
+	padding: 10px 30px;
 }
 
 nav ul li a:hover,
 nav ul li.dropdown.show > a {
-	color: #3b4842;
+	color: #e6e6e6;
+	background: #3b4842;
 	transition: 0.3s ease all;
 }
 
 nav ul li a:active {
-	color: #4f5c56;
-	/* border-bottom: 2px #4f5c56 solid; */
+	color: #d2d2d2;
+	background: #4f5c56;
+	/* border-bottom: 2px #d2d2d2 solid; */
 	transition: 0.3s ease all;
 }
 
 nav a.nav-link:before {
-	background: #3b4842;
+	background: #e6e6e6;
 }
 
 .navbar-nav .dropdown-menu {
@@ -2617,11 +2692,11 @@ body a.fbx-close {
     	margin: 0;
     }
         
-    header nav button:focus {
+    /* header nav button:focus {
     	outline: none;
     }
         
-    /* nav .collapse:not(.show) {
+    nav .collapse:not(.show) {
     	display: none !important; /* Required to override the !important statement on the .d-flex class - otherwise menu always shows *
     } */
         
@@ -3005,6 +3080,15 @@ body a.fbx-close {
     	background: transparent;
     }
         
+    .header-background {
+    	height: 70px;
+    }
+        
+    header nav button.menu-toggler {
+    	/* padding: 15px 70px 15px 0; /* 10px less top and bottom, 20px less on right to keep circular background image in relationship to text */
+    	padding: 20px 75px 20px 5px ; /* Same as above statement, but +5px in all directions */
+    }
+        
     header nav.navbar {
     	top: 0;
     	height: 70px;
@@ -3370,10 +3454,17 @@ body a.fbx-close {
     	max-width: 55vw;
     }
         
-    nav .navbar-collapse {
+    /* nav .navbar-collapse {
     	left: -30px;
     	width: 100%;
     	width: calc(100% + 60px);
+    } */
+        
+    @media (max-width: 450px) {
+    	header nav button.menu-toggler {
+    		padding: 20px 5px;
+    		background: transparent !important;
+    	}
     }
         
         
@@ -3528,7 +3619,7 @@ header .navbar-collapse.collapse.show {
 }
 
 header .navbar .logo {
-	z-index: 10000;
+	z-index: 9999;
 }
 
 header nav.navbar #main-nav {
@@ -3544,7 +3635,7 @@ header.scrolled .logo a.navbar-brand {
 }
 
 header nav button:focus {
-	outline: none;
+	outline-color: #b5691b;
 }
 
 nav .collapse:not(.show) {
