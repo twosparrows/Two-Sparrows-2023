@@ -1,6 +1,6 @@
 CSS Options Fields
 
-Updated at 17/05/2023 6:37.12am UTC
+Updated at 18/05/2023 2:19.44am UTC
 Referrer: /wp-admin/admin.php?page=acf-options-structural-css-editor
 
 
@@ -348,6 +348,7 @@ Shortcodes:
 [image-margin-vertical] => 15px
 [line-height-headings] => 1.2
 [line-height] => 1.5
+[menu-location] => left
 [nav-dropdown-menu-opacity] => 0.8
 [pi] => 3.1415926536
 [section-padding-vertical] => 90px
@@ -362,8 +363,8 @@ Shortcodes:
 [width-sm] => 540px
 [width-xl] => 1140px
 [width-xs-max] => 560px
-colors-brand-key => 140
-colours-brand-key => 140
+colors-brand-key => 139
+colours-brand-key => 139
 
 
 CSS:
@@ -422,6 +423,11 @@ array (
     array (
       'name' => 'slide-navigation-transition',
       'value' => 'left 0.6s ease',
+    ),
+    9 => 
+    array (
+      'name' => 'menu-location',
+      'value' => 'left',
     ),
   ),
   'menu_order' => 47,
@@ -2299,8 +2305,8 @@ footer#footer {
 	position: relative;
 	width:[slide-navigation-width];
 	max-width: 100vw;
-	left: -[slide-navigation-width];
-	grid-column: 1;
+	[menu-location]: -[slide-navigation-width];
+	grid-column: 1; /* If changing menu to right side, changing this to -1 could be helpful? */
 	grid-row: 1/-1;
 	z-index: 10000;
 	background: [colour-nav-dropdown-background];
@@ -2309,7 +2315,7 @@ footer#footer {
 }
 
 .reveal-menu #website-navigation {
-	left: 0;
+	[menu-location]: 0;
 }
 
 #website-navigation ul {
@@ -2335,11 +2341,11 @@ footer#footer {
 	position: fixed;
 	display: block;
 	top: 1.5em;
-	left: .2em;
+	[menu-side]: .2em;
 }
 
 body.reveal-menu .menu-toggler {
-	left: 14.5em;
+	[menu-side]: 14.5em;
 } */',
   'menu_order' => 59,
   'instructions' => 'Enter full CSS for imported fonts below (wrapped in @font-face or @import).',
@@ -6576,11 +6582,11 @@ overflow: hidden; /* Prevents animation beginning position from creating a scrol
   'ID' => 0,
   'key' => 'field_5dd20b9831a89',
   'label' => 'section.kokako :is(.container, .container-fluid) .row',
-  'name' => '',
+  'name' => 'sectionkokako_:iscontainer_container-fluid_row',
   'aria-label' => '',
   'prefix' => 'acf',
   'type' => 'textarea',
-  'value' => 'export',
+  'value' => '',
   'menu_order' => 85,
   'instructions' => '',
   'required' => 0,
@@ -6599,7 +6605,7 @@ overflow: hidden; /* Prevents animation beginning position from creating a scrol
   'rows' => 3,
   'placeholder' => '',
   'new_lines' => '',
-  '_name' => '',
+  '_name' => 'sectionkokako_:iscontainer_container-fluid_row',
   '_valid' => 1,
 )array (
   'ID' => 0,
@@ -8377,11 +8383,79 @@ section.kokako.testimonials .testimonials-heading :is(h1, h2, h3) {
         0 => 
         array (
           'screen_size' => 'xl_only',
-          'css_at_screen_size' => '/* Set max width on Text with Photo section */
+          'css_at_screen_size' => '/* Max widths */
 
-section.kokako.textWithPhoto .col-lg-6.text {
-	max-width: 570px; 
+section.kokako.textWithPhoto .container-fluid.photo-on-right .text {
+	padding-left: calc( ( ( 100vw - [width-xl] ) / 2) - 15px );
 }
+
+section.kokako.textWithPhoto .container-fluid.photo-on-left .text {
+	padding-right: calc( ( ( 100vw - [width-xl] ) / 2) - 15px );
+}
+
+section.kokako.textWithPhoto .container-fluid.photo-on-right .col-lg-6.text {
+	padding-left: calc( ( ( 100vw - [width-xl] ) / 2) + 7.5px );
+}
+
+section.kokako.textWithPhoto .container-fluid.photo-on-left .col-lg-6.text {
+	padding-right: calc( ( ( 100vw - [width-xl] ) / 2) + 7.5px );
+}
+
+section.kokako.textWithPhoto .container-fluid .col-lg-1 {
+	flex: 0 0 calc( ( ( ( 100vw - [width-xl] ) / 2) + ( [width-xl] / 12 ) ) - 7.5px);
+	max-width: calc( ( ( ( 100vw - [width-xl] ) / 2) + ( [width-xl] / 12 ) ) - 7.5px);
+}
+
+section.kokako.textWithPhoto .container-fluid .col-lg-2 {
+	flex: 0 0 calc( ( ( ( 100vw - [width-xl] ) / 2) + ( [width-xl] / 6 ) ) - 7.5px);
+	max-width: calc( ( ( ( 100vw - [width-xl] ) / 2) + ( [width-xl] / 6 ) ) - 7.5px);
+}
+
+section.kokako.textWithPhoto .container-fluid .col-lg-3 {
+	flex: 0 0 calc( ( ( ( 100vw - [width-xl] ) / 2) + ( [width-xl] / 4 ) ) - 7.5px);
+	max-width: calc( ( ( ( 100vw - [width-xl] ) / 2) + ( [width-xl] / 4 ) ) - 7.5px);
+}
+
+section.kokako.textWithPhoto .container-fluid .col-lg-4 {
+	flex: 0 0 calc( ( ( ( 100vw - [width-xl] ) / 2) + ( [width-xl] / 3 ) ) - 7.5px);
+	max-width: calc( ( ( ( 100vw - [width-xl] ) / 2) + ( [width-xl] / 3 ) ) - 7.5px);
+}
+
+section.kokako.textWithPhoto .container-fluid .col-lg-5 {
+	flex: 0 0 calc( ( ( ( 100vw - [width-xl] ) / 2) + ( ( [width-xl] * 5 ) / 12 ) ) - 7.5px);
+	max-width: calc( ( ( ( 100vw - [width-xl] ) / 2) + ( ( [width-xl] * 5 ) / 12 ) ) - 7.5px);
+}
+
+section.kokako.textWithPhoto .container-fluid .col-lg-6 {
+	flex: 0 0 calc( ( ( ( 100vw - [width-xl] ) / 2) + ( [width-xl] / 2 ) ) - 7.5px);
+	max-width: calc( ( ( ( 100vw - [width-xl] ) / 2) + ( [width-xl] / 2 ) ) - 7.5px);
+}
+
+section.kokako.textWithPhoto .container-fluid .col-lg-7 {
+	flex: 0 0 calc( ( ( ( 100vw - [width-xl] ) / 2) + ( [width-xl] * 7 / 12 ) ) - 7.5px);
+	max-width: calc( ( ( ( 100vw - [width-xl] ) / 2) + ( [width-xl] * 7 / 12 ) ) - 7.5px);
+}
+
+section.kokako.textWithPhoto .container-fluid .col-lg-8 {
+	flex: 0 0 calc( ( ( ( 100vw - [width-xl] ) / 2) + ( [width-xl] * 2 / 3 ) ) - 7.5px);
+	max-width: calc( ( ( ( 100vw - [width-xl] ) / 2) + ( [width-xl] * 2 / 3 ) ) - 7.5px);
+}
+
+section.kokako.textWithPhoto .container-fluid .col-lg-9 {
+	flex: 0 0 calc( ( ( ( 100vw - [width-xl] ) / 2) + ( [width-xl] * 3 / 4 ) ) - 7.5px);
+	max-width: calc( ( ( ( 100vw - [width-xl] ) / 2) + ( [width-xl] * 3 / 4 ) ) - 7.5px);
+}
+
+section.kokako.textWithPhoto .container-fluid .col-lg-10 {
+	flex: 0 0 calc( ( ( ( 100vw - [width-xl] ) / 2) + ( [width-xl] * 5 / 6 ) ) - 7.5px);
+	max-width: calc( ( ( ( 100vw - [width-xl] ) / 2) + ( [width-xl] * 5 / 6 ) ) - 7.5px);
+}
+
+section.kokako.textWithPhoto .container-fluid .col-lg-11 {
+	flex: 0 0 calc( ( ( ( 100vw - [width-xl] ) / 2) + ( [width-xl] * 11 / 12 ) ) - 7.5px);
+	max-width: calc( ( ( ( 100vw - [width-xl] ) / 2) + ( [width-xl] * 11 / 12 ) ) - 7.5px);
+}
+
 
 @media (min-width: 2100px) {
 	section.kokako.textWithPhoto .container-fluid .col-lg-6.image {
@@ -8444,8 +8518,77 @@ section.kokako.textWithPhoto.image-sticky .internalWrap {
         2 => 
         array (
           'screen_size' => 'lg_only',
-          'css_at_screen_size' => 'section.kokako.textWithPhoto .col-lg-6.text { /* Set max width on Text with Photo section */
-	max-width: 480px;
+          'css_at_screen_size' => '/* Max widths */
+
+section.kokako.textWithPhoto .container-fluid.photo-on-right .text {
+	padding-left: calc( ( ( 100vw - [width-lg] ) / 2) - 15px );
+}
+
+section.kokako.textWithPhoto .container-fluid.photo-on-left .text {
+	padding-right: calc( ( ( 100vw - [width-lg] ) / 2) - 15px );
+}
+
+section.kokako.textWithPhoto .container-fluid.photo-on-right .col-lg-6.text {
+	padding-left: calc( ( ( 100vw - [width-lg] ) / 2) + 7.5px );
+}
+
+section.kokako.textWithPhoto .container-fluid.photo-on-left .col-lg-6.text {
+	padding-right: calc( ( ( 100vw - [width-lg] ) / 2) + 7.5px );
+}
+
+section.kokako.textWithPhoto .container-fluid .col-lg-1 {
+	flex: 0 0 calc( ( ( ( 100vw - [width-lg] ) / 2) + ( [width-lg] / 12 ) ) - 7.5px);
+	max-width: calc( ( ( ( 100vw - [width-lg] ) / 2) + ( [width-lg] / 12 ) ) - 7.5px);
+}
+
+section.kokako.textWithPhoto .container-fluid .col-lg-2 {
+	flex: 0 0 calc( ( ( ( 100vw - [width-lg] ) / 2) + ( [width-lg] / 6 ) ) - 7.5px);
+	max-width: calc( ( ( ( 100vw - [width-lg] ) / 2) + ( [width-lg] / 6 ) ) - 7.5px);
+}
+
+section.kokako.textWithPhoto .container-fluid .col-lg-3 {
+	flex: 0 0 calc( ( ( ( 100vw - [width-lg] ) / 2) + ( [width-lg] / 4 ) ) - 7.5px);
+	max-width: calc( ( ( ( 100vw - [width-lg] ) / 2) + ( [width-lg] / 4 ) ) - 7.5px);
+}
+
+section.kokako.textWithPhoto .container-fluid .col-lg-4 {
+	flex: 0 0 calc( ( ( ( 100vw - [width-lg] ) / 2) + ( [width-lg] / 3 ) ) - 7.5px);
+	max-width: calc( ( ( ( 100vw - [width-lg] ) / 2) + ( [width-lg] / 3 ) ) - 7.5px);
+}
+
+section.kokako.textWithPhoto .container-fluid .col-lg-5 {
+	flex: 0 0 calc( ( ( ( 100vw - [width-lg] ) / 2) + ( ( [width-lg] * 5 ) / 12 ) ) - 7.5px);
+	max-width: calc( ( ( ( 100vw - [width-lg] ) / 2) + ( ( [width-lg] * 5 ) / 12 ) ) - 7.5px);
+}
+
+section.kokako.textWithPhoto .container-fluid .col-lg-6 {
+	flex: 0 0 calc( ( ( ( 100vw - [width-lg] ) / 2) + ( [width-lg] / 2 ) ) - 7.5px);
+	max-width: calc( ( ( ( 100vw - [width-lg] ) / 2) + ( [width-lg] / 2 ) ) - 7.5px);
+}
+
+section.kokako.textWithPhoto .container-fluid .col-lg-7 {
+	flex: 0 0 calc( ( ( ( 100vw - [width-lg] ) / 2) + ( [width-lg] * 7 / 12 ) ) - 7.5px);
+	max-width: calc( ( ( ( 100vw - [width-lg] ) / 2) + ( [width-lg] * 7 / 12 ) ) - 7.5px);
+}
+
+section.kokako.textWithPhoto .container-fluid .col-lg-8 {
+	flex: 0 0 calc( ( ( ( 100vw - [width-lg] ) / 2) + ( [width-lg] * 2 / 3 ) ) - 7.5px);
+	max-width: calc( ( ( ( 100vw - [width-lg] ) / 2) + ( [width-lg] * 2 / 3 ) ) - 7.5px);
+}
+
+section.kokako.textWithPhoto .container-fluid .col-lg-9 {
+	flex: 0 0 calc( ( ( ( 100vw - [width-lg] ) / 2) + ( [width-lg] * 3 / 4 ) ) - 7.5px);
+	max-width: calc( ( ( ( 100vw - [width-lg] ) / 2) + ( [width-lg] * 3 / 4 ) ) - 7.5px);
+}
+
+section.kokako.textWithPhoto .container-fluid .col-lg-10 {
+	flex: 0 0 calc( ( ( ( 100vw - [width-lg] ) / 2) + ( [width-lg] * 5 / 6 ) ) - 7.5px);
+	max-width: calc( ( ( ( 100vw - [width-lg] ) / 2) + ( [width-lg] * 5 / 6 ) ) - 7.5px);
+}
+
+section.kokako.textWithPhoto .container-fluid .col-lg-11 {
+	flex: 0 0 calc( ( ( ( 100vw - [width-lg] ) / 2) + ( [width-lg] * 11 / 12 ) ) - 7.5px);
+	max-width: calc( ( ( ( 100vw - [width-lg] ) / 2) + ( [width-lg] * 11 / 12 ) ) - 7.5px);
 }',
         ),
         3 => 

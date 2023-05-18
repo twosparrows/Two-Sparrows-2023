@@ -49,7 +49,7 @@ footer#footer {
 	width:16em;
 	max-width: 100vw;
 	left: -16em;
-	grid-column: 1;
+	grid-column: 1; /* If changing menu to right side, changing this to -1 could be helpful? */
 	grid-row: 1/-1;
 	z-index: 10000;
 	background: #222f29;
@@ -84,11 +84,11 @@ footer#footer {
 	position: fixed;
 	display: block;
 	top: 1.5em;
-	left: .2em;
+	[menu-side]: .2em;
 }
 
 body.reveal-menu .menu-toggler {
-	left: 14.5em;
+	[menu-side]: 14.5em;
 } */
 
 
@@ -1288,10 +1288,6 @@ section.kokako {
 
 section.kokako .row {
     position: relative;
-}
-
-section.kokako :is(.container, .container-fluid) .row {
-    export
 }
 
 section.kokako :is(h1, h2).display {
@@ -2841,11 +2837,79 @@ body a.fbx-close {
         
     /* Text With Photo */
         
-    /* Set max width on Text with Photo section */
+    /* Max widths */
         
-    section.kokako.textWithPhoto .col-lg-6.text {
-    	max-width: 570px; 
+    section.kokako.textWithPhoto .container-fluid.photo-on-right .text {
+    	padding-left: calc( ( ( 100vw - 1140px ) / 2) - 15px );
     }
+        
+    section.kokako.textWithPhoto .container-fluid.photo-on-left .text {
+    	padding-right: calc( ( ( 100vw - 1140px ) / 2) - 15px );
+    }
+        
+    section.kokako.textWithPhoto .container-fluid.photo-on-right .col-lg-6.text {
+    	padding-left: calc( ( ( 100vw - 1140px ) / 2) + 7.5px );
+    }
+        
+    section.kokako.textWithPhoto .container-fluid.photo-on-left .col-lg-6.text {
+    	padding-right: calc( ( ( 100vw - 1140px ) / 2) + 7.5px );
+    }
+        
+    section.kokako.textWithPhoto .container-fluid .col-lg-1 {
+    	flex: 0 0 calc( ( ( ( 100vw - 1140px ) / 2) + ( 1140px / 12 ) ) - 7.5px);
+    	max-width: calc( ( ( ( 100vw - 1140px ) / 2) + ( 1140px / 12 ) ) - 7.5px);
+    }
+        
+    section.kokako.textWithPhoto .container-fluid .col-lg-2 {
+    	flex: 0 0 calc( ( ( ( 100vw - 1140px ) / 2) + ( 1140px / 6 ) ) - 7.5px);
+    	max-width: calc( ( ( ( 100vw - 1140px ) / 2) + ( 1140px / 6 ) ) - 7.5px);
+    }
+        
+    section.kokako.textWithPhoto .container-fluid .col-lg-3 {
+    	flex: 0 0 calc( ( ( ( 100vw - 1140px ) / 2) + ( 1140px / 4 ) ) - 7.5px);
+    	max-width: calc( ( ( ( 100vw - 1140px ) / 2) + ( 1140px / 4 ) ) - 7.5px);
+    }
+        
+    section.kokako.textWithPhoto .container-fluid .col-lg-4 {
+    	flex: 0 0 calc( ( ( ( 100vw - 1140px ) / 2) + ( 1140px / 3 ) ) - 7.5px);
+    	max-width: calc( ( ( ( 100vw - 1140px ) / 2) + ( 1140px / 3 ) ) - 7.5px);
+    }
+        
+    section.kokako.textWithPhoto .container-fluid .col-lg-5 {
+    	flex: 0 0 calc( ( ( ( 100vw - 1140px ) / 2) + ( ( 1140px * 5 ) / 12 ) ) - 7.5px);
+    	max-width: calc( ( ( ( 100vw - 1140px ) / 2) + ( ( 1140px * 5 ) / 12 ) ) - 7.5px);
+    }
+        
+    section.kokako.textWithPhoto .container-fluid .col-lg-6 {
+    	flex: 0 0 calc( ( ( ( 100vw - 1140px ) / 2) + ( 1140px / 2 ) ) - 7.5px);
+    	max-width: calc( ( ( ( 100vw - 1140px ) / 2) + ( 1140px / 2 ) ) - 7.5px);
+    }
+        
+    section.kokako.textWithPhoto .container-fluid .col-lg-7 {
+    	flex: 0 0 calc( ( ( ( 100vw - 1140px ) / 2) + ( 1140px * 7 / 12 ) ) - 7.5px);
+    	max-width: calc( ( ( ( 100vw - 1140px ) / 2) + ( 1140px * 7 / 12 ) ) - 7.5px);
+    }
+        
+    section.kokako.textWithPhoto .container-fluid .col-lg-8 {
+    	flex: 0 0 calc( ( ( ( 100vw - 1140px ) / 2) + ( 1140px * 2 / 3 ) ) - 7.5px);
+    	max-width: calc( ( ( ( 100vw - 1140px ) / 2) + ( 1140px * 2 / 3 ) ) - 7.5px);
+    }
+        
+    section.kokako.textWithPhoto .container-fluid .col-lg-9 {
+    	flex: 0 0 calc( ( ( ( 100vw - 1140px ) / 2) + ( 1140px * 3 / 4 ) ) - 7.5px);
+    	max-width: calc( ( ( ( 100vw - 1140px ) / 2) + ( 1140px * 3 / 4 ) ) - 7.5px);
+    }
+        
+    section.kokako.textWithPhoto .container-fluid .col-lg-10 {
+    	flex: 0 0 calc( ( ( ( 100vw - 1140px ) / 2) + ( 1140px * 5 / 6 ) ) - 7.5px);
+    	max-width: calc( ( ( ( 100vw - 1140px ) / 2) + ( 1140px * 5 / 6 ) ) - 7.5px);
+    }
+        
+    section.kokako.textWithPhoto .container-fluid .col-lg-11 {
+    	flex: 0 0 calc( ( ( ( 100vw - 1140px ) / 2) + ( 1140px * 11 / 12 ) ) - 7.5px);
+    	max-width: calc( ( ( ( 100vw - 1140px ) / 2) + ( 1140px * 11 / 12 ) ) - 7.5px);
+    }
+        
         
     @media (min-width: 2100px) {
     	section.kokako.textWithPhoto .container-fluid .col-lg-6.image {
@@ -3169,8 +3233,77 @@ body a.fbx-close {
         
     /* Text With Photo */
         
-    section.kokako.textWithPhoto .col-lg-6.text { /* Set max width on Text with Photo section */
-    	max-width: 480px;
+    /* Max widths */
+        
+    section.kokako.textWithPhoto .container-fluid.photo-on-right .text {
+    	padding-left: calc( ( ( 100vw - 960px ) / 2) - 15px );
+    }
+        
+    section.kokako.textWithPhoto .container-fluid.photo-on-left .text {
+    	padding-right: calc( ( ( 100vw - 960px ) / 2) - 15px );
+    }
+        
+    section.kokako.textWithPhoto .container-fluid.photo-on-right .col-lg-6.text {
+    	padding-left: calc( ( ( 100vw - 960px ) / 2) + 7.5px );
+    }
+        
+    section.kokako.textWithPhoto .container-fluid.photo-on-left .col-lg-6.text {
+    	padding-right: calc( ( ( 100vw - 960px ) / 2) + 7.5px );
+    }
+        
+    section.kokako.textWithPhoto .container-fluid .col-lg-1 {
+    	flex: 0 0 calc( ( ( ( 100vw - 960px ) / 2) + ( 960px / 12 ) ) - 7.5px);
+    	max-width: calc( ( ( ( 100vw - 960px ) / 2) + ( 960px / 12 ) ) - 7.5px);
+    }
+        
+    section.kokako.textWithPhoto .container-fluid .col-lg-2 {
+    	flex: 0 0 calc( ( ( ( 100vw - 960px ) / 2) + ( 960px / 6 ) ) - 7.5px);
+    	max-width: calc( ( ( ( 100vw - 960px ) / 2) + ( 960px / 6 ) ) - 7.5px);
+    }
+        
+    section.kokako.textWithPhoto .container-fluid .col-lg-3 {
+    	flex: 0 0 calc( ( ( ( 100vw - 960px ) / 2) + ( 960px / 4 ) ) - 7.5px);
+    	max-width: calc( ( ( ( 100vw - 960px ) / 2) + ( 960px / 4 ) ) - 7.5px);
+    }
+        
+    section.kokako.textWithPhoto .container-fluid .col-lg-4 {
+    	flex: 0 0 calc( ( ( ( 100vw - 960px ) / 2) + ( 960px / 3 ) ) - 7.5px);
+    	max-width: calc( ( ( ( 100vw - 960px ) / 2) + ( 960px / 3 ) ) - 7.5px);
+    }
+        
+    section.kokako.textWithPhoto .container-fluid .col-lg-5 {
+    	flex: 0 0 calc( ( ( ( 100vw - 960px ) / 2) + ( ( 960px * 5 ) / 12 ) ) - 7.5px);
+    	max-width: calc( ( ( ( 100vw - 960px ) / 2) + ( ( 960px * 5 ) / 12 ) ) - 7.5px);
+    }
+        
+    section.kokako.textWithPhoto .container-fluid .col-lg-6 {
+    	flex: 0 0 calc( ( ( ( 100vw - 960px ) / 2) + ( 960px / 2 ) ) - 7.5px);
+    	max-width: calc( ( ( ( 100vw - 960px ) / 2) + ( 960px / 2 ) ) - 7.5px);
+    }
+        
+    section.kokako.textWithPhoto .container-fluid .col-lg-7 {
+    	flex: 0 0 calc( ( ( ( 100vw - 960px ) / 2) + ( 960px * 7 / 12 ) ) - 7.5px);
+    	max-width: calc( ( ( ( 100vw - 960px ) / 2) + ( 960px * 7 / 12 ) ) - 7.5px);
+    }
+        
+    section.kokako.textWithPhoto .container-fluid .col-lg-8 {
+    	flex: 0 0 calc( ( ( ( 100vw - 960px ) / 2) + ( 960px * 2 / 3 ) ) - 7.5px);
+    	max-width: calc( ( ( ( 100vw - 960px ) / 2) + ( 960px * 2 / 3 ) ) - 7.5px);
+    }
+        
+    section.kokako.textWithPhoto .container-fluid .col-lg-9 {
+    	flex: 0 0 calc( ( ( ( 100vw - 960px ) / 2) + ( 960px * 3 / 4 ) ) - 7.5px);
+    	max-width: calc( ( ( ( 100vw - 960px ) / 2) + ( 960px * 3 / 4 ) ) - 7.5px);
+    }
+        
+    section.kokako.textWithPhoto .container-fluid .col-lg-10 {
+    	flex: 0 0 calc( ( ( ( 100vw - 960px ) / 2) + ( 960px * 5 / 6 ) ) - 7.5px);
+    	max-width: calc( ( ( ( 100vw - 960px ) / 2) + ( 960px * 5 / 6 ) ) - 7.5px);
+    }
+        
+    section.kokako.textWithPhoto .container-fluid .col-lg-11 {
+    	flex: 0 0 calc( ( ( ( 100vw - 960px ) / 2) + ( 960px * 11 / 12 ) ) - 7.5px);
+    	max-width: calc( ( ( ( 100vw - 960px ) / 2) + ( 960px * 11 / 12 ) ) - 7.5px);
     }
     
 }
