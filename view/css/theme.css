@@ -2068,6 +2068,12 @@ section.kokako.textWithPhoto.no-margin-bottom.no-padding .container-fluid .inter
 	background: #efebe5;
 }
 
+section.kokako.textWithPhoto .container-fluid {
+	--screen-size-width: 960px; /* Default, only used at LG and XL sizes (overridden at XL size) */
+	--padding-offset: -15px;
+	--text-padding: calc( ( ( 100vw - var(--screen-size-width) ) / 2) + var(--padding-offset) );
+}
+
 
 /* Brand Colour Classes */
 
@@ -2838,22 +2844,32 @@ body a.fbx-close {
     /* Text With Photo */
         
     /* Max widths */
+    section.kokako.textWithPhoto .container-fluid {
+    	--screen-size-width: 1140px;
+    }
         
     section.kokako.textWithPhoto .container-fluid.photo-on-right .text {
-    	padding-left: calc( ( ( 100vw - 1140px ) / 2) - 15px );
+    	/* padding-left: calc( ( ( 100vw - 1140px ) / 2) - 15px ); */
+    	padding-left: var(--text-padding);
     }
         
     section.kokako.textWithPhoto .container-fluid.photo-on-left .text {
-    	padding-right: calc( ( ( 100vw - 1140px ) / 2) - 15px );
+    	/* padding-right: calc( ( ( 100vw - 1140px ) / 2) - 15px ); */
+    	padding-right: var(--text-padding);
+    }
+        
+    section.kokako.textWithPhoto .container-fluid .col-lg-6.text {
+    	/* padding-left: calc( ( ( 100vw - 1140px ) / 2) + 7.5px ); */
+    	--padding-offset: 7.5px;
     }
         
     section.kokako.textWithPhoto .container-fluid.photo-on-right .col-lg-6.text {
     	padding-left: calc( ( ( 100vw - 1140px ) / 2) + 7.5px );
     }
         
-    section.kokako.textWithPhoto .container-fluid.photo-on-left .col-lg-6.text {
+    /* section.kokako.textWithPhoto .container-fluid.photo-on-left .col-lg-6.text {
     	padding-right: calc( ( ( 100vw - 1140px ) / 2) + 7.5px );
-    }
+    } */
         
     section.kokako.textWithPhoto .container-fluid .col-lg-1 {
     	flex: 0 0 calc( ( ( ( 100vw - 1140px ) / 2) + ( 1140px / 12 ) ) - 7.5px);
