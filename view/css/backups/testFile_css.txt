@@ -1,6 +1,6 @@
 CSS Options Fields
 
-Updated at 19/05/2023 8:28.21am UTC
+Updated at 25/05/2023 3:50.09am UTC
 Referrer: /wp-admin/admin.php?page=acf-options-structural-css-editor
 
 
@@ -8382,7 +8382,7 @@ section.kokako.testimonials .testimonials-heading :is(h1, h2, h3) {
 section.kokako.textWithPhoto .container-fluid {
 	--screen-size-width: [width-lg]; /* Default, only used at LG and XL sizes (overridden at XL size) */
 	--padding-offset: -15px;
-	--text-padding: calc( ( ( 100vw - var(--screen-size-width) ) / 2) + var(--padding-offset) );
+	--text-padding: calc( ( ( 100vw - var(--screen-size-width) ) / 2) + var(--padding-offset) ); /* THIS NEEDS TO BE SET LOWER DOWN SELECTIVELY I THINK*/
 }',
       'section_responsivity' => 
       array (
@@ -8390,32 +8390,40 @@ section.kokako.textWithPhoto .container-fluid {
         array (
           'screen_size' => 'xl_only',
           'css_at_screen_size' => '/* Max widths */
+
 section.kokako.textWithPhoto .container-fluid {
 	--screen-size-width: [width-xl];
 }
 
-section.kokako.textWithPhoto .container-fluid.photo-on-right .text {
-	/* padding-left: calc( ( ( 100vw - [width-xl] ) / 2) - 15px ); */
-	padding-left: var(--text-padding);
-}
-
-section.kokako.textWithPhoto .container-fluid.photo-on-left .text {
-	/* padding-right: calc( ( ( 100vw - [width-xl] ) / 2) - 15px ); */
-	padding-right: var(--text-padding);
-}
-
-section.kokako.textWithPhoto .container-fluid .col-lg-6.text {
+section.kokako.textWithPhoto .container-fluid .col-lg-6 {
 	/* padding-left: calc( ( ( 100vw - [width-xl] ) / 2) + 7.5px ); */
 	--padding-offset: 7.5px;
 }
 
-section.kokako.textWithPhoto .container-fluid.photo-on-right .col-lg-6.text {
-	padding-left: calc( ( ( 100vw - [width-xl] ) / 2) + 7.5px );
+section.kokako.textWithPhoto .container-fluid.photo-on-right .text {
+	padding-left: calc( ( ( 100vw - [width-xl] ) / 2) - 15px );
+	padding-left: var(--text-padding);
 }
 
-/* section.kokako.textWithPhoto .container-fluid.photo-on-left .col-lg-6.text {
+section.kokako.textWithPhoto .container-fluid.photo-on-left .text {
+	padding-right: calc( ( ( 100vw - [width-xl] ) / 2) - 15px );
+	padding-right: var(--text-padding);
+}
+
+
+section.kokako.textWithPhoto .container-fluid.photo-on-right .col-lg-6.text {
+	padding-left: calc( ( ( 100vw - [width-xl] ) / 2) + 7.5px );
+	--padding-offset: 7.5px; /* Not cascading into following calculation */
+	padding-left: var(--text-padding);
+}
+
+section.kokako.textWithPhoto .container-fluid.photo-on-left .col-lg-6.text {
 	padding-right: calc( ( ( 100vw - [width-xl] ) / 2) + 7.5px );
-} */
+	--padding-offset: 7.5px; /* Not cascading into following calculation */
+	padding-right: var(--text-padding);
+}
+
+
 
 section.kokako.textWithPhoto .container-fluid .col-lg-1 {
 	flex: 0 0 calc( ( ( ( 100vw - [width-xl] ) / 2) + ( [width-xl] / 12 ) ) - 7.5px);

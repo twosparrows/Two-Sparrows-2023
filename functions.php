@@ -37,8 +37,8 @@ function tsp_section_heading_hook( $data = array() ) {
 	
 	global $section;
 
-	// Kōkako theme hooks
-	if ( ( array_key_exists( "heading", $section ) ) && ( array_key_exists( "display", $section["heading"] ) ) && ( "hide" != $section["heading"]["display"] ) ) {
+	// Add heading motif (if required)
+	if ( ( array_key_exists( "heading", $section ) ) && ( array_key_exists( "display", $section["heading"] ) ) && ( "hide" != $section["heading"]["display"] ) && ( "callToAction" != $section["type"] ) ) {
 		?><div class="motif-bar-heading"><div class="bar"></div></div><?php
 	}
 

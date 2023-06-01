@@ -20,7 +20,7 @@ if ( "right" == $section["image"]["position"] ) {
 }
 
 
-// CUSTOM: Get Image Column Width (for sizes LG and above)
+// CUSTOM: Get Image Column Width (for sizes XL and above)
 if ( !array_key_exists( "image_column_width", $section["developer"] ) ) {
 	$section["developer"]["image_column_width"] = 6;
 }
@@ -36,7 +36,7 @@ tsp_open_section();
 
 		tsp_apply_motif();
 
-		if ($section["image"] != "") { 
+		if ( "" != $section["image"] ) { 
 			
 			$backgroundSize = "background-size:cover;"; // Default
 			if ( "contain" == $section["image"]["size"] ) {
@@ -47,32 +47,34 @@ tsp_open_section();
 			}
 
 			?><style type="text/css">								
-				section.<?= $section["type"] ?>.section<?= $section["index"] ?> .col-lg-<?= $section["developer"]["image_column_width"] ?>.image<?php if ( tsp_section_has_class( "image-sticky" ) ) { echo " .sticky-image"; } ?>{
+				section.<?= $section["type"] ?>.section<?= $section["index"] ?> .col-xl-<?= $section["developer"]["image_column_width"] ?>.image<?php if ( tsp_section_has_class( "image-sticky" ) ) { echo " .sticky-image"; } ?>{
 					background: url(<?= $section["image"]["image"]["sizes"]["background-retina"]; ?>);
 					<?= $backgroundSize ?>
 					background-position: <?= $section["image"]["alignment"]; ?>;
 				}
 				
 				@media (max-width: 991px) {
-					section.<?= $section["type"] ?>.section<?= $section["index"] ?> .col-lg-<?= $section["developer"]["image_column_width"] ?>.image<?php if ( tsp_section_has_class( "image-sticky" ) ) { echo " .sticky-image"; } ?>{
+					section.<?= $section["type"] ?>.section<?= $section["index"] ?> .col-xl-<?= $section["developer"]["image_column_width"] ?>.image<?php if ( tsp_section_has_class( "image-sticky" ) ) { echo " .sticky-image"; } ?>{
 						background: url(<?= $section["image"]["image"]["sizes"]["background"]; ?>);
 						<?= $backgroundSize ?>
 						background-position: <?= $section["image"]["alignment"]; ?>;
 					}
-					
-					section.<?= $section["type"] ?>.section<?= $section["index"] ?> .col-lg-<?= $section["developer"]["image_column_width"] ?>.image<?php if ( tsp_section_has_class( "image-sticky" ) ) { echo " .sticky-image"; } ?>{
+				}
+
+				@media (max-width: 1199px) {
+					section.<?= $section["type"] ?>.section<?= $section["index"] ?> .col-xl-<?= $section["developer"]["image_column_width"] ?>.image<?php if ( tsp_section_has_class( "image-sticky" ) ) { echo " .sticky-image"; } ?>{
 						min-height: 400px;
 					}
 				}
 			</style>
 		<?php } ?>
 		<div class="row<?php if ( "right" == $section["image"]["position"] ) { echo " flex-row-reverse"; } ?>">
-			<div class="<?php // col ?>col-xs-12 col-lg-<?= $section["developer"]["image_column_width"] ?> image"><?php // Image always first for mobile sizes, order reversed above if required 
+			<div class="<?php // col ?>col-xs-12 col-sm-12 col-xl-<?= $section["developer"]["image_column_width"] ?> image"><?php // Image always first for mobile sizes, order reversed above if required 
 				if ( tsp_section_has_class( "image-sticky" ) ) {
 					echo '<div class="sticky-image"></div>';
 				}
 			?></div>
-			<div class="<?php // col ?>col-xs-12 col-lg-<?= 12 - $section["developer"]["image_column_width"] ?> text">
+			<div class="<?php // col ?>col-xs-12 col-sm-12 col-xl-<?= 12 - $section["developer"]["image_column_width"] ?> text">
 				<div class="internalWrap">
 					<?php tsp_display_heading(); ?>
 					<?= $section["text"] ?>
