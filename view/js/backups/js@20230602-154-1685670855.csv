@@ -11,13 +11,72 @@ js_functions_theme,"function tspSetHeadingTopMargin() {
 }
 
 function skewedRandom() { // From https://stackoverflow.com/questions/16110758/generate-random-number-with-a-non-uniform-distribution
-    const a = Math.pow(Math.random(), 2);
-    if (Math.random() < 0.5) {
-        return a;
-    }
-    return 1 - a;
+	const a = Math.pow(Math.random(), 2);
+	if ( Math.random() < 0.5 ) {
+		return a;
+	}
+	return 1 - a;
 }"
-js_functions_user,
+js_functions_user,"// Slide in menu. Adapted from https://www.linkedin.com/learning/css-advanced-layouts-with-grid/off-screen-to-cover-navigation-overview?autoplay=true&resume=false&u=92735081
+
+const SITE = document.querySelector('.site');
+const TRIGGER = document.querySelector('.menu-toggler');
+const CLOSER = document.querySelector('.menu-closer');
+const REVEAL = document.querySelector('#website-navigation');
+const MENUITEMS = REVEAL.querySelectorAll('#website-navigation a');
+const MENUARRAY = Array.apply(null, MENUITEMS);
+let screenReaderText = document.querySelector('.menu-toggler .sr-only');
+
+// Toggle reveal class on body element, set aria-expanded and screen reader text on TRIGGER:
+function revealMenu() {
+	SITE.classList.toggle('reveal-menu');
+	REVEAL.classList.add('open');
+	TRIGGER.getAttribute('aria-expanded') == 'false' ? TRIGGER.setAttribute('aria-expanded', true) : TRIGGER.setAttribute('aria-expanded', false);
+	screenReaderText.innerHTML == 'Open ' ? screenReaderText.innerHTML = 'Close ' : screenReaderText.innerHTML = 'Open ';
+}
+
+// Explicitly hide menu
+function hideMenu() {
+	SITE.classList.remove('reveal-menu');
+	REVEAL.classList.remove('open');
+	TRIGGER.setAttribute('aria-expanded', false);
+	screenReaderText.innerHTML = 'Open ';
+}
+
+// Hide nav area when focus shifts away:
+function catchFocus() {
+	if ( TRIGGER.getAttribute('aria-expanded') == 'true' && !( MENUARRAY.includes(document.activeElement) || document.activeElement === TRIGGER ) ) {
+		revealMenu();
+	} else {
+		return;
+	}
+}
+
+function menuClosed() {
+	if ( TRIGGER.getAttribute('aria-expanded') == 'false') {
+		REVEAL.classList.remove('open');
+	}
+}
+
+// Hide nav area when touch or click happens elsewhere:
+function clickTarget(e) {
+	if ( TRIGGER.getAttribute('aria-expanded') == 'true' && !REVEAL.contains(e.target) && !TRIGGER.contains(e.target) ) { // Needs to check that the click isn't within the menu (REVEAL) or TRIGGER button, otherwise revealMenu() will be called twice, ie. open and close the menu
+		revealMenu();
+	}
+}
+
+
+// Listen for clicks on TRIGGER button:
+TRIGGER.addEventListener('click', revealMenu, false);
+CLOSER.addEventListener('click', hideMenu, false); // Fine to just toggle, as closer button can only be clicked when it is on screen
+
+// Listen for focus changes:
+SITE.addEventListener('focusin', catchFocus, true);
+
+// Listen for clicks:
+SITE.addEventListener('click', function(e) { clickTarget(e); }, true);
+
+SITE.addEventListener('transitionend', menuClosed, false);"
 js_document_ready_theme,"// Confirm JS loaded
 $('#js-loaded').text(""true""); // This will prevent ""No JS"" file from being loaded in footer.php (which is a fallback in case JS doesn't execute)
 
@@ -25,10 +84,11 @@ $('#js-loaded').text(""true""); // This will prevent ""No JS"" file from being l
 // let heading1 = document.querySelector('section.kokako h1');
 // let heading2s = document.querySelectorAll('section.kokako h2');
 let headingMotifBars = document.querySelectorAll('.kokako .motif-bar-heading .bar');
-let textWithPhotoImages = document.querySelectorAll('section.textWithPhoto .image');
-let multipleColumns = document.querySelectorAll('section.multipleColumns .multiple-columns-col');
-let multipleRows = document.querySelectorAll('section.multipleRows .multiple-rows-row');
-let latestPosts = document.querySelectorAll('section.kokako.latestPosts .blog-grid.post');
+let allButtons = document.querySelectorAll('button:not(.menu-toggler, .menu-closer), input[type=""submit""], a.button, a.btn');
+// let textWithPhotoImages = document.querySelectorAll('section.textWithPhoto .image');
+// let multipleColumns = document.querySelectorAll('section.multipleColumns .multiple-columns-col');
+// let multipleRows = document.querySelectorAll('section.multipleRows .multiple-rows-row');
+// let latestPosts = document.querySelectorAll('section.kokako.latestPosts .blog-grid.post');
 
 /* heading2s.forEach(
 	(item) => ( item.style.animationDelay = (Math.random() * 0.5) + 's' )
@@ -95,31 +155,49 @@ function animateOnScroll() {
 				animationDelay += animationDelayIncrease;
 			}
 			if  ( !headingMotifBar.classList.contains('appear') ) {
-				let hmbWidth = 70 + Math.round( skewedRandom() * 30) + '%'; // Between 70% and 100%
-				let hmbHeight = 30 + Math.round( skewedRandom() * 70) + '%'; // Between 50% and 100%
-				headingMotifBar.style.width = hmbWidth;
-				headingMotifBar.style.height = hmbHeight;
+				let hmbWidth = 70 + Math.round( skewedRandom() * 30); // Between 70% and 100%
+				let hmbHeight = 30 + Math.round( skewedRandom() * 70); // Between 50% and 100%
+				headingMotifBar.style.width = hmbWidth + '%';
+				headingMotifBar.style.height = hmbHeight + '%';
 				headingMotifBar.classList.add( 'appear' );
-					// console.log( headingMotifBar.closest('.kokako.latestPosts').length );
-				if ( headingMotifBar.closest('.kokako.latestPosts') ) { // &&  headingMotifBar.closest('.kokako.latestPosts').length ) { // For aligning heading when side by side
-						console.log(hmbWidth);
-					if ( $(window).width > 991 ) {
-							console.log( headingMotifBar.closest('.motif-bar-heading') );
-						let hmbParentWidth = headingMotifBar.closest('.motif-bar-heading').width;
-						if ( headingMotifBar.closest('.motif-bar-heading').nextSibling ) {
-							let hmbHeading = headingMotifBar.closest('.motif-bar-heading').nextSibling;
-							if ( hmbHeading.classList.contains('display') ) {
+				if ( headingMotifBar.closest('.kokako.latestPosts') ) { // For aligning heading when side by side
+					if ( $(window).width() > 991 ) {
+						let hmbParentWidth = headingMotifBar.closest('.motif-bar-heading'). offsetWidth;
+						if ( headingMotifBar.closest('.motif-bar-heading').nextElementSibling ) {
+							let hmbHeading = headingMotifBar.closest('.motif-bar-heading'). nextElementSibling;
+							if ( hmbHeading.classList && hmbHeading.classList.contains('display') ) {
 								hmbHeading.style.left = ( ( Math.floor( hmbParentWidth * ( ( 100 - hmbWidth ) / 100 ) ) ) * -1 ) + 'px';
 							}
 						}
-					} else {
-						headingMotifBar.closest('.heading-motif-bar').nextSibling('h1.display, h2.display').style.left =  '0px';
+					} else if ( headingMotifBar.closest('.motif-bar-heading').nextElementSibling ) {
+						let hmbHeading = headingMotifBar.closest('.motif-bar-heading').nextElementSibling;
+						if ( hmbHeading.classList && hmbHeading.classList.contains('display') ) {
+							hmbHeading.style.left = '0px';
+						}
 					}
 				}
 			}
 		}
 	});
 
+
+
+
+	// All Buttons
+	
+	let animationDelayButtons = animationDelayInitial; // Will add animationDelayInitial (in seconds) in case h1 and first h2 are in view together
+	allButtons.forEach(function(aButton) {
+		if ( inViewPort(aButton) ) {
+			if ( ( !aButton.classList.contains('appear') ) || ( performance.now() < 3000) ) { // If page has recently loaded, add a variation, so that headings in view don't display all at the same time
+				aButton.style.animationDelay = animationDelayButtons + 's'; // Animation delay doesn't need to be removed, as this code is only executing when a heading is in view with 4 seconds of the page loading, and the animation is never being re-triggered
+				animationDelayButtons += animationDelayIncrease;
+			}
+			aButton.classList.add('appear');
+		}
+	});
+
+
+	/*
 	// Text with Photo images
 	animationDelay = animationDelayInitial; // Will add 300ms in case h1 and first h2 are in view together, to match headings
 	textWithPhotoImages.forEach(function(textWithPhotoImage) {
@@ -131,7 +209,9 @@ function animateOnScroll() {
 			textWithPhotoImage.classList.add('appear');
 		}
 	});
+	*/
 
+	/*
 	// Multiple Columns columns
 	animationDelay = animationDelayInitial;
 	parentSection = """";
@@ -177,6 +257,7 @@ function animateOnScroll() {
 			latestPostsPost.classList.add('appear');
 		}
 	});
+	*/
 
 	window.requestAnimationFrame(animateOnScroll);
 }
@@ -269,7 +350,8 @@ $(window).scroll(function(){
 		// jQuery('section.section1').removeClass(""scrolled""); // No longer required
 	}
 });"
-js_document_ready_user,
+js_document_ready_user,"// Remove dropdown links from keyboard focus (dropdown menus are explicitly opened now)
+$('nav ul li a.dropdown-toggle').attr('tabindex','-1');"
 js_window_load_theme,"// Set top margin of heading in top Section
 if (jQuery('section.section1.fullScreen').length) {
 	tspSetHeadingTopMargin();

@@ -61,8 +61,20 @@ footer#footer {
 	left: 0;
 }
 
-#website-navigation ul {
+#main-nav {
 	position: fixed;
+	height: 100vh;
+	overflow-y: scroll;
+	-ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
+	scrollbar-width: none;  /*  Hide scrollbar forFirefox */
+}
+
+#main-nav::-webkit-scrollbar { /* Hide scrollbar for Chrome, Safari and Opera */
+	display: none;
+}
+
+#website-navigation ul {
+	/* position: fixed; /* Shifted to parent element to allow the area to scroll, but independently of the site scroll. */
 	display: none;
 	flex-direction: column;
 	width: 16em;
